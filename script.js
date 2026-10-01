@@ -117,7 +117,7 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  photos.querySelectorAll('figure img').forEach(photo=>{
   photo.style.cursor='pointer';
   photo.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'){hovered=true;schedule();}});
-  photo.addEventListener('pointerleave',event=>{if(event.pointerType==='mouse'){hovered=false;schedule();}});
+  photo.addEventListener('pointerleave',event=>{if(event.pointerType==='mouse'){hovered=false;paused=false;schedule();}});
  });
  let pointerStart=null,dragged=false;
  photos.addEventListener('pointerdown',event=>{pointerStart={x:event.clientX,y:event.clientY};dragged=false;});
