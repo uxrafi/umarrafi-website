@@ -775,3 +775,13 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 @media(max-width:800px){
  .site-branding .inner-page-header .social-links{margin-left:1rem}
 }
+
+/* Let the full About page scroll naturally, without a nested reading box. */
+.about-reading-layout{height:auto;min-height:100svh;overflow:visible;display:block}
+.about-reading-layout .about-page{overflow:visible;padding:3rem 7vw 4rem}
+.about-reading-layout .about-article{
+ height:auto;max-width:1000px;overflow:visible;overscroll-behavior:auto;
+ scrollbar-gutter:auto;padding:0;background:transparent;border:0;border-radius:0;
+ display:flow-root;
+}
+@media(max-width:600px){.about-reading-layout .about-page{padding:2rem 6vw 3rem}}
