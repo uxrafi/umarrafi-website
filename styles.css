@@ -45,3 +45,5 @@
 .company-list{justify-content:center;gap:1rem}.brand-logo[aria-label="Barclays"]{margin-left:-1rem}.brand-logo[aria-label="Credit Suisse"]{flex-basis:100px;width:100px}.brand-logo[aria-label="Credit Suisse"] img{width:100px;height:36px}@media(max-width:800px){.brand-logo[aria-label="Credit Suisse"]{flex-basis:90px;width:90px}.brand-logo[aria-label="Credit Suisse"] img{width:90px;height:36px}}
 
 .profile-photos img{filter:brightness(.8) saturate(.7);transform:scale(1);transition:transform .8s ease,filter .8s ease}.profile-photos figure:after{background:rgba(36,79,108,.08)}@media(hover:hover) and (pointer:fine){.profile-photos figure:hover img{transform:scale(1.06);filter:brightness(.87) saturate(.8)}}@media(prefers-reduced-motion:reduce){.profile-photos img{transition:none}.profile-photos figure:hover img{transform:none}}
+
+.company-bar{padding:1.5rem 3vw}.company-list{display:flex;flex-wrap:nowrap}@media(max-width:800px){.company-bar{padding:1.5rem 3vw}}
