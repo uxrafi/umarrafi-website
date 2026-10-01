@@ -117,14 +117,14 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 @media(max-width:650px){.poetry-page{padding:2.5rem 6vw 4rem}.poetry-cards{grid-template-columns:1fr}.poem-body{padding:1.2rem}.poem-title{font-size:1.5rem}.poetry-index{margin-bottom:2.5rem}}
 
 /* Muted blues drawn from the painting's sky and shaded architecture. */
-.home-layout .top-bar,.home-layout .top-bar .announcement{background:#6b8c9a}
-.home-layout .site-header,.home-layout .site-header nav.open{background:#4d6d7d}
+.site-branding .top-bar,.site-branding .top-bar .announcement{background:#6b8c9a}
+.site-branding .site-header,.site-branding .site-header nav.open{background:#4d6d7d}
 .home-layout .company-bar{background:#b9ced7}
-.home-layout .author-wordmark{border:0;text-decoration:none;letter-spacing:0;gap:0}
-.home-layout .author-name{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:2.25rem;line-height:1.1;letter-spacing:.025em;color:#f5f5f0}
-.home-layout .site-header nav a{font-family:'Montserrat',Arial,sans-serif;font-weight:300;letter-spacing:.06em;font-size:.85rem}
-.home-layout .site-header{border-bottom-color:#b4ab91}
-@media(max-width:800px){.home-layout .author-name{font-size:1.95rem}}
+.site-branding .author-wordmark{border:0;text-decoration:none;letter-spacing:0;gap:0}
+.site-branding .author-name{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:2.25rem;line-height:1.1;letter-spacing:.025em;color:#f5f5f0}
+.site-branding .site-header nav a{font-family:'Montserrat',Arial,sans-serif;font-weight:300;letter-spacing:.06em;font-size:.85rem}
+.site-branding .site-header{border-bottom-color:#b4ab91}
+@media(max-width:800px){.site-branding .author-name{font-size:1.95rem}}
 
 .urdu-poem{padding:2rem;background:#fff;border:1px solid var(--line)}.urdu-poem>header{text-align:center;margin-bottom:2rem}
 .urdu-poem h3{font-family:'Noto Nastaliq Urdu',serif;font-size:2rem;font-weight:400;line-height:2.5;color:#185b78;margin:0}
@@ -136,10 +136,10 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .roman-urdu{font-family:Georgia,serif;font-size:.95rem;line-height:2;margin:0;overflow-wrap:anywhere}
 @media(max-width:650px){.urdu-poem{padding:1.2rem}.bilingual-couplet{grid-template-columns:1fr;gap:.8rem}.urdu-column-headings{display:none}.urdu-script{font-size:1.1rem}.roman-urdu{font-size:.9rem}}
 
-.home-layout .author-wordmark{display:flex;align-items:center;gap:.7rem}
+.site-branding .author-wordmark{display:flex;align-items:center;gap:.7rem}
 .ur-logo{display:block;width:66px;height:68px;flex-shrink:0;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
-.home-layout .author-wordmark .author-name{font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:.62rem;letter-spacing:.28em;line-height:1.3;white-space:nowrap}
-@media(max-width:800px){.ur-logo{width:52px;height:54px}.home-layout .author-wordmark .author-name{font-size:.57rem;letter-spacing:.22em}}
+.site-branding .author-wordmark .author-name{font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:.62rem;letter-spacing:.28em;line-height:1.3;white-space:nowrap}
+@media(max-width:800px){.ur-logo{width:52px;height:54px}.site-branding .author-wordmark .author-name{font-size:.57rem;letter-spacing:.22em}}
 
 .home-layout .media{padding:2.4rem 6vw}
 .home-layout .media h2{font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:clamp(1.15rem,1.8vw,1.65rem);line-height:1.45;letter-spacing:0;max-width:850px;margin:.6rem auto}
