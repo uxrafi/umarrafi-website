@@ -823,3 +823,6 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
  -webkit-mask-size:100% 100%;mask-size:100% 100%;
 }
+
+/* Visually balance the Media strip above and below its content. */
+.home-layout #media{padding-bottom:1.5rem}
