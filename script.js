@@ -91,7 +91,7 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  const track=gallery.querySelector('.skydiving-track');
  const toggle=gallery.querySelector('.skydiving-toggle');
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
- let paused=false,touching=false,frame=null,last=null,direction=1,position=track.scrollLeft;
+ let paused=false,touching=false,hovered=false,frame=null,last=null,direction=1,position=track.scrollLeft;
  function step(time){
   frame=null;
   const elapsed=last===null?0:Math.min(time-last,64);
@@ -106,14 +106,32 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  function schedule(){
   if(frame!==null)cancelAnimationFrame(frame);
   frame=null;last=null;position=track.scrollLeft;
-  if(!paused&&!touching&&!document.hidden&&!reduced.matches)frame=requestAnimationFrame(step);
+  if(!paused&&!touching&&!hovered&&!document.hidden&&!reduced.matches)frame=requestAnimationFrame(step);
   toggle.textContent=paused?'Play':'Pause';
   toggle.setAttribute('aria-pressed',String(paused));
   toggle.setAttribute('aria-label',paused?'Start skydiving photo rotation':'Pause skydiving photo rotation');
   toggle.hidden=reduced.matches;
  }
  toggle.addEventListener('click',()=>{paused=!paused;schedule();});
+ const photos=gallery.closest('.skydiving-showcase')||gallery;
+ photos.querySelectorAll('figure img').forEach(photo=>{
+  photo.style.cursor='pointer';
+  photo.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'){hovered=true;schedule();}});
+  photo.addEventListener('pointerleave',event=>{if(event.pointerType==='mouse'){hovered=false;schedule();}});
+ });
+ let pointerStart=null,dragged=false;
+ photos.addEventListener('pointerdown',event=>{pointerStart={x:event.clientX,y:event.clientY};dragged=false;});
+ photos.addEventListener('pointermove',event=>{
+  if(pointerStart&&(Math.abs(event.clientX-pointerStart.x)>10||Math.abs(event.clientY-pointerStart.y)>10))dragged=true;
+ });
+ photos.addEventListener('pointerup',()=>{pointerStart=null;});
+ photos.addEventListener('pointercancel',()=>{pointerStart=null;dragged=true;});
+ photos.addEventListener('click',event=>{
+  if(dragged||!event.target.closest('figure img'))return;
+  paused=!paused;schedule();
+ });
  track.addEventListener('keydown',event=>{
+  if(event.key===' '||event.key==='Enter'){event.preventDefault();paused=!paused;schedule();return;}
   if(event.key==='ArrowLeft'||event.key==='ArrowRight'){
    event.preventDefault();
    track.scrollLeft+=track.clientWidth/2*(event.key==='ArrowLeft'?-1:1);
