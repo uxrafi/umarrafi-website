@@ -288,3 +288,7 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Credit Suisse"] img{width:118px!important;max-width:118px!important;height:46px!important;max-height:46px!important;object-fit:contain!important}
 .home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="TD"] img{width:54px!important;max-width:54px!important;height:48px!important;max-height:48px!important}
 .home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Varo Bank"] img{width:82px!important;max-width:82px!important;height:34px!important;max-height:34px!important}
+
+/* Give the long Scotiabank wordmark a wider frame without stretching it. */
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Scotiabank"]{flex-basis:156px!important;width:156px!important}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Scotiabank"] img{width:150px!important;max-width:150px!important;height:82px!important;max-height:82px!important;object-fit:contain!important}
