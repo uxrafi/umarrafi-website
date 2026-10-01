@@ -7,7 +7,7 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  const track=gallery.querySelector('.carousel-track');
  const toggle=gallery.querySelector('.carousel-toggle');
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
- let paused=reduced.matches,hovered=false,focused=false,timer=null;
+ let paused=reduced.matches,hovered=false,focused=false,timer=null,autoDirection=1;
  function move(direction){
   const step=track.querySelector('figure').getBoundingClientRect().width;
   const max=track.scrollWidth-track.clientWidth;
@@ -18,7 +18,12 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  }
  function schedule(){
   clearInterval(timer);
-  if(!paused&&!hovered&&!focused&&!document.hidden)timer=setInterval(()=>move(1),5000);
+  if(!paused&&!hovered&&!focused&&!document.hidden)timer=setInterval(()=>{
+   const max=track.scrollWidth-track.clientWidth;
+   if(track.scrollLeft>=max-2)autoDirection=-1;
+   else if(track.scrollLeft<=2)autoDirection=1;
+   move(autoDirection);
+  },4000);
  }
  function label(){toggle.textContent=paused?'Play':'Pause';toggle.setAttribute('aria-label',paused?'Start photo rotation':'Pause photo rotation');toggle.setAttribute('aria-pressed',String(paused));}
  toggle.addEventListener('click',()=>{paused=!paused;label();schedule();});
