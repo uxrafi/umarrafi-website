@@ -424,3 +424,15 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .about-reading-layout>footer>div{display:none}
 .about-reading-layout>footer nav{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}
 .about-reading-layout>footer nav a{font:300 .75rem/1.7 'Montserrat',sans-serif;text-decoration:none}
+
+/* A prominent airfield portrait opens Umar's personal story. */
+.about-reading-layout .about-skydiving-portrait{
+ width:280px;max-width:42%;height:auto;aspect-ratio:3/4;object-fit:cover;
+ object-position:50% 50%;float:left;margin:0 2rem 1.2rem 0;
+ border-radius:3px;filter:saturate(.85) brightness(.94);
+}
+@media(max-width:600px){
+ .about-reading-layout .about-skydiving-portrait{
+  float:none;width:240px;max-width:100%;margin:0 auto 1.5rem;
+ }
+}
