@@ -36,3 +36,18 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  reduced.addEventListener('change',schedule);
  label();schedule();
 })();
+
+
+// Reveal the author portrait once when the biography comes into view.
+(() => {
+ const portrait=document.querySelector('.author-profile-portrait');
+ if(!portrait || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+ portrait.classList.add('portrait-motion-ready');
+ const observer=new IntersectionObserver(entries=>{
+  if(entries.some(entry=>entry.isIntersecting)){
+   portrait.classList.add('portrait-visible');
+   observer.disconnect();
+  }
+ },{threshold:.15});
+ observer.observe(portrait);
+})();

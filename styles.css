@@ -259,3 +259,12 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  max-width:64px!important;max-height:56px!important;
  object-fit:contain!important;
 }
+
+/* A larger transparent portrait with a one-time entrance. */
+.author-profile-layout{grid-template-columns:300px minmax(0,1fr);gap:2.5rem}
+.author-profile-portrait{width:300px;height:auto;object-fit:contain;border-radius:0;filter:none;margin-top:-24px;background:transparent}
+.author-profile-portrait.portrait-motion-ready{opacity:0;transform:translateX(-100px);transition:opacity .9s ease,transform 1.1s cubic-bezier(.22,1,.36,1)}
+.author-profile-portrait.portrait-motion-ready.portrait-visible{opacity:1;transform:translateX(0)}
+@media(max-width:900px){.author-profile-layout{grid-template-columns:230px minmax(0,1fr);gap:1.5rem}.author-profile-portrait{width:230px;margin-top:-18px}.author-profile-layout .profile-columns{grid-template-columns:1fr;gap:0}}
+@media(max-width:600px){.author-profile-layout{grid-template-columns:1fr}.author-profile-portrait{width:min(280px,80vw);margin:0 auto}}
+@media(prefers-reduced-motion:reduce){.author-profile-portrait.portrait-motion-ready{opacity:1;transform:none;transition:none}}
