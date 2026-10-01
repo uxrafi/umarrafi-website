@@ -18,4 +18,4 @@
 
 .athens-overlay h1{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(3.2rem,5.6vw,5.5rem);line-height:1.08;letter-spacing:0;margin:0 0 .55rem}.athens-overlay p{font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:clamp(1rem,1.65vw,1.6rem);line-height:1.5;letter-spacing:0}.athens-overlay a{font-family:'Montserrat',Arial,sans-serif;font-weight:400;text-transform:none;letter-spacing:.04em;font-size:.9rem}
 
-.top-bar,.top-bar .announcement,.site-header,.site-header nav.open{background:#455d61}
+.top-bar,.top-bar .announcement{background:#4b8fa9}.site-header,.site-header nav.open{background:#244f6c}
