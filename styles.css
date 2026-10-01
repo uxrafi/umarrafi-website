@@ -27,3 +27,5 @@
 .company-bar{background:#f4faff}.brand-logo img{mix-blend-mode:multiply}
 
 .top-bar .announcement{gap:.6rem;flex-wrap:wrap;max-width:900px;padding:.3rem 0}.quote-text{font-family:'Allura','Segoe Script',cursive;font-size:1.65rem;line-height:1.2}.quote-credit{font-size:.75rem}@media(max-width:600px){.quote-text{font-size:1.4rem}.quote-credit{font-size:.7rem}}
+
+.quote-text,.top-bar .quote-credit{font-family:'Kalam','Segoe Print',cursive;font-weight:300;font-size:1.05rem;line-height:1.5}.top-bar .announcement{gap:.45rem}@media(max-width:600px){.quote-text,.top-bar .quote-credit{font-size:.95rem}}
