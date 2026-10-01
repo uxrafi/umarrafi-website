@@ -332,3 +332,8 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .book-announcement a:hover{text-decoration:underline;text-underline-offset:3px}
 .book-announcement a:focus-visible{outline:2px solid #fff;outline-offset:4px}
 @media(max-width:600px){.book-announcement{padding:.6rem 4vw}.book-announcement a{font-size:.73rem}}
+
+/* Match the book announcement to the actual quote-bar height at every width. */
+.book-announcement{height:var(--quote-strip-height,44px);min-height:0;padding:0 5vw;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.book-announcement strong{font-weight:700}
+@media(max-width:600px){.book-announcement{padding:0 4vw}}
