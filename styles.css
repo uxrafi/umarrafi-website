@@ -531,3 +531,31 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  .skydiving-gallery img{transition:none}
  .skydiving-gallery figure:hover img{transform:none}
 }
+
+/* Ground portrait stays fixed beside a joined, automatically moving gallery. */
+.skydiving-showcase{
+ display:grid;grid-template-columns:1fr 3fr;width:min(1400px,100%);
+ margin:0 auto 2.5rem;background:#cad8e1;
+}
+.skydiving-showcase figure{margin:0;display:flex;align-items:center;justify-content:center;background:#cad8e1}
+.skydiving-static{aspect-ratio:1}
+.skydiving-rotator{position:relative;min-width:0}
+.skydiving-track{display:flex;width:100%;height:100%;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory}
+.skydiving-track::-webkit-scrollbar{display:none}
+.skydiving-track figure{flex:0 0 50%;min-width:0;scroll-snap-align:start}
+.skydiving-showcase img{
+ display:block;width:88%;height:88%;object-fit:contain;
+ filter:saturate(.5) brightness(.78);transition:transform 1.2s ease,filter 1.2s ease;
+}
+.skydiving-showcase figure:hover img{transform:scale(1.12);filter:saturate(.65) brightness(.86)}
+.skydiving-toggle{position:absolute;right:.65rem;top:.65rem;z-index:2;border:1px solid #7895a4;background:#edf3f7;color:#244b65;font:400 .65rem 'Montserrat',sans-serif;padding:.3rem .55rem;cursor:pointer}
+.skydiving-track:focus-visible,.skydiving-toggle:focus-visible{outline:2px solid #244b65;outline-offset:-2px}
+@media(max-width:600px){
+ .skydiving-showcase{grid-template-columns:1fr 2fr;min-height:180px}
+ .skydiving-static{aspect-ratio:auto}
+ .skydiving-track figure{flex-basis:100%}
+}
+@media(prefers-reduced-motion:reduce){
+ .skydiving-showcase img{transition:none}
+ .skydiving-showcase figure:hover img{transform:none}
+}

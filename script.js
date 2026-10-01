@@ -119,3 +119,39 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  window.addEventListener('hashchange',markSection);
  markSection();
 })();
+
+// Automatic rotation beside the fixed ground portrait.
+(() => {
+ const gallery=document.querySelector('.skydiving-rotator');
+ if(!gallery)return;
+ const track=gallery.querySelector('.skydiving-track');
+ const toggle=gallery.querySelector('.skydiving-toggle');
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+ let paused=false,timer=null,touching=false;
+ function move(direction){
+  const frame=track.querySelector('figure');
+  if(!frame)return;
+  const step=frame.getBoundingClientRect().width;
+  const max=Math.max(0,track.scrollWidth-track.clientWidth);
+  let target=track.scrollLeft+direction*step;
+  if(target>max+2)target=0;
+  if(target< -2)target=max;
+  track.scrollTo({left:Math.max(0,Math.min(max,target)),behavior:reduced.matches?'instant':'smooth'});
+ }
+ function schedule(){
+  clearInterval(timer);
+  if(!paused&&!touching&&!document.hidden&&!reduced.matches)timer=setInterval(()=>move(1),2500);
+  toggle.textContent=paused?'Play':'Pause';
+  toggle.setAttribute('aria-pressed',String(paused));
+  toggle.setAttribute('aria-label',paused?'Start skydiving photo rotation':'Pause skydiving photo rotation');
+  toggle.hidden=reduced.matches;
+ }
+ toggle.addEventListener('click',()=>{paused=!paused;schedule();});
+ track.addEventListener('keydown',event=>{if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();move(event.key==='ArrowLeft'?-1:1);schedule();}});
+ track.addEventListener('touchstart',()=>{touching=true;schedule();},{passive:true});
+ track.addEventListener('touchend',()=>{touching=false;schedule();},{passive:true});
+ track.addEventListener('touchcancel',()=>{touching=false;schedule();},{passive:true});
+ document.addEventListener('visibilitychange',schedule);
+ reduced.addEventListener('change',schedule);
+ schedule();
+})();
