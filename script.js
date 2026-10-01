@@ -38,46 +38,50 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
 })();
 
 
-// Slide each portrait in from the left once, then keep it visible.
+// Replay portrait entrances when the bottom of each section is reached.
 (() => {
  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
- let pending=[...document.querySelectorAll('.author-profile-portrait,.media-portrait')];
- pending.forEach(portrait=>{
+ const portraits=[...document.querySelectorAll('.author-profile-portrait,.media-portrait')].map(portrait=>{
   portrait.classList.remove('portrait-motion-ready','portrait-visible');
   portrait.style.opacity='0';
+  return {portrait,section:portrait.closest('section'),played:false,animation:null};
  });
  let scheduled=false;
- function reveal(portrait){
-  portrait.style.opacity='1';
-  portrait.style.transform='none';
-  if(typeof portrait.animate!=='function') return;
-  const entrance=portrait.animate([
+ function reset(state){
+  if(state.animation){state.animation.cancel();state.animation=null;}
+  state.played=false;
+  state.portrait.style.opacity='0';
+  state.portrait.style.transform='none';
+ }
+ function reveal(state){
+  state.played=true;
+  state.portrait.style.opacity='1';
+  state.portrait.style.transform='none';
+  if(typeof state.portrait.animate!=='function') return;
+  const entrance=state.portrait.animate([
    {opacity:0,transform:'translateX(-120px)'},
    {opacity:1,transform:'translateX(0px)'}
   ],{duration:5000,easing:'cubic-bezier(.22,1,.36,1)',fill:'both',iterations:1});
+  state.animation=entrance;
   entrance.onfinish=()=>{
-   portrait.style.opacity='1';
-   portrait.style.transform='none';
+   state.portrait.style.opacity='1';
+   state.portrait.style.transform='none';
    entrance.cancel();
+   state.animation=null;
   };
  }
  function check(){
   scheduled=false;
-  pending=pending.filter(portrait=>{
-   const rect=portrait.closest('section').getBoundingClientRect();
-   if(rect.top<=window.innerHeight*.2 && rect.bottom>0){
-    reveal(portrait);
-    return false;
-   }
-   return true;
+  portraits.forEach(state=>{
+   const rect=state.section.getBoundingClientRect();
+   const inView=rect.bottom>0 && rect.top<window.innerHeight;
+   if(!inView){if(state.played)reset(state);return;}
+   if(!state.played && rect.bottom<=window.innerHeight+2)reveal(state);
   });
-  if(!pending.length){
-   window.removeEventListener('scroll',queue);
-   window.removeEventListener('resize',queue);
-  }
  }
  function queue(){if(!scheduled){scheduled=true;requestAnimationFrame(check);}}
  window.addEventListener('scroll',queue,{passive:true});
  window.addEventListener('resize',queue);
+ window.addEventListener('pageshow',queue);
  queue();
 })();
