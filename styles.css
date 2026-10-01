@@ -669,3 +669,9 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .quote blockquote{margin-top:0;margin-bottom:0}
 .home-layout .quote p{margin:.4rem 0 0}
 .home-layout .skydiving-showcase{margin-bottom:0}
+
+/* Bring photos, the personal quote and speaking content closer together. */
+.home-layout .quote{padding-top:.45rem;padding-bottom:.45rem;margin:0}
+.home-layout .quote p{margin:.15rem 0 0}
+.home-layout .skydiving-showcase{margin-bottom:0}
+.home-layout #media{padding-top:1.5rem}
