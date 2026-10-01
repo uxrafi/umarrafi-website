@@ -498,3 +498,14 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .auto-logo-strip .logo-group{height:72px}
 .home-layout .auto-logo-strip .logo-group .brand-logo{height:72px!important}
 @media(max-width:800px){.home-layout{--icon-strip-height:75px}}
+
+/* Quieter Noor and Audi marks, with a modest reduction for TD. */
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Noor Bank"] img{
+ width:80px!important;max-width:80px!important;height:33px!important;max-height:33px!important;object-fit:contain!important;
+}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Bank Audi"] img{
+ width:100px!important;max-width:100px!important;height:100px!important;max-height:100px!important;
+}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="TD"] img{
+ width:49px!important;max-width:49px!important;height:43px!important;max-height:43px!important;object-fit:contain!important;
+}
