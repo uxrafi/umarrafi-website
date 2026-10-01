@@ -268,3 +268,9 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 @media(max-width:900px){.author-profile-layout{grid-template-columns:230px minmax(0,1fr);gap:1.5rem}.author-profile-portrait{width:230px;margin-top:-18px}.author-profile-layout .profile-columns{grid-template-columns:1fr;gap:0}}
 @media(max-width:600px){.author-profile-layout{grid-template-columns:1fr}.author-profile-portrait{width:min(280px,80vw);margin:0 auto}}
 @media(prefers-reduced-motion:reduce){.author-profile-portrait.portrait-motion-ready{opacity:1;transform:none;transition:none}}
+
+.media-portrait{width:250px;height:auto;object-fit:contain;border-radius:0;filter:none;background:transparent;flex-shrink:0}
+.author-profile-portrait.portrait-motion-ready,.media-portrait.portrait-motion-ready{opacity:0;transform:translateX(-120px);transition:opacity 1.8s ease,transform 2.4s cubic-bezier(.22,1,.36,1)}
+.author-profile-portrait.portrait-visible,.media-portrait.portrait-visible{opacity:1;transform:translateX(0)}
+@media(max-width:600px){.media-portrait{width:210px}}
+@media(prefers-reduced-motion:reduce){.author-profile-portrait.portrait-motion-ready,.media-portrait.portrait-motion-ready{opacity:1;transform:none;transition:none}}

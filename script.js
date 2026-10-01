@@ -38,16 +38,30 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
 })();
 
 
-// Reveal the author portrait once when the biography comes into view.
+// Reveal portraits once their section is fully reached, rather than at first glimpse.
 (() => {
- const portrait=document.querySelector('.author-profile-portrait');
- if(!portrait || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
- portrait.classList.add('portrait-motion-ready');
- const observer=new IntersectionObserver(entries=>{
-  if(entries.some(entry=>entry.isIntersecting)){
-   portrait.classList.add('portrait-visible');
-   observer.disconnect();
+ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+ let pending=[...document.querySelectorAll('.author-profile-portrait,.media-portrait')];
+ pending.forEach(portrait=>portrait.classList.add('portrait-motion-ready'));
+ let scheduled=false;
+ function check(){
+  scheduled=false;
+  pending=pending.filter(portrait=>{
+   const section=portrait.closest('section');
+   const rect=section.getBoundingClientRect();
+   if(rect.top<=window.innerHeight*.2 && rect.bottom>0){
+    portrait.classList.add('portrait-visible');
+    return false;
+   }
+   return true;
+  });
+  if(!pending.length){
+   window.removeEventListener('scroll',queue);
+   window.removeEventListener('resize',queue);
   }
- },{threshold:.15});
- observer.observe(portrait);
+ }
+ function queue(){if(!scheduled){scheduled=true;requestAnimationFrame(check);}}
+ window.addEventListener('scroll',queue,{passive:true});
+ window.addEventListener('resize',queue);
+ queue();
 })();
