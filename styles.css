@@ -436,3 +436,11 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
   float:none;width:240px;max-width:100%;margin:0 auto 1.5rem;
  }
 }
+
+/* Give the square Schwab mark more presence without stretching it. */
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Charles Schwab"] img{
+ width:112px!important;max-width:112px!important;height:60px!important;max-height:60px!important;object-fit:contain!important;
+}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Charles Schwab"]{
+ flex-basis:118px!important;width:118px!important;
+}
