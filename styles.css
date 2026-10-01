@@ -246,3 +246,9 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  .home-layout .auto-logo-strip .logo-group .brand-logo{flex-basis:88px!important;width:88px!important}
  .home-layout .auto-logo-strip .logo-group .brand-logo img{width:82px!important;max-width:82px!important}
 }
+
+/* Broader centered window for the expanded collection of bank logos. */
+.home-layout .auto-logo-strip .logo-window{width:min(90vw,1200px)}
+.home-layout .auto-logo-strip .company-list{animation-name:logo-wide-drift}
+@keyframes logo-wide-drift{0%,8%{transform:translateX(0)}92%,100%{transform:translateX(min(0px,calc(min(90vw,1200px) - 100%)))}}
+@media(min-width:601px){.author-profile-portrait{margin-top:.4rem}}
