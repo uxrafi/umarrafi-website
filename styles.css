@@ -76,3 +76,9 @@
 @media(max-width:700px){.book-detail{grid-template-columns:1fr;gap:2rem}.book-detail-cover{max-width:260px;margin:0 auto}.books-page{padding:2.5rem 7vw 4rem}.books-page-heading{margin-bottom:2rem}.book-detail-copy h2{font-size:2rem}}
 
 .brand-logo[aria-label="Wells Fargo"] img{width:36px;height:36px;filter:none;mix-blend-mode:normal;opacity:1}.brand-logo[aria-label="Edward Jones"]{flex:0 0 86px;width:86px}.brand-logo[aria-label="Edward Jones"] img{width:86px;height:36px;filter:none;mix-blend-mode:normal;opacity:1}.company-list{gap:clamp(.5rem,1.1vw,1rem)}
+
+.book-detail{align-items:start}
+.book-detail-copy{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:1.3rem 1.7rem;background:#fff;border:1px solid var(--line);border-radius:4px;-webkit-overflow-scrolling:touch}
+.book-detail-copy:focus-visible{outline:2px solid #4b8fa9;outline-offset:3px}
+.book-detail-copy .meta{margin-top:0}
+@media(max-width:700px){.book-detail-copy{padding:1.1rem 1.25rem}}
