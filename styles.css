@@ -758,3 +758,20 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  font-size:1.1rem;line-height:1.75;color:#292f34;
 }
 @media(max-width:600px){.about-reading-layout .about-article>p:not(.eyebrow){font-size:1.05rem}}
+
+/* Inner pages retain navigation and socials in a single header. */
+.site-branding .inner-page-header .social-links{
+ position:static;left:auto;right:auto;top:auto;transform:none;
+ display:flex;flex-direction:row;gap:.8rem;margin-left:auto;padding:0;
+ background:transparent;border:0;
+}
+.site-branding .inner-page-header .social-links a{
+ display:inline-flex;align-items:center;gap:.35rem;padding:.25rem 0;
+ font-size:.65rem;letter-spacing:0;text-transform:none;border:0;
+}
+@media(max-width:1100px){
+ .site-branding .inner-page-header .social-links span{display:none}
+}
+@media(max-width:800px){
+ .site-branding .inner-page-header .social-links{margin-left:1rem}
+}
