@@ -1,2 +1,37 @@
 const menu=document.querySelector('.menu');const nav=document.querySelector('.site-header nav');menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));document.getElementById('year').textContent=new Date().getFullYear();
 const topBar=document.querySelector('.top-bar');const siteHeader=document.querySelector('.site-header');function sizeFirstScreen(){const chromeHeight=(topBar?.getBoundingClientRect().height||0)+(siteHeader?.getBoundingClientRect().height||0);document.documentElement.style.setProperty('--site-chrome-height',`${chromeHeight}px`);}sizeFirstScreen();if('ResizeObserver' in window){const chromeObserver=new ResizeObserver(sizeFirstScreen);if(topBar)chromeObserver.observe(topBar);if(siteHeader)chromeObserver.observe(siteHeader);}window.addEventListener('resize',sizeFirstScreen);
+
+(() => {
+ const gallery=document.querySelector('.photo-carousel');
+ if(!gallery)return;
+ const track=gallery.querySelector('.carousel-track');
+ const toggle=gallery.querySelector('.carousel-toggle');
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+ let paused=reduced.matches,hovered=false,focused=false,timer=null;
+ function move(direction){
+  const step=track.querySelector('figure').getBoundingClientRect().width;
+  const max=track.scrollWidth-track.clientWidth;
+  let target=track.scrollLeft+direction*step;
+  if(target>max+2)target=0;
+  if(target< -2)target=max;
+  track.scrollTo({left:Math.max(0,Math.min(max,target)),behavior:reduced.matches?'instant':'smooth'});
+ }
+ function schedule(){
+  clearInterval(timer);
+  if(!paused&&!hovered&&!focused&&!document.hidden)timer=setInterval(()=>move(1),5000);
+ }
+ function label(){toggle.textContent=paused?'Play':'Pause';toggle.setAttribute('aria-label',paused?'Start photo rotation':'Pause photo rotation');toggle.setAttribute('aria-pressed',String(paused));}
+ toggle.addEventListener('click',()=>{paused=!paused;label();schedule();});
+ gallery.querySelector('.carousel-prev').addEventListener('click',()=>{move(-1);schedule();});
+ gallery.querySelector('.carousel-next').addEventListener('click',()=>{move(1);schedule();});
+ gallery.addEventListener('mouseenter',()=>{hovered=true;schedule();});
+ gallery.addEventListener('mouseleave',()=>{hovered=false;schedule();});
+ gallery.addEventListener('focusin',()=>{focused=true;schedule();});
+ gallery.addEventListener('focusout',event=>{if(!gallery.contains(event.relatedTarget)){focused=false;schedule();}});
+ track.addEventListener('keydown',event=>{if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();move(event.key==='ArrowLeft'?-1:1);}});
+ track.addEventListener('touchstart',()=>{clearInterval(timer);},{passive:true});
+ track.addEventListener('touchend',schedule,{passive:true});
+ document.addEventListener('visibilitychange',schedule);
+ reduced.addEventListener('change',()=>{paused=reduced.matches;label();schedule();});
+ label();schedule();
+})();
