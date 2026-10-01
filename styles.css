@@ -675,3 +675,11 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .quote p{margin:.15rem 0 0}
 .home-layout .skydiving-showcase{margin-bottom:0}
 .home-layout #media{padding-top:1.5rem}
+
+/* Match speaking content to the leftward biography layout and light typography. */
+@media(min-width:901px){.home-layout .media-portrait-layout{position:relative;left:-6vw}}
+@media(min-width:601px) and (max-width:900px){.home-layout .media-portrait-layout{position:relative;left:-3vw}}
+.home-layout #media h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400}
+.home-layout #media .eyebrow,
+.home-layout #media .media-copy>p,
+.home-layout #media .media-copy a{font-family:'Montserrat',Arial,sans-serif;font-weight:300}
