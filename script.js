@@ -114,11 +114,10 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  }
  toggle.addEventListener('click',()=>{paused=!paused;schedule();});
  const photos=gallery.closest('.skydiving-showcase')||gallery;
- photos.querySelectorAll('figure img').forEach(photo=>{
-  photo.style.cursor='pointer';
-  photo.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'){hovered=true;schedule();}});
-  photo.addEventListener('pointerleave',event=>{if(event.pointerType==='mouse'){hovered=false;paused=false;schedule();}});
- });
+ photos.querySelectorAll('figure').forEach(photo=>{photo.style.cursor='pointer';});
+ // Observe the stationary strip, not the zooming image's changing hit area.
+ photos.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'){hovered=true;schedule();}});
+ photos.addEventListener('pointerleave',event=>{if(event.pointerType==='mouse'){hovered=false;paused=false;schedule();}});
  let pointerStart=null,dragged=false;
  photos.addEventListener('pointerdown',event=>{pointerStart={x:event.clientX,y:event.clientY};dragged=false;});
  photos.addEventListener('pointermove',event=>{
@@ -127,7 +126,7 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  photos.addEventListener('pointerup',()=>{pointerStart=null;});
  photos.addEventListener('pointercancel',()=>{pointerStart=null;dragged=true;});
  photos.addEventListener('click',event=>{
-  if(dragged||!event.target.closest('figure img'))return;
+  if(dragged||!event.target.closest('figure'))return;
   paused=!paused;schedule();
  });
  track.addEventListener('keydown',event=>{
