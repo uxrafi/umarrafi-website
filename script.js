@@ -85,3 +85,17 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  window.addEventListener('pageshow',queue);
  queue();
 })();
+
+// Keep Media and Contact selected in both menus when following homepage anchors.
+(() => {
+ if(!document.body.classList.contains('home-layout'))return;
+ function markSection(){
+  document.querySelectorAll('.site-header nav a,footer nav a').forEach(link=>{
+   const selected=['#media','#contact'].includes(location.hash)&&link.getAttribute('href')===location.hash;
+   if(selected)link.setAttribute('aria-current','location');
+   else link.removeAttribute('aria-current');
+  });
+ }
+ window.addEventListener('hashchange',markSection);
+ markSection();
+})();
