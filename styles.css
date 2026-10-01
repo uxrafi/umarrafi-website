@@ -23,3 +23,5 @@
 .top-bar{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem}.top-bar .announcement{grid-column:2;justify-self:center;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;letter-spacing:.01em;gap:.5rem}.quote-credit{font-family:'Lato',Arial,sans-serif;font-size:.8rem;white-space:nowrap}.top-bar .social-links{grid-column:3;justify-self:end}@media(max-width:900px){.top-bar{grid-template-columns:1fr;gap:0;padding:.4rem 4vw}.top-bar .announcement{grid-column:1;min-height:30px;flex-wrap:wrap;font-size:1rem}.top-bar .social-links{grid-column:1;justify-self:center}.quote-credit{font-size:.75rem}}
 
 .company-bar{background:#fff}.brand-logo img{filter:none;mix-blend-mode:normal;opacity:1}.brand-logo:focus-visible{outline-color:#244f6c}
+
+.company-bar{background:#edf6fa}.brand-logo img{mix-blend-mode:multiply}
