@@ -101,3 +101,17 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .quote blockquote{font-family:'Kalam','Segoe Print',cursive;font-weight:300;font-size:1.05rem;line-height:1.6;max-width:850px;margin:0 auto;color:#435363}
 .quote p{font-family:'Kalam','Segoe Print',cursive;font-weight:300;font-size:.85rem;margin:.4rem 0 0;color:#647386}
 @media(max-width:600px){.quote{padding:1.8rem 7vw}.quote blockquote{font-size:.95rem}.quote p{font-size:.8rem}}
+
+.poetry-page{max-width:1180px;margin:auto;padding:4rem 6vw 6rem}.poetry-intro{max-width:800px;margin:0 auto 2rem;text-align:center}
+.poetry-intro h1{font-family:'Cormorant Garamond',Georgia,serif;color:#185b78;font-size:clamp(2.5rem,4.5vw,4rem);line-height:1.1;letter-spacing:0}
+.poetry-intro>p:not(.eyebrow){font-family:'Lato',Arial,sans-serif;font-size:1.12rem;line-height:1.8;color:#435363}.poetry-intro .poetry-note{font-size:.9rem!important}
+.poetry-index{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin:2rem 0 4rem}.poetry-index a{padding:.65rem 1rem;border:1px solid #86b5c8;text-decoration:none;font-family:'Lato',Arial,sans-serif}
+.poetry-group{margin-bottom:4rem;scroll-margin-top:2rem}.poetry-group>h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:2rem;color:#185b78;border-bottom:1px solid var(--line);padding-bottom:.8rem}
+.poetry-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.3rem;align-items:start}.poem-card{background:white;border:1px solid var(--line);border-radius:3px}
+.poem-card>summary{padding:1.5rem;cursor:pointer;list-style:none}.poem-card>summary::-webkit-details-marker{display:none}.poem-title,.poem-credit,.poem-preview,.poem-read{display:block}
+.poem-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.2;color:#185b78}.poem-credit{font-family:'Lato',Arial,sans-serif;font-size:.8rem;color:#647386;margin:.7rem 0}
+.poem-preview{font-family:Georgia,serif;font-size:.95rem;color:#435363;margin:1rem 0;font-style:italic}.poem-read{font-family:'Lato',Arial,sans-serif;font-size:.8rem;color:#185b78}
+.poem-card[open]{grid-column:1/-1}.poem-card[open] .poem-preview{display:none}.poem-card[open] .poem-read{display:none}
+.poem-body{border-top:1px solid var(--line);padding:1.5rem 2rem 2rem}.poem-text{white-space:pre-wrap;overflow-wrap:anywhere;font-family:Georgia,serif;font-size:1rem;line-height:1.9;color:#354656}
+.poem-date{font-size:.8rem;color:#647386;margin:0 0 1rem}.poem-body details{margin-top:1.8rem}.poem-body details summary{cursor:pointer;color:#185b78;font-family:'Lato',Arial,sans-serif;font-size:.9rem}.source-text{font-size:.95rem;margin-top:1rem}.poem-card summary:focus-visible{outline:2px solid #4b8fa9;outline-offset:3px}
+@media(max-width:650px){.poetry-page{padding:2.5rem 6vw 4rem}.poetry-cards{grid-template-columns:1fr}.poem-body{padding:1.2rem}.poem-title{font-size:1.5rem}.poetry-index{margin-bottom:2.5rem}}
