@@ -688,3 +688,6 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .home-about{padding-bottom:2rem}
 .home-layout .quote{padding-top:.3rem;padding-bottom:2rem}
 @media(max-width:800px){.home-layout .home-about{padding-bottom:1.5rem}}
+
+/* More breathing room between the personal quote and photographs. */
+.home-layout .quote{padding-bottom:5rem}
