@@ -24,6 +24,6 @@
 
 .company-bar{background:#fff}.brand-logo img{filter:none;mix-blend-mode:normal;opacity:1}.brand-logo:focus-visible{outline-color:#244f6c}
 
-.company-bar{background:#edf6fa}.brand-logo img{mix-blend-mode:multiply}
+.company-bar{background:#f4faff}.brand-logo img{mix-blend-mode:multiply}
 
 .top-bar .announcement{gap:.6rem;flex-wrap:wrap;max-width:900px;padding:.3rem 0}.quote-text{font-family:'Allura','Segoe Script',cursive;font-size:1.65rem;line-height:1.2}.quote-credit{font-size:.75rem}@media(max-width:600px){.quote-text{font-size:1.4rem}.quote-credit{font-size:.7rem}}
