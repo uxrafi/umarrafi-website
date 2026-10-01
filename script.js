@@ -38,51 +38,71 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
 })();
 
 
-// Replay portrait entrances when the bottom of each section is reached.
+// Replay five-second entrances for portraits and book artwork across the site.
 (() => {
- if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
- const portraits=[...document.querySelectorAll('.author-profile-portrait,.media-portrait')].map(portrait=>{
-  portrait.classList.remove('portrait-motion-ready','portrait-visible');
-  portrait.style.opacity='0';
-  return {portrait,section:portrait.closest('section'),played:false,animation:null};
- });
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const selector='.author-profile-portrait,.media-portrait,.about-bio-portrait,.book-detail-cover img,.landing-cover img,.landing-author>img';
+ const states=[...document.querySelectorAll(selector)].map(image=>({
+  image,
+  section:image.matches('.author-profile-portrait,.media-portrait')?image.closest('section'):null,
+  scroller:image.closest('.about-article'),
+  played:false,
+  animation:null
+ }));
  let scheduled=false;
  function reset(state){
-  if(state.animation){state.animation.cancel();state.animation=null;}
+  state.animation?.cancel();
+  state.animation=null;
   state.played=false;
-  state.portrait.style.opacity='0';
-  state.portrait.style.transform='none';
+  state.image.style.opacity=reduced.matches?'1':'0';
+  state.image.style.translate='none';
  }
  function reveal(state){
   state.played=true;
-  state.portrait.style.opacity='1';
-  state.portrait.style.transform='none';
-  if(typeof state.portrait.animate!=='function') return;
-  const entrance=state.portrait.animate([
-   {opacity:0,transform:'translateX(-120px)'},
-   {opacity:1,transform:'translateX(0px)'}
+  state.image.style.opacity='1';
+  state.image.style.translate='none';
+  if(reduced.matches||typeof state.image.animate!=='function')return;
+  const entrance=state.image.animate([
+   {opacity:0,translate:'-120px 0'},
+   {opacity:1,translate:'0px 0'}
   ],{duration:5000,easing:'cubic-bezier(.22,1,.36,1)',fill:'both',iterations:1});
   state.animation=entrance;
   entrance.onfinish=()=>{
-   state.portrait.style.opacity='1';
-   state.portrait.style.transform='none';
-   entrance.cancel();
+   if(state.animation!==entrance)return;
+   state.image.style.opacity='1';
+   state.image.style.translate='none';
    state.animation=null;
+   entrance.cancel();
   };
  }
  function check(){
   scheduled=false;
-  portraits.forEach(state=>{
-   const rect=state.section.getBoundingClientRect();
-   const inView=rect.bottom>0 && rect.top<window.innerHeight;
+  if(reduced.matches)return;
+  states.forEach(state=>{
+   const rect=(state.section||state.image).getBoundingClientRect();
+   const bounds=state.scroller?.getBoundingClientRect();
+   const top=Math.max(0,bounds?.top||0);
+   const bottom=Math.min(window.innerHeight,bounds?.bottom??window.innerHeight);
+   const inView=rect.bottom>top&&rect.top<bottom;
    if(!inView){if(state.played)reset(state);return;}
-   if(!state.played && rect.bottom<=window.innerHeight+2)reveal(state);
+   const reachedBottom=rect.bottom<=bottom+2;
+   const fillsView=!state.section&&rect.height>bottom-top&&rect.top<=top+2;
+   if(!state.played&&(reachedBottom||fillsView))reveal(state);
   });
  }
  function queue(){if(!scheduled){scheduled=true;requestAnimationFrame(check);}}
- window.addEventListener('scroll',queue,{passive:true});
+ states.forEach(state=>{
+  state.image.classList.remove('portrait-motion-ready','portrait-visible');
+  state.image.style.transform='';
+  reset(state);
+  state.image.addEventListener('load',queue);
+  state.image.addEventListener('error',()=>{state.image.style.opacity='1';});
+ });
+ // Capture also handles the About page's internal reading box.
+ document.addEventListener('scroll',queue,{passive:true,capture:true});
  window.addEventListener('resize',queue);
  window.addEventListener('pageshow',queue);
+ reduced.addEventListener('change',()=>{states.forEach(reset);queue();});
  queue();
 })();
 
