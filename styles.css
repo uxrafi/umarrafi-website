@@ -140,3 +140,10 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .ur-logo{display:block;width:66px;height:68px;flex-shrink:0;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
 .home-layout .author-wordmark .author-name{font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:.62rem;letter-spacing:.28em;line-height:1.3;white-space:nowrap}
 @media(max-width:800px){.ur-logo{width:52px;height:54px}.home-layout .author-wordmark .author-name{font-size:.57rem;letter-spacing:.22em}}
+
+.home-layout .media{padding:2.4rem 6vw}
+.home-layout .media h2{font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:clamp(1.15rem,1.8vw,1.65rem);line-height:1.45;letter-spacing:0;max-width:850px;margin:.6rem auto}
+.home-layout .media>p:not(.eyebrow){font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:.85rem;line-height:1.7;margin:.7rem auto 1.1rem}
+.home-layout .media .eyebrow{font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:.6rem;margin:0}
+.home-layout .media .button{font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:.72rem;padding:.5rem 1rem}
+@media(max-width:600px){.home-layout .media{padding:1.8rem 7vw}.home-layout .media>p:not(.eyebrow){font-size:.78rem}}
