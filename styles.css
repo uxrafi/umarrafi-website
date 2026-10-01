@@ -192,3 +192,11 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 @keyframes logo-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .auto-logo-strip:hover .company-list,.auto-logo-strip:focus-within .company-list{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.auto-logo-strip .company-list{animation:none;overflow-x:auto;width:100%;scrollbar-width:none}.auto-logo-strip .logo-group[aria-hidden="true"]{display:none}}
+
+.auto-logo-strip{justify-content:center}
+.auto-logo-strip .logo-window{width:min(100%,960px);overflow:hidden;min-width:0}
+.auto-logo-strip .company-list{width:max-content;max-width:none;animation:logo-single-drift 30s ease-in-out infinite alternate}
+.auto-logo-strip .logo-group{gap:1.5rem;padding-right:0}
+@keyframes logo-single-drift{0%,8%{transform:translateX(0)}92%,100%{transform:translateX(min(0px,calc(960px - 100%)))}}
+@media(max-width:1020px){@keyframes logo-single-drift{0%,8%{transform:translateX(0)}92%,100%{transform:translateX(min(0px,calc(94vw - 100%)))}}}
+@media(prefers-reduced-motion:reduce){.auto-logo-strip .company-list{animation:none;width:100%;overflow-x:auto}}
