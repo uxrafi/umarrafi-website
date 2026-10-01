@@ -901,3 +901,7 @@ body.site-branding{font-family:'Lato',Arial,Helvetica,sans-serif;font-weight:300
  .home-layout.site-branding .site-header{height:50px}
  .home-layout.site-branding .site-header nav{top:50px}
 }
+
+/* Hide subpixel seams between moving, zoomable photo frames. */
+.home-layout .skydiving-track figure{margin-right:-1px}
+.home-layout .skydiving-showcase img{backface-visibility:hidden}
