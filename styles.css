@@ -730,3 +730,6 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 /* Bring the contact footer closer to the speaking section. */
 .home-layout #media{padding-bottom:5.7rem}
 @media(max-width:800px){.home-layout #media{padding-bottom:4rem}}
+
+/* Equal space above and below the speaking content at every screen size. */
+.home-layout #media{padding-top:1.5rem;padding-bottom:1.5rem}
