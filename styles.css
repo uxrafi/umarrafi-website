@@ -55,3 +55,14 @@
 .brand-logo[aria-label="Barclays"]{margin-left:0}.brand-logo[aria-label="TD"] img{width:93px;height:57px}.brand-logo[aria-label="INCEIF"] img{width:90px;height:90px}.brand-logo[aria-label="HBL"] img{width:90px;height:51px}.brand-logo[aria-label="Bank of Montreal"] img,.brand-logo[aria-label="Wells Fargo"] img{width:64px;height:36px}
 
 .about-reading-layout{height:100svh;overflow:hidden;display:flex;flex-direction:column}.about-reading-layout>.top-bar,.about-reading-layout>.site-header{flex-shrink:0}.about-reading-layout .about-page{flex:1;min-height:0;overflow:hidden;padding:1.5rem 5vw}.about-reading-layout .about-article{height:100%;max-width:880px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:1.5rem 2.5rem 2rem;background:#fff;border:1px solid var(--line);border-radius:4px;-webkit-overflow-scrolling:touch}.about-reading-layout .about-article:focus-visible{outline:2px solid #4b8fa9;outline-offset:3px}.about-reading-layout>footer{display:none}@media(max-width:600px){.about-reading-layout .about-page{padding:.75rem 3vw}.about-reading-layout .about-article{padding:1rem 1.2rem 1.5rem}.about-reading-layout .about-article>h1{font-size:2.3rem}}
+
+/* Four quieter photographs with a stronger hover zoom. */
+.profile-photos{grid-template-columns:repeat(4,minmax(0,1fr))}
+.profile-photos figure{aspect-ratio:auto;height:calc(100vw / 3 / 1.25 * .8)}
+.profile-photos img{filter:brightness(.7) saturate(.5);transition:transform .9s cubic-bezier(.2,.65,.3,1),filter .9s ease}
+.profile-photos figure:after{background:rgba(36,79,108,.12)}
+.profile-photos figure:nth-child(4) img{object-position:center}
+@media(hover:hover) and (pointer:fine){.profile-photos figure:hover img{transform:scale(1.25);filter:brightness(.74) saturate(.55)}}
+@media(max-width:800px){.profile-photos{grid-template-columns:repeat(2,minmax(0,1fr))}.profile-photos figure{height:32vw}}
+@media(max-width:480px){.profile-photos{grid-template-columns:1fr}.profile-photos figure{height:64vw}}
+@media(prefers-reduced-motion:reduce){.profile-photos img{transition:none}.profile-photos figure:hover img{transform:none}}
