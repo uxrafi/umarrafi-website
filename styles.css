@@ -751,3 +751,10 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 
 .home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="HBL"]{width:130px!important;flex-basis:130px!important}
 .home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="HBL"] img{width:122px!important;max-width:122px!important;height:51px!important;max-height:51px!important;object-fit:contain!important}
+
+/* Match About biography text to the light homepage introduction. */
+.about-reading-layout .about-article>p:not(.eyebrow){
+ font-family:'Lato',Arial,Helvetica,sans-serif;font-weight:300;
+ font-size:1.1rem;line-height:1.75;color:#292f34;
+}
+@media(max-width:600px){.about-reading-layout .about-article>p:not(.eyebrow){font-size:1.05rem}}
