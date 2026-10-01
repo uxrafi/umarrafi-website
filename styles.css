@@ -702,3 +702,20 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  .home-layout .profile-quote-text{width:calc(100% - 234px);margin-left:234px}
 }
 @media(max-width:600px){.home-layout .profile-quote-text{width:100%;margin-left:0}}
+
+/* Slimmer navigation and affiliation strip around the School of Athens. */
+.site-branding .site-header{height:60px}
+.site-branding .site-header .ur-logo{width:48px;height:50px}
+.home-layout{--icon-strip-height:65px}
+.home-layout .auto-logo-strip .logo-window,
+.home-layout .auto-logo-strip .logo-group{height:62px}
+.home-layout .auto-logo-strip .logo-group .brand-logo{height:62px!important}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="U.S. Bank"] img{
+ height:60px!important;max-height:60px!important;
+}
+@media(max-width:800px){
+ .site-branding .site-header{height:54px}
+ .site-branding .site-header .ur-logo{width:42px;height:44px}
+ .site-branding .site-header nav{top:54px}
+ .home-layout{--icon-strip-height:65px}
+}
