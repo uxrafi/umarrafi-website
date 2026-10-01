@@ -158,3 +158,17 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .contact-invite h2{margin-bottom:.56rem}
 @media(max-width:700px){.home-layout .contact-strip-top{gap:1.6rem}}
 @media(max-width:600px){.home-layout .media{padding-block:calc(2.25rem + 12.5px)}}
+
+.home-layout .media{padding-block:calc(3.75rem + 30px);background:#4d7187;color:#fff}
+.home-layout .media h2,.home-layout .media .eyebrow{color:#fff}
+.home-layout .media>p:not(.eyebrow){color:#e0eaf0}
+.home-layout .media .button{color:#fff;border-color:#bdd2df}
+.home-layout footer.contact-strip{background:#244b65;padding:2.04rem 4vw .816rem}
+.home-layout .contact-strip-top{padding-bottom:1.7rem;gap:2.72rem}
+.home-layout .contact-strip-nav{padding:.68rem 0}
+.home-layout .contact-brand .social-links{margin-top:.816rem}
+.home-layout .contact-invite p{margin:.34rem 0 .884rem}
+.home-layout .contact-invite h2{margin-bottom:.476rem}
+.home-layout .contact-invite .contact-actions a{background:#a9c9d9}
+@media(max-width:700px){.home-layout .contact-strip-top{gap:1.36rem}}
+@media(max-width:600px){.home-layout .media{padding-block:calc(2.8125rem + 30px)}}
