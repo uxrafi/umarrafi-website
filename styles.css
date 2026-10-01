@@ -836,3 +836,8 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  -webkit-mask-size:100% 100%;mask-size:100% 100%;
  background:transparent;border:0;box-shadow:none;
 }
+
+/* Restore the original clear V-neck cutout without feathering. */
+.home-layout .author-profile-portrait{
+ -webkit-mask-image:none;mask-image:none;
+}
