@@ -637,3 +637,19 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  inset:auto;top:-7.74%;left:50%;width:auto;max-width:none;height:107.74%;
  object-fit:contain;transform:translateX(-50%);
 }
+
+/* Tighter shared header gives the painting more vertical room. */
+.site-branding .site-header{height:70px}
+.site-branding .site-header .ur-logo{width:58px;height:60px}
+.site-branding .top-bar{min-height:38px;padding-top:0;padding-bottom:0}
+.site-branding .top-bar .announcement{min-height:38px;padding:.15rem 0}
+@media(max-width:1100px){
+ .site-branding .top-bar{padding-top:.15rem;padding-bottom:.15rem}
+ .site-branding .top-bar .announcement{min-height:26px}
+ .site-branding .top-bar .social-links a{padding:.25rem 0}
+}
+@media(max-width:800px){
+ .site-branding .site-header{height:58px}
+ .site-branding .site-header .ur-logo{width:46px;height:48px}
+ .site-branding .site-header nav{top:58px}
+}
