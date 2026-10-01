@@ -726,3 +726,7 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  .site-branding .top-bar .announcement{height:34px;min-height:34px;padding-top:0;padding-bottom:0}
  .site-branding .combined-book-announcement{height:34px;min-height:34px;padding-top:0;padding-bottom:0}
 }
+
+/* Bring the contact footer closer to the speaking section. */
+.home-layout #media{padding-bottom:5.7rem}
+@media(max-width:800px){.home-layout #media{padding-bottom:4rem}}
