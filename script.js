@@ -164,3 +164,29 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  reduced.addEventListener('change',schedule);
  schedule();
 })();
+
+/* Native dialog keeps keyboard focus inside the optional professional profile. */
+(() => {
+ const trigger=document.querySelector('[data-professional-background]');
+ const dialog=document.getElementById('professional-background');
+ if(!trigger||!dialog)return;
+ const closeButton=dialog.querySelector('.professional-close');
+ let previousOverflow='';
+ trigger.addEventListener('click',()=>{
+  if(dialog.open)return;
+  previousOverflow=document.body.style.overflow;
+  dialog.showModal();
+  document.body.style.overflow='hidden';
+  dialog.querySelector('.professional-dialog-content').scrollTop=0;
+ });
+ closeButton.addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',event=>{
+  if(event.target!==dialog)return;
+  const rect=dialog.getBoundingClientRect();
+  if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close();
+ });
+ dialog.addEventListener('close',()=>{
+  document.body.style.overflow=previousOverflow;
+  trigger.focus({preventScroll:true});
+ });
+})();

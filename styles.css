@@ -785,3 +785,32 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  display:flow-root;
 }
 @media(max-width:600px){.about-reading-layout .about-page{padding:2rem 6vw 3rem}}
+
+/* An optional, accessible professional profile on the About page. */
+.professional-background-trigger{background:none;border:0;border-bottom:1px solid currentColor;padding:0 0 .25rem;cursor:pointer;font:inherit;color:inherit}
+.professional-dialog{box-sizing:border-box;width:min(1000px,92vw);max-width:92vw;height:min(850px,88svh);max-height:88svh;margin:auto;padding:0;border:1px solid #adc1cc;border-radius:8px;background:#f7fafb;color:#292f34;box-shadow:0 20px 80px #122b3d55;overflow:hidden}
+.professional-dialog::backdrop{background:rgb(18 35 47 / .65)}
+.professional-dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 2rem;background:#dbe7ed;border-bottom:1px solid #b8ccd7}
+.professional-dialog .professional-kicker{margin:0 0 .25rem;font-family:'Montserrat',sans-serif;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase}
+.professional-dialog h2{margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.05}
+.professional-close{flex-shrink:0;background:transparent;border:1px solid #7b96a5;border-radius:4px;padding:.5rem .75rem;font:400 .8rem 'Lato',sans-serif;color:#294555;cursor:pointer}
+.professional-close:focus-visible,.professional-background-trigger:focus-visible{outline:2px solid #345d75;outline-offset:4px}
+.professional-dialog[open]{display:flex;flex-direction:column}
+.professional-dialog-content{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:1.75rem 2rem 2.5rem;font:300 1rem/1.65 'Lato',sans-serif}
+.professional-dialog-content section{margin:0 0 2rem}
+.professional-dialog-content h3{margin:0 0 .65rem;font:400 1.7rem/1.2 'Cormorant Garamond',serif;color:#34586c}
+.professional-dialog-content p{margin:0 0 .8rem}
+.professional-dialog-content strong{font-weight:400}
+.professional-dialog-content ul{padding-left:1.2rem;margin:.5rem 0}
+.professional-dialog-content li{margin-bottom:.7rem}
+.professional-academy{background:#e4eef3;border-left:3px solid #668ba1;padding:1.25rem 1.5rem}
+.professional-academy p:last-child{margin-bottom:0}
+.professional-intro{margin-bottom:2rem!important}
+.professional-career>div{padding:1rem 0;border-bottom:1px solid #d4e0e7}
+.professional-career>div:first-child{padding-top:0}
+.professional-career h4{display:flex;justify-content:space-between;gap:1rem;margin:0;font:400 1.05rem/1.5 'Lato',sans-serif}
+.professional-career h4 span{font-size:.9rem;white-space:nowrap;color:#597382}
+.professional-career .professional-role{color:#597382;margin:.15rem 0 .4rem;font-weight:400;font-size:.9rem}
+.professional-teaching li p{margin:.25rem 0 .8rem}
+.professional-publications{font-size:.94rem}
+@media(max-width:600px){.professional-dialog{width:94vw;max-width:94vw;height:90svh;max-height:90svh}.professional-dialog-heading{padding:1rem}.professional-dialog-content{padding:1.25rem 1rem 2rem}.professional-academy{padding:1rem}.professional-career h4{flex-direction:column;gap:0}}
