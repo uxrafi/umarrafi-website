@@ -292,3 +292,13 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 /* Give the long Scotiabank wordmark a wider frame without stretching it. */
 .home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Scotiabank"]{flex-basis:156px!important;width:156px!important}
 .home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Scotiabank"] img{width:150px!important;max-width:150px!important;height:82px!important;max-height:82px!important;object-fit:contain!important}
+
+/* Feather portrait bottoms into their section backgrounds. */
+.home-layout .author-profile-portrait{
+ -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 82%,transparent 100%);
+ mask-image:linear-gradient(to bottom,#000 0%,#000 82%,transparent 100%);
+}
+.home-layout .media-portrait{
+ -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 65%,rgba(0,0,0,.75) 80%,transparent 100%);
+ mask-image:linear-gradient(to bottom,#000 0%,#000 65%,rgba(0,0,0,.75) 80%,transparent 100%);
+}
