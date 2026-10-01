@@ -38,19 +38,35 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
 })();
 
 
-// Reveal portraits once their section is fully reached, rather than at first glimpse.
+// Slide each portrait in from the left once, then keep it visible.
 (() => {
  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
  let pending=[...document.querySelectorAll('.author-profile-portrait,.media-portrait')];
- pending.forEach(portrait=>portrait.classList.add('portrait-motion-ready'));
+ pending.forEach(portrait=>{
+  portrait.classList.remove('portrait-motion-ready','portrait-visible');
+  portrait.style.opacity='0';
+ });
  let scheduled=false;
+ function reveal(portrait){
+  portrait.style.opacity='1';
+  portrait.style.transform='none';
+  if(typeof portrait.animate!=='function') return;
+  const entrance=portrait.animate([
+   {opacity:0,transform:'translateX(-120px)'},
+   {opacity:1,transform:'translateX(0px)'}
+  ],{duration:2400,easing:'cubic-bezier(.22,1,.36,1)',fill:'both',iterations:1});
+  entrance.onfinish=()=>{
+   portrait.style.opacity='1';
+   portrait.style.transform='none';
+   entrance.cancel();
+  };
+ }
  function check(){
   scheduled=false;
   pending=pending.filter(portrait=>{
-   const section=portrait.closest('section');
-   const rect=section.getBoundingClientRect();
+   const rect=portrait.closest('section').getBoundingClientRect();
    if(rect.top<=window.innerHeight*.2 && rect.bottom>0){
-    portrait.classList.add('portrait-visible');
+    reveal(portrait);
     return false;
    }
    return true;
