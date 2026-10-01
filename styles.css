@@ -740,3 +740,11 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 
 /* A clean join between the navigation and book announcement. */
 .site-branding .site-header{border-bottom:0}
+
+/* Slightly more presence for HBL while retaining its proportions. */
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="HBL"]{
+ width:116px!important;flex-basis:116px!important;
+}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="HBL"] img{
+ width:108px!important;max-width:108px!important;height:45px!important;max-height:45px!important;object-fit:contain!important;
+}
