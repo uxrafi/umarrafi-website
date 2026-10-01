@@ -310,3 +310,9 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
  -webkit-mask-size:100% 100%;mask-size:100% 100%;
 }
+
+/* Show the V-neck cutout without a bottom fade. */
+.home-layout .author-profile-portrait{
+ -webkit-mask-image:none;
+ mask-image:none;
+}
