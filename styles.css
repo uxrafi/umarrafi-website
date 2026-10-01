@@ -509,3 +509,25 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="TD"] img{
  width:49px!important;max-width:49px!important;height:43px!important;max-height:43px!important;object-fit:contain!important;
 }
+
+/* Three permanent skydiving moments, with full frames and restrained color. */
+.skydiving-gallery{
+ display:grid;grid-template-columns:3fr 3fr 2fr;gap:1rem;
+ width:min(1200px,94vw);margin:0 auto 2.5rem;
+}
+.skydiving-gallery figure{margin:0;overflow:hidden;background:#d0dce4}
+.skydiving-gallery img{
+ display:block;width:100%;height:100%;object-fit:contain;
+ filter:saturate(.55) brightness(.82);
+ transition:transform 1.2s ease,filter 1.2s ease;
+}
+.skydiving-gallery figure:hover img{transform:scale(1.25);filter:saturate(.7) brightness(.9)}
+@media(max-width:600px){
+ .skydiving-gallery{grid-template-columns:1fr;max-width:440px;gap:.8rem}
+ .skydiving-gallery figure{aspect-ratio:3/2}
+ .skydiving-gallery .skydiving-ground{aspect-ratio:1;max-width:300px;width:100%;justify-self:center}
+}
+@media(prefers-reduced-motion:reduce){
+ .skydiving-gallery img{transition:none}
+ .skydiving-gallery figure:hover img{transform:none}
+}
