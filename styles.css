@@ -491,3 +491,10 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 @media(max-width:600px){
  .book-strip-intro{font-size:.66rem}
 }
+
+/* Trim the affiliation strip while retaining every logo's size. */
+.home-layout{--icon-strip-height:75px}
+.home-layout .auto-logo-strip .logo-window,
+.home-layout .auto-logo-strip .logo-group{height:72px}
+.home-layout .auto-logo-strip .logo-group .brand-logo{height:72px!important}
+@media(max-width:800px){.home-layout{--icon-strip-height:75px}}
