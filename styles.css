@@ -737,3 +737,6 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 /* Visually balance the speaking strip with less space below its content. */
 .home-layout #media{padding-bottom:.5rem}
 .home-layout #media .media-copy>:last-child{margin-bottom:0}
+
+/* A clean join between the navigation and book announcement. */
+.site-branding .site-header{border-bottom:0}
