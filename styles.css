@@ -47,3 +47,5 @@
 .profile-photos img{filter:brightness(.8) saturate(.7);transform:scale(1);transition:transform .8s ease,filter .8s ease}.profile-photos figure:after{background:rgba(36,79,108,.08)}@media(hover:hover) and (pointer:fine){.profile-photos figure:hover img{transform:scale(1.06);filter:brightness(.87) saturate(.8)}}@media(prefers-reduced-motion:reduce){.profile-photos img{transition:none}.profile-photos figure:hover img{transform:none}}
 
 .company-bar{padding:1.5rem 3vw}.company-list{display:flex;flex-wrap:nowrap}@media(max-width:800px){.company-bar{padding:1.5rem 3vw}}
+
+.about-page{padding:5rem 7vw 6rem}.about-article{max-width:780px;margin:0 auto}.about-article>h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.5rem,4.5vw,4rem);line-height:1.12;text-align:center;letter-spacing:-.01em;margin:.4rem 0 1.5rem;color:#185b78}.about-article>.eyebrow{text-align:center}.about-article>p:not(.eyebrow){font-family:'Lato',Arial,sans-serif;font-size:1.15rem;line-height:1.85;color:#435363}.about-article h2{font-size:1.8rem;margin:2rem 0 .5rem}@media(max-width:600px){.about-page{padding:3rem 7vw 4rem}}
