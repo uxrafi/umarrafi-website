@@ -469,3 +469,25 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  .combined-book-announcement a{font-size:.7rem}
  .book-strip-divider{display:none}
 }
+
+/* Balance the visible marks rather than their image-file dimensions. */
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Bank Audi"] img{
+ width:120px!important;max-width:120px!important;height:120px!important;max-height:120px!important;
+}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Charles Schwab"]{
+ width:104px!important;flex-basis:104px!important;
+}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Charles Schwab"] img{
+ width:96px!important;max-width:96px!important;height:46px!important;max-height:46px!important;
+}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="U.S. Bank"]{
+ width:126px!important;flex-basis:126px!important;
+}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="U.S. Bank"] img{
+ width:120px!important;max-width:120px!important;height:68px!important;max-height:68px!important;object-fit:contain!important;
+}
+.combined-book-announcement strong{font-weight:700}
+.book-strip-intro{font:300 .75rem/1.5 'Montserrat',sans-serif;letter-spacing:.02em}
+@media(max-width:600px){
+ .book-strip-intro{font-size:.66rem}
+}
