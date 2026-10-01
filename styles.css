@@ -403,3 +403,15 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 @media(prefers-reduced-motion:reduce){.landing-cover img{transition:none;transform:none!important}}
 
 .book-title-link{text-decoration:none}.book-title-link:hover{text-decoration:underline}.dedicated-book-link{display:inline-block;margin-top:1.4rem;font:400 .8rem 'Montserrat',sans-serif}
+
+.landing-author-note{padding-block:4rem;border-top:1px solid var(--line)}
+.landing-note-intro{font:300 1.05rem/1.8 'Lato',sans-serif;max-width:650px}
+.landing-author-note details{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:2rem}
+.landing-author-note summary{cursor:pointer;font:400 .85rem/1.8 'Montserrat',sans-serif;padding:1.3rem 0;display:flex;justify-content:space-between;gap:1rem;list-style:none}
+.landing-author-note summary::-webkit-details-marker{display:none}
+.landing-author-note summary span{font-size:1.25rem}
+.landing-author-note details[open] summary span{transform:rotate(45deg)}
+.landing-author-note .landing-prose{max-width:780px;margin:0 auto;padding:1.5rem 0 2rem}
+.landing-author-note summary:focus-visible{outline:2px solid var(--landing-accent);outline-offset:4px}
+.about-bio-portrait{display:block;width:180px;height:auto;float:left;margin:0 2rem 1rem 0}
+@media(max-width:600px){.landing-author-note{padding-block:3rem}.about-bio-portrait{float:none;width:150px;margin:0 auto 1.5rem}}
