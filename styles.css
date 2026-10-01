@@ -683,3 +683,8 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout #media .eyebrow,
 .home-layout #media .media-copy>p,
 .home-layout #media .media-copy a{font-family:'Montserrat',Arial,sans-serif;font-weight:300}
+
+/* Keep the personal quote near the story link, with space before the photos. */
+.home-layout .home-about{padding-bottom:2rem}
+.home-layout .quote{padding-top:.3rem;padding-bottom:2rem}
+@media(max-width:800px){.home-layout .home-about{padding-bottom:1.5rem}}
