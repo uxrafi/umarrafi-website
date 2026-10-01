@@ -733,3 +733,7 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 
 /* Equal space above and below the speaking content at every screen size. */
 .home-layout #media{padding-top:1.5rem;padding-bottom:1.5rem}
+
+/* Visually balance the speaking strip with less space below its content. */
+.home-layout #media{padding-bottom:.5rem}
+.home-layout #media .media-copy>:last-child{margin-bottom:0}
