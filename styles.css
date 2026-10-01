@@ -96,3 +96,8 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .contact-strip-nav a{text-transform:uppercase;text-decoration:none;font-size:.85rem;letter-spacing:.08em}
 .contact-strip-nav a:hover{text-decoration:underline}.contact-copyright{text-align:center;color:#d4e8f0;font-size:.8rem;margin:.5rem 0 0}
 @media(max-width:700px){.contact-strip-top{grid-template-columns:1fr;gap:2rem}.contact-brand .wordmark,.contact-brand .social-links{justify-content:center}.contact-strip-nav{gap:1rem 1.5rem}.contact-invite h2{font-size:2rem}}
+
+.quote{padding:2.3rem 6vw;text-align:center}
+.quote blockquote{font-family:'Kalam','Segoe Print',cursive;font-weight:300;font-size:1.05rem;line-height:1.6;max-width:850px;margin:0 auto;color:#435363}
+.quote p{font-family:'Kalam','Segoe Print',cursive;font-weight:300;font-size:.85rem;margin:.4rem 0 0;color:#647386}
+@media(max-width:600px){.quote{padding:1.8rem 7vw}.quote blockquote{font-size:.95rem}.quote p{font-size:.8rem}}
