@@ -35,3 +35,5 @@
 .brand-logo{flex-basis:80px;width:80px;height:48px}.brand-logo img{width:80px;height:48px}.brand-logo:nth-child(5) img{width:116px;height:76px}.brand-logo:nth-child(7) img{width:112px;height:112px}@media(max-width:800px){.brand-logo{flex-basis:64px;width:64px;height:40px}.brand-logo img{width:64px;height:40px}.brand-logo:nth-child(5) img{width:92px;height:61px}.brand-logo:nth-child(7) img{width:90px;height:90px}}
 
 .company-list{display:grid;grid-template-columns:repeat(6,80px);justify-content:center;gap:1.2rem 2.5rem}.brand-logo:nth-child(12) img{width:112px;height:63px}@media(max-width:800px){.company-list{grid-template-columns:repeat(4,64px);gap:1rem 1.5rem}.brand-logo:nth-child(12) img{width:90px;height:51px}}@media(max-width:480px){.company-list{grid-template-columns:repeat(3,64px)}}
+
+@media(min-width:801px){.company-list{grid-template-columns:repeat(7,80px)}.brand-logo:nth-child(8){grid-column:1}}
