@@ -444,3 +444,28 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Charles Schwab"]{
  flex-basis:118px!important;width:118px!important;
 }
+
+/* One compact announcement gives the painting more room. */
+.combined-book-announcement{
+ height:auto;min-height:40px;padding:.45rem 4vw;gap:1.5rem;
+ background:#7895a4;flex-wrap:wrap;
+}
+.combined-book-announcement a{font-size:.78rem;line-height:1.5;white-space:nowrap}
+.combined-book-announcement strong{font-weight:400}
+.combined-book-announcement .featured-novel strong{font-weight:700}
+.book-strip-divider{font-size:.8rem;opacity:.55}
+.home-layout{--icon-strip-height:90px}
+.home-layout .auto-logo-strip .logo-window,
+.home-layout .auto-logo-strip .logo-group{height:76px}
+.home-layout .auto-logo-strip .logo-group .brand-logo{height:76px!important}
+@media(max-width:800px){
+ .home-layout{--icon-strip-height:80px}
+ .home-layout .auto-logo-strip .logo-window,
+ .home-layout .auto-logo-strip .logo-group{height:72px}
+ .home-layout .auto-logo-strip .logo-group .brand-logo{height:72px!important}
+}
+@media(max-width:600px){
+ .combined-book-announcement{flex-direction:column;gap:.2rem;padding:.4rem 3vw}
+ .combined-book-announcement a{font-size:.7rem}
+ .book-strip-divider{display:none}
+}
