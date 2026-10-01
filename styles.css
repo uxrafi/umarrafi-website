@@ -874,3 +874,10 @@ body.site-branding{font-family:'Lato',Arial,Helvetica,sans-serif;font-weight:300
 }
 .site-branding .professional-career h4,.site-branding .professional-career .professional-role{font-weight:300}
 .site-branding .urdu-poem h3,.site-branding .urdu-script{font-family:'Noto Nastaliq Urdu',serif;font-weight:400}
+
+/* Try quiet cream titles without bold or italics in the homepage announcement. */
+.home-layout .combined-book-announcement .book-strip-title{
+ font-weight:300;font-style:normal;color:#fff0cd;
+ text-decoration:underline;text-underline-offset:.18em;text-decoration-thickness:1px;
+}
+.home-layout .combined-book-announcement a:hover .book-strip-title{color:#fff8e7}
