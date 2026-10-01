@@ -748,3 +748,6 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="HBL"] img{
  width:108px!important;max-width:108px!important;height:45px!important;max-height:45px!important;object-fit:contain!important;
 }
+
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="HBL"]{width:130px!important;flex-basis:130px!important}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="HBL"] img{width:122px!important;max-width:122px!important;height:51px!important;max-height:51px!important;object-fit:contain!important}
