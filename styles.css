@@ -814,3 +814,12 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .professional-teaching li p{margin:.25rem 0 .8rem}
 .professional-publications{font-size:.94rem}
 @media(max-width:600px){.professional-dialog{width:94vw;max-width:94vw;height:90svh;max-height:90svh}.professional-dialog-heading{padding:1rem}.professional-dialog-content{padding:1.25rem 1rem 2rem}.professional-academy{padding:1rem}.professional-career h4{flex-direction:column;gap:0}}
+
+/* Blend the blazer silhouette into the Media strip with a curved feathered edge. */
+.home-layout .media-portrait{
+ background:transparent;border:0;outline:0;box-shadow:none;border-radius:0;
+ -webkit-mask-image:radial-gradient(ellipse 90% 100% at 50% 0%,#000 0%,#000 72%,transparent 100%);
+ mask-image:radial-gradient(ellipse 90% 100% at 50% 0%,#000 0%,#000 72%,transparent 100%);
+ -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+ -webkit-mask-size:100% 100%;mask-size:100% 100%;
+}
