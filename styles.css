@@ -894,3 +894,10 @@ body.site-branding{font-family:'Lato',Arial,Helvetica,sans-serif;font-weight:300
 .home-layout .combined-book-announcement a,
 .home-layout .combined-book-announcement a:hover,
 .home-layout .combined-book-announcement .book-strip-title{ text-decoration:none }
+
+/* Trim homepage navigation while leaving both announcement strips intact. */
+.home-layout.site-branding .site-header{height:55px}
+@media(max-width:800px){
+ .home-layout.site-branding .site-header{height:50px}
+ .home-layout.site-branding .site-header nav{top:50px}
+}
