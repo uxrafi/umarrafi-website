@@ -631,3 +631,9 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 @media(min-width:601px) and (max-width:900px){
  .home-layout .home-about-inner{position:relative;left:-3vw}
 }
+
+/* Match the visible cutout to the text height, compensating for transparent headroom. */
+.home-layout .profile-portrait-frame .author-profile-portrait{
+ inset:auto;top:-7.74%;left:50%;width:auto;max-width:none;height:107.74%;
+ object-fit:contain;transform:translateX(-50%);
+}
