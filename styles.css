@@ -691,3 +691,14 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 
 /* More breathing room between the personal quote and photographs. */
 .home-layout .quote{padding-bottom:5rem}
+
+/* Align the quote with the biography text and give it a generous lower pause. */
+.home-layout .quote{padding-left:7vw;padding-right:7vw;padding-bottom:10rem}
+.home-layout .profile-quote-align{max-width:1200px;margin:0 auto;position:relative}
+.home-layout .profile-quote-text{width:calc(100% - 300px);margin-left:300px;text-align:center}
+@media(min-width:901px){.home-layout .profile-quote-align{left:-6vw}}
+@media(min-width:601px) and (max-width:900px){
+ .home-layout .profile-quote-align{left:-3vw}
+ .home-layout .profile-quote-text{width:calc(100% - 234px);margin-left:234px}
+}
+@media(max-width:600px){.home-layout .profile-quote-text{width:100%;margin-left:0}}
