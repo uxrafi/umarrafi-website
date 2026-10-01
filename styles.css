@@ -841,3 +841,36 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .author-profile-portrait{
  -webkit-mask-image:none;mask-image:none;
 }
+
+/* Shared typography: light body text, thin navigation, and the homepage's serif headings. */
+body.site-branding{font-family:'Lato',Arial,Helvetica,sans-serif;font-weight:300}
+.site-branding h1,.site-branding h2,.site-branding h3,
+.site-branding .poem-title,.site-branding .landing-deck{
+ font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;
+}
+.site-branding .book-detail-copy>p:not(.meta),
+.site-branding .poetry-intro>p:not(.eyebrow),
+.site-branding .poem-text,.site-branding .poem-preview,
+.site-branding .roman-urdu,.site-branding .source-text,
+.site-branding .about-article>p:not(.eyebrow),
+.site-branding .landing-intro,.site-branding .landing-release,
+.site-branding .landing-prose p,.site-branding .landing-author p:not(.landing-kicker),
+.site-branding .landing-theme>p:not(.landing-kicker),
+.site-branding .landing-updates p:not(.landing-kicker){
+ font-family:'Lato',Arial,Helvetica,sans-serif;font-weight:300;
+}
+.site-branding .eyebrow,.site-branding .meta,
+.site-branding .button,.site-branding .text-link,
+.site-branding .poetry-index a,.site-branding .poem-credit,
+.site-branding .poem-read,.site-branding .poem-date,
+.site-branding .poem-body details summary,
+.site-branding .landing-kicker,.site-branding .landing-button,
+.site-branding .landing-text-link,.site-branding .landing-related>a,
+.site-branding .dedicated-book-link,.site-branding .landing-cover figcaption,
+.site-branding .landing-card-grid h4,.site-branding .landing-author-note summary,
+.site-branding .footer-links a,.site-branding .professional-background-trigger,
+.site-branding .professional-close,.site-branding .professional-kicker{
+ font-family:'Montserrat',Arial,sans-serif;font-weight:300;
+}
+.site-branding .professional-career h4,.site-branding .professional-career .professional-role{font-weight:300}
+.site-branding .urdu-poem h3,.site-branding .urdu-script{font-family:'Noto Nastaliq Urdu',serif;font-weight:400}
