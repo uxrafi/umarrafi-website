@@ -184,3 +184,11 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 @media(max-width:800px){.profile-photos.carousel-track figure{flex-basis:50%;height:32vw}}
 @media(max-width:480px){.profile-photos.carousel-track figure{flex-basis:100%;height:64vw}}
 @media(prefers-reduced-motion:reduce){.profile-photos.carousel-track{scroll-behavior:auto}}
+
+.auto-logo-strip{overflow:hidden}
+.auto-logo-strip .company-list{width:max-content;max-width:none;display:flex;justify-content:flex-start;gap:0;overflow:visible;flex-shrink:0;margin:0;animation:logo-drift 45s linear infinite}
+.auto-logo-strip .logo-group{display:flex;align-items:center;flex-shrink:0;gap:1.5rem;padding-right:1.5rem}
+.auto-logo-strip .brand-logo{flex-shrink:0}
+@keyframes logo-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.auto-logo-strip:hover .company-list,.auto-logo-strip:focus-within .company-list{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.auto-logo-strip .company-list{animation:none;overflow-x:auto;width:100%;scrollbar-width:none}.auto-logo-strip .logo-group[aria-hidden="true"]{display:none}}
