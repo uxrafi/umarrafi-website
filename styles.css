@@ -663,3 +663,9 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  .home-layout .skydiving-showcase{--sky-height:210px;grid-template-columns:150px minmax(0,1fr)}
  .home-layout .skydiving-static{aspect-ratio:auto}
 }
+
+/* A compact pause after the photographs, with the same quote typography. */
+.home-layout .quote{padding-top:1.25rem;padding-bottom:1.25rem;min-height:0;height:auto}
+.home-layout .quote blockquote{margin-top:0;margin-bottom:0}
+.home-layout .quote p{margin:.4rem 0 0}
+.home-layout .skydiving-showcase{margin-bottom:0}
