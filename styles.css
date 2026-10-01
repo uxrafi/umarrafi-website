@@ -324,3 +324,11 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Bank Audi"] img{
  width:82px!important;max-width:82px!important;height:82px!important;max-height:82px!important;object-fit:contain!important;
 }
+
+/* A quiet invitation to discover the forthcoming literary publication. */
+.book-announcement{background:#7895a4;color:#fff;text-align:center;padding:.65rem 5vw;border-bottom:1px solid rgba(255,255,255,.15)}
+.book-announcement a{font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:.85rem;line-height:1.6;text-decoration:none;letter-spacing:.015em}
+.book-announcement strong{font-weight:400}
+.book-announcement a:hover{text-decoration:underline;text-underline-offset:3px}
+.book-announcement a:focus-visible{outline:2px solid #fff;outline-offset:4px}
+@media(max-width:600px){.book-announcement{padding:.6rem 4vw}.book-announcement a{font-size:.73rem}}
