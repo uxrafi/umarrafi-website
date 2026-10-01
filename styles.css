@@ -200,3 +200,10 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 @keyframes logo-single-drift{0%,8%{transform:translateX(0)}92%,100%{transform:translateX(min(0px,calc(960px - 100%)))}}
 @media(max-width:1020px){@keyframes logo-single-drift{0%,8%{transform:translateX(0)}92%,100%{transform:translateX(min(0px,calc(94vw - 100%)))}}}
 @media(prefers-reduced-motion:reduce){.auto-logo-strip .company-list{animation:none;width:100%;overflow-x:auto}}
+
+.auto-logo-strip .logo-window{width:min(70vw,720px);margin-inline:auto;overflow:hidden}
+.auto-logo-strip .company-list{animation:logo-centered-drift 28s ease-in-out infinite alternate}
+.auto-logo-strip .brand-logo img{mix-blend-mode:multiply!important;background:transparent}
+@keyframes logo-centered-drift{0%,8%{transform:translateX(0)}92%,100%{transform:translateX(min(0px,calc(min(70vw,720px) - 100%)))}}
+@media(max-width:600px){.auto-logo-strip .logo-window{width:82vw}@keyframes logo-centered-drift{0%,8%{transform:translateX(0)}92%,100%{transform:translateX(min(0px,calc(82vw - 100%)))}}}
+@media(prefers-reduced-motion:reduce){.auto-logo-strip .company-list{animation:none}}
