@@ -115,3 +115,13 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .poem-body{border-top:1px solid var(--line);padding:1.5rem 2rem 2rem}.poem-text{white-space:pre-wrap;overflow-wrap:anywhere;font-family:Georgia,serif;font-size:1rem;line-height:1.9;color:#354656}
 .poem-date{font-size:.8rem;color:#647386;margin:0 0 1rem}.poem-body details{margin-top:1.8rem}.poem-body details summary{cursor:pointer;color:#185b78;font-family:'Lato',Arial,sans-serif;font-size:.9rem}.source-text{font-size:.95rem;margin-top:1rem}.poem-card summary:focus-visible{outline:2px solid #4b8fa9;outline-offset:3px}
 @media(max-width:650px){.poetry-page{padding:2.5rem 6vw 4rem}.poetry-cards{grid-template-columns:1fr}.poem-body{padding:1.2rem}.poem-title{font-size:1.5rem}.poetry-index{margin-bottom:2.5rem}}
+
+/* Muted blues drawn from the painting's sky and shaded architecture. */
+.home-layout .top-bar,.home-layout .top-bar .announcement{background:#6b8c9a}
+.home-layout .site-header,.home-layout .site-header nav.open{background:#4d6d7d}
+.home-layout .company-bar{background:#b9ced7}
+.home-layout .author-wordmark{border:0;text-decoration:none;letter-spacing:0;gap:0}
+.home-layout .author-name{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:2.25rem;line-height:1.1;letter-spacing:.025em;color:#f5f5f0}
+.home-layout .site-header nav a{font-family:'Montserrat',Arial,sans-serif;font-weight:300;letter-spacing:.06em;font-size:.85rem}
+.home-layout .site-header{border-bottom-color:#b4ab91}
+@media(max-width:800px){.home-layout .author-name{font-size:1.95rem}}
