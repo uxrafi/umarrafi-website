@@ -147,3 +147,14 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .media .eyebrow{font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:.6rem;margin:0}
 .home-layout .media .button{font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:.72rem;padding:.5rem 1rem}
 @media(max-width:600px){.home-layout .media{padding:1.8rem 7vw}.home-layout .media>p:not(.eyebrow){font-size:.78rem}}
+
+.home-layout .media{padding:2.4rem 6vw;background:#cbdde8}
+.home-layout .media{padding-block:calc(3rem + 12.5px)}
+.home-layout footer.contact-strip{padding:2.4rem 4vw .96rem}
+.home-layout .contact-strip-top{padding-bottom:2rem;gap:3.2rem}
+.home-layout .contact-strip-nav{padding:.8rem 0}
+.home-layout .contact-brand .social-links{margin-top:.96rem}
+.home-layout .contact-invite p{margin:.4rem 0 1.04rem}
+.home-layout .contact-invite h2{margin-bottom:.56rem}
+@media(max-width:700px){.home-layout .contact-strip-top{gap:1.6rem}}
+@media(max-width:600px){.home-layout .media{padding-block:calc(2.25rem + 12.5px)}}
