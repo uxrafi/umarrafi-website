@@ -207,3 +207,9 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 @keyframes logo-centered-drift{0%,8%{transform:translateX(0)}92%,100%{transform:translateX(min(0px,calc(min(70vw,720px) - 100%)))}}
 @media(max-width:600px){.auto-logo-strip .logo-window{width:82vw}@keyframes logo-centered-drift{0%,8%{transform:translateX(0)}92%,100%{transform:translateX(min(0px,calc(82vw - 100%)))}}}
 @media(prefers-reduced-motion:reduce){.auto-logo-strip .company-list{animation:none}}
+
+/* Keep the moving layer's backdrop blue so white pixels blend correctly. */
+.home-layout .auto-logo-strip .company-list,
+.home-layout .auto-logo-strip .logo-group{background:#b9ced7}
+.auto-logo-strip .brand-logo{background:transparent}
+.auto-logo-strip .brand-logo img{mix-blend-mode:multiply!important}
