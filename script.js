@@ -23,7 +23,7 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
    if(track.scrollLeft>=max-2)autoDirection=-1;
    else if(track.scrollLeft<=2)autoDirection=1;
    move(autoDirection);
-  },4000);
+  },2000);
  }
  function label(){toggle.textContent=paused?'Play':'Pause';toggle.setAttribute('aria-label',paused?'Start photo rotation':'Pause photo rotation');toggle.setAttribute('aria-pressed',String(paused));}
  toggle.addEventListener('click',()=>{paused=!paused;label();schedule();});
