@@ -302,3 +302,11 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 65%,rgba(0,0,0,.75) 80%,transparent 100%);
  mask-image:linear-gradient(to bottom,#000 0%,#000 65%,rgba(0,0,0,.75) 80%,transparent 100%);
 }
+
+/* Keep the V-neck torso solid; feather only its final edge. */
+.home-layout .author-profile-portrait{
+ -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 94%,rgba(0,0,0,.9) 96%,rgba(0,0,0,.5) 98%,transparent 100%);
+ mask-image:linear-gradient(to bottom,#000 0%,#000 94%,rgba(0,0,0,.9) 96%,rgba(0,0,0,.5) 98%,transparent 100%);
+ -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+ -webkit-mask-size:100% 100%;mask-size:100% 100%;
+}
