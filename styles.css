@@ -274,3 +274,7 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .author-profile-portrait.portrait-visible,.media-portrait.portrait-visible{opacity:1;transform:translateX(0)}
 @media(max-width:600px){.media-portrait{width:210px}}
 @media(prefers-reduced-motion:reduce){.author-profile-portrait.portrait-motion-ready,.media-portrait.portrait-motion-ready{opacity:1;transform:none;transition:none}}
+
+/* The entrance is controlled once in script, with a permanent visible final state. */
+.home-layout .author-profile-portrait,
+.home-layout .media-portrait{animation:none!important;transition:none!important}
