@@ -826,3 +826,13 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 
 /* Visually balance the Media strip above and below its content. */
 .home-layout #media{padding-bottom:1.5rem}
+
+/* A narrow, gentle feather around the V-neck cutout, preserving its solid torso. */
+.home-layout .author-profile-portrait{
+ -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 95%,transparent 100%),linear-gradient(to right,transparent 0%,#000 4%,#000 96%,transparent 100%);
+ mask-image:linear-gradient(to bottom,#000 0%,#000 95%,transparent 100%),linear-gradient(to right,transparent 0%,#000 4%,#000 96%,transparent 100%);
+ -webkit-mask-composite:source-in;mask-composite:intersect;
+ -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+ -webkit-mask-size:100% 100%;mask-size:100% 100%;
+ background:transparent;border:0;box-shadow:none;
+}
