@@ -14,7 +14,7 @@
 .company-bar{padding:1rem 5vw}.company-list{max-width:1000px;gap:1.5rem;align-items:center}.brand-logo{background:transparent;border-radius:0;padding:0;height:58px}.brand-logo img{width:100px;height:48px;filter:grayscale(1) invert(1);mix-blend-mode:screen}.social-links svg{width:14px;height:14px}@media(max-width:800px){.brand-logo{height:50px}.brand-logo img{width:85px;height:42px}.company-list{gap:1rem}}@media(max-width:480px){.brand-logo img{width:78px;height:38px}.social-links svg{width:13px;height:13px}}
 
 /* Compact monochrome affiliation strip. */
-.company-bar{background:#4b8fa9;border-bottom:0;padding:2rem 6vw;isolation:isolate}.company-list{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:2.5rem;max-width:1100px}.brand-logo{flex:0 0 100px;width:100px;height:60px;background:transparent;padding:0;border:0;border-radius:0;overflow:hidden}.brand-logo img{width:100px;height:60px;max-width:none;object-fit:contain;filter:grayscale(1) invert(1);mix-blend-mode:screen;opacity:.8}.brand-logo:nth-child(5) img{width:145px;height:95px}.brand-logo:nth-child(7) img{width:140px;height:140px}.brand-logo:hover img{opacity:1}@media(max-width:800px){.company-bar{padding:1.5rem 5vw}.company-list{gap:1.5rem}.brand-logo{flex-basis:80px;width:80px;height:50px}.brand-logo img{width:80px;height:50px}.brand-logo:nth-child(5) img{width:115px;height:76px}.brand-logo:nth-child(7) img{width:112px;height:112px}}@media(max-width:480px){.company-list{gap:1.1rem 1.5rem}}
+.company-bar{background:#4b8fa9;border-bottom:0;padding:2rem 6vw;isolation:isolate}.company-list{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:2.5rem;max-width:1100px}.brand-logo{flex:0 0 100px;width:100px;height:60px;background:transparent;padding:0;border:0;border-radius:0;overflow:hidden}.brand-logo img{width:100px;height:60px;max-width:none;object-fit:contain;filter:grayscale(1) invert(1);mix-blend-mode:screen;opacity:.8}.brand-logo:hover img{opacity:1}@media(max-width:800px){.company-bar{padding:1.5rem 5vw}.company-list{gap:1.5rem}.brand-logo{flex-basis:80px;width:80px;height:50px}.brand-logo img{width:80px;height:50px}}@media(max-width:480px){.company-list{gap:1.1rem 1.5rem}}
 
 .athens-overlay h1{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(3.2rem,5.6vw,5.5rem);line-height:1.08;letter-spacing:0;margin:0 0 .55rem}.athens-overlay p{font-family:'Montserrat',Arial,sans-serif;font-weight:300;font-size:clamp(1rem,1.65vw,1.6rem);line-height:1.5;letter-spacing:0}.athens-overlay a{font-family:'Montserrat',Arial,sans-serif;font-weight:400;text-transform:none;letter-spacing:.04em;font-size:.9rem}
 
@@ -32,15 +32,15 @@
 
 .top-bar{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:.75rem}.top-bar .announcement{flex-wrap:nowrap;white-space:nowrap;max-width:none;gap:.4rem}.quote-text,.top-bar .quote-credit{font-size:.85rem;line-height:1.4}@media(max-width:1100px){.top-bar{grid-template-columns:1fr;gap:0}.top-bar .announcement{grid-column:1}.top-bar .social-links{grid-column:1;justify-self:center}}@media(max-width:600px){.top-bar .announcement{width:auto;max-width:100%}.quote-text,.top-bar .quote-credit{font-size:clamp(.43rem,1.72vw,.75rem)}}
 
-.brand-logo{flex-basis:80px;width:80px;height:48px}.brand-logo img{width:80px;height:48px}.brand-logo:nth-child(5) img{width:116px;height:76px}.brand-logo:nth-child(7) img{width:112px;height:112px}@media(max-width:800px){.brand-logo{flex-basis:64px;width:64px;height:40px}.brand-logo img{width:64px;height:40px}.brand-logo:nth-child(5) img{width:92px;height:61px}.brand-logo:nth-child(7) img{width:90px;height:90px}}
+.brand-logo{flex-basis:80px;width:80px;height:48px}.brand-logo img{width:80px;height:48px}@media(max-width:800px){.brand-logo{flex-basis:64px;width:64px;height:40px}.brand-logo img{width:64px;height:40px}}
 
-.company-list{display:grid;grid-template-columns:repeat(6,80px);justify-content:center;gap:1.2rem 2.5rem}.brand-logo:nth-child(12) img{width:112px;height:63px}@media(max-width:800px){.company-list{grid-template-columns:repeat(4,64px);gap:1rem 1.5rem}.brand-logo:nth-child(12) img{width:90px;height:51px}}@media(max-width:480px){.company-list{grid-template-columns:repeat(3,64px)}}
+.company-list{display:grid;grid-template-columns:repeat(6,80px);justify-content:center;gap:1.2rem 2.5rem}@media(max-width:800px){.company-list{grid-template-columns:repeat(4,64px);gap:1rem 1.5rem}}@media(max-width:480px){.company-list{grid-template-columns:repeat(3,64px)}}
 
 @media(min-width:801px){.company-list{grid-template-columns:repeat(7,80px)}.brand-logo:nth-child(8){grid-column:1}}
 
 .company-bar{padding:1.25rem 3vw}.company-list{display:flex;flex-wrap:nowrap;justify-content:space-between;align-items:center;gap:1rem;max-width:1400px;margin:0 auto;overflow-x:auto}.brand-logo{flex:0 0 80px}.brand-logo:nth-child(8){grid-column:auto}@media(max-width:1100px){.company-list{justify-content:flex-start;gap:1rem}.company-bar{padding:1.25rem 3vw}}@media(max-width:800px){.brand-logo{flex:0 0 64px}.company-bar{padding:1.5rem 3vw}.company-list{gap:1rem}}
 
-.company-bar{padding:.25rem 3vw}.company-list{display:flex;flex-wrap:nowrap;gap:1rem;overflow-x:auto}.brand-logo{flex:0 0 64px;width:64px;height:36px}.brand-logo img{width:64px;height:36px}.brand-logo:nth-child(5) img{width:93px;height:57px}.brand-logo:nth-child(7) img{width:90px;height:90px}.brand-logo:nth-child(12) img{width:90px;height:51px}@media(max-width:800px){.company-bar{padding:.375rem 3vw}.brand-logo{flex:0 0 60px;width:60px;height:36px}.brand-logo img{width:60px;height:36px}}
+.company-bar{padding:.25rem 3vw}.company-list{display:flex;flex-wrap:nowrap;gap:1rem;overflow-x:auto}.brand-logo{flex:0 0 64px;width:64px;height:36px}.brand-logo img{width:64px;height:36px}@media(max-width:800px){.company-bar{padding:.375rem 3vw}.brand-logo{flex:0 0 60px;width:60px;height:36px}.brand-logo img{width:60px;height:36px}}
 
 .company-list{justify-content:center;gap:1rem}.brand-logo[aria-label="Barclays"]{margin-left:-1rem}.brand-logo[aria-label="Credit Suisse"]{flex-basis:100px;width:100px}.brand-logo[aria-label="Credit Suisse"] img{width:100px;height:36px}@media(max-width:800px){.brand-logo[aria-label="Credit Suisse"]{flex-basis:90px;width:90px}.brand-logo[aria-label="Credit Suisse"] img{width:90px;height:36px}}
 
@@ -213,3 +213,19 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .home-layout .auto-logo-strip .logo-group{background:#b9ced7}
 .auto-logo-strip .brand-logo{background:transparent}
 .auto-logo-strip .brand-logo img{mix-blend-mode:multiply!important}
+
+/* Author portraits give the biography and speaking section a personal focus. */
+.author-profile-layout{display:grid;grid-template-columns:180px minmax(0,1fr);gap:2.5rem;align-items:start}
+.author-profile-portrait{display:block;width:100%;height:240px;object-fit:cover;border-radius:3px;filter:saturate(.75)}
+.media-portrait-layout{display:flex;justify-content:center;align-items:center;gap:2.5rem;max-width:1050px;margin:auto}
+.media-portrait{display:block;width:140px;height:140px;object-fit:cover;border-radius:3px;filter:saturate(.7)}
+.media-copy{min-width:0}
+@media(max-width:800px){.author-profile-layout{grid-template-columns:130px minmax(0,1fr);gap:1.5rem}.author-profile-portrait{height:175px}}
+@media(max-width:600px){.author-profile-layout{grid-template-columns:1fr}.author-profile-portrait{width:140px;height:185px;margin:0 auto .5rem}.media-portrait-layout{flex-direction:column;gap:1.2rem}.media-portrait{width:110px;height:110px}}
+
+.auto-logo-strip .brand-logo[aria-label="Noor Bank"]{flex:0 0 70px;width:70px;height:36px}
+.auto-logo-strip .brand-logo[aria-label="Noor Bank"] img{width:58px;height:36px;object-fit:contain}
+.auto-logo-strip .brand-logo[aria-label="Bank Audi"]{flex:0 0 90px;width:90px;height:36px;overflow:hidden}
+.auto-logo-strip .brand-logo[aria-label="Bank Audi"] img{width:210px;height:110px;max-width:none;flex-shrink:0;object-fit:contain}
+.auto-logo-strip .brand-logo[aria-label="Robinhood"]{flex:0 0 100px;width:100px;height:36px}
+.auto-logo-strip .brand-logo[aria-label="Robinhood"] img{width:100px;height:36px;object-fit:contain}
