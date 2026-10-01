@@ -316,3 +316,11 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  -webkit-mask-image:none;
  mask-image:none;
 }
+
+/* Allow complete taller marks inside the horizontally clipped carousel. */
+.home-layout .auto-logo-strip .logo-window{height:84px;display:flex;align-items:center}
+.home-layout .auto-logo-strip .logo-group{height:84px}
+.home-layout .auto-logo-strip .logo-group .brand-logo{height:84px!important}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Bank Audi"] img{
+ width:82px!important;max-width:82px!important;height:82px!important;max-height:82px!important;object-fit:contain!important;
+}
