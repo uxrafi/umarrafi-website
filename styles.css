@@ -653,3 +653,13 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  .site-branding .site-header .ur-logo{width:46px;height:48px}
  .site-branding .site-header nav{top:58px}
 }
+
+/* Taller photographs and closer transitions around the homepage biography. */
+.home-layout .skydiving-showcase{--sky-height:clamp(230px,28vw,390px)}
+.home-layout .home-about{padding-top:4.5rem;padding-bottom:4.5rem}
+.home-layout .home-about .about-rule{margin-bottom:1.8rem}
+@media(max-width:800px){.home-layout .home-about{padding-top:3.25rem;padding-bottom:3.25rem}}
+@media(max-width:600px){
+ .home-layout .skydiving-showcase{--sky-height:210px;grid-template-columns:150px minmax(0,1fr)}
+ .home-layout .skydiving-static{aspect-ratio:auto}
+}
