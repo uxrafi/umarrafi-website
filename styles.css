@@ -82,3 +82,17 @@
 .book-detail-copy:focus-visible{outline:2px solid #4b8fa9;outline-offset:3px}
 .book-detail-copy .meta{margin-top:0}
 @media(max-width:700px){.book-detail-copy{padding:1.1rem 1.25rem}}
+
+footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4vw 1.2rem;border:0;font-family:'Lato',Arial,sans-serif}
+.contact-strip-top{display:grid;grid-template-columns:1fr 1.25fr;gap:4rem;align-items:center;padding-bottom:2.5rem}
+.contact-brand .wordmark{font-weight:300;font-size:.9rem}.contact-brand .monogram{width:65px;height:65px;font-size:1.8rem}
+.contact-brand .social-links{margin-top:1.2rem;justify-content:flex-start}
+.contact-invite{text-align:center}.contact-invite h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.4rem;line-height:1.15;margin:0 0 .7rem}
+.contact-invite p{color:#c9e3ed;margin:.5rem 0 1.3rem}
+.contact-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.contact-actions a{background:#8bd0de;color:#123f52;text-decoration:none;padding:.65rem 1.4rem;letter-spacing:.04em}
+.contact-actions a:hover{background:#b0e4ee}.contact-strip a:focus-visible{outline:2px solid white;outline-offset:5px}
+.contact-strip-nav{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;border-top:1px dotted #8cbacb;padding:1rem 0}
+.contact-strip-nav a{text-transform:uppercase;text-decoration:none;font-size:.85rem;letter-spacing:.08em}
+.contact-strip-nav a:hover{text-decoration:underline}.contact-copyright{text-align:center;color:#d4e8f0;font-size:.8rem;margin:.5rem 0 0}
+@media(max-width:700px){.contact-strip-top{grid-template-columns:1fr;gap:2rem}.contact-brand .wordmark,.contact-brand .social-links{justify-content:center}.contact-strip-nav{gap:1rem 1.5rem}.contact-invite h2{font-size:2rem}}
