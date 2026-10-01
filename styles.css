@@ -278,3 +278,13 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 /* The entrance is controlled once in script, with a permanent visible final state. */
 .home-layout .author-profile-portrait,
 .home-layout .media-portrait{animation:none!important;transition:none!important}
+
+/* Balance wide wordmarks against compact bank symbols. */
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Scotiabank"],
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Edward Jones"],
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Credit Suisse"]{flex-basis:124px!important;width:124px!important}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Scotiabank"] img,
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Edward Jones"] img,
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Credit Suisse"] img{width:118px!important;max-width:118px!important;height:46px!important;max-height:46px!important;object-fit:contain!important}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="TD"] img{width:54px!important;max-width:54px!important;height:48px!important;max-height:48px!important}
+.home-layout .auto-logo-strip .logo-group .brand-logo[aria-label="Varo Bank"] img{width:82px!important;max-width:82px!important;height:34px!important;max-height:34px!important}
