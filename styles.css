@@ -719,3 +719,10 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  .site-branding .site-header nav{top:54px}
  .home-layout{--icon-strip-height:65px}
 }
+
+/* Matching slim quote and book bands on wide screens. */
+@media(min-width:1101px){
+ .site-branding .top-bar{height:34px;min-height:34px;padding-top:0;padding-bottom:0}
+ .site-branding .top-bar .announcement{height:34px;min-height:34px;padding-top:0;padding-bottom:0}
+ .site-branding .combined-book-announcement{height:34px;min-height:34px;padding-top:0;padding-bottom:0}
+}
