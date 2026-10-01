@@ -41,10 +41,10 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
 // Replay five-second entrances for portraits and book artwork across the site.
 (() => {
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
- const selector='.author-profile-portrait,.media-portrait,.about-bio-portrait,.book-detail-cover img,.landing-cover img,.landing-author>img';
+ const selector='.home-about .profile-heading,.home-about .profile-action,.author-profile-portrait,.media-portrait,.about-bio-portrait,.book-detail-cover img,.landing-cover img,.landing-author>img';
  const states=[...document.querySelectorAll(selector)].map(image=>({
   image,
-  section:image.matches('.author-profile-portrait,.media-portrait')?image.closest('section'):null,
+  section:image.matches('.author-profile-portrait,.media-portrait,.profile-heading,.profile-action')?image.closest('section'):null,
   scroller:image.closest('.about-article'),
   played:false,
   animation:null
@@ -63,7 +63,7 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
   state.image.style.translate='none';
   if(reduced.matches||typeof state.image.animate!=='function')return;
   const entrance=state.image.animate([
-   {opacity:0,translate:'-120px 0'},
+   {opacity:0,translate:state.image.matches('.profile-heading,.profile-action')?'0 80px':'-120px 0'},
    {opacity:1,translate:'0px 0'}
   ],{duration:5000,easing:'cubic-bezier(.22,1,.36,1)',fill:'both',iterations:1});
   state.animation=entrance;

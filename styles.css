@@ -604,3 +604,22 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  .home-layout .profile-portrait-frame{height:320px;width:240px;margin:0 auto 1rem}
  .home-layout .home-about .profile-columns p{font-size:1.05rem}
 }
+
+/* Center the heading and story link on the text, independently of the portrait. */
+.home-layout .home-about .profile-heading{
+ width:calc(100% - 300px);margin:.2em 0 .5em 300px;
+ font-size:clamp(2.4rem,3.2vw,3.3rem);
+}
+.home-layout .home-about .about-rule{margin-left:calc(50% + 70px)}
+.home-layout .home-about .profile-action{width:calc(100% - 300px);margin-left:300px}
+@media(max-width:900px){
+ .home-layout .home-about .profile-heading,
+ .home-layout .home-about .profile-action{width:calc(100% - 234px);margin-left:234px}
+ .home-layout .home-about .about-rule{margin-left:calc(50% + 37px)}
+}
+@media(max-width:600px){
+ .home-layout .home-about .profile-heading,
+ .home-layout .home-about .profile-action{width:100%;margin-left:0}
+ .home-layout .home-about .about-rule{margin-left:auto}
+ .home-layout .home-about .profile-heading{font-size:2.5rem}
+}
