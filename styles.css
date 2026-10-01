@@ -885,3 +885,7 @@ body.site-branding{font-family:'Lato',Arial,Helvetica,sans-serif;font-weight:300
 /* Brighter blue for the forthcoming book titles. */
 .home-layout .combined-book-announcement .book-strip-title{color:#b9efff}
 .home-layout .combined-book-announcement a:hover .book-strip-title{color:#e0f8ff}
+
+/* Deep red book titles stand apart from the blue announcement background. */
+.home-layout .combined-book-announcement .book-strip-title{color:#650f24}
+.home-layout .combined-book-announcement a:hover .book-strip-title{color:#490819}
