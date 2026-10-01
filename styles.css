@@ -623,3 +623,11 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
  .home-layout .home-about .about-rule{margin-left:auto}
  .home-layout .home-about .profile-heading{font-size:2.5rem}
 }
+
+/* Shift the complete introduction left, preserving its internal alignment. */
+@media(min-width:901px){
+ .home-layout .home-about-inner{position:relative;left:-3vw}
+}
+@media(min-width:601px) and (max-width:900px){
+ .home-layout .home-about-inner{position:relative;left:-1.5vw}
+}
