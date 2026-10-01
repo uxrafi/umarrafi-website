@@ -54,7 +54,7 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
   const entrance=portrait.animate([
    {opacity:0,transform:'translateX(-120px)'},
    {opacity:1,transform:'translateX(0px)'}
-  ],{duration:2400,easing:'cubic-bezier(.22,1,.36,1)',fill:'both',iterations:1});
+  ],{duration:5000,easing:'cubic-bezier(.22,1,.36,1)',fill:'both',iterations:1});
   entrance.onfinish=()=>{
    portrait.style.opacity='1';
    portrait.style.transform='none';
