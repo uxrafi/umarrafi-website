@@ -626,8 +626,8 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 
 /* Shift the complete introduction left, preserving its internal alignment. */
 @media(min-width:901px){
- .home-layout .home-about-inner{position:relative;left:-3vw}
+ .home-layout .home-about-inner{position:relative;left:-6vw}
 }
 @media(min-width:601px) and (max-width:900px){
- .home-layout .home-about-inner{position:relative;left:-1.5vw}
+ .home-layout .home-about-inner{position:relative;left:-3vw}
 }
