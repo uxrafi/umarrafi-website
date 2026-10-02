@@ -929,11 +929,9 @@ html{scroll-padding-top:80px}
 .home-layout .quote{padding-bottom:calc(10rem - 48px)}
 
 
-/* Readable announcement text on the existing light blue bands. */
-.home-layout .top-bar .announcement,.home-layout .combined-book-announcement{color:#102533}
-.home-layout .combined-book-announcement .book-strip-title{color:#580b1c}
 
-.home-layout .top-bar .announcement a,.home-layout .combined-book-announcement a{color:inherit}
+
+
 
 /* A literary feature beneath the painting, with professional marks on Ventures. */
 .home-layout .home-featured-book{display:grid;grid-template-columns:150px minmax(0,650px);justify-content:center;align-items:center;gap:2.5rem;padding:2rem 6vw;background:#e5eef3}
@@ -945,3 +943,7 @@ html{scroll-padding-top:80px}
 .ventures-affiliations{padding:1.5rem 0 2rem;background:#e5eef3}
 .ventures-affiliations>h2{text-align:center;font-size:2rem;margin:0 1rem 1.5rem}
 @media(max-width:650px){.home-layout .home-featured-book{grid-template-columns:100px minmax(0,1fr);gap:1rem;padding:1.5rem 5vw}.home-featured-book .featured-cover img{width:100px;height:150px}.home-featured-book h2{font-size:1.8rem}.home-featured-book p{font-size:.95rem}}
+
+/* Restore the familiar white announcement text and red book titles. */
+.home-layout .top-bar .announcement,.home-layout .top-bar .announcement a,.home-layout .combined-book-announcement,.home-layout .combined-book-announcement a{color:#fff}
+.home-layout .combined-book-announcement .book-strip-title{color:#650f24}
