@@ -957,3 +957,6 @@ html{scroll-padding-top:80px}
 
 /* Favor the foreground figures over the upper architecture in the hero crop. */
 .home-layout .art-hero>img{object-position:center 80%}
+
+/* A narrow fade blends the painting into the pale featured-book strip. */
+.home-layout .art-hero:after{background:linear-gradient(to bottom,rgba(0,0,0,.03) 0%,rgba(0,0,0,.08) calc(100% - 55px),rgba(229,238,243,0) calc(100% - 45px),#e5eef3 100%);z-index:2;pointer-events:none}
