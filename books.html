@@ -114,6 +114,14 @@ html body.books-layout .book-gallery{gap:1.5rem}
 html body.books-layout .book-gallery-card{min-width:0}
 html body.books-layout .book-gallery-card h2{max-width:none;white-space:nowrap;min-height:0}
 }
+</style><style>
+/* Centre each action in the space between its title and the footer. */
+@media(min-width:601px){
+html body.books-layout main.books-gallery-page{display:flex;flex-direction:column;padding-bottom:0}
+html body.books-layout .book-gallery{flex:1;align-items:stretch}
+html body.books-layout .book-gallery-card h2{margin-bottom:0}
+html body.books-layout .book-gallery-card .book-description-button{margin-top:auto;margin-bottom:auto}
+}
 </style></head>
 <body class="books-layout site-branding">
 
