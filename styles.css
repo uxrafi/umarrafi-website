@@ -947,3 +947,7 @@ html{scroll-padding-top:80px}
 /* Restore the familiar white announcement text and red book titles. */
 .home-layout .top-bar .announcement,.home-layout .top-bar .announcement a,.home-layout .combined-book-announcement,.home-layout .combined-book-announcement a{color:#fff}
 .home-layout .combined-book-announcement .book-strip-title{color:#650f24}
+
+/* Warm gold makes the forthcoming titles distinct against blue. */
+.home-layout .combined-book-announcement .book-strip-title{color:#ffe0a3}
+.home-layout .combined-book-announcement a:hover .book-strip-title{color:#ffcf74}
