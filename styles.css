@@ -951,3 +951,6 @@ html{scroll-padding-top:80px}
 /* Warm gold makes the forthcoming titles distinct against blue. */
 .home-layout .combined-book-announcement .book-strip-title{color:#ffe0a3}
 .home-layout .combined-book-announcement a:hover .book-strip-title{color:#ffcf74}
+
+.home-layout .combined-book-announcement .book-strip-title{color:#fff36a}
+.home-layout .combined-book-announcement a:hover .book-strip-title{color:#ffeb32}
