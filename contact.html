@@ -64,7 +64,13 @@
 .contact-layout footer.book-landing-footer nav{gap:.8rem}
 .contact-layout footer.book-landing-footer nav a{font-size:.8rem}
 }
-</style><style>.contact-page-copy>.eyebrow{font-size:1.05rem;letter-spacing:.14em;margin-bottom:1rem}</style><style>body.contact-layout{min-height:100svh;display:flex;flex-direction:column}.contact-layout>.site-header{flex-shrink:0}.contact-layout>.contact-page{flex:1;width:min(1200px,90vw)}.contact-layout>footer.book-landing-footer{margin-top:auto;flex-shrink:0}</style></head><body class="site-branding contact-layout"><header class="site-header inner-page-header">
+</style><style>.contact-page-copy>.eyebrow{font-size:1.05rem;letter-spacing:.14em;margin-bottom:1rem}</style><style>body.contact-layout{min-height:100svh;display:flex;flex-direction:column}.contact-layout>.site-header{flex-shrink:0}.contact-layout>.contact-page{flex:1;width:min(1200px,90vw)}.contact-layout>footer.book-landing-footer{margin-top:auto;flex-shrink:0}</style><style>
+html:has(body.contact-layout){min-height:100%}
+body.contact-layout{min-height:100vh;min-height:100dvh;display:grid;grid-template-rows:auto 1fr auto}
+.contact-layout>.contact-page{margin:0 auto;align-self:stretch}
+.contact-layout>footer.book-landing-footer{margin-top:0;align-self:end}
+@media(min-width:801px){.contact-layout .contact-page-grid{min-height:calc(100dvh - 120px - 3.5rem)}}
+</style></head><body class="site-branding contact-layout"><header class="site-header inner-page-header">
 <a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
 <button class="menu" aria-label="Open navigation" aria-expanded="false">Menu</button>
 <nav aria-label="Main navigation"><a href="about.html">About</a><a href="books.html">Books</a><a href="poetry.html">Writing</a><a href="index.html#media">Media</a><a href="contact.html" aria-current="page">Contact</a></nav>
