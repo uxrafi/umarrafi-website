@@ -260,6 +260,13 @@ html body.contact-layout main.contact-page{padding-top:1.4rem!important}
  html body.contact-layout .letter .letter-topics{margin-bottom:1.5rem}
  html body.contact-layout .letter .letter-actions{margin-top:1.5rem}
 }
+</style><style>
+/* Keep optional Speaking fields within shorter desktop screens. */
+@media(min-width:801px) and (max-height:800px){
+html body.contact-layout .letter:has(.letter-speaking:not([hidden])) textarea{height:80px}
+html body.contact-layout .letter:has(.letter-speaking:not([hidden])) .letter-actions{margin-top:1rem}
+html body.contact-layout .letter .letter-speaking:not([hidden]){margin-top:.5rem}
+}
 </style></head><body class="site-branding contact-layout"><header class="site-header inner-page-header">
 <a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
 <button class="menu" aria-label="Open navigation" aria-expanded="false">Menu</button>
