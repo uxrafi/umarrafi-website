@@ -119,6 +119,18 @@ body .novel-reading-dialog{box-sizing:border-box;width:min(1000px,92vw);max-widt
 .novel-reading-dialog .parallel-poem-column h4{font:300 .75rem/1.5 Montserrat,Arial,sans-serif;color:#597382;margin:0 0 1rem;padding-bottom:.6rem;border-bottom:1px solid #cfdae3}
 .novel-reading-dialog .poem-text{font:300 1rem/1.9 Lato,Arial,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
 @media(max-width:700px){.novel-reading-dialog .parallel-poem{grid-template-columns:1fr;gap:1.75rem}}
+</style><style>
+/* Keep the novel opening compact on laptop-height desktop screens. */
+@media(min-width:901px){
+html body.novel-landing .landing-hero{padding-top:2.5rem;padding-bottom:2rem}
+html body.novel-landing .landing-hero-grid{row-gap:2rem}
+html body.novel-landing #bazeecha-e-atfal[hidden]{display:none!important}
+}
+@media(min-width:901px) and (max-height:850px){
+html body.novel-landing .landing-hero{padding-top:1.5rem;padding-bottom:1.5rem}
+html body.novel-landing .landing-hero-copy h1{font-size:clamp(3rem,4.3vw,4rem)}
+html body.novel-landing .novel-intro-columns{padding-top:2rem}
+}
 </style></head>
 <body class="book-landing novel-landing site-branding">
 
