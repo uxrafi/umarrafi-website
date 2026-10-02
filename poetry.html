@@ -803,7 +803,7 @@ document.querySelectorAll('.poem-performance').forEach(performance => {
   if(target.matches('.poem-card'))target.open=true;
  }
  tabs.forEach((tab,i)=>{
-  tab.addEventListener('click',()=>{select(tab.getAttribute('aria-controls'));history.replaceState(null,'','#'+tab.getAttribute('aria-controls'))});
+  tab.addEventListener('click',()=>{select(tab.getAttribute('aria-controls'));history.replaceState(null,'',location.pathname+location.search)});
   tab.addEventListener('keydown',event=>{
    if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
    event.preventDefault();
@@ -812,6 +812,8 @@ document.querySelectorAll('.poem-performance').forEach(performance => {
   });
  });
  window.addEventListener('hashchange',()=>select(location.hash.slice(1)));
- if(location.hash) select(location.hash.slice(1));
+ panels.forEach(panel=>panel.hidden=true);
+ tabs.forEach((tab,i)=>{tab.setAttribute('aria-selected','false');tab.tabIndex=i===0?0:-1});
+ if(panels.some(panel=>'#'+panel.id===location.hash))history.replaceState(null,'',location.pathname+location.search);
 })();
 </script></body></html>
