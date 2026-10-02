@@ -39,7 +39,14 @@
 .education-marks-row figcaption{font:300 .75rem/1.5 'Montserrat',sans-serif;color:#597382;margin-top:.5rem}
 @media(max-width:600px){.education-marks-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}}
 </style>
-</head>
+<style>
+.site-branding footer{padding:.7rem 5vw;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.site-branding footer>div>p{display:none}
+.site-branding footer .ur-logo{width:32px;height:34px}
+.site-branding footer p{margin:0;font-size:.75rem}
+.contact-layout footer.book-landing-footer>div,.contact-layout footer.book-landing-footer>p{display:block}
+@media(max-width:650px){.site-branding footer{flex-direction:row!important;text-align:left}.site-branding footer .author-name{font-size:.85rem}.contact-layout footer.book-landing-footer{justify-content:space-between}}
+</style></head>
 <body class="about-reading-layout site-branding">
 
 <header class="site-header inner-page-header">
@@ -70,5 +77,5 @@
  </div>
 </dialog>
 
-<footer id="contact"><div><strong>UMAR RAFI</strong><p>Author</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="about.html" aria-current="page">About</a><a href="books.html">Books</a><a href="poetry.html">Writing</a><a href="contact.html">Contact</a></nav><div><p>© <span id="year"></span> Umar Rafi</p></div></footer>
+<footer id="contact"><div><strong>UMAR RAFI</strong><p>Author</p></div><div><p>© <span id="year"></span> Umar Rafi</p></div></footer>
 <script src="script.js?v=mobile-entrance-fix-96"></script></body></html>
