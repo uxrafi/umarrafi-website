@@ -103,6 +103,21 @@ body.ventures-layout{height:auto;min-height:100dvh;margin:0}
 .ventures-layout .ventures-affiliations{margin-bottom:0}
 @media(min-width:701px) and (max-height:900px){.ventures-layout .ventures-heading{margin-bottom:.8rem}.ventures-layout .venture-choices{row-gap:.8rem}}
 </style><style>.ventures-page .ventures-heading p.venture-lead{font:400 1.6rem/1.3 "Cormorant Garamond",Georgia,serif;color:#185b78;text-align:center;margin:-1rem 0 2rem}@media(max-width:600px){.ventures-page .ventures-heading p.venture-lead{font-size:1.35rem;margin:-.75rem 0 1.5rem}}</style>
+<style>
+/* Compact startup cards so the page fits a laptop screen without scrolling. */
+@media(min-width:601px){
+body.ventures-layout .venture-choices{row-gap:.75rem;column-gap:1rem}
+body.ventures-layout .venture-choices .venture-choice{min-height:0;padding:.55rem .5rem;gap:.35rem}
+body.ventures-layout .venture-choices .venture-choice-logo{zoom:.68}
+}
+@media(min-width:601px) and (max-height:880px){
+body.ventures-layout .venture-choices .venture-choice{padding:.4rem .5rem;gap:.25rem}
+body.ventures-layout .venture-choices .venture-choice-logo{zoom:.6}
+}
+@media(min-width:601px) and (max-height:740px){
+body.ventures-layout .venture-choices .venture-choice-logo{zoom:.52}
+}
+</style>
 </head><body class="site-branding about-reading-layout ventures-layout">
 <header class="site-header inner-page-header">
 <a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
