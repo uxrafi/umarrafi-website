@@ -122,6 +122,12 @@ html body.books-layout .book-gallery{flex:1;align-items:stretch}
 html body.books-layout .book-gallery-card h2{margin-bottom:0}
 html body.books-layout .book-gallery-card .book-description-button{margin-top:auto;margin-bottom:auto}
 }
+</style><style>
+/* Reserve a little more room for titles and centred actions on desktop. */
+@media(min-width:901px){
+html body.books-layout .book-gallery .book-graphic-button{height:clamp(100px,calc(100svh - var(--books-fixed,552px) - 24px),506px)}
+html body.books-layout main.books-gallery-page{padding-top:2.3rem}
+}
 </style></head>
 <body class="books-layout site-branding">
 
