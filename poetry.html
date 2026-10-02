@@ -133,6 +133,48 @@ html body.poetry-layout main.poetry-page{padding-top:1.8rem}
 #mural-explorer.mural-explorer #mural-about .mural-panel-close{position:absolute;right:.6rem;top:.4rem;width:auto;height:auto;padding:0 .2rem;border:0;background:transparent;color:#203747;font-size:1.6rem;box-shadow:none}
 @media(max-width:600px){#mural-explorer.mural-explorer .mural-about-toggle{top:.7rem;left:.7rem;padding:.45rem .7rem;font-size:.78rem}#mural-explorer.mural-explorer #mural-about{top:3.5rem;left:.6rem;width:calc(100vw - 1.2rem);max-height:calc(100dvh - 4.2rem);padding:1.2rem 1.1rem}#mural-explorer.mural-explorer #mural-about h2{font-size:1.7rem}}
 </style>
+<style>
+/* Match the School of Athens explorer controls */
+.hikma-mural .mural-open{top:auto;bottom:0;right:1rem;transform:translateY(50%);z-index:8;padding:7.2px 11.2px;background:#e5eef3;color:#244f6c;border:1px solid #b9ccd6;border-radius:3px;font:300 12px/1.4 Montserrat,sans-serif;letter-spacing:normal;text-transform:none;backdrop-filter:none}
+.hikma-mural .mural-open:hover,.hikma-mural .mural-open:focus-visible{background:#244f6c;color:#fff;border-color:#244f6c}
+#mural-explorer.mural-explorer .mural-about-toggle{font:300 .85rem/normal Lato,Arial,sans-serif;box-shadow:none}
+#mural-explorer.mural-explorer .mural-explorer-close{top:.65rem;right:.8rem;width:auto;height:auto;padding:.45rem .7rem;background:rgba(243,247,250,.94);color:#244f6c;border:1px solid #7895a4;border-radius:3px;font:400 1rem/normal Lato,Arial,sans-serif;box-shadow:none;z-index:6}
+#mural-explorer.mural-explorer .mural-explorer-close:hover,#mural-explorer.mural-explorer .mural-explorer-close:focus-visible{background:#244f6c;color:#fff}
+#mural-explorer.mural-explorer #mural-about h2{line-height:1.65}
+#mural-explorer.mural-explorer #mural-about h3{margin:1rem 0 .5rem;font:400 1.1rem/1.65 "Cormorant Garamond",Georgia,serif;color:#203747}
+#mural-explorer.mural-explorer #mural-about .mural-panel-close{right:.6rem;top:.4rem;padding:1px 6px;border-radius:0;font:400 1.6rem/normal Arial,sans-serif;color:#203747}
+#mural-explorer.mural-explorer .mural-marker{width:32px;height:32px;background:#244f6c;color:#fff;border:1px solid #fff;font:400 13px/1 Arial,sans-serif;box-shadow:0 2px 5px #0008;transform:translate(-50%,-50%)}
+#mural-explorer.mural-explorer .mural-marker:hover,#mural-explorer.mural-explorer .mural-marker[aria-pressed="true"]{z-index:3;transform:translate(-50%,-50%) scale(1.25);background:#244f6c;color:#fff}
+#mural-explorer.mural-explorer .mural-marker:focus-visible{outline:3px solid #ffe16a;outline-offset:3px}
+#mural-explorer.mural-explorer #mural-section-panel{bottom:1rem;width:min(650px,94vw);padding:.7rem 1rem;background:rgba(243,247,250,.95);color:#172536;border-radius:5px;box-shadow:0 3px 18px #0004;font-size:.85rem}
+#mural-explorer.mural-explorer #mural-section-panel h3{margin:0 2rem .3rem 0;font:400 1.6rem/1.65 "Cormorant Garamond",Georgia,serif;color:#172536}
+#mural-explorer.mural-explorer #mural-section-panel p{margin:.35rem 0;font:300 .85rem/1.6 Lato,Arial,sans-serif;color:#172536}
+#mural-explorer.mural-explorer #mural-section-panel .mural-panel-era{margin:0;font:400 .65rem/1.4 Montserrat,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4d6072}
+#mural-explorer.mural-explorer #mural-section-panel .mural-panel-look{font-style:italic;color:#4d6072}
+#mural-explorer.mural-explorer #mural-section-panel .mural-panel-close{top:.35rem;right:.5rem;width:auto;height:auto;padding:.2rem .35rem;border-radius:0;background:none;color:#244f6c;font:400 1.5rem/1 Arial,sans-serif}
+/* "There is more to the right" cues */
+#mural-explorer.mural-explorer .mural-pan{position:absolute;z-index:5;top:50%;transform:translateY(-50%);width:3rem;height:3rem;border-radius:50%;background:rgba(243,247,250,.94);color:#244f6c;border:1px solid #7895a4;font:300 2rem/1 Lato,Arial,sans-serif;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;padding:0 0 .2rem}
+#mural-explorer.mural-explorer .mural-pan:hover,#mural-explorer.mural-explorer .mural-pan:focus-visible{background:#244f6c;color:#fff}
+#mural-explorer.mural-explorer .mural-pan[hidden]{display:none}
+#mural-explorer.mural-explorer .mural-pan-next{right:1rem;animation:mural-nudge 1.6s ease-in-out 3}
+#mural-explorer.mural-explorer .mural-pan-prev{left:1rem}
+@keyframes mural-nudge{0%,100%{transform:translate(0,-50%)}50%{transform:translate(6px,-50%)}}
+#mural-explorer.mural-explorer:before,#mural-explorer.mural-explorer:after{content:"";position:absolute;z-index:4;top:0;bottom:0;width:9rem;pointer-events:none;transition:opacity .3s}
+#mural-explorer.mural-explorer:after{right:0;background:linear-gradient(to left,rgba(15,22,27,.55),rgba(15,22,27,0))}
+#mural-explorer.mural-explorer:before{left:0;background:linear-gradient(to right,rgba(15,22,27,.55),rgba(15,22,27,0));opacity:0}
+#mural-explorer.mural-explorer.at-end:after{opacity:0}
+#mural-explorer.mural-explorer.not-start:before{opacity:1}
+#mural-explorer.mural-explorer .mural-pan-hint{bottom:1.6rem}
+#mural-explorer.mural-explorer .mural-progress{position:absolute;z-index:5;left:1rem;right:1rem;bottom:.5rem;height:4px;border-radius:2px;background:rgba(255,255,255,.25);pointer-events:none}
+#mural-explorer.mural-explorer .mural-progress span{position:absolute;top:0;bottom:0;left:0;border-radius:2px;background:rgba(255,255,255,.85)}
+#mural-explorer.mural-explorer:has(.mural-panel:not([hidden])) .mural-progress{opacity:0}
+@media(prefers-reduced-motion:reduce){#mural-explorer.mural-explorer .mural-pan-next{animation:none}}
+@media(max-width:600px){#mural-explorer.mural-explorer .mural-pan{width:2.5rem;height:2.5rem;font-size:1.7rem}#mural-explorer.mural-explorer .mural-pan-next{right:.6rem}#mural-explorer.mural-explorer .mural-pan-prev{left:.6rem}#mural-explorer.mural-explorer:before,#mural-explorer.mural-explorer:after{width:4rem}#mural-explorer.mural-explorer .mural-explorer-close{top:.6rem;right:.6rem;padding:.4rem .6rem;font-size:.9rem}}
+.hikma-mural .mural-open{line-height:1.5}
+#mural-explorer.mural-explorer .mural-about-toggle{line-height:1.65}
+#mural-explorer.mural-explorer .mural-explorer-close{font-weight:300;line-height:1.65}
+#mural-explorer.mural-explorer #mural-about{box-shadow:0 8px 32px #0004}
+</style>
 </head>
 <body class="poetry-layout site-branding">
 
@@ -145,10 +187,10 @@ html body.poetry-layout main.poetry-page{padding-top:1.8rem}
 
 
 
-<section class="hikma-mural" aria-label="Treasures of Time by Sadequain"><button type="button" class="mural-open" data-open-mural aria-haspopup="dialog">Explore the mural</button><div class="hikma-mural-strip" tabindex="0" title="Sadequain · Treasures of Time · 1961 · State Bank of Pakistan Museum" aria-label="Sadequain’s mural Treasures of Time — swipe or use arrow keys to explore"><img data-open-mural src="images/treasures-of-time.webp" alt="Sadequain’s mural Treasures of Time: a 61-foot procession of scholars and thinkers through history, with books, instruments, domes and minarets" width="1883" height="245"></div></section><dialog id="mural-explorer" class="mural-explorer" aria-labelledby="mural-explorer-title">
-<div class="mural-explorer-head"><h2 id="mural-explorer-title">Explore <em>Treasures of Time</em></h2><button type="button" class="mural-about-toggle" aria-expanded="false" aria-controls="mural-about">About the mural</button><button type="button" class="mural-explorer-close" aria-label="Close mural explorer">×</button></div>
+<section class="hikma-mural" aria-label="Treasures of Time by Sadequain"><button type="button" class="mural-open" data-open-mural aria-haspopup="dialog">Explore the mural ↓</button><div class="hikma-mural-strip" tabindex="0" title="Sadequain · Treasures of Time · 1961 · State Bank of Pakistan Museum" aria-label="Sadequain’s mural Treasures of Time — swipe or use arrow keys to explore"><img data-open-mural src="images/treasures-of-time.webp" alt="Sadequain’s mural Treasures of Time: a 61-foot procession of scholars and thinkers through history, with books, instruments, domes and minarets" width="1883" height="245"></div></section><dialog id="mural-explorer" class="mural-explorer" aria-labelledby="mural-explorer-title">
+<div class="mural-explorer-head"><h2 id="mural-explorer-title">Explore <em>Treasures of Time</em></h2><button type="button" class="mural-about-toggle" aria-expanded="false" aria-controls="mural-about">About the mural &amp; sections</button><button type="button" class="mural-explorer-close" aria-label="Close mural explorer">Close ×</button></div>
 <p class="mural-explorer-intro">Sadequain’s mural walks through the history of human thought from left to right. Choose a number to visit each section.</p>
-<p class="mural-pan-hint" aria-hidden="true">Drag or scroll sideways to walk through the mural →</p><div class="mural-explorer-strip" tabindex="0" aria-label="The mural, with numbered sections. Scroll sideways to see it all."><div class="mural-explorer-canvas"><img src="images/treasures-of-time.webp" alt="Sadequain’s mural Treasures of Time, with numbered sections" width="1883" height="245"><button type="button" class="mural-marker" style="left:9%" data-section="0" aria-pressed="false" aria-label="Section 1: The Greeks">1</button><button type="button" class="mural-marker" style="left:27%" data-section="1" aria-pressed="false" aria-label="Section 2: Medieval and Renaissance Italy">2</button><button type="button" class="mural-marker" style="left:50%" data-section="2" aria-pressed="false" aria-label="Section 3: The Islamic world">3</button><button type="button" class="mural-marker" style="left:77%" data-section="3" aria-pressed="false" aria-label="Section 4: The Enlightenment">4</button><button type="button" class="mural-marker" style="left:92%" data-section="4" aria-pressed="false" aria-label="Section 5: South Asia">5</button><button type="button" class="mural-marker" style="left:98%" data-section="5" aria-pressed="false" aria-label="Section 6: Einstein">6</button></div></div>
+<p class="mural-pan-hint" aria-hidden="true">Scroll right to see more of the mural →</p><button type="button" class="mural-pan mural-pan-prev" aria-label="Scroll the mural left" hidden>‹</button><button type="button" class="mural-pan mural-pan-next" aria-label="Scroll the mural right">›</button><div class="mural-progress" aria-hidden="true"><span></span></div><div class="mural-explorer-strip" tabindex="0" aria-label="The mural, with numbered sections. Scroll sideways to see it all."><div class="mural-explorer-canvas"><img src="images/treasures-of-time.webp" alt="Sadequain’s mural Treasures of Time, with numbered sections" width="1883" height="245"><button type="button" class="mural-marker" style="left:9%" data-section="0" aria-pressed="false" aria-label="Section 1: The Greeks">1</button><button type="button" class="mural-marker" style="left:27%" data-section="1" aria-pressed="false" aria-label="Section 2: Medieval and Renaissance Italy">2</button><button type="button" class="mural-marker" style="left:50%" data-section="2" aria-pressed="false" aria-label="Section 3: The Islamic world">3</button><button type="button" class="mural-marker" style="left:77%" data-section="3" aria-pressed="false" aria-label="Section 4: The Enlightenment">4</button><button type="button" class="mural-marker" style="left:92%" data-section="4" aria-pressed="false" aria-label="Section 5: South Asia">5</button><button type="button" class="mural-marker" style="left:98%" data-section="5" aria-pressed="false" aria-label="Section 6: Einstein">6</button></div></div>
 <section class="mural-panel" id="mural-section-panel" aria-live="polite" hidden><button type="button" class="mural-panel-close" aria-label="Close section">×</button><p class="mural-panel-era"></p><h3></h3><p class="mural-panel-text"></p><p class="mural-panel-look"></p></section>
 <section class="mural-panel mural-about" id="mural-about" aria-label="About the mural and the artist" hidden><button type="button" class="mural-panel-close" aria-label="Close about the mural">×</button><h2>Treasures of Time</h2>
 <h3>The artist</h3>
@@ -1012,6 +1054,19 @@ strip.addEventListener('click',e=>{if(moved){e.stopPropagation();e.preventDefaul
 strip.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){strip.scrollLeft+=e.deltaY;e.preventDefault()}},{passive:false});
 strip.addEventListener('scroll',()=>{if(strip.scrollLeft>40)dlg.classList.add('has-panned')},{passive:true});
 dlg.addEventListener('close',()=>dlg.classList.remove('has-panned'));
+})();
+</script>
+<script>
+(()=>{
+/* Arrows, edge shading and a position bar show there is more mural to the right. */
+const dlg=document.getElementById('mural-explorer');if(!dlg)return;
+const strip=dlg.querySelector('.mural-explorer-strip'),prev=dlg.querySelector('.mural-pan-prev'),next=dlg.querySelector('.mural-pan-next'),bar=dlg.querySelector('.mural-progress span');
+function update(){const max=strip.scrollWidth-strip.clientWidth,x=strip.scrollLeft;prev.hidden=x<=4;next.hidden=x>=max-4;dlg.classList.toggle('not-start',x>4);dlg.classList.toggle('at-end',x>=max-4);bar.style.width=(strip.clientWidth/strip.scrollWidth*100)+'%';bar.style.left=(max>0?x/strip.scrollWidth*100:0)+'%'}
+const step=d=>strip.scrollBy({left:d*strip.clientWidth*.7,behavior:'smooth'});
+prev.addEventListener('click',()=>step(-1));next.addEventListener('click',()=>step(1));
+strip.addEventListener('scroll',update,{passive:true});addEventListener('resize',update);
+new MutationObserver(()=>{if(dlg.open)requestAnimationFrame(update)}).observe(dlg,{attributes:true,attributeFilter:['open']});
+dlg.querySelector('.mural-explorer-canvas img').addEventListener('load',update);
 })();
 </script>
 </body></html>
