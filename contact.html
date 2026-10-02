@@ -153,7 +153,14 @@ html body.contact-layout .letter .letter-note{color:#56697a}
  html body.contact-layout .contact-page-portrait{width:min(330px,100%);min-width:0;margin:0 auto;overflow:visible}
  html body.contact-layout .contact-page-portrait img{position:static;left:auto!important;transform:none!important;width:100%!important;height:auto!important;max-width:100%!important;max-height:none!important}
 }
-</style></head><body class="site-branding contact-layout"><header class="site-header inner-page-header">
+</style><style id="letter-direct">
+html body.contact-layout .letter .letter-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+html body.contact-layout .letter .letter-send[disabled]{opacity:.75;cursor:default}
+html body.contact-layout .letter .letter-status{margin:.6rem 0 0;padding:.55rem .8rem;border-radius:3px;font:400 .88rem/1.45 Lato,Arial,sans-serif}
+html body.contact-layout .letter .letter-status.is-sent{background:#e3edf2;color:#173c50;border:1px solid #b9ccd6}
+html body.contact-layout .letter .letter-status.is-error{background:#f8ece9;color:#7b1724;border:1px solid #e3c2bb}
+</style>
+</head><body class="site-branding contact-layout"><header class="site-header inner-page-header">
 <a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
 <button class="menu" aria-label="Open navigation" aria-expanded="false">Menu</button>
 <nav aria-label="Main navigation"><a href="about.html">About</a><a href="books.html">Books</a><a href="poetry.html">Writing</a><a href="contact.html" aria-current="page">Contact</a></nav>
@@ -167,19 +174,39 @@ html body.contact-layout .letter .letter-note{color:#56697a}
 <div class="letter-speaking" id="speaking-contact-fields" hidden><label><span class="letter-label">Event or organization <i>(optional)</i></span><input id="contact-organization" name="organization" autocomplete="organization" maxlength="200"></label><label><span class="letter-label">Event date <i>(optional)</i></span><input id="contact-date" name="date" type="date"></label></div>
 <div class="letter-signoff"><p class="letter-wishes" aria-hidden="true">With best wishes,</p><div class="letter-from"><label><span class="letter-label">Your name</span><input id="contact-name" name="name" autocomplete="name" required maxlength="150"></label><label><span class="letter-label">Your email</span><input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254"></label></div></div>
 </div>
-<div class="letter-actions"><button class="letter-send" type="submit">Open in your email app</button><p class="letter-webmail">or send with <a id="compose-gmail" href="https://mail.google.com/mail/?view=cm&amp;to=uxrafi%40hotmail.com" target="_blank" rel="noopener">Gmail</a> or <a id="compose-outlook" href="https://outlook.live.com/mail/0/deeplink/compose?to=uxrafi%40hotmail.com" target="_blank" rel="noopener">Outlook</a></p></div>
-<p class="letter-note">Nothing is sent from this page. Your email opens with the letter ready for you to review and send.</p>
+<input class="letter-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="letter-actions"><button class="letter-send" type="submit" id="letter-send">Open in your email app</button><p class="letter-webmail">or <span id="compose-mailapp-wrap" hidden>open it in <a id="compose-mailapp" href="mailto:uxrafi@hotmail.com">your email app</a>, </span><span id="compose-sendwith">send with </span><a id="compose-gmail" href="https://mail.google.com/mail/?view=cm&amp;to=uxrafi%40hotmail.com" target="_blank" rel="noopener">Gmail</a> or <a id="compose-outlook" href="https://outlook.live.com/mail/0/deeplink/compose?to=uxrafi%40hotmail.com" target="_blank" rel="noopener">Outlook</a></p></div>
+<p class="letter-note" id="letter-note">Nothing is sent from this page. Your email opens with the letter ready for you to review and send.</p>
+<p class="letter-status" id="letter-status" role="status" aria-live="polite" hidden></p>
 </form></div><figure class="contact-page-portrait"><img src="images/contact-portrait-full.webp" alt="Umar Rafi wearing a V-neck shirt" width="1086" height="1448"></figure></div></main><footer class="book-landing-footer"><div><a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a></div><p>© <span id="year"></span> Umar Rafi</p></footer><script src="script.js?v=mobile-entrance-fix-96"></script><script>
 (()=>{
-/* The contact letter: builds the email for the visitor's mail app or webmail. */
+/* The contact letter: sends directly through Formspree when FORMSPREE_ID is set; otherwise, and always as an alternative, builds the email for the visitor's mail app or webmail. */
+const FORMSPREE_ID='';
 const form=document.getElementById('contact-form');if(!form)return;
 const extra=document.getElementById('speaking-contact-fields');
+const send=document.getElementById('letter-send'),note=document.getElementById('letter-note'),status=document.getElementById('letter-status');
+const direct=!!FORMSPREE_ID;
 const topic=()=>form.querySelector('input[name="type"]:checked').value;
 form.addEventListener('change',e=>{if(e.target.name==='type')extra.hidden=topic()!=='Speaking invitation'});
 function letter(){const d=new FormData(form);let body='Dear Umar,\n\n'+d.get('message')+'\n\nWith best wishes,\n'+d.get('name')+'\n'+d.get('email');
  if(topic()==='Speaking invitation'){const o=d.get('organization'),t=d.get('date');if(o||t)body+='\n\n'+(o?'Event or organization: '+o:'')+(o&&t?'\n':'')+(t?'Event date: '+t:'')}
  return {subject:topic()+' from '+d.get('name'),body}}
-form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const l=letter();location.href='mailto:uxrafi@hotmail.com?subject='+encodeURIComponent(l.subject)+'&body='+encodeURIComponent(l.body)});
+const mailto=()=>{const l=letter();return 'mailto:uxrafi@hotmail.com?subject='+encodeURIComponent(l.subject)+'&body='+encodeURIComponent(l.body)};
+function say(msg,ok){status.hidden=false;status.className='letter-status '+(ok?'is-sent':'is-error');status.textContent=msg}
+if(direct){send.textContent='Send message';document.getElementById('compose-mailapp-wrap').hidden=false;document.getElementById('compose-sendwith').hidden=true;note.textContent='Your letter comes straight to me. If you prefer, open it in your own email to review and send.'}
+form.addEventListener('submit',async e=>{e.preventDefault();if(!form.reportValidity())return;
+ if(!direct){location.href=mailto();return}
+ const l=letter(),d=new FormData(form);
+ const payload={_subject:l.subject,topic:topic(),name:d.get('name'),email:d.get('email'),message:d.get('message'),_gotcha:d.get('_gotcha')};
+ if(topic()==='Speaking invitation'){payload.organization=d.get('organization')||'';payload.event_date=d.get('date')||''}
+ send.disabled=true;send.textContent='Sending…';status.hidden=true;
+ try{const r=await fetch('https://formspree.io/f/'+FORMSPREE_ID,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(payload)});
+  if(!r.ok)throw new Error(r.status);
+  form.reset();extra.hidden=true;send.textContent='Sent';say('Thank you, '+payload.name.split(' ')[0]+'. Your letter is on its way, and I’ll reply to '+payload.email+'.',true);
+  setTimeout(()=>{send.disabled=false;send.textContent='Send message'},4000);
+ }catch(err){send.disabled=false;send.textContent='Send message';say('Sorry, your letter couldn’t be sent just now. Please try again, or open it in your email app, Gmail or Outlook using the links above.',false)}
+});
+document.getElementById('compose-mailapp').addEventListener('click',function(e){if(!form.reportValidity()){e.preventDefault();return}this.href=mailto()});
 for(const [id,base,key] of [['compose-gmail','https://mail.google.com/mail/?view=cm&to=uxrafi%40hotmail.com','su'],['compose-outlook','https://outlook.live.com/mail/0/deeplink/compose?to=uxrafi%40hotmail.com','subject']])
  document.getElementById(id).addEventListener('click',function(e){if(!form.reportValidity()){e.preventDefault();return}const l=letter();this.href=base+'&'+key+'='+encodeURIComponent(l.subject)+'&body='+encodeURIComponent(l.body)});
 })();
