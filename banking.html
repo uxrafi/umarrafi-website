@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Banking technology — Umar Rafi</title>
+<meta name="description" content="Twenty-five years in banking technology: Umar Rafi’s work across on-premise risk and regulatory systems, cloud and digital banking, and AI agents for financial institutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=review-fixes-20261002">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://umarrafi-website.pages.dev/banking.html"><meta property="og:type" content="website"><meta property="og:site_name" content="Umar Rafi"><meta property="og:title" content="Banking technology — Umar Rafi"><meta property="og:description" content="Twenty-five years. Three eras of banking."><meta property="og:url" content="https://umarrafi-website.pages.dev/banking.html"><meta property="og:image" content="https://umarrafi-website.pages.dev/images/share/banking.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/jpeg"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","name":"Banking technology — Umar Rafi","url":"https://umarrafi-website.pages.dev/banking.html","mainEntity":{"@type":"Person","name":"Umar Rafi","jobTitle":"Banking technology architect, author and entrepreneur","alumniOf":["United States Air Force Academy","Wichita State University","INCEIF","Georgia Institute of Technology"],"hasCredential":"Salesforce Certified Technical Architect"}}</script>
+
+
+
+<style>
+/* Banking technology page */
+html body.bt-layout{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+html body.bt-layout>main{flex:1 0 auto}
+.bt-page{--ink:#172536;--slate:#244f6c;--head:#185b78;--muted:#4d6072;--rule:#cfdae3;width:min(1180px,90vw);margin:0 auto;padding:2.6rem 0 4rem;box-sizing:border-box}
+.bt-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bt-heading{text-align:center}
+.bt-heading h1{margin:0;font:400 clamp(2.4rem,4vw,4rem)/1.12 "Cormorant Garamond",Georgia,serif;color:var(--head);letter-spacing:0}
+.bt-heading .about-rule{margin:.9rem auto 1.2rem}
+.bt-lead{margin:0;font:400 1.6rem/1.3 "Cormorant Garamond",Georgia,serif;color:var(--head)}
+.bt-intro{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1040px;margin:2.4rem auto 0}
+.bt-intro p{margin:0;font:300 1.04rem/1.72 Lato,Arial,sans-serif;color:var(--ink)}
+.bt-eras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:3.6rem 0 0;border-top:1px solid var(--rule)}
+.bt-era{padding:2rem 2rem 0;border-left:1px solid var(--rule)}
+.bt-era:first-of-type{border-left:0;padding-left:0}
+.bt-era:last-of-type{padding-right:0}
+.bt-era-num{margin:0;font:400 clamp(4rem,7vw,6.2rem)/.9 "Cormorant Garamond",Georgia,serif;color:var(--head)}
+.bt-era-num::before{content:"Banking";display:block;margin:0 0 .35rem;font:400 .95rem/1 Lato,Arial,sans-serif;color:var(--muted)}
+.bt-era h3{margin:.4rem 0 .5rem;font:400 1.75rem/1.15 "Cormorant Garamond",Georgia,serif;color:var(--ink)}
+.bt-era-def{margin:0 0 1.4rem;font:italic 400 1.12rem/1.45 "Cormorant Garamond",Georgia,serif;color:var(--muted)}
+.bt-era ul{list-style:none;margin:0;padding:0}
+.bt-era li{padding:.9rem 0;border-top:1px solid var(--rule)}
+.bt-era h4{margin:0 0 .3rem;font:400 1rem/1.3 Lato,Arial,sans-serif;color:var(--slate)}
+.bt-era h4 span{font-weight:300;color:var(--muted);margin-left:.35rem}
+.bt-era li p{margin:0;font:300 .95rem/1.6 Lato,Arial,sans-serif;color:var(--ink)}
+.bt-era li p a,.bt-edu a{color:var(--slate)}
+.bt-logos{margin:4rem 0 0;padding:2.2rem 2rem 2.4rem;background:#fff;border:1px solid #dde6ec;border-radius:2px;text-align:center}
+.bt-logos h2,.bt-edu h2{margin:0;font:400 2rem/1.2 "Cormorant Garamond",Georgia,serif;color:var(--head)}
+.bt-logos>p{margin:.4rem 0 1.8rem;font:300 1rem/1.5 Lato,Arial,sans-serif;color:var(--muted)}
+.bt-logos ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.6rem 2rem;align-items:center}
+.bt-logos li{display:flex;align-items:center;justify-content:center;height:56px}
+.bt-logos img{max-width:130px;max-height:46px;min-height:30px;width:auto;height:auto;object-fit:contain}
+.bt-edu{margin:4rem 0 0;text-align:center}
+.bt-edu-intro{max-width:640px;margin:.5rem auto 2rem;font:300 1.02rem/1.65 Lato,Arial,sans-serif;color:var(--muted)}
+.bt-edu ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem;text-align:left;counter-reset:deg}
+.bt-edu li{position:relative;padding-top:1.4rem;border-top:2px solid var(--slate)}
+.bt-edu li img{display:block;height:52px;width:auto;max-width:120px;object-fit:contain;margin:0 0 1rem;mix-blend-mode:multiply}
+.bt-edu li h3{margin:0;font:400 1.35rem/1.2 "Cormorant Garamond",Georgia,serif;color:var(--ink)}
+.bt-school{margin:.2rem 0 .6rem;font:400 .9rem/1.3 Lato,Arial,sans-serif;color:var(--slate)}
+.bt-edu li p:last-child{margin:0;font:300 .95rem/1.6 Lato,Arial,sans-serif;color:var(--ink)}
+.bt-cred{max-width:820px;margin:2.6rem auto 0;font:300 1rem/1.7 Lato,Arial,sans-serif;color:var(--ink)}
+.bt-next{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem;margin:3rem 0 0}
+.bt-next a{padding:.65rem 1.1rem;border:1px solid #b9ccd6;border-radius:3px;color:var(--slate);font:300 .92rem/1.2 Lato,Arial,sans-serif;text-decoration:none;transition:background .2s,color .2s}
+.bt-next a.bt-next-primary{background:var(--slate);border-color:var(--slate);color:#fff}
+.bt-next a:hover,.bt-next a:focus-visible{background:#173c50;border-color:#173c50;color:#fff}
+@media(max-width:900px){.bt-intro{grid-template-columns:1fr;gap:1.2rem}.bt-eras{grid-template-columns:1fr;border-top:0}.bt-era,.bt-era:first-of-type,.bt-era:last-of-type{padding:1.8rem 0 0;border-left:0;border-top:1px solid var(--rule)}.bt-logos ul{grid-template-columns:repeat(3,minmax(0,1fr))}.bt-edu ol{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.bt-page{padding-top:2rem}.bt-logos{padding:1.6rem 1rem}.bt-logos ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}.bt-edu ol{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.bt-next a{transition:none}}
+</style>
+</head>
+<body class="bt-layout site-branding">
+<header class="site-header inner-page-header">
+<a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
+<button class="menu" aria-label="Open navigation" aria-expanded="false" aria-haspopup="dialog">Menu</button>
+<nav aria-label="Main navigation"><a href="about.html">About</a><a href="books.html">Books</a><a href="poetry.html">Writing</a><a href="contact.html">Contact</a></nav>
+<nav class="social-links" aria-label="Social media"><a href="https://www.linkedin.com/in/umar-rafi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6H2V22h3.4V7.6ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.5c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.2V7.6H9.2V22h3.4v-8c0-2.1.4-4.1 3-4.1s3 2.4 3 4.2V22H22v-8.5Z"/></svg></a><a href="https://www.facebook.com/uxrafi" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.3-2.8-.3-2.8 0-4.7 1.7-4.7 4.9v2.6H7V13h3.2v9H14Z"/></svg></a></nav>
+</header>
+<main class="bt-page" id="top">
+<header class="bt-heading"><h1>Banking technology.</h1><div class="about-rule"></div><p class="bt-lead">Twenty-five years. Three eras of banking.</p></header>
+<div class="bt-intro"><p>For more than twenty-five years I have worked where banking meets software: in the data, risk and regulatory systems of large institutions, in the cloud platforms that connected them to their customers, and now in the governance of AI agents that can act on their behalf. The work has taken me from microfinance institutions in developing countries to some of the largest banks in North America and Europe, and across the Middle East, South Asia and Africa.</p><p>In every era the same questions return: where the data lives, who may change it, how a decision is evidenced and how a regulator is satisfied. Each generation of technology answers them differently. I have helped banks answer them through each generation, and that history is the best preparation I know for what comes next.</p></div>
+<section class="bt-eras" aria-labelledby="bt-eras-title"><h2 id="bt-eras-title" class="bt-sr">Three eras of banking</h2><article class="bt-era"><p class="bt-era-num" aria-hidden="true">1.0</p><h3><span class="bt-sr">Banking 1.0: </span>Systems that record</h3><p class="bt-era-def">The bank’s institutional memory: data, risk and regulatory systems running inside the institution.</p><ul><li><h4>FRS Global <span>2005–2007</span></h4><p>I built the Canadian operation from inception. Within eighteen months our clients included four of Canada’s six largest banks, with regulatory reporting and Basel II across credit, market and operational risk.</p></li><li><h4>Oracle</h4><p>I led the Risk and Compliance practice across the Middle East and Africa, bringing risk, regulatory and compliance systems to banks across the region.</p></li><li><h4>Verax <span>2003–2005</span></h4><p>I established the software-development lifecycle practice for dependable enterprise systems.</p></li><li><h4>Ardent Software <span>1998–2000</span></h4><p>Data warehousing with DataStage: moving and preparing the enterprise data every banking application depends on.</p></li></ul></article><article class="bt-era"><p class="bt-era-num" aria-hidden="true">2.0</p><h3><span class="bt-sr">Banking 2.0: </span>Platforms that connect</h3><p class="bt-era-def">Cloud, software as a service and digital banking: data and services brought together across channels.</p><ul><li><h4>Salesforce <span>Eight years</span></h4><p>I helped shape Financial Services Cloud and architected cloud transformations for banks and wealth managers across North America and Europe, as a Certified Technical Architect.</p></li><li><h4>Varo Bank <span>2016–2017</span></h4><p>On the founding technology leadership team of a digital bank, I worked across core banking, governance, compliance, integration and regulatory controls.</p></li><li><h4>WorldInsure and Catapulse <span>2000–2002</span></h4><p>Early software as a service: hosted insurance and hosted development platforms, at the very start of cloud software.</p></li></ul></article><article class="bt-era"><p class="bt-era-num" aria-hidden="true">3.0</p><h3><span class="bt-sr">Banking 3.0: </span>Agents that act</h3><p class="bt-era-def">Intelligence that carries work within explicit boundaries of authority, evidence and accountability.</p><ul><li><h4>Sayaa.ai <span>Today</span></h4><p>I co-founded Sayaa.ai to bring runtime assurance to autonomous financial systems: discovering, controlling and demonstrating how AI agents behave.</p></li><li><h4>Tessera Labs <span>2025–2026</span></h4><p>As VP of Enterprise Architecture and Delivery, I led architecture and delivery for the Mosaic AI-agent platform.</p></li><li><h4>Salesforce</h4><p>I architected AI-agent solutions for financial institutions.</p></li><li><h4>Georgia Tech <span>Research</span></h4><p>My research examines the runtime governance of enterprise AI-agent workflows.</p></li><li><h4>Banking 3.0 <span>December 2026</span></h4><p>My book on the architecture banks need as intelligence learns to act.</p></li></ul></article></section>
+<section class="bt-logos" aria-labelledby="bt-logos-title"><h2 id="bt-logos-title">Banks and financial institutions I have worked with</h2><p>From digital challengers to global leaders.</p><ul><li><img src="images/logos/varo-updated.png" alt="Varo Bank" loading="lazy"></li><li><img src="images/logos/td-updated.png" alt="TD" loading="lazy"></li><li><img src="images/logos/barclays-local.svg" alt="Barclays" loading="lazy"></li><li><img src="images/logos/alinma.svg" alt="Alinma Bank" loading="lazy"></li><li><img src="images/logos/wells-fargo-local.svg" alt="Wells Fargo" loading="lazy"></li><li><img src="images/logos/bmo.svg" alt="Bank of Montreal" loading="lazy"></li><li><img src="images/logos/hbl-local.svg" alt="HBL" loading="lazy"></li><li><img src="images/logos/credit-suisse-local.svg" alt="Credit Suisse" loading="lazy"></li><li><img src="images/logos/edward-jones-local.svg" alt="Edward Jones" loading="lazy"></li><li><img src="images/logos/bank-audi-updated.png" alt="Bank Audi" loading="lazy"></li><li><img src="images/logos/robinhood-local.svg" alt="Robinhood" loading="lazy"></li><li><img src="images/logos/scotiabank-updated.jpeg" alt="Scotiabank" loading="lazy"></li><li><img src="images/logos/us-bank.png" alt="U.S. Bank" loading="lazy"></li><li><img src="images/logos/charles-schwab.png" alt="Charles Schwab" loading="lazy"></li><li><img src="images/logos/noor-bank.png" alt="Noor Bank" loading="lazy"></li></ul></section>
+<section class="bt-edu" aria-labelledby="bt-edu-title"><h2 id="bt-edu-title">How my education fits together</h2><p class="bt-edu-intro">Each degree added a layer to the same question: how systems that hold people’s money and trust should be built, and how they should behave.</p><ol><li><img src="images/education/usafa.jpg" alt="" loading="lazy"><h3>B.S. Applied Mathematics</h3><p class="bt-school">United States Air Force Academy</p><p>The language of models: describing a system precisely enough to reason about it.</p></li><li><img src="images/education/wichita-state.jpg" alt="" loading="lazy"><h3>M.S. Computer Science</h3><p class="bt-school">Wichita State University</p><p>How to build those systems: software, data and architecture.</p></li><li><img src="images/education/inceif.png" alt="" loading="lazy"><h3>Ph.D. Finance</h3><p class="bt-school">INCEIF</p><p>How financial systems behave under stress. My doctoral research with Professor Abbas Mirakhor on risk-sharing and antifragility became <a href="antifragility.html">Antifragility of Islamic Finance</a>.</p></li><li><img src="images/education/georgia-tech.png" alt="" loading="lazy"><h3>M.S. Machine Learning</h3><p class="bt-school">Georgia Tech</p><p>How intelligent systems learn and act, and how to keep them within bounds.</p></li></ol>
+<p class="bt-cred">I am a Salesforce Certified Technical Architect, one of the most demanding certifications in enterprise software, and hold 27 Salesforce certifications. I have taught at UC Berkeley Extension, SP Jain School of Global Management and Hamdan Bin Mohammed Smart University, and mentor students in computer science through iCodeGuru.</p></section>
+<nav class="bt-next" aria-label="Related pages"><a class="bt-next-primary" href="contact.html">Speaking and advisory enquiries</a><a href="banking-3.html">About Banking 3.0</a><a href="ventures.html">Startup Journey</a></nav>
+</main>
+<footer id="contact" class="book-landing-footer"><div><a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a></div><p>© <span id="year">2026</span> Umar Rafi</p></footer>
+<script src="script.js?v=mobile-entrance-fix-96"></script>
+</body></html>
