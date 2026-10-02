@@ -128,6 +128,15 @@ html body.books-layout .book-gallery-card .book-description-button{margin-top:au
 html body.books-layout .book-gallery .book-graphic-button{height:clamp(100px,calc(100svh - var(--books-fixed,552px) - 24px),506px)}
 html body.books-layout main.books-gallery-page{padding-top:2.3rem}
 }
+</style><style>
+@media(min-width:901px){
+html body.books-layout{height:100dvh;min-height:0}
+html body.books-layout main.books-gallery-page{flex:1 1 0;min-height:0}
+html body.books-layout .books-page-heading{flex-shrink:0}
+html body.books-layout .book-gallery{min-height:0}
+html body.books-layout .book-gallery-card{min-height:0}
+html body.books-layout .book-gallery .book-graphic-button{height:var(--gallery-cover-height,clamp(70px,calc(100dvh - 480px),506px));min-height:0;flex-shrink:0}
+}
 </style></head>
 <body class="books-layout site-branding">
 
@@ -151,5 +160,19 @@ controls.forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.book;pane
 close.addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()});
 dialog.addEventListener('close',()=>{controls.forEach(x=>x.setAttribute('aria-expanded','false'));opener?.focus({preventScroll:true})});
+})();
+</script><script>
+(()=>{
+ const gallery=document.querySelector('.book-gallery');
+ function fit(){
+ if(innerWidth<=900){gallery.style.removeProperty('--gallery-cover-height');return}
+ const cards=[...gallery.querySelectorAll('.book-gallery-card')];
+ const extra=Math.max(...cards.map(card=>[...card.children].filter(e=>!e.classList.contains('book-graphic-button')).reduce((sum,e)=>{const s=getComputedStyle(e);return sum+e.getBoundingClientRect().height+(parseFloat(s.marginTop)||0)+(parseFloat(s.marginBottom)||0)},0)));
+ const height=Math.max(0,Math.min(506,gallery.getBoundingClientRect().height-extra-64));
+ gallery.style.setProperty('--gallery-cover-height',height+'px');
+ }
+ new ResizeObserver(fit).observe(gallery);
+ window.addEventListener('resize',fit);
+ document.fonts.ready.then(fit);fit();
 })();
 </script></body></html>
