@@ -202,7 +202,7 @@ I know not what future holds from this date
 
 
 My habits, my callings, he shares all with me
-Ghalib, I fancy; my confidant is he</div></section></div><p><a class="landing-text-link" href="poetry.html#bazeecha">Explore this poem and more translations →</a></p>
+Ghalib, I fancy; my confidant is he</div></section></div><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/-UsI9d9kccE" title="Bazeecha-e-Atfal — sung performance on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=-UsI9d9kccE" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details><p><a class="landing-text-link" href="poetry.html#bazeecha">Explore this poem and more translations →</a></p>
 </div></div></div></div></section>
   </main><footer class="book-landing-footer"><div><a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a><p>Books and writings across worlds.</p></div><nav aria-label="Footer navigation"><a href="about.html">About</a><a href="books.html" aria-current="page">Books</a><a href="poetry.html">Writing</a><a href="index.html#media">Media</a><a href="index.html#contact">Contact</a></nav><p>© <span id="year"></span> Umar Rafi</p></footer><script src="script.js?v=mobile-entrance-fix-96"></script><script>
 (()=>{
@@ -213,4 +213,14 @@ Ghalib, I fancy; my confidant is he</div></section></div><p><a class="landing-te
  window.addEventListener('hashchange',()=>select(location.hash.slice(1)));
  select(location.hash.slice(1)||'the-story');
 })();
-</script></body></html>
+</script><script>
+document.querySelectorAll('.poem-performance').forEach(performance => {
+ performance.addEventListener('toggle', () => {
+  const frame = performance.querySelector('iframe');
+  if (performance.open) {
+   if (!frame.hasAttribute('src')) frame.src = frame.dataset.videoSrc;
+  } else frame.removeAttribute('src');
+ });
+});
+</script>
+</body></html>
