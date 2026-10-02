@@ -208,6 +208,19 @@ html body.site-branding .top-bar,html body.site-branding .top-bar .announcement{
 html body.home-layout .book-announcement,html body.home-layout .combined-book-announcement{background:#3c5a69}
 </style>
 <style id="media-fit">@media (min-width:901px){html body.home-layout #media .media-portrait{width:clamp(160px,22vh,220px)}html body.home-layout #media{padding-block:20px}}</style>
+<style id="home-clouds">
+html body.home-layout .home-cloud-background{background-image:linear-gradient(rgba(245,248,250,.5),rgba(245,248,250,.5)),url('images/home-sky-clouds-loop.webp');background-repeat:no-repeat,repeat-x;background-size:100% 100%,var(--cloud-w,2880px) var(--cloud-h,844px);background-position:0 0,0 0}
+html body.home-layout .home-cloud-background.clouds-moving{animation:clouds-drift var(--cloud-dur,150s) linear infinite}
+html body.home-layout .home-cloud-background.clouds-paused{animation-play-state:paused}
+@keyframes clouds-drift{from{background-position:0 0,0 0}to{background-position:0 0,calc(-1 * var(--cloud-w,2880px)) 0}}
+@media (prefers-reduced-motion:reduce){html body.home-layout .home-cloud-background.clouds-moving{animation:none}}
+html body.home-layout .home-cloud-background .profile-heading{color:#0f4d69}
+html body.home-layout .home-cloud-background .home-about p{color:#1b252c;font-weight:400}
+html body.home-layout .home-cloud-background .quote blockquote{color:#2b3d4d}
+html body.home-layout .home-cloud-background .quote p{color:#3d5062}
+html body.home-layout .home-cloud-background .home-professional-button{color:#1f4a61;font-weight:400}
+@media (min-width:901px){html body.home-layout #media{box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}}
+</style>
 </head>
 <body class="home-layout site-branding">
 <div class="top-bar"><div class="announcement"><span class="quote-text">“Man is not free from ignorance except when he knows that he is ignorant.”</span> <span class="quote-credit">— Averroes</span></div><nav class="social-links" aria-label="Social media"><a href="https://www.linkedin.com/in/umar-rafi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6H2V22h3.4V7.6ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.5c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.2V7.6H9.2V22h3.4v-8c0-2.1.4-4.1 3-4.1s3 2.4 3 4.2V22H22v-8.5Z"/></svg></a><a href="https://www.facebook.com/uxrafi" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.3-2.8-.3-2.8 0-4.7 1.7-4.7 4.9v2.6H7V13h3.2v9H14Z"/></svg></a></nav></div>
@@ -289,6 +302,22 @@ function update(){const pan=f.classList.contains('athens-panning'),max=f.scrollW
 window.athensPanUpdate=update;f.addEventListener('scroll',update,{passive:true});
 prev.addEventListener('click',()=>f.scrollBy({left:-f.clientWidth*.7,behavior:'smooth'}));next.addEventListener('click',()=>f.scrollBy({left:f.clientWidth*.7,behavior:'smooth'}));
 new MutationObserver(()=>{if(d.open)requestAnimationFrame(update)}).observe(d,{attributes:true,attributeFilter:['open']});
+})();
+</script>
+<script>
+(()=>{
+/* Clouds drift slowly from right to left while the cloud section is on screen; the Media strip fills the last screen. */
+const bg=document.querySelector('.home-cloud-background');if(!bg)return;
+const sky=bg.querySelector('.skydiving-showcase'),media=document.getElementById('media'),header=document.querySelector('.site-header'),footer=document.querySelector('body > footer');
+const RATIO=2048/600,SPEED=18;
+function size(){const w=bg.clientWidth,top=bg.getBoundingClientRect().top,visible=sky?sky.getBoundingClientRect().top-top:bg.clientHeight;
+ const h=Math.ceil(Math.max(w/1024*600,visible)),tw=Math.ceil(h*RATIO);
+ bg.style.setProperty('--cloud-h',h+'px');bg.style.setProperty('--cloud-w',tw+'px');bg.style.setProperty('--cloud-dur',Math.round(tw/SPEED)+'s');
+ if(media&&sky&&footer&&header){if(innerWidth<901){media.style.minHeight=''}else{media.style.minHeight='';const avail=innerHeight-header.offsetHeight-sky.offsetHeight-footer.offsetHeight;if(avail>media.offsetHeight)media.style.minHeight=Math.min(avail,420)+'px'}}}
+size();addEventListener('resize',size);addEventListener('load',size);
+if('IntersectionObserver' in window){bg.classList.add('clouds-moving','clouds-paused');
+ const target=bg.querySelector('.home-about')||bg;
+ new IntersectionObserver(es=>{for(const e of es)bg.classList.toggle('clouds-paused',!e.isIntersecting)},{threshold:.15}).observe(target)}
 })();
 </script>
 </body></html>
