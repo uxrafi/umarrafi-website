@@ -137,6 +137,13 @@ html body.about-reading-layout .about-story-column{display:block;min-width:0}
 html body.about-reading-layout main.about-page .about-story-column p{margin:0 0 1rem}
 html body.about-reading-layout main.about-page .about-story-column p:last-child{margin-bottom:0}
 @media(max-width:800px){html body.about-reading-layout main.about-page .about-columns{grid-template-columns:1fr;gap:1rem}}
+</style><style>
+/* Centre the action row in the remaining space between biography and footer. */
+html body.about-reading-layout main.about-page{flex:1;display:flex;padding-bottom:0!important}
+html body.about-reading-layout main.about-page>.about-article{flex:1;display:flex;flex-direction:column;margin-bottom:0}
+html body.about-reading-layout main.about-page .about-columns{flex-shrink:0}
+html body.about-reading-layout main.about-page .about-columns+.about-professional-access{flex:1;min-height:6rem;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0!important;padding:0}
+html body.about-reading-layout .about-action-buttons{justify-content:center}
 </style></head>
 <body class="about-reading-layout site-branding">
 
