@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=theme-20261002">
+<link rel="stylesheet" href="styles.css?v=final-20261002">
 
 <style>
 .book-poem-heading{margin:2rem 0 .5rem;font-size:2rem}
@@ -156,7 +156,23 @@ html body.novel-landing .landing-hero-copy .landing-deck{margin-top:1rem;margin-
 /* Compact stanza spacing while preserving each verse line. */
 body .poem-text .poem-stanza{display:block;white-space:pre-wrap;line-height:1.65;margin:0}
 body .poem-text .poem-stanza+.poem-stanza{margin-top:.55em}
-</style></head>
+</style><style id="landing-fit">
+@media (min-width:901px) and (max-height:760px){
+html body.book-landing .landing-hero{padding-top:14px;padding-bottom:14px}
+html body.book-landing .landing-hero-copy .landing-back{margin-bottom:18px}
+html body.book-landing .landing-hero-copy .landing-kicker{margin-bottom:10px}
+html body.book-landing .landing-hero-copy h1{margin-bottom:12px}
+html body.book-landing .landing-hero-copy .landing-deck{margin-top:8px;margin-bottom:12px}
+html body.book-landing .book-intro-columns,html body.book-landing .novel-intro-columns{padding-top:12px}
+html body.book-landing .landing-cover img{max-height:calc(100svh - 300px)}
+html body.book-landing .landing-cover figcaption{margin-top:16px}
+}
+@media (min-width:901px) and (max-height:640px){
+html body.book-landing .landing-hero-copy h1{font-size:clamp(2.2rem,4.2vw,3.2rem)}
+html body.book-landing .landing-hero-copy .landing-back{margin-bottom:10px}
+}
+</style>
+</head>
 <body class="book-landing novel-landing site-branding">
 
 <header class="site-header inner-page-header">

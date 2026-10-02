@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=theme-20261002">
+<link rel="stylesheet" href="styles.css?v=final-20261002">
 <style>
 .contact-page{width:min(1200px,90vw);margin:auto;padding:3.5rem 0 0}
 .contact-page-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:end}
@@ -267,7 +267,21 @@ html body.contact-layout .letter:has(.letter-speaking:not([hidden])) textarea{he
 html body.contact-layout .letter:has(.letter-speaking:not([hidden])) .letter-actions{margin-top:1rem}
 html body.contact-layout .letter .letter-speaking:not([hidden]){margin-top:.5rem}
 }
-</style></head><body class="site-branding contact-layout"><header class="site-header inner-page-header">
+</style><style id="title-standard">@media (min-width:901px){html body.contact-layout main.contact-page{padding-top:2.6rem!important}}</style>
+<style id="contact-fit">
+@media (min-width:901px) and (max-height:760px){
+html body.contact-layout main.contact-page{padding-top:2.6rem!important}
+html body.contact-layout .contact-page-heading h1{margin-bottom:.55rem!important}
+html body.contact-layout .contact-page-heading .about-rule{margin-bottom:.5rem!important;margin-top:0!important}
+html body.contact-layout .contact-page-heading .contact-tagline{font-size:1.2rem;margin-bottom:.4rem!important}
+html body.contact-layout .letter{margin-top:.6rem!important}
+html body.contact-layout .letter .letter-topics{margin-bottom:.7rem!important}
+html body.contact-layout .letter .letter-actions{margin-top:1rem!important}
+}
+@media (min-width:901px){html body.contact-layout .letter textarea#contact-message{height:var(--msg-h,96px)!important;min-height:0!important}}
+</style>
+<style id="contact-fit-narrow">@media (min-width:901px) and (max-width:1100px) and (max-height:620px){html body.contact-layout .letter .letter-topic span{font-size:.76rem;padding-left:.6rem;padding-right:.6rem}html body.contact-layout .contact-page-heading .contact-tagline{display:none}}</style>
+</head><body class="site-branding contact-layout"><header class="site-header inner-page-header">
 <a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
 <button class="menu" aria-label="Open navigation" aria-expanded="false">Menu</button>
 <nav aria-label="Main navigation"><a href="about.html">About</a><a href="books.html">Books</a><a href="poetry.html">Writing</a><a href="contact.html" aria-current="page">Contact</a></nav>
@@ -333,4 +347,14 @@ for(const [id,base,key] of [['compose-gmail','https://mail.google.com/mail/?view
  window.addEventListener('resize',alignLetter);
  alignLetter();
 })();
-</script></body></html>
+</script><script>
+(()=>{
+/* Size the message box so the Contact page always fits one screen on desktop, whatever the platform's font metrics. */
+const t=document.getElementById('contact-message');if(!t)return;const root=document.documentElement;const MIN=48,MAX=96;
+function fit(){if(innerWidth<901){root.style.removeProperty('--msg-h');return}
+ root.style.setProperty('--msg-h',MAX+'px');const over=root.scrollHeight-innerHeight;
+ root.style.setProperty('--msg-h',Math.max(MIN,Math.min(MAX,MAX-Math.max(0,over)))+'px')}
+fit();addEventListener('resize',fit);addEventListener('load',fit);const fm=document.getElementById('contact-form');if(fm)fm.addEventListener('change',()=>requestAnimationFrame(fit));if(document.fonts)document.fonts.ready.then(fit);
+})();
+</script>
+</body></html>

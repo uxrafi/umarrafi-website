@@ -380,7 +380,7 @@ footer.contact-strip{display:block;background:#105b79;color:#fff;padding:3rem 4v
 .landing-prose p{margin:0 0 1.5rem}.landing-prose p:last-child{margin-bottom:0}
 .landing-characters{padding:4.5rem 0;background:var(--landing-soft)}
 .landing-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem;margin-top:2.5rem}
-.landing-card-grid article{border-top:1px solid color-mix(in srgb,var(--landing-accent) 40%,transparent);padding-top:1.3rem}
+.landing-card-grid article{border-top:1px solid rgba(120,140,150,.35);border-top:1px solid color-mix(in srgb,var(--landing-accent) 40%,transparent);padding-top:1.3rem}
 .landing-card-number{font:300 .7rem 'Montserrat',sans-serif;color:var(--landing-accent)}
 .landing-card-grid h3{font:400 2rem/1.2 'Cormorant Garamond',Georgia,serif;margin:.8rem 0}
 .landing-card-grid h4{font:400 .8rem/1.5 'Montserrat',sans-serif;margin:0 0 .8rem}
