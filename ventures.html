@@ -145,6 +145,20 @@ body.ventures-layout .venture-dialog .venture-sector::before{content:" · ";colo
 body.ventures-layout .venture-dialog .venture-copy>p:last-child{margin:.9rem 0 0;font:300 1rem/1.65 Lato,Arial,sans-serif}
 @media(max-width:600px){body.ventures-layout .venture-dialog{padding:1.3rem 1.2rem 1.4rem}body.ventures-layout .venture-dialog .venture-entry{grid-template-columns:1fr;gap:.6rem}body.ventures-layout .venture-dialog .venture-brand{justify-content:flex-start;width:auto;height:48px}body.ventures-layout .venture-dialog .venture-brand img,body.ventures-layout .venture-dialog .venture-brand svg{width:auto;max-width:110px;height:48px}body.ventures-layout .venture-dialog .venture-title h2{font-size:1.7rem}body.ventures-layout .venture-dialog .venture-brand{justify-self:start}body.ventures-layout .venture-dialog .venture-sector{display:block;margin-top:.2rem}body.ventures-layout .venture-dialog .venture-sector::before{content:none}}
 </style>
+<style>
+/* Let the startup cards grow into the free space above the logo strip (desktop/tablet). */
+@media(min-width:601px){
+body.ventures-layout main.ventures-page{display:flex;flex-direction:column}
+body.ventures-layout main.ventures-page>.ventures-heading{flex:none}
+body.ventures-layout main.ventures-page>.venture-choices{flex:1 1 auto;grid-template-rows:repeat(2,minmax(0,1fr));max-height:400px;margin-bottom:1.6rem}
+body.ventures-layout main.ventures-page>.venture-choices .venture-choice{height:auto;min-height:0}
+body.ventures-layout main.ventures-page>.venture-choices .venture-choice-logo{zoom:1}
+}
+@media(min-width:601px) and (max-height:1000px){body.ventures-layout main.ventures-page>.venture-choices .venture-choice-logo{zoom:.85}}
+@media(min-width:601px) and (max-height:880px){body.ventures-layout main.ventures-page>.venture-choices .venture-choice-logo{zoom:.74}}
+@media(min-width:601px) and (max-height:780px){body.ventures-layout main.ventures-page>.venture-choices .venture-choice-logo{zoom:.66}}
+@media(min-width:601px) and (max-height:740px){body.ventures-layout main.ventures-page>.venture-choices .venture-choice-logo{zoom:.56}}
+</style>
 </head><body class="site-branding about-reading-layout ventures-layout">
 <header class="site-header inner-page-header">
 <a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
