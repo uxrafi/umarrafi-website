@@ -106,6 +106,14 @@ html body.books-layout .book-gallery .book-graphic-button{height:clamp(100px,cal
 html body.books-layout .book-gallery{align-items:stretch}
 html body.books-layout .book-gallery-card .book-description-button{margin-top:auto}
 }
+</style><style>
+/* Try the full finance title on one line, at the same size as its neighbours. */
+@media(min-width:901px){
+html body.books-layout main.books-gallery-page{width:min(1400px,94vw)}
+html body.books-layout .book-gallery{gap:1.5rem}
+html body.books-layout .book-gallery-card{min-width:0}
+html body.books-layout .book-gallery-card h2{max-width:none;white-space:nowrap;min-height:0}
+}
 </style></head>
 <body class="books-layout site-branding">
 
