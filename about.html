@@ -64,6 +64,27 @@ body.about-reading-layout.site-branding{min-height:100vh;min-height:100dvh;displ
 body.about-reading-layout.site-branding>main{flex:1 0 auto;width:100%;box-sizing:border-box}
 body.about-reading-layout.site-branding>header,body.about-reading-layout.site-branding>footer{flex:none}
 </style>
+<style>
+/* About text: same look as before on phones/tablets; two columns on wider screens so it fits one screen. */
+body.about-reading-layout main.about-page .about-columns p{font:300 1.1rem/1.75 Lato,Arial,sans-serif;color:#292f34;margin:1em 0}
+@media(max-width:600px){body.about-reading-layout main.about-page .about-columns p{font-size:1.05rem}}
+@media(min-width:901px){
+body.about-reading-layout main.about-page{padding-top:1.4rem;padding-bottom:1.6rem}
+body.about-reading-layout main.about-page .about-article{max-width:1180px}
+body.about-reading-layout main.about-page .about-article>h1{font-size:clamp(2.4rem,3.4vw,3.3rem);margin:.2rem 0 .6rem}
+body.about-reading-layout main.about-page .about-article>.about-rule{margin-bottom:1.1rem}
+body.about-reading-layout main.about-page .about-professional-access{margin-bottom:1.3rem}
+body.about-reading-layout main.about-page .about-columns{column-count:2;column-gap:3.5rem}
+body.about-reading-layout main.about-page .about-columns p{font-size:1.02rem;line-height:1.68;margin:0 0 .85rem;break-inside:avoid}
+}
+@media(min-width:901px) and (max-height:800px){
+body.about-reading-layout main.about-page .about-article>h1{font-size:2.3rem;margin:0 0 .4rem}
+body.about-reading-layout main.about-page .about-article>.about-rule{margin-bottom:.8rem}
+body.about-reading-layout main.about-page .about-professional-access{margin-bottom:.9rem}
+body.about-reading-layout main.about-page .about-columns p{font-size:.98rem;line-height:1.6;margin-bottom:.7rem}
+}
+@media(min-width:901px) and (max-height:740px){body.about-reading-layout main.about-page{padding-top:.8rem;padding-bottom:.8rem}body.about-reading-layout main.about-page .about-columns p{margin-bottom:.55rem}}
+</style>
 </head>
 <body class="about-reading-layout site-branding">
 
@@ -76,13 +97,13 @@ body.about-reading-layout.site-branding>header,body.about-reading-layout.site-br
 
 
 
-<main id="top" class="about-page"><article class="about-article"><h1>The journey behind the writing.</h1><div class="about-rule"></div><div class="about-professional-access"><div class="about-action-buttons"><a class="about-secondary-button" href="books.html">Explore Umar’s books <span aria-hidden="true">→</span></a><a class="professional-background-trigger" href="ventures.html">Startup Journey <span aria-hidden="true">→</span></a><a class="about-secondary-button" href="poetry.html">Poetry &amp; translations <span aria-hidden="true">→</span></a></div><span class="professional-access-caption">Aviation, career, education &amp; research</span></div><p>I was born in Pakistan, and life has since carried me to Iraq, Canada, the United States, the UAE, Saudi Arabia, Lebanon and Malaysia. Each move brought new ways of living, believing and seeing the world. My work has taken me through aviation, technology, finance and entrepreneurship, and each has shown me something of people and the institutions they build.</p>
+<main id="top" class="about-page"><article class="about-article"><h1>The journey behind the writing.</h1><div class="about-rule"></div><div class="about-professional-access"><div class="about-action-buttons"><a class="about-secondary-button" href="books.html">Explore Umar’s books <span aria-hidden="true">→</span></a><a class="professional-background-trigger" href="ventures.html">Startup Journey <span aria-hidden="true">→</span></a><a class="about-secondary-button" href="poetry.html">Poetry &amp; translations <span aria-hidden="true">→</span></a></div><span class="professional-access-caption">Aviation, career, education &amp; research</span></div><div class="about-columns"><p>I was born in Pakistan, and life has since carried me to Iraq, Canada, the United States, the UAE, Saudi Arabia, Lebanon and Malaysia. Each move brought new ways of living, believing and seeing the world. My work has taken me through aviation, technology, finance and entrepreneurship, and each has shown me something of people and the institutions they build.</p>
 <p>Yet the deepest lessons came through friendship. Across borders drawn by conflict and divided by competing stories, I have found lifelong friends of many nationalities and faiths. Their kindness, set against the quarrels of our nations, left me with a question my fiction keeps returning to: why do compassionate, well-meaning people so often end up on opposite sides?</p>
 <p>Literature lets me sit with that question inside other lives, in their loves and loyalties, their ambitions, and the choices that test them. My first novel grew from the places and people that shaped me and became a story of love, duty and becoming.</p>
 <p>Much of that shaping happened on the road, from childhood journeys across the Middle East and South Asia to later years among countries that regarded one another as rivals. I have broken bread with people of many faiths, and I count friends on both sides of more than one conflict.</p>
 <p>Finance and technology taught me how systems shape the people inside them. But it is the encounters that remain: a city once visited and later remembered, a face that keeps an adversary from becoming an abstraction. They are what I return to when I write, and why literature remains closest to my heart.</p>
 <p>Poetry is another doorway into those lives. Beside my own verse, I translate from Urdu and my native Punjabi into English, carrying voices I love to new readers, one more bridge across the languages and cultures that have made me.</p>
-<p>I hold a B.S. in applied mathematics from the United States Air Force Academy, an M.S. in computer science from Wichita State University, a Ph.D. in finance from INCEIF, and an M.S. in machine learning from Georgia Tech.</p></article></main>
+<p>I hold a B.S. in applied mathematics from the United States Air Force Academy, an M.S. in computer science from Wichita State University, a Ph.D. in finance from INCEIF, and an M.S. in machine learning from Georgia Tech.</p></div></article></main>
 <dialog id="professional-background" class="professional-dialog" aria-labelledby="professional-title">
  <div class="professional-dialog-heading"><div><p class="professional-kicker">Beyond the writing</p><h2 id="professional-title">Professional background</h2></div><button type="button" class="professional-close" aria-label="Close professional background" autofocus>Close ×</button></div>
  <div class="professional-dialog-content professional-narrative">
