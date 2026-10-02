@@ -398,7 +398,7 @@ They have never, interested me
 Ghalib, the wretch; when he leaves 
 The world, without him, will not cease 
 So, when he dies, no need to mourn 
-So, when he dies, no need to grieve</div></section></div></div></details></div></section><section id="punjabi-translations" class="poetry-group"><h2>Punjabi translations</h2><div class="poetry-cards"><details class="poem-card" id="waris-shah"><summary><span class="poem-title">Ajj Aakhaan Waris Shah Nu — Today I Call Waris Shah</span><span class="poem-credit">Amrita Pritam · Punjabi · English translation by Umar Rafi</span><span class="poem-preview">Today, I call Waris Shah, “Speak from inside your grave”</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><p class="poem-date">Translation dated 2005.</p><div class="parallel-poem"><section class="parallel-poem-column"><h4>Roman Punjabi</h4><div class="poem-text source-text" lang="pa-Latn">aaj aakhaN Waris Shah nuuN, kitoN kabraaN vichchoN bol,
+So, when he dies, no need to grieve</div></section></div><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/49XOMo2hak0" title="Dil Hi To Hai — sung performance on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=49XOMo2hak0" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details></div></details></div></section><section id="punjabi-translations" class="poetry-group"><h2>Punjabi translations</h2><div class="poetry-cards"><details class="poem-card" id="waris-shah"><summary><span class="poem-title">Ajj Aakhaan Waris Shah Nu — Today I Call Waris Shah</span><span class="poem-credit">Amrita Pritam · Punjabi · English translation by Umar Rafi</span><span class="poem-preview">Today, I call Waris Shah, “Speak from inside your grave”</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><p class="poem-date">Translation dated 2005.</p><div class="parallel-poem"><section class="parallel-poem-column"><h4>Roman Punjabi</h4><div class="poem-text source-text" lang="pa-Latn">aaj aakhaN Waris Shah nuuN, kitoN kabraaN vichchoN bol,
 te aaj kitab-e ishq daa koii aglaa varkaa phol
 
 ik roii sii dhii punjaab dii, tuuN likh likh maare vaen,
@@ -775,4 +775,14 @@ But at the dais of political gatherings....</div></div></details></div></section
 <div class="contact-invite"><h2>Stay in touch with Umar</h2><p>Follow along for books, writings, and ideas across worlds.</p><div class="contact-actions"><a href="https://www.linkedin.com/in/umar-rafi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg style="width:1.25rem;height:1.25rem;vertical-align:middle" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6H2V22h3.4V7.6ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.5c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.2V7.6H9.2V22h3.4v-8c0-2.1.4-4.1 3-4.1s3 2.4 3 4.2V22H22v-8.5Z"/></svg></a><a href="https://www.facebook.com/uxrafi" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg style="width:1.25rem;height:1.25rem;vertical-align:middle" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.3-2.8-.3-2.8 0-4.7 1.7-4.7 4.9v2.6H7V13h3.2v9H14Z"/></svg></a></div></div></div>
 <nav class="contact-strip-nav" aria-label="Footer navigation"><a href="about.html">About</a><a href="books.html">Books</a><a href="poetry.html" aria-current="page">Writing</a><a href="index.html#media">Media</a><a href="index.html#contact">Contact</a></nav>
 <p class="contact-copyright">Copyright © <span id="year"></span> Umar Rafi</p>
-</footer><script src="script.js?v=mobile-entrance-fix-96"></script></body></html>
+</footer><script src="script.js?v=mobile-entrance-fix-96"></script><script>
+document.querySelectorAll('.poem-performance').forEach(performance => {
+ performance.addEventListener('toggle', () => {
+  const frame = performance.querySelector('iframe');
+  if (performance.open) {
+   if (!frame.hasAttribute('src')) frame.src = frame.dataset.videoSrc;
+  } else frame.removeAttribute('src');
+ });
+});
+</script>
+</body></html>
