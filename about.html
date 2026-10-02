@@ -155,6 +155,13 @@ html body.about-reading-layout .about-action-buttons{justify-content:center}
 html body.about-reading-layout{display:flex;flex-direction:column;min-height:100dvh;height:auto}
 html body.about-reading-layout>.site-header,html body.about-reading-layout>footer{flex-shrink:0}
 html body.about-reading-layout main.about-page{flex:1 0 auto;min-height:0;height:auto}
+</style><style>
+/* Give the biography more room without shrinking the type. */
+@media(min-width:901px){
+html body.about-reading-layout main.about-page{padding-top:2.1rem}
+html body.about-reading-layout main.about-page .about-columns{margin-top:clamp(.4rem,calc(10vh - 3.4rem),2.2rem)}
+html body.about-reading-layout main.about-page .about-columns+.about-professional-access{min-height:4.5rem}
+}
 </style></head>
 <body class="about-reading-layout site-branding">
 
