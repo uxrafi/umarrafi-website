@@ -954,3 +954,6 @@ html{scroll-padding-top:80px}
 
 .home-layout .combined-book-announcement .book-strip-title{color:#fff36a}
 .home-layout .combined-book-announcement a:hover .book-strip-title{color:#ffeb32}
+
+/* Favor the foreground figures over the upper architecture in the hero crop. */
+.home-layout .art-hero>img{object-position:center 80%}
