@@ -292,4 +292,38 @@ document.querySelectorAll('.poem-performance').forEach(performance => {
  });
 });
 </script>
+<style>
+/* × close buttons for anything a button opens */
+[role="tabpanel"]:has(>.reveal-close),details.poem-card,details.poem-performance{position:relative}
+.reveal-close{position:absolute;top:.5rem;right:.5rem;z-index:2;display:flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;margin:0;padding:0;border:0;border-radius:50%;background:transparent;color:#24556e;font:300 1.6rem/1 Lato,Arial,sans-serif;cursor:pointer}
+.reveal-close:hover,.reveal-close:focus-visible{background:#dbe7ed}
+.reveal-close:focus-visible{outline:2px solid #4d7186;outline-offset:2px}
+details.poem-performance>.reveal-close{top:.6rem;right:0;width:1.9rem;height:1.9rem;font-size:1.35rem}
+details.poem-card[open]>summary{padding-right:2.6rem}
+</style>
+<script>
+(()=>{
+/* Every panel opened by a button gets a × that closes it and returns the button to normal. */
+function addClose(host,label,close,before){
+ const b=document.createElement('button');b.type='button';b.className='reveal-close';b.setAttribute('aria-label',label);b.textContent='×';
+ b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();close(e.detail===0)});
+ before?before.after(b):host.prepend(b);
+}
+const tabs=[...document.querySelectorAll('[role="tab"][aria-controls],[role="tab"][href^="#"]')];
+const tabFor=p=>tabs.find(t=>(t.getAttribute('aria-controls')||t.hash?.slice(1))===p.id);
+document.querySelectorAll('[role="tabpanel"]').forEach(panel=>addClose(panel,'Close section',keyboard=>{
+ const tab=tabFor(panel);
+ panel.hidden=true;
+ panel.querySelectorAll('details[open]').forEach(d=>d.open=false);
+ tabs.forEach((t,i)=>{t.setAttribute('aria-selected','false');t.tabIndex=i===0?0:-1});
+ if(tab){tab.closest('[role="tablist"]')?.scrollIntoView({block:'nearest',behavior:'smooth'});if(keyboard)tab.focus({preventScroll:true});else document.activeElement?.blur()}
+}));
+document.querySelectorAll('details.poem-card,details.poem-performance').forEach(d=>{
+ const summary=d.querySelector(':scope>summary');
+ addClose(d,d.classList.contains('poem-card')?'Close poem':'Close performance',keyboard=>{d.open=false;if(keyboard)summary.focus({preventScroll:true});else document.activeElement?.blur()},summary);
+});
+/* Closing a poem also closes (and stops) any performance inside it. */
+document.querySelectorAll('details.poem-card').forEach(d=>d.addEventListener('toggle',()=>{if(!d.open)d.querySelectorAll('details.poem-performance[open]').forEach(x=>x.open=false)}));
+})();
+</script>
 </body></html>
