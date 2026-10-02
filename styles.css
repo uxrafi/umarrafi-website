@@ -957,3 +957,5 @@ html{scroll-padding-top:80px}
 
 /* Favor the foreground figures over the upper architecture in the hero crop. */
 .home-layout .art-hero>img{object-position:center 80%}
+
+@media(max-width:800px){.site-header nav[aria-label="Main navigation"]{transform:none;left:0;right:0;width:auto}}
