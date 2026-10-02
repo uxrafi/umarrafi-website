@@ -959,3 +959,6 @@ html{scroll-padding-top:80px}
 .home-layout .art-hero>img{object-position:center 80%}
 
 @media(max-width:800px){.site-header nav[aria-label="Main navigation"]{transform:none;left:0;right:0;width:auto}}
+
+/* Native popups scroll internally while the page stays still. */
+html:has(dialog[open]){overflow:hidden}
