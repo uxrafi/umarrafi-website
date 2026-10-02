@@ -934,3 +934,14 @@ html{scroll-padding-top:80px}
 .home-layout .combined-book-announcement .book-strip-title{color:#580b1c}
 
 .home-layout .top-bar .announcement a,.home-layout .combined-book-announcement a{color:inherit}
+
+/* A literary feature beneath the painting, with professional marks on Ventures. */
+.home-layout .home-featured-book{display:grid;grid-template-columns:150px minmax(0,650px);justify-content:center;align-items:center;gap:2.5rem;padding:2rem 6vw;background:#e5eef3}
+.home-featured-book .featured-cover img{display:block;width:150px;height:205px;object-fit:contain}
+.home-featured-book h2{font-size:clamp(2rem,3vw,3rem);line-height:1.15;margin:.35rem 0 .75rem}
+.home-featured-book h2 a{text-decoration:none}
+.home-featured-book .featured-date{font:300 .8rem/1.5 Montserrat,sans-serif;color:#34586c;margin:0}
+.home-featured-book p{font-size:1.05rem;margin:.5rem 0 1rem}
+.ventures-affiliations{padding:1.5rem 0 2rem;background:#e5eef3}
+.ventures-affiliations>h2{text-align:center;font-size:2rem;margin:0 1rem 1.5rem}
+@media(max-width:650px){.home-layout .home-featured-book{grid-template-columns:100px minmax(0,1fr);gap:1rem;padding:1.5rem 5vw}.home-featured-book .featured-cover img{width:100px;height:150px}.home-featured-book h2{font-size:1.8rem}.home-featured-book p{font-size:.95rem}}
