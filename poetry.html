@@ -194,7 +194,16 @@ html body.poetry-layout main.poetry-page{padding-top:1.8rem}
 @media(max-width:600px){#mural-explorer.mural-explorer .mural-section-pill{font-size:.7rem;padding:.25rem .55rem}#mural-explorer.mural-explorer .mural-marker{width:26px;height:26px}}
 </style>
 <noscript><style>/* Without JavaScript, show every section */html body [role="tabpanel"][role][hidden],html body main .book-reading-panel[hidden],html body main .book-tab-panel[hidden],html body main .poetry-group[hidden]{display:block!important}.reveal-close,[role="tablist"]{display:none!important}</style></noscript>
-</head>
+<style>
+body .poetry-category-dialog{box-sizing:border-box;width:min(1050px,92vw);max-width:92vw;max-height:88svh;margin:auto;padding:2.8rem 2rem 2rem;border:1px solid #adc1cc;border-radius:8px;background:#f7fafb;color:#292f34;box-shadow:0 20px 80px rgb(18 43 59 / .35);overflow-y:auto}
+.poetry-category-dialog::backdrop{background:rgb(18 35 47 / .55)}
+.poetry-category-dialog .poetry-group{margin:0;padding-top:0}
+.poetry-category-dialog .poetry-group[hidden]{display:none!important}
+.poetry-dialog-close{position:absolute;right:.8rem;top:.6rem;width:2.2rem;height:2.2rem;border:0;border-radius:50%;background:transparent;color:#24556e;font:300 1.6rem/1 Lato,Arial,sans-serif;cursor:pointer}
+.poetry-dialog-close:hover,.poetry-dialog-close:focus-visible{background:#dbe7ed}
+.poetry-category-tabs button[aria-expanded="true"]{background:#4d7186;color:white;border-color:#4d7186}
+@media(max-width:700px){body .poetry-category-dialog{padding:2.8rem 1.2rem 1.2rem}}
+</style></head>
 <body class="poetry-layout site-branding">
 
 <header class="site-header inner-page-header">
@@ -982,32 +991,29 @@ document.querySelectorAll('.poem-performance').forEach(performance => {
 });
 </script>
 <script>
-(() => {
- const tabs=[...document.querySelectorAll('.poetry-category-tabs [role="tab"]')];
- const panels=[...document.querySelectorAll('.poetry-group[role="tabpanel"]')];
- function select(id) {
-  const target=document.getElementById(id);
-  const panel=target && (panels.includes(target)?target:target.closest('.poetry-group'));
-  if(!panel)return;
-  panels.forEach(p=>{p.hidden=p!==panel;if(p.hidden)p.querySelectorAll('.poem-performance[open]').forEach(v=>v.open=false)});
-  tabs.forEach(t=>{const active=t.getAttribute('aria-controls')===panel.id;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1});
-  if(target.matches('.poem-card'))target.open=true;
+(()=>{
+ const controls=[...document.querySelectorAll('.poetry-category-tabs button')];
+ const panels=[...document.querySelectorAll('.poetry-group')];
+ document.querySelector('.poetry-category-tabs').removeAttribute('role');
+ const dialog=document.createElement('dialog');dialog.id='poetry-category-dialog';dialog.className='poetry-category-dialog';
+ const close=document.createElement('button');close.type='button';close.className='poetry-dialog-close';close.textContent='×';close.setAttribute('aria-label','Close poetry category');dialog.append(close);document.body.append(dialog);
+ panels.forEach(p=>{p.removeAttribute('role');p.hidden=true;dialog.append(p)});
+ let opener=null;
+ function open(id,trigger){
+ const target=document.getElementById(id),panel=target&&(panels.includes(target)?target:target.closest('.poetry-group'));if(!panel)return;
+ panels.forEach(p=>p.hidden=p!==panel);
+ controls.forEach(b=>b.setAttribute('aria-expanded',String(b.getAttribute('aria-controls')===panel.id)));
+ dialog.setAttribute('aria-labelledby',panel.getAttribute('aria-labelledby'));opener=trigger;
+ if(target.matches('.poem-card'))target.open=true;
+ if(!dialog.open)dialog.showModal();dialog.scrollTop=0;close.focus();
  }
- tabs.forEach((tab,i)=>{
-  tab.addEventListener('click',()=>{select(tab.getAttribute('aria-controls'));history.replaceState(null,'',location.pathname+location.search)});
-  tab.addEventListener('keydown',event=>{
-   if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
-   event.preventDefault();
-   const n=event.key==='Home'?0:event.key==='End'?tabs.length-1:(i+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
-   tabs[n].focus();tabs[n].click();
-  });
- });
- window.addEventListener('hashchange',()=>select(location.hash.slice(1)));
- panels.forEach(panel=>panel.hidden=true);
- tabs.forEach((tab,i)=>{tab.setAttribute('aria-selected','false');tab.tabIndex=i===0?0:-1});
- if(panels.some(panel=>'#'+panel.id===location.hash))history.replaceState(null,'',location.pathname+location.search);
-})();
-</script><style>
+ controls.forEach(b=>{b.removeAttribute('role');b.removeAttribute('aria-selected');b.removeAttribute('tabindex');b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-expanded','false');b.addEventListener('click',()=>open(b.getAttribute('aria-controls'),b))});
+ close.addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()});
+ dialog.addEventListener('close',()=>{controls.forEach(b=>b.setAttribute('aria-expanded','false'));dialog.querySelectorAll('details.poem-performance[open]').forEach(d=>d.open=false);opener?.focus({preventScroll:true})});
+ window.addEventListener('hashchange',()=>open(location.hash.slice(1),null));
+ const initial=location.hash.slice(1);if(initial&&!panels.some(p=>p.id===initial))open(initial,null);
+})();</script><style>
 /* × close buttons for anything a button opens */
 [role="tabpanel"]:has(>.reveal-close),details.poem-card,details.poem-performance{position:relative}
 .reveal-close{position:absolute;top:.5rem;right:.5rem;z-index:2;display:flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;margin:0;padding:0;border:0;border-radius:50%;background:transparent;color:#24556e;font:300 1.6rem/1 Lato,Arial,sans-serif;cursor:pointer}
