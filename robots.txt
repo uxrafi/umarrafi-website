@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /README.md
+Disallow: /wrangler.jsonc
+Sitemap: https://umarrafi-website.pages.dev/sitemap.xml

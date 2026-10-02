@@ -927,3 +927,10 @@ html{scroll-padding-top:80px}
 
 /* Reduce the pause between the quote and skydiving gallery by half an inch. */
 .home-layout .quote{padding-bottom:calc(10rem - 48px)}
+
+
+/* Readable announcement text on the existing light blue bands. */
+.home-layout .top-bar .announcement,.home-layout .combined-book-announcement{color:#102533}
+.home-layout .combined-book-announcement .book-strip-title{color:#580b1c}
+
+.home-layout .top-bar .announcement a,.home-layout .combined-book-announcement a{color:inherit}
