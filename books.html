@@ -40,6 +40,12 @@
 .site-branding footer p{margin:0;font-size:.75rem}
 .contact-layout footer.book-landing-footer>div,.contact-layout footer.book-landing-footer>p{display:block}
 @media(max-width:650px){.site-branding footer{flex-direction:row!important;text-align:left}.site-branding footer .author-name{font-size:.85rem}.contact-layout footer.book-landing-footer{justify-content:space-between}}
+</style><style>
+/* Keep the Books footer against the viewport bottom on short pages. */
+body.books-layout.site-branding{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;margin:0;padding-bottom:0}
+.books-layout.site-branding>.site-header{flex-shrink:0}
+.books-layout.site-branding>.books-gallery-page{flex:1 0 auto}
+.books-layout.site-branding>footer.book-landing-footer{flex-shrink:0;margin-bottom:0}
 </style></head>
 <body class="books-layout site-branding">
 
