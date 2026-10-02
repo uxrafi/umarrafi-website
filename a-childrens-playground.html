@@ -102,7 +102,17 @@ body.book-landing.site-branding>main{flex:1 0 auto;width:100%;box-sizing:border-
 body.book-landing.site-branding>header,body.book-landing.site-branding>footer{flex:none}
 </style>
 <noscript><style>/* Without JavaScript, show every section */html body [role="tabpanel"][role][hidden],html body main .book-reading-panel[hidden],html body main .book-tab-panel[hidden],html body main .poetry-group[hidden]{display:block!important}.reveal-close,[role="tablist"]{display:none!important}</style></noscript>
-</head>
+<style>
+body .novel-reading-dialog{box-sizing:border-box;width:min(1000px,92vw);max-width:92vw;max-height:88svh;margin:auto;padding:2.8rem 2rem 2rem;border:1px solid #adc1cc;border-radius:8px;background:#f7fafb;color:#292f34;box-shadow:0 20px 80px rgb(18 43 59 / .35);overflow-y:auto}
+.novel-reading-dialog::backdrop{background:rgb(18 35 47 / .55)}
+.novel-reading-dialog .book-reading-panel{padding:0;border:0}
+.novel-dialog-close{position:absolute;right:.8rem;top:.6rem;width:2.2rem;height:2.2rem;border:0;border-radius:50%;background:transparent;color:#24556e;font:300 1.6rem/1 Lato,Arial,sans-serif;cursor:pointer}
+.novel-dialog-close:hover,.novel-dialog-close:focus-visible{background:#dbe7ed}
+.novel-reading-dialog .landing-prose{max-width:none}
+.novel-reading-dialog .landing-prose p{font:300 1.05rem/1.8 Lato,Arial,sans-serif}
+.novel-landing .book-hero-buttons a[aria-expanded="true"]{background:#4d7186;color:white}
+@media(max-width:700px){body .novel-reading-dialog{padding:2.8rem 1.2rem 1.2rem}}
+</style></head>
 <body class="book-landing novel-landing site-branding">
 
 <header class="site-header inner-page-header">
@@ -157,7 +167,7 @@ body.book-landing.site-branding>header,body.book-landing.site-branding>footer{fl
 <p>To you, the reader, I offer my sincere gratitude for taking the time to read my books and writings, with the hope that you may embark on your own personal Kyoto adventure.</p>
 </div></div>
 <div id="ghalib-title-note" class="book-reading-panel" role="tabpanel" aria-labelledby="tab-ghalib-title-note" hidden><div class="landing-prose">
-<p>The title of this novel is derived from the opening phrase of the first verse of one of Mirza Ghalib's most celebrated ghazals - <em>Bazeecha-e-Atfal</em>. Translating the non-English dialogue and poetry present in the book into English proved to be a daunting task. However, I recognize the importance of providing readers with an understanding of the final poem that concludes the book. It is challenging to retain the essence of Ghalib's words in any translation. However, I hope my efforts enable readers to appreciate the beauty of his language and the depth of his poetry, even in translation.</p>
+<p>The title of this novel is derived from the opening phrase of the first verse of one of the most celebrated ghazals by Mirza Ghalib, the nineteenth-century Urdu and Persian poet - <em>Bazeecha-e-Atfal</em>. Translating the non-English dialogue and poetry present in the book into English proved to be a daunting task. However, I recognize the importance of providing readers with an understanding of the final poem that concludes the book. It is challenging to retain the essence of Ghalib's words in any translation. However, I hope my efforts enable readers to appreciate the beauty of his language and the depth of his poetry, even in translation.</p>
 <p>The term <em>Bazeecha-e-atfal</em> is derived from two words: <em>Bazeecha</em> which means a playground or play area, and <em>Atfal,</em> which is the plural of the Arabic word <em>tifl</em> meaning child. Therefore, the phrase can be translated to mean ‘A Children's Playground.’ However, the phrase also carries a poetic connotation, evoking the idea of the fleeting nature of life and the impermanence of our existence. In the context of the book, the phrase refers to the front yard of the house in Islamabad where I spent my childhood. The yard is described in detail in the book, providing readers with a vivid sense of the physical space that inspired the title.</p>
 <p><em>Ghazal</em> originated as an Arabic poetic form in the 7th century and spread to Iran and South Asia during the 12th century under the influence of Sufi mystics. Due to its strict restrictions on rhyme and meter, it is one of the most difficult genres of poetry to write and to sing.</p>
 <p>The root word of <em>ghazal</em> - <em>ghazl</em> - has multiple meanings, one of which is ‘talking to women.’ Another meaning is the ‘final dying wail of a young graceful doe,’ as it is killed by a hunter's arrow. The English word ‘gazelle,’ is also derived from <em>ghazl</em>. Thus, a <em>ghazal</em> is used to express admiration for women along with the tragedies of unrequited and unfulfilled love that dies a tragic death well before its time.</p>
@@ -274,17 +284,30 @@ Ghalib, I fancy; my confidant is he</div></section></div><details class="poem-pe
 </div></div></div></div></section>
   </main><footer class="book-landing-footer"><div><a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a></div><p>© <span id="year"></span> Umar Rafi</p></footer><script src="script.js?v=mobile-entrance-fix-96"></script><script>
 (()=>{
- const tabs=[...document.querySelectorAll('.book-hero-buttons [role="tab"]')];
+ const controls=[...document.querySelectorAll('.book-hero-buttons a')];
  const panels=[...document.querySelectorAll('.book-reading-panel')];
- function select(id){if(id==='bazeecha-e-atfal')id='ghalib-title-note';if(!panels.some(p=>p.id===id))return;panels.forEach(p=>p.hidden=p.id!==id);tabs.forEach(t=>{const active=t.getAttribute('aria-controls')===id;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;});}
- tabs.forEach((tab,i)=>{tab.addEventListener('click',event=>{event.preventDefault();select(tab.hash.slice(1));history.replaceState(null,'',location.pathname+location.search);});tab.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const n=event.key==='Home'?0:event.key==='End'?tabs.length-1:(i+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;tabs[n].focus();tabs[n].click();});});
- document.querySelector('.ghalib-intro-link').addEventListener('click',event=>{event.preventDefault();select('ghalib-title-note');document.getElementById('ghalib-title-note').scrollIntoView({behavior:'smooth',block:'start'});});
- window.addEventListener('hashchange',()=>select(location.hash.slice(1)));
- panels.forEach(p=>p.hidden=true);
- tabs.forEach((t,i)=>{t.setAttribute('aria-selected','false');t.tabIndex=i===0?0:-1;});
+ const nav=document.querySelector('.book-hero-buttons');nav.removeAttribute('role');
+ const dialog=document.createElement('dialog');dialog.className='novel-reading-dialog';dialog.id='novel-reading-dialog';
+ const close=document.createElement('button');close.type='button';close.className='novel-dialog-close';close.textContent='×';close.setAttribute('aria-label','Close reading');
+ dialog.append(close);document.body.append(dialog);
+ panels.forEach(p=>{p.removeAttribute('role');p.hidden=true;dialog.append(p)});
+ document.getElementById('bazeecha-e-atfal').hidden=true;
+ let opener=null;
+ function open(id,trigger){if(id==='bazeecha-e-atfal')id='ghalib-title-note';const panel=panels.find(p=>p.id===id);if(!panel)return;
+ panels.forEach(p=>p.hidden=p!==panel);controls.forEach(a=>a.setAttribute('aria-expanded',String(a.hash==='#'+id)));
+ dialog.setAttribute('aria-labelledby',panel.getAttribute('aria-labelledby'));opener=trigger;
+ if(!dialog.open)dialog.showModal();dialog.scrollTop=0;close.focus();
+ }
+ controls.forEach(a=>{a.removeAttribute('role');a.removeAttribute('aria-selected');a.removeAttribute('tabindex');a.setAttribute('aria-haspopup','dialog');a.setAttribute('aria-expanded','false');
+ a.addEventListener('click',e=>{e.preventDefault();open(a.hash.slice(1),a)});
+ });
+ document.querySelector('.ghalib-intro-link').addEventListener('click',e=>{e.preventDefault();open('ghalib-title-note',e.currentTarget)});
+ close.addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()});
+ dialog.addEventListener('close',()=>{controls.forEach(a=>a.setAttribute('aria-expanded','false'));dialog.querySelectorAll('details[open]').forEach(d=>d.open=false);opener?.focus({preventScroll:true})});
+ window.addEventListener('hashchange',()=>open(location.hash.slice(1),null));
  if(location.hash)history.replaceState(null,'',location.pathname+location.search);
-})();
-</script><script>
+})();</script><script>
 document.querySelectorAll('.poem-performance').forEach(performance => {
  performance.addEventListener('toggle', () => {
   const frame = performance.querySelector('iframe');
