@@ -128,7 +128,7 @@ html body .bt-era-btn .bt-era-def{line-height:1.3;margin-bottom:.4rem}
 </style>
 <style id="bt-onescreen">
 @media (min-width:901px){
-html body.bt-layout .bt-first{min-height:calc(100svh - 60px - var(--bt-strip,72px) - var(--bt-foot,60px))}
+
 html body.bt-layout main.bt-page{padding-bottom:0!important}html body.bt-layout .bt-first .bt-eras{padding:clamp(1rem,3vh,2.2rem) 0 clamp(.9rem,2.4vh,1.6rem)!important}
 }
 html body.bt-layout .bt-more{display:flex;justify-content:center;align-items:center;gap:.9rem;flex-wrap:wrap;margin:0 0 clamp(1rem,3.2vh,2.4rem)}
@@ -144,44 +144,23 @@ html body.bt-layout .bt-edu-panel .bt-next a{display:inline-flex;align-items:cen
 @media (max-width:900px){html body.bt-layout .bt-edu-panel ol{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){html body.bt-layout .bt-edu-panel ol{grid-template-columns:1fr}}
 </style>
-<style id="bt-fit">
-@media (min-width:901px) and (max-height:960px){
-html body.bt-layout .bt-first .bt-intro{margin-top:1.1rem!important}
-html body.bt-layout .bt-first .bt-intro p{font-size:.97rem!important;line-height:1.6!important}
-html body.bt-layout .bt-era-btn:not(.bt-more-btn){padding:.8rem 1.15rem .75rem!important}
-html body.bt-layout .bt-era-btn .bt-era-num{font-size:2.5rem!important}
-html body.bt-layout .bt-era-btn .bt-era-name{font-size:1.3rem!important;margin:.2rem 0 .15rem!important}
-html body.bt-layout .bt-era-btn .bt-era-def{font-size:.95rem!important;line-height:1.3!important;margin-bottom:.4rem!important}
-}
-@media (min-width:901px) and (max-height:800px){
-html body.bt-layout .bt-heading .about-rule{margin-top:.5rem!important;margin-bottom:.5rem!important}
-html body.bt-layout .bt-first .bt-intro{margin-top:.7rem!important;gap:2.4rem!important}
-html body.bt-layout .bt-first .bt-intro p{font-size:.92rem!important;line-height:1.5!important}
-html body.bt-layout .bt-era-btn .bt-era-num{font-size:2.1rem!important}
-html body.bt-layout .bt-era-btn .bt-era-num::before{font-size:.72rem!important;margin-bottom:.1rem!important}
-html body.bt-layout .bt-era-btn .bt-era-more{font-size:.78rem!important}
-}
-@media (min-width:901px) and (max-height:780px){html body.bt-layout .bt-era-btn .bt-era-def{display:none!important}}
-@media (min-width:901px) and (max-height:700px){
-html body.bt-layout .bt-lead{font-size:1.3rem!important}
-html body.bt-layout .bt-first .bt-intro p{font-size:.88rem!important;line-height:1.45!important}
-}
-@media (min-width:901px) and (max-height:880px){
-html body.bt-layout .bt-era-btn:not(.bt-more-btn){display:grid!important;grid-template-columns:auto 1fr;column-gap:1rem;align-items:center;align-content:center}
-html body.bt-layout .bt-era-btn:not(.bt-more-btn) .bt-era-num{grid-row:span 3;margin:0!important}
-html body.bt-layout .bt-era-btn:not(.bt-more-btn) .bt-era-more{justify-self:start}
-}
-@media (min-width:901px) and (max-height:660px){
-html body.bt-layout .bt-heading .bt-lead{display:none!important}
-html body.bt-layout .bt-first .bt-eras{padding:.6rem 0 .6rem!important}
-html body.bt-layout .bt-more{margin-bottom:.7rem!important}
-}
-@media (min-width:901px) and (max-height:600px){
-html body.bt-layout .bt-era-btn .bt-era-more{display:none!important}html body.bt-layout .bt-more{margin-bottom:.4rem!important}
-html body.bt-layout main.bt-page .bt-first{padding-top:1.4rem!important}html body.bt-layout .bt-first .bt-intro p{font-size:.85rem!important;line-height:1.42!important}
-}
+<style id="bt-scroll">
+/* Relaxed layout: the page scrolls, text is narrower and the era boxes are square. */
+html body.bt-layout .bt-first{min-height:0!important;padding-bottom:3rem!important;justify-content:flex-start!important}
+html body.bt-layout .bt-first .bt-intro{max-width:880px!important;margin:2rem auto 0!important;gap:3rem!important}
+html body.bt-layout .bt-first .bt-intro p{font-size:1rem!important;line-height:1.75!important}
+html body.bt-layout .bt-first .bt-eras{display:grid!important;grid-template-columns:repeat(3,minmax(0,290px))!important;justify-content:center;gap:1.6rem!important;margin:3.2rem auto 0!important;padding:0!important}
+html body.bt-layout .bt-era-btn:not(.bt-more-btn){aspect-ratio:1/1;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;padding:1.4rem 1.5rem!important}
+html body.bt-layout .bt-era-btn .bt-era-num{font-size:clamp(4.2rem,6vw,5.6rem)!important;line-height:.9!important;margin:0 0 .6rem!important}
+html body.bt-layout .bt-era-btn .bt-era-num::before{font-size:.85rem!important;margin:0 0 .45rem!important;letter-spacing:.08em}
+html body.bt-layout .bt-era-btn .bt-era-name{font-size:1.5rem!important;margin:0 0 .5rem!important}
+html body.bt-layout .bt-era-btn .bt-era-def{display:block!important;font-size:1rem!important;line-height:1.4!important;margin:0 0 .9rem!important;max-width:15rem}
+html body.bt-layout .bt-era-btn .bt-era-more{display:inline!important;margin-top:0!important;font-size:.85rem!important}
+html body.bt-layout .bt-more{margin:2.4rem 0 0!important}
+html body.bt-layout .bt-affiliations .brand-logo img{transform:scale(1.1);transform-origin:center}@media (min-width:1600px){html body.bt-layout .bt-affiliations .brand-logo img{transform:scale(1.18)}}
+html body.bt-layout .bt-affiliations .company-bar{padding-top:.9rem!important;padding-bottom:.9rem!important}
+@media (max-width:900px){html body.bt-layout .bt-first .bt-eras{grid-template-columns:minmax(0,340px)!important}html body.bt-layout .bt-era-btn:not(.bt-more-btn){aspect-ratio:auto;min-height:260px}}
 </style>
-<style id="bt-fit-narrow">@media (min-width:901px) and (max-width:1300px) and (max-height:840px){html body.bt-layout .bt-era-btn .bt-era-def{display:none!important}}</style>
 </head>
 <body class="bt-layout site-branding">
 <header class="site-header inner-page-header">
