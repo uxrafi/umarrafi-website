@@ -905,3 +905,8 @@ body.site-branding{font-family:'Lato',Arial,Helvetica,sans-serif;font-weight:300
 /* Hide subpixel seams between moving, zoomable photo frames. */
 .home-layout .skydiving-track figure{margin-right:-1px}
 .home-layout .skydiving-showcase img{backface-visibility:hidden}
+
+/* Keep the shared navigation visible while the page scrolls. */
+.site-branding .site-header{position:sticky;top:0;z-index:1000;box-shadow:0 2px 8px rgba(23,37,54,.10)}
+html{scroll-padding-top:80px}
+@media(max-width:800px){html{scroll-padding-top:70px}}
