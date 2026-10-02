@@ -45,6 +45,13 @@
 .contact-page-portrait{transform:translateX(6rem);overflow:visible}
 .contact-page-portrait img{-webkit-mask-image:radial-gradient(ellipse 110% 115% at 50% 0%,black 96%,transparent 100%);mask-image:radial-gradient(ellipse 110% 115% at 50% 0%,black 96%,transparent 100%)}
 }
+</style><style>
+.contact-page-portrait:before{display:none}
+.contact-page-portrait img{-webkit-mask-image:none!important;mask-image:none!important;filter:none!important}
+@media(min-width:801px){
+.contact-page-portrait{transform:none!important}
+.contact-page-portrait img{left:calc(50% + 8rem)!important}
+}
 </style></head><body class="site-branding contact-layout"><header class="site-header inner-page-header">
 <a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
 <button class="menu" aria-label="Open navigation" aria-expanded="false">Menu</button>
