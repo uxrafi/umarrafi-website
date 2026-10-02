@@ -53,7 +53,19 @@ body.book-landing.site-branding>main{flex:1 0 auto;width:100%;box-sizing:border-
 body.book-landing.site-branding>header,body.book-landing.site-branding>footer{flex:none}
 </style>
 <noscript><style>/* Without JavaScript, show every section */html body [role="tabpanel"][role][hidden],html body main .book-reading-panel[hidden],html body main .book-tab-panel[hidden],html body main .poetry-group[hidden]{display:block!important}.reveal-close,[role="tablist"]{display:none!important}</style></noscript>
-</head><body class="book-landing site-branding banking-landing"><header class="site-header inner-page-header">
+<style>
+/* Empty reading panels should not create another grid row. */
+.book-tab-content:not(:has(.book-tab-panel:not([hidden]))){display:none}
+@media(min-width:901px){
+html body.book-landing .landing-hero{padding-block:1.5rem}
+html body.book-landing .landing-hero-grid{row-gap:2rem}
+html body.book-landing .landing-cover img{max-height:calc(100dvh - 280px);object-fit:contain;width:100%}
+}
+@media(min-width:901px) and (max-height:850px){
+html body.book-landing .landing-hero-copy h1{font-size:clamp(2.8rem,4.3vw,4rem)}
+html body.book-landing .book-intro-columns{padding-top:1.25rem}
+}
+</style></head><body class="book-landing site-branding banking-landing"><header class="site-header inner-page-header">
 <a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
 <button class="menu" aria-label="Open navigation" aria-expanded="false">Menu</button>
 <nav aria-label="Main navigation"><a href="about.html">About</a><a href="books.html" aria-current="page">Books</a><a href="poetry.html">Writing</a><a href="contact.html">Contact</a></nav>
