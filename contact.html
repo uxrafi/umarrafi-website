@@ -318,7 +318,7 @@ for(const [id,base,key] of [['compose-gmail','https://mail.google.com/mail/?view
  function alignLetter(){
   if(innerWidth<=800){form.style.removeProperty('--letter-aligned-width');return}
   const last=row.lastElementChild;
-  const width=last.getBoundingClientRect().left-sheet.getBoundingClientRect().left;
+  const width=last.getBoundingClientRect().right-sheet.getBoundingClientRect().left;
   if(width>250)form.style.setProperty('--letter-aligned-width',width+'px');
  }
  new ResizeObserver(alignLetter).observe(row);
