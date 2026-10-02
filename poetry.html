@@ -39,6 +39,13 @@ body.poetry-layout.site-branding{min-height:100vh;min-height:100dvh;display:flex
 body.poetry-layout.site-branding>main{flex:1 0 auto;width:100%;box-sizing:border-box}
 body.poetry-layout.site-branding>header,body.poetry-layout.site-branding>footer{flex:none}
 </style>
+<style>
+/* Shared page-title standard (About, Books, Writing): same size and same distance below the menu. */
+html body.poetry-layout main.poetry-page{padding-top:2.6rem}
+html body.poetry-layout main.poetry-page>.poetry-intro{margin-top:0;padding-top:0}
+html body.poetry-layout main.poetry-page>.poetry-intro>h1{font:400 clamp(2.4rem,4vw,4rem)/1.12 "Cormorant Garamond",Georgia,serif;letter-spacing:0;margin-top:0}
+@media(max-width:600px){html body.poetry-layout main.poetry-page{padding-top:2rem}}
+</style>
 </head>
 <body class="poetry-layout site-branding">
 
