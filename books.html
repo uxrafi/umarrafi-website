@@ -46,6 +46,12 @@ body.books-layout.site-branding{min-height:100vh;min-height:100dvh;display:flex;
 .books-layout.site-branding>.site-header{flex-shrink:0}
 .books-layout.site-branding>.books-gallery-page{flex:1 0 auto}
 .books-layout.site-branding>footer.book-landing-footer{flex-shrink:0;margin-bottom:0}
+</style><style>
+/* One footer height across the site, measured including padding. */
+body.site-branding>footer{box-sizing:border-box!important;height:60px!important;min-height:60px!important;padding:0 5vw!important;gap:1rem;align-items:center}
+body.site-branding>footer .ur-logo{width:32px!important;height:34px!important}
+body.site-branding>footer p{margin:0!important}
+@media(max-width:650px){body.site-branding>footer{height:54px!important;min-height:54px!important}body.home-layout.site-branding>footer{height:auto!important;min-height:54px!important;padding:.5rem 5vw!important}}
 </style></head>
 <body class="books-layout site-branding">
 
