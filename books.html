@@ -100,7 +100,13 @@ html body.books-layout .book-gallery-card .book-description-button{padding-top:8
 html body.books-layout .book-gallery .book-graphic-button{height:clamp(100px,calc(100svh - var(--books-fixed,460px)),530px)}
 }
 </style>
-</head>
+<style>
+/* Share the card height so wrapped titles do not lower one action button. */
+@media(min-width:601px){
+html body.books-layout .book-gallery{align-items:stretch}
+html body.books-layout .book-gallery-card .book-description-button{margin-top:auto}
+}
+</style></head>
 <body class="books-layout site-branding">
 
 <header class="site-header inner-page-header">
