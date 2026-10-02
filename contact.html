@@ -219,12 +219,24 @@ html body.contact-layout .letter .letter-send::after{content:" \2192";margin-lef
 html body.contact-layout .letter .letter-send:hover,html body.contact-layout .letter .letter-send:focus-visible{background:#e3edf2;border-color:#8fa9b8;color:#244f6c}
 html body.contact-layout .letter .letter-send[disabled]::after{content:""}
 </style>
+<style>
+/* Match the inner-page heading and give the letter controls room to breathe. */
+html body.contact-layout main.contact-page{padding-top:1.8rem!important}
+html body.contact-layout .contact-page-heading{text-align:center;margin-bottom:2rem}
+html body.contact-layout .contact-page-heading h1{font:400 clamp(2.4rem,4vw,4rem)/1.12 "Cormorant Garamond",Georgia,serif;color:#185b78;margin:0 0 1rem!important;letter-spacing:0}
+html body.contact-layout .contact-page-grid{min-height:0;flex:1 1 auto}
+html body.contact-layout .letter{margin-top:0}
+html body.contact-layout .letter .letter-topics{margin-bottom:1.8rem}
+html body.contact-layout .letter .letter-actions{margin-top:2.5rem}
+@media(min-width:801px){html body.contact-layout .contact-page-portrait img{max-height:100%!important}}
+@media(max-width:600px){html body.contact-layout .contact-page-heading{margin-bottom:1.5rem}html body.contact-layout .letter .letter-topics{margin-bottom:1.5rem}html body.contact-layout .letter .letter-actions{margin-top:2rem}}
+</style>
 </head><body class="site-branding contact-layout"><header class="site-header inner-page-header">
 <a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
 <button class="menu" aria-label="Open navigation" aria-expanded="false">Menu</button>
 <nav aria-label="Main navigation"><a href="about.html">About</a><a href="books.html">Books</a><a href="poetry.html">Writing</a><a href="contact.html" aria-current="page">Contact</a></nav>
 <nav class="social-links" aria-label="Social media"><a href="https://www.linkedin.com/in/umar-rafi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6H2V22h3.4V7.6ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.5c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.2V7.6H9.2V22h3.4v-8c0-2.1.4-4.1 3-4.1s3 2.4 3 4.2V22H22v-8.5Z"/></svg></a><a href="https://www.facebook.com/uxrafi" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.3-2.8-.3-2.8 0-4.7 1.7-4.7 4.9v2.6H7V13h3.2v9H14Z"/></svg></a></nav>
-</header><main class="contact-page"><div class="contact-page-grid"><div class="contact-page-copy"><h1>Get in touch.</h1><form class="letter" id="contact-form">
+</header><main class="contact-page"><header class="contact-page-heading"><h1>Get in touch.</h1><div class="about-rule"></div></header><div class="contact-page-grid"><div class="contact-page-copy"><form class="letter" id="contact-form">
 <fieldset class="letter-topics"><legend>What would you like to write about?</legend><div class="letter-topic-row"><label class="letter-topic"><input type="radio" name="type" value="Reader message" checked><span>My writing</span></label><label class="letter-topic"><input type="radio" name="type" value="Book enquiry"><span>Books</span></label><label class="letter-topic"><input type="radio" name="type" value="Interview or podcast"><span>Interviews &amp; podcasts</span></label><label class="letter-topic"><input type="radio" name="type" value="Speaking invitation"><span>Speaking</span></label><label class="letter-topic"><input type="radio" name="type" value="Other"><span>Something else</span></label></div></fieldset>
 <div class="letter-sheet">
 <p class="letter-salutation" aria-hidden="true">Dear Umar,</p>
