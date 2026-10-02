@@ -78,7 +78,13 @@ body.site-branding>footer p{margin:0!important}
 .home-layout .profile-quote-align{max-width:1100px;left:0;margin-inline:auto}
 .home-layout .profile-quote-text{width:100%;margin-left:0;text-align:center}
 @media(max-width:700px){.home-layout .home-about .profile-columns{grid-template-columns:1fr;gap:1rem}}
-</style><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://umarrafi-website.pages.dev/"><meta property="og:type" content="website"><meta property="og:site_name" content="Umar Rafi"><meta property="og:title" content="Umar Rafi — Author"><meta property="og:description" content="Official website of Umar Rafi — author of literary fiction and books on technology and finance."><meta property="og:url" content="https://umarrafi-website.pages.dev/"><meta property="og:image" content="https://umarrafi-website.pages.dev/images/skydiving-ground.jpg"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Umar Rafi", "url": "https://umarrafi-website.pages.dev", "sameAs": ["https://www.linkedin.com/in/umar-rafi/", "https://www.facebook.com/uxrafi"]}</script></head>
+</style><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://umarrafi-website.pages.dev/"><meta property="og:type" content="website"><meta property="og:site_name" content="Umar Rafi"><meta property="og:title" content="Umar Rafi — Author"><meta property="og:description" content="Official website of Umar Rafi — author of literary fiction and books on technology and finance."><meta property="og:url" content="https://umarrafi-website.pages.dev/"><meta property="og:image" content="https://umarrafi-website.pages.dev/images/skydiving-ground.jpg"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Umar Rafi", "url": "https://umarrafi-website.pages.dev", "sameAs": ["https://www.linkedin.com/in/umar-rafi/", "https://www.facebook.com/uxrafi"]}</script><style>
+@media(min-width:801px) and (min-height:650px){
+.home-layout .art-hero{height:calc(100svh - var(--homepage-top-height,123px) - var(--homepage-feature-height,269px));min-height:200px}
+.home-layout .home-featured-book{padding-top:1rem;padding-bottom:1rem}
+.home-featured-book .featured-cover img{height:190px}
+}
+</style></head>
 <body class="home-layout site-branding">
 <div class="top-bar"><div class="announcement"><span class="quote-text">“Man is not free from ignorance except when he knows that he is ignorant.”</span> <span class="quote-credit">— Averroes</span></div><nav class="social-links" aria-label="Social media"><a href="https://www.linkedin.com/in/umar-rafi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6H2V22h3.4V7.6ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.5c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.2V7.6H9.2V22h3.4v-8c0-2.1.4-4.1 3-4.1s3 2.4 3 4.2V22H22v-8.5Z"/></svg></a><a href="https://www.facebook.com/uxrafi" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.3-2.8-.3-2.8 0-4.7 1.7-4.7 4.9v2.6H7V13h3.2v9H14Z"/></svg></a></nav></div>
 <header class="site-header">
@@ -145,4 +151,6 @@ body.site-branding>footer p{margin:0!important}
   <p><a class="text-link" href="ventures.html">Explore my experience across eight startups →</a></p>
  </div>
 </dialog>
-<script src="script.js?v=stable-photo-hover-100"></script></body></html>
+<script src="script.js?v=stable-photo-hover-100"></script><script>
+(()=>{const hero=document.querySelector('.art-hero'),feature=document.querySelector('.home-featured-book'),main=document.querySelector('main');if(!hero||!feature||!main)return;function size(){document.body.style.setProperty('--homepage-top-height',main.offsetTop+'px');document.body.style.setProperty('--homepage-feature-height',feature.getBoundingClientRect().height+'px')}new ResizeObserver(size).observe(feature);window.addEventListener('resize',size);document.fonts.ready.then(size);size()})();
+</script></body></html>
