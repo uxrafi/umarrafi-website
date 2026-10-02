@@ -924,3 +924,6 @@ html{scroll-padding-top:80px}
 .site-branding .contact-invite h2{margin:0 0 .3rem}
 .site-branding .contact-invite p{margin:.25rem 0}
 @media(max-width:650px){.site-branding footer.book-landing-footer{gap:.65rem}.site-branding footer nav a{font-size:.95rem}.site-branding .contact-strip-top{gap:1rem}}
+
+/* Reduce the pause between the quote and skydiving gallery by half an inch. */
+.home-layout .quote{padding-bottom:calc(10rem - 48px)}
