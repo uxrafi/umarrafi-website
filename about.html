@@ -116,13 +116,8 @@ html body.about-reading-layout main.about-page{justify-content:flex-start}
 </style>
 <style id="about-col-break">@media (min-width:901px){html body.about-reading-layout main.about-page .about-columns p{break-inside:avoid}html body.about-reading-layout main.about-page .about-columns p.about-col2{break-before:column}}</style>
 <style id="about-balance">@media (min-width:901px){html body.about-reading-layout main.about-page .about-columns p{break-inside:auto;orphans:1;widows:1}html body.about-reading-layout main.about-page .about-columns p:last-child{margin-bottom:0}}</style>
-<style id="about-airy">@media (min-width:901px){html body.about-reading-layout main.about-page .about-columns{margin-top:clamp(1.4rem,5vh,3.2rem)}html body.about-reading-layout main.about-page .about-columns+.about-professional-access{margin-top:clamp(2.2rem,8vh,5.5rem)}}</style>
-<style id="footer-autohide">
-@media (hover:hover) and (pointer:fine) and (min-width:901px){
-html body.about-reading-layout.footer-autohide>footer{position:fixed;left:0;right:0;bottom:0;z-index:40;transform:translateY(100%);opacity:0;transition:transform .35s ease,opacity .35s ease;box-shadow:0 -6px 20px rgba(20,40,55,.12)}
-html body.about-reading-layout.footer-autohide.footer-peek>footer,html body.about-reading-layout.footer-autohide>footer:focus-within{transform:none;opacity:1}
-}
-</style>
+<style id="about-airy">@media (min-width:901px){html body.about-reading-layout main.about-page .about-columns{margin-top:clamp(.6rem,calc(10vh - 2.4rem),3.2rem)}html body.about-reading-layout main.about-page .about-columns+.about-professional-access{margin-top:clamp(1rem,calc(14vh - 3.5rem),5.5rem)}}</style>
+<style id="about-very-short">@media (min-width:901px) and (max-height:600px){html body.about-reading-layout main.about-page .about-columns p{line-height:1.5}}</style>
 </head>
 <body class="about-reading-layout site-branding">
 
@@ -153,17 +148,4 @@ html body.about-reading-layout.footer-autohide.footer-peek>footer,html body.abou
 </dialog>
 
 <footer id="contact" class="book-landing-footer"><div><a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a></div><p>© <span id="year">2026</span> Umar Rafi</p></footer>
-<script src="script.js?v=mobile-entrance-fix-96"></script><script>
-(()=>{
-/* Footer hides like an auto-hiding taskbar: it slides up when the pointer nears the bottom edge. Mouse and trackpad only; touch screens keep the normal footer. */
-const mq=matchMedia('(hover:hover) and (pointer:fine) and (min-width:901px)');const f=document.querySelector('body > footer');if(!f)return;
-const ZONE=70;let on=false;
-const set=v=>{if(v!==on){on=v;document.body.classList.toggle('footer-peek',v)}};
-const move=e=>{const r=f.getBoundingClientRect();set(innerHeight-e.clientY<ZONE||(on&&e.clientY>=r.top-8))};
-function apply(){document.body.classList.toggle('footer-autohide',mq.matches);if(!mq.matches)set(false)}
-apply();mq.addEventListener('change',apply);
-addEventListener('mousemove',move,{passive:true});
-document.addEventListener('mouseleave',e=>{if(e.clientY<innerHeight-ZONE)set(false)});
-})();
-</script>
-</body></html>
+<script src="script.js?v=mobile-entrance-fix-96"></script></body></html>
