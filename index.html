@@ -249,7 +249,7 @@ html body.home-layout .home-cloud-background .home-professional-button{color:#2a
 <style id="home-portrait">
 /* Large portrait standing at the left of the cloud section, like the skydiving photo below it. */
 @media(min-width:1000px){
-html body.home-layout{--ph:clamp(460px,72vh,660px);--pw:calc(var(--ph) * .75);--pl:clamp(16px,3vw,64px)}
+html body.home-layout{--ph:clamp(460px,72vh,660px);--pw:calc(var(--ph) * .75);--pl:max(0px,calc(clamp(16px,3vw,64px) - 19px))}
 html body.home-layout .home-cloud-background .quote{position:relative}
 html body.home-layout .home-cloud-background .home-portrait{position:absolute;left:var(--pl);bottom:0;height:var(--ph);width:auto;z-index:2;pointer-events:none;user-select:none;filter:drop-shadow(0 14px 28px rgba(20,40,60,.16))}
 html body.home-layout .home-cloud-background .home-about-inner,html body.home-layout .home-cloud-background .profile-quote-align{position:relative;z-index:3;box-sizing:border-box;margin-left:calc(var(--pl) + var(--pw) + 2rem)!important;margin-right:clamp(24px,6vw,120px)!important;max-width:none!important;width:auto!important}
