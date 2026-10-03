@@ -246,6 +246,21 @@ html body.home-layout .home-cloud-background .home-professional-button{color:#2a
 <style id="athens-sticky-title">#athens-game #athens-about-panel>h2{position:sticky;top:-24px;z-index:2;margin:-24px -27.2px .8rem!important;padding:24px 4rem 12px 27.2px;background:#f6f9fa;border-bottom:1px solid #dbe5eb}#athens-game #athens-about-panel>#close-athens-about{position:sticky!important;float:right;top:0;z-index:3;margin:-.6rem -.9rem 0 0;right:auto}</style>
 <style id="monogram-larger">html body.home-layout .profile-title-divider .divider-monogram{width:58px!important;height:58px!important}html body.home-layout .profile-title-divider .divider-monogram svg{width:36px!important;height:36px!important}</style>
 <style id="pro-photo-size">@media (min-width:701px){html body.home-layout .professional-opening{grid-template-columns:172px minmax(0,1fr)!important}}</style>
+<style id="home-portrait">
+/* Large portrait standing at the left of the cloud section, like the skydiving photo below it. */
+@media(min-width:1000px){
+html body.home-layout{--ph:clamp(460px,72vh,660px);--pw:calc(var(--ph) * .75);--pl:clamp(16px,3vw,64px)}
+html body.home-layout .home-cloud-background .quote{position:relative}
+html body.home-layout .home-cloud-background .home-portrait{position:absolute;left:var(--pl);bottom:0;height:var(--ph);width:auto;z-index:2;pointer-events:none;user-select:none;filter:drop-shadow(0 14px 28px rgba(20,40,60,.16))}
+html body.home-layout .home-cloud-background .home-about-inner,html body.home-layout .home-cloud-background .profile-quote-align{position:relative;z-index:3;box-sizing:border-box;margin-left:calc(var(--pl) + var(--pw) + 2rem)!important;margin-right:clamp(24px,6vw,120px)!important;max-width:none!important;width:auto!important}
+html body.home-layout .home-cloud-background .profile-columns{gap:2.6rem}
+html body.home-layout .home-cloud-background .home-about,html body.home-layout .home-cloud-background .quote{padding-left:0!important;padding-right:0!important}
+}
+@media(max-width:999px){
+html body.home-layout .home-cloud-background .quote{display:flex;flex-direction:column;align-items:center;padding-bottom:0!important}
+html body.home-layout .home-cloud-background .home-portrait{order:2;display:block;height:min(380px,60vw);width:auto;margin-top:1.6rem}
+}
+</style>
 </head>
 <body class="home-layout site-branding">
 <aside class="top-bar" aria-label="Quote and social links"><div class="announcement"><span class="quote-text">“Man is not free from ignorance except when he knows that he is ignorant.”</span> <span class="quote-credit">— Averroes</span></div><nav class="social-links" aria-label="Social media"><a href="https://www.linkedin.com/in/umar-rafi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6H2V22h3.4V7.6ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.5c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.2V7.6H9.2V22h3.4v-8c0-2.1.4-4.1 3-4.1s3 2.4 3 4.2V22H22v-8.5Z"/></svg></a><a href="https://www.facebook.com/uxrafi" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.3-2.8-.3-2.8 0-4.7 1.7-4.7 4.9v2.6H7V13h3.2v9H14Z"/></svg></a></nav></aside>
@@ -270,7 +285,7 @@ html body.home-layout .home-cloud-background .home-professional-button{color:#2a
 <div class="author-profile-layout"><div class="profile-columns"><div><p>Umar Rafi’s life has been an accidental journey across countries, cultures and professions. Born in Pakistan, he has lived in Iraq, USA, Canada, UAE, Saudi Arabia, Lebanon and Malaysia. His work in entrepreneurship, aviation, technology and finance, and the friendships he has made along the way, have shaped his curiosity about people and what drives them.</p></div><div><p>His studies and career led him to write books on technology and finance, but the writing closest to his heart is fiction. His novels draw on that learning and lived experience to follow characters across cultures and borders as they navigate love, loyalty and duty, exploring the choices that bring people together and the beliefs that set them apart.</p></div></div></div><div class="profile-action"><button type="button" class="professional-background-trigger home-professional-button" data-professional-background aria-haspopup="dialog" aria-controls="professional-background">Professional Background</button></div>
 </div>
 </section>
-<section class="quote"><div class="profile-quote-align"><div class="profile-quote-text"><blockquote>“The greatest gift one can offer another is a moment of laughter and a thought that lingers.”</blockquote><p>— Umar Rafi</p></div></div></section>
+<section class="quote"><img class="home-portrait" src="images/contact-portrait-full.webp" alt="Umar Rafi" width="1086" height="1448" loading="lazy" decoding="async"><div class="profile-quote-align"><div class="profile-quote-text"><blockquote>“The greatest gift one can offer another is a moment of laughter and a thought that lingers.”</blockquote><p>— Umar Rafi</p></div></div></section>
 <section class="skydiving-showcase" aria-label="Umar’s skydiving photographs">
 <figure class="skydiving-static"><img src="images/skydiving-ground.jpg" alt="Umar Rafi in his blue skydiving suit, holding his helmet on the ground" loading="lazy" width="1200" height="1200"></figure>
 <div class="skydiving-rotator" aria-roledescription="carousel" aria-label="Skydiving in the air and on the ground">
