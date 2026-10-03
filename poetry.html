@@ -226,7 +226,14 @@ body .poetry-category-dialog:has(#waris-shah[open]){padding-left:1.2rem;padding-
 #poetry-category-dialog>section>h2{position:sticky;top:calc(-1 * var(--pt));z-index:3;margin-left:calc(-1 * var(--px))!important;margin-right:calc(-1 * var(--px))!important;margin-top:calc(26.56px - var(--pt))!important;padding:var(--pt) 4rem 12.8px var(--px)!important;background:#f7fafb}
 #poetry-category-dialog>.poetry-dialog-close{position:sticky!important;float:right;top:calc(9.6px - var(--pt));z-index:4;margin:calc(9.6px - var(--pt)) calc(12.8px - var(--px)) -40px 0;right:auto}
 </style>
-<style id="poem-sticky-title">#poetry-category-dialog section:not([hidden]) details.poem-card[open]>summary{position:sticky;top:var(--sumtop,70px);z-index:2;background:#fff;border-bottom:1px solid #e3eaef}@media(max-width:600px){#poetry-category-dialog section:not([hidden]) details.poem-card[open]>summary{padding-top:14px;padding-bottom:12px}}</style>
+<style id="poem-pin">
+#poetry-category-dialog .poem-pin{position:sticky;top:var(--sumtop,70px);height:0;z-index:3}
+#poetry-category-dialog .poem-pin-bar{position:absolute;left:0;right:0;top:0;display:flex;flex-direction:column;gap:.15rem;padding:.8rem 1.5rem .75rem;background:#fff;border:1px solid #cfdae3;border-top:0;box-shadow:0 8px 16px -12px rgba(23,37,54,.35);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .15s}
+#poetry-category-dialog .poem-pin.is-on .poem-pin-bar{opacity:1;visibility:visible}
+#poetry-category-dialog .poem-pin-title{font:400 1.45rem/1.2 "Cormorant Garamond",Georgia,serif;color:#185b78}
+#poetry-category-dialog .poem-pin-credit{font:300 .8rem/1.4 Montserrat,Arial,sans-serif;color:#647386}
+@media(max-width:600px){#poetry-category-dialog .poem-pin-bar{padding:.6rem 1rem}#poetry-category-dialog .poem-pin-title{font-size:1.2rem}}
+</style>
 </head>
 <body class="poetry-layout site-branding">
 
@@ -701,6 +708,24 @@ dlg.querySelector('.mural-explorer-canvas img').addEventListener('load',update);
 const d=document.getElementById('poetry-category-dialog');if(!d)return;
 const set=()=>{const c=getComputedStyle(d);d.style.setProperty('--pt',c.paddingTop);d.style.setProperty('--px',c.paddingLeft);requestAnimationFrame(()=>{const h=d.querySelector('section:not([hidden])>h2');if(h)d.style.setProperty('--sumtop',(h.offsetHeight-parseFloat(c.paddingTop))+'px')})};d.addEventListener('toggle',set,true);
 new MutationObserver(()=>{if(d.open)set()}).observe(d,{attributes:true,attributeFilter:['open']});addEventListener('resize',()=>{if(d.open)set()});
+})();
+</script>
+<script>
+(()=>{/* While a poem is open, its title stays pinned under the section title, even after scrolling past it. */
+const d=document.getElementById('poetry-category-dialog');if(!d)return;
+d.querySelectorAll('section').forEach(sec=>{const h=sec.querySelector(':scope>h2');if(!h)return;const pin=document.createElement('div');pin.className='poem-pin';pin.setAttribute('aria-hidden','true');pin.innerHTML='<div class="poem-pin-bar"><span class="poem-pin-title"></span><span class="poem-pin-credit"></span></div>';h.after(pin);
+ pin.querySelector('.poem-pin-bar').addEventListener('click',()=>{const c=pin._card;if(c){const s=c.querySelector(':scope>summary');d.scrollTo({top:Math.max(0,c.offsetTop-pin.offsetTop-8),behavior:'smooth'})}})});
+let card=null;
+function pinOf(c){return c&&c.closest('section')?.querySelector('.poem-pin')}
+function update(){d.querySelectorAll('.poem-pin.is-on').forEach(p=>{if(!card||pinOf(card)!==p)p.classList.remove('is-on')});if(!card||!card.open){return}
+ const pin=pinOf(card);if(!pin)return;const sum=card.querySelector(':scope>summary');const pr=pin.getBoundingClientRect(),sr=sum.getBoundingClientRect();
+ pin.classList.toggle('is-on',sr.bottom<pr.top+4)}
+d.addEventListener('toggle',e=>{const c=e.target;if(!(c instanceof HTMLDetailsElement)||!c.classList.contains('poem-card'))return;
+ if(c.open){card=c;const pin=pinOf(c);if(pin){pin._card=c;pin.querySelector('.poem-pin-title').textContent=c.querySelector('.poem-title')?.textContent||'';pin.querySelector('.poem-pin-credit').textContent=c.querySelector('.poem-credit')?.textContent||'';const t=c.querySelector('.poem-title');pin.querySelector('.poem-pin-title').setAttribute('style',t?.getAttribute('style')||'')}}
+ else if(card===c){card=[...d.querySelectorAll('section:not([hidden]) details.poem-card[open]')].pop()||null;if(card){const pin=pinOf(card);pin._card=card;pin.querySelector('.poem-pin-title').textContent=card.querySelector('.poem-title').textContent;pin.querySelector('.poem-pin-credit').textContent=card.querySelector('.poem-credit').textContent}}
+ requestAnimationFrame(update)},true);
+d.addEventListener('scroll',update,{passive:true});addEventListener('resize',update);
+d.addEventListener('close',()=>{card=null;update()});
 })();
 </script>
 </body></html>
