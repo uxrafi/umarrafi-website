@@ -12,6 +12,12 @@
       book: 'A Children’s Playground',
       boxes: [['novel', 'My novels', true], ['tech', 'My books on banking and technology', false]]
     },
+    blog: {
+      title: 'Be the first to know',
+      text: 'Leave your email and I’ll let you know when the first posts are published.',
+      book: 'the blog',
+      boxes: [['blog', 'New blog posts', true], ['novel', 'My novels', false], ['tech', 'My books on banking and technology', false]]
+    },
     banking3: {
       title: 'Be the first to know',
       text: 'Leave your email and I’ll let you know when <em>Banking 3.0</em> is published in December 2026.',
@@ -109,7 +115,7 @@ html:not(.notify-ready) .notify-open{display:none!important}
     const interests = [...form.querySelectorAll('[name=interest]:checked')].map(c => c.parentElement.textContent.trim());
     if (!interests.length) { say('Please tick at least one option.', false); return; }
     if (!NOTIFY_ENDPOINT) {
-      const body = `Please let me know when ${b.book} is published.\n\nKeep me posted about:\n- ${interests.join('\n- ')}\n\nMy email: ${email.value}`;
+      const body = `Please let me know when ${b.book === 'the blog' ? 'new posts are' : b.book + ' is'} published.\n\nKeep me posted about:\n- ${interests.join('\n- ')}\n\nMy email: ${email.value}`;
       location.href = `mailto:${TO}?subject=${encodeURIComponent('Notify me: ' + b.book)}&body=${encodeURIComponent(body)}`;
       say('Your email app should open with a short note ready to send. Thank you.', true);
       return;
