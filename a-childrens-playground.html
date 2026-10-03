@@ -423,8 +423,14 @@ fit();addEventListener('resize',fit);addEventListener('load',fit);if(document.fo
 })();
 </script>
 <script id="ghazal-video-load">
-(()=>{const panel=document.getElementById('ghazal-performance');if(!panel)return;const f=panel.querySelector('iframe');
-const check=()=>{const show=!panel.hidden&&panel.closest('dialog')?.open;if(show&&!f.getAttribute('src'))f.src=f.dataset.videoSrc;if(!show&&f.hasAttribute('src'))f.removeAttribute('src')};new MutationObserver(()=>requestAnimationFrame(check)).observe(panel,{attributes:true,attributeFilter:['hidden']});
-const d=document.getElementById('novel-reading-dialog');d&&d.addEventListener('close',()=>f.removeAttribute('src'));})();
+(()=>{/* Load the video whenever its popup is showing (including reopening it), and unload it when hidden or closed. */
+const panel=document.getElementById('ghazal-performance');if(!panel)return;const f=panel.querySelector('iframe');
+const dlg=()=>panel.closest('dialog');
+const check=()=>{const d=dlg();const show=!panel.hidden&&d&&d.open;if(show&&!f.getAttribute('src'))f.src=f.dataset.videoSrc;if(!show&&f.hasAttribute('src'))f.removeAttribute('src')};
+const later=()=>requestAnimationFrame(()=>requestAnimationFrame(check));
+new MutationObserver(later).observe(panel,{attributes:true,attributeFilter:['hidden']});
+const d=dlg();if(d){new MutationObserver(later).observe(d,{attributes:true,attributeFilter:['open']});d.addEventListener('close',()=>f.removeAttribute('src'))}
+document.querySelectorAll('a[href="#ghazal-performance"]').forEach(a=>a.addEventListener('click',later));
+})();
 </script>
 </body></html>
