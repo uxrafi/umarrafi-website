@@ -221,6 +221,11 @@ body .poetry-category-dialog:has(#waris-shah[open]){padding-left:1.2rem;padding-
 }
 </style><style id="mural-sticky-title">#mural-about>h2{position:sticky;top:-1.5rem;z-index:2;margin:-1.5rem -1.7rem .8rem!important;padding:1.5rem 4rem .75rem 1.7rem;background:#f6f9fa;border-bottom:1px solid #dbe5eb}#mural-about>.mural-panel-close{position:sticky!important;float:right;top:0;z-index:3;margin:-.6rem -.9rem 0 0;right:auto}@media(max-width:600px){#mural-explorer.mural-explorer #mural-about>h2{top:-1.2rem;margin:-1.2rem -1.1rem .8rem!important;padding:1.2rem 3.4rem .7rem 1.1rem}}</style>
 <style id="mural-key-list">#mural-about .mural-key-list{margin:.4rem 0 1rem;padding-left:1.6rem;columns:2;column-gap:1.6rem;font:300 .88rem/1.55 Lato,Arial,sans-serif;color:#203747}#mural-about .mural-key-list li{break-inside:avoid}#mural-about .mural-key-list span{color:#6a7c8a;font-style:italic}@media(max-width:600px){#mural-about .mural-key-list{columns:1}}</style>
+<style id="category-sticky-title">
+#poetry-category-dialog{--pt:44.8px;--px:32px}
+#poetry-category-dialog>section>h2{position:sticky;top:calc(-1 * var(--pt));z-index:3;margin-left:calc(-1 * var(--px))!important;margin-right:calc(-1 * var(--px))!important;margin-top:calc(26.56px - var(--pt))!important;padding:var(--pt) 4rem 12.8px var(--px)!important;background:#f7fafb}
+#poetry-category-dialog>.poetry-dialog-close{position:sticky!important;float:right;top:calc(9.6px - var(--pt));z-index:4;margin:calc(9.6px - var(--pt)) calc(12.8px - var(--px)) -40px 0;right:auto}
+</style>
 </head>
 <body class="poetry-layout site-branding">
 
@@ -688,6 +693,13 @@ prev.addEventListener('click',()=>step(-1));next.addEventListener('click',()=>st
 strip.addEventListener('scroll',update,{passive:true});addEventListener('resize',update);
 new MutationObserver(()=>{if(dlg.open)requestAnimationFrame(update)}).observe(dlg,{attributes:true,attributeFilter:['open']});
 dlg.querySelector('.mural-explorer-canvas img').addEventListener('load',update);
+})();
+</script>
+<script>
+(()=>{/* Keep each poetry popup's title pinned at the top while its contents scroll. */
+const d=document.getElementById('poetry-category-dialog');if(!d)return;
+const set=()=>{const c=getComputedStyle(d);d.style.setProperty('--pt',c.paddingTop);d.style.setProperty('--px',c.paddingLeft)};
+new MutationObserver(()=>{if(d.open)set()}).observe(d,{attributes:true,attributeFilter:['open']});addEventListener('resize',()=>{if(d.open)set()});
 })();
 </script>
 </body></html>
