@@ -14,7 +14,7 @@
     },
     blog: {
       title: 'Be the first to know',
-      text: 'Leave your email and I’ll let you know when the first posts are published.',
+      text: 'Leave your email and I’ll let you know when new posts are published.',
       book: 'the blog',
       boxes: [['blog', 'New blog posts', true], ['novel', 'My novels', false], ['tech', 'My books on banking and technology', false]]
     },
