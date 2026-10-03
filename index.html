@@ -407,7 +407,10 @@ function size(){body.classList.remove(...LV);q.style.removeProperty('padding-bot
  const avail=innerHeight-(hdr?hdr.getBoundingClientRect().height:0);
  for(let L=0;L<PADS.length;L++){body.classList.remove(...LV);if(L>0)body.classList.add(...LV.slice(0,L));q.style.setProperty('padding-bottom',PADS[L]+'px','important');place();
   if(q.getBoundingClientRect().bottom-about.getBoundingClientRect().top<=avail)break}
- place()}
+ place();
+ /* fill the rest of the screen with sky down to the skydiving photos */
+ const cur=parseFloat(getComputedStyle(q).paddingBottom)||0,extra=Math.floor(avail-(q.getBoundingClientRect().bottom-about.getBoundingClientRect().top));
+ if(extra>0)q.style.setProperty('padding-bottom',(cur+extra)+'px','important')}
 let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(size,90)});addEventListener('load',size);document.fonts&&document.fonts.ready.then(size);size();
 })();
 </script>
