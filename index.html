@@ -383,6 +383,16 @@ if('IntersectionObserver' in window){bg.classList.add('clouds-moving','clouds-pa
 })();
 </script>
 <script src="notify.js?v=1" defer></script>
+<script id="quote-one-line">
+(()=>{/* Keep the homepage quote on one line, shrinking the type if needed (wraps normally on phones). */
+const bq=document.querySelector('.home-cloud-background .profile-quote-text blockquote');if(!bq)return;
+function fit(){bq.style.removeProperty('font-size');bq.style.whiteSpace='';if(innerWidth<768)return;
+ bq.style.whiteSpace='nowrap';let fs=parseFloat(getComputedStyle(bq).fontSize);const box=bq.parentElement;
+ for(let i=0;i<40&&bq.scrollWidth>box.clientWidth;i++){fs*=.97;bq.style.setProperty('font-size',fs+'px','important')}
+ if(fs<13){bq.style.removeProperty('font-size');bq.style.whiteSpace=''}}
+let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(fit,100)});addEventListener('portrait-sized',fit);addEventListener('load',fit);document.fonts&&document.fonts.ready.then(fit);fit();
+})();
+</script>
 <script id="home-portrait-height">
 (()=>{/* Keep the portrait standing on the bottom of the clouds with the top of the head level with the heading,
    and keep the whole cloud section within one screen on shorter laptop windows by tightening spacing in steps. */
