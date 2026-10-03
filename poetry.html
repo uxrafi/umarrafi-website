@@ -226,6 +226,7 @@ body .poetry-category-dialog:has(#waris-shah[open]){padding-left:1.2rem;padding-
 #poetry-category-dialog>section>h2{position:sticky;top:calc(-1 * var(--pt));z-index:3;margin-left:calc(-1 * var(--px))!important;margin-right:calc(-1 * var(--px))!important;margin-top:calc(26.56px - var(--pt))!important;padding:var(--pt) 4rem 12.8px var(--px)!important;background:#f7fafb}
 #poetry-category-dialog>.poetry-dialog-close{position:sticky!important;float:right;top:calc(9.6px - var(--pt));z-index:4;margin:calc(9.6px - var(--pt)) calc(12.8px - var(--px)) -40px 0;right:auto}
 </style>
+<style id="poem-sticky-title">#poetry-category-dialog section:not([hidden]) details.poem-card[open]>summary{position:sticky;top:var(--sumtop,70px);z-index:2;background:#fff;border-bottom:1px solid #e3eaef}@media(max-width:600px){#poetry-category-dialog section:not([hidden]) details.poem-card[open]>summary{padding-top:14px;padding-bottom:12px}}</style>
 </head>
 <body class="poetry-layout site-branding">
 
@@ -698,7 +699,7 @@ dlg.querySelector('.mural-explorer-canvas img').addEventListener('load',update);
 <script>
 (()=>{/* Keep each poetry popup's title pinned at the top while its contents scroll. */
 const d=document.getElementById('poetry-category-dialog');if(!d)return;
-const set=()=>{const c=getComputedStyle(d);d.style.setProperty('--pt',c.paddingTop);d.style.setProperty('--px',c.paddingLeft)};
+const set=()=>{const c=getComputedStyle(d);d.style.setProperty('--pt',c.paddingTop);d.style.setProperty('--px',c.paddingLeft);requestAnimationFrame(()=>{const h=d.querySelector('section:not([hidden])>h2');if(h)d.style.setProperty('--sumtop',(h.offsetHeight-parseFloat(c.paddingTop))+'px')})};d.addEventListener('toggle',set,true);
 new MutationObserver(()=>{if(d.open)set()}).observe(d,{attributes:true,attributeFilter:['open']});addEventListener('resize',()=>{if(d.open)set()});
 })();
 </script>
