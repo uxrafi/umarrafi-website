@@ -251,7 +251,7 @@ html body.home-layout .home-cloud-background .home-professional-button{color:#2a
 @media(min-width:1000px){
 html body.home-layout{--ph:clamp(460px,72vh,660px);--pw:calc(var(--ph) * .75);--pl:0px;--tg:clamp(32px,4.2vw,72px)}
 html body.home-layout .home-cloud-background .quote{position:relative}
-html body.home-layout .home-cloud-background .home-portrait{position:absolute;left:var(--pl);bottom:0;height:var(--ph);width:auto;z-index:2;pointer-events:none;user-select:none;filter:brightness(1.38) contrast(.48) saturate(.56) sepia(.07) drop-shadow(0 8px 18px rgba(20,40,60,.03))}
+html body.home-layout .home-cloud-background .home-portrait{position:absolute;left:var(--pl);bottom:0;height:var(--ph);width:auto;z-index:2;pointer-events:none;user-select:none;filter:brightness(1.38) contrast(.48) saturate(.56) sepia(.07)}
 html body.home-layout .home-cloud-background .home-about-inner,html body.home-layout .home-cloud-background .profile-quote-align{position:relative;z-index:3;box-sizing:border-box;margin-left:calc(var(--pl) + var(--pw) + 28px)!important;margin-right:auto!important;max-width:none!important;width:var(--about-w,calc(100vw - var(--pl) - var(--pw) - 2 * var(--tg)))!important}
 html body.home-layout .home-cloud-background .profile-columns{gap:2.6rem}
 html body.home-layout .home-cloud-background .home-about,html body.home-layout .home-cloud-background .quote{padding-left:0!important;padding-right:0!important}
@@ -285,6 +285,9 @@ html body.home-layout.cloud-t3 .home-cloud-background .profile-action{margin-top
 html body.home-layout.cloud-t3 .home-cloud-background .quote{padding-top:.8rem!important}
 html body.home-layout.cloud-t3 .home-cloud-background .profile-quote-text blockquote{font-size:1.25rem!important}
 }
+</style>
+<style id="portrait-fade">
+@media(min-width:1000px){html body.home-layout .home-cloud-background .home-portrait{-webkit-mask-image:linear-gradient(to bottom,#000 72%,rgba(0,0,0,.6) 86%,transparent 100%);mask-image:linear-gradient(to bottom,#000 72%,rgba(0,0,0,.6) 86%,transparent 100%)}}
 </style>
 </head>
 <body class="home-layout site-branding">
@@ -394,22 +397,17 @@ let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(fit,100)});add
 })();
 </script>
 <script id="home-portrait-height">
-(()=>{/* Keep the portrait standing on the bottom of the clouds with the top of the head level with the heading,
-   and keep the whole cloud section within one screen on shorter laptop windows by tightening spacing in steps. */
-const img=document.querySelector('.home-cloud-background .home-portrait'),h=document.querySelector('.home-cloud-background .profile-heading'),q=document.querySelector('.home-cloud-background .quote'),qt=document.querySelector('.home-cloud-background .profile-quote-align'),about=document.querySelector('.home-cloud-background .home-about'),hdr=document.querySelector('.site-header'),body=document.body;if(!img||!h||!q||!qt||!about)return;
+(()=>{/* Smaller portrait whose head lines up with the section heading; its lower edge fades into the clouds.
+   On shorter laptop windows the cloud section tightens in steps so it fits on one screen. */
+const img=document.querySelector('.home-cloud-background .home-portrait'),h=document.querySelector('.home-cloud-background .profile-heading'),q=document.querySelector('.home-cloud-background .quote'),about=document.querySelector('.home-cloud-background .home-about'),hdr=document.querySelector('.site-header'),body=document.body;if(!img||!h||!q||!about)return;
 const HEAD=37/1448,PADS=[68,44,30,22],LV=['cloud-t1','cloud-t2','cloud-t3'];
-function pass(minPad){
- q.style.removeProperty('padding-bottom');body.style.removeProperty('--ph');
- const ph0=parseFloat(getComputedStyle(img).height)||600;
- for(let i=0;i<3;i++){
-  const top=h.getBoundingClientRect().top,content=qt.getBoundingClientRect().bottom-top+minPad;
-  const ph=Math.max(ph0,Math.min(820,ph0*1.16,content/(1-HEAD)));body.style.setProperty('--ph',Math.round(ph)+'px');dispatchEvent(new Event('portrait-sized'));
-  const need=ph*(1-HEAD)-(qt.getBoundingClientRect().bottom-h.getBoundingClientRect().top);
-  q.style.setProperty('padding-bottom',Math.max(minPad,Math.round(need))+'px','important')}}
-function size(){body.classList.remove(...LV);q.style.removeProperty('padding-bottom');body.style.removeProperty('--ph');if(innerWidth<1000)return;
+function place(){const ph=Math.round(Math.max(360,Math.min(560,innerHeight*.62)));body.style.setProperty('--ph',ph+'px');dispatchEvent(new Event('portrait-sized'));
+ const off=h.getBoundingClientRect().top-q.getBoundingClientRect().top-ph*HEAD;img.style.setProperty('top',Math.round(off)+'px');img.style.setProperty('bottom','auto')}
+function size(){body.classList.remove(...LV);q.style.removeProperty('padding-bottom');img.style.removeProperty('top');img.style.removeProperty('bottom');body.style.removeProperty('--ph');if(innerWidth<1000)return;
  const avail=innerHeight-(hdr?hdr.getBoundingClientRect().height:0);
- for(let L=0;L<PADS.length;L++){body.classList.remove(...LV);if(L>0)body.classList.add(...LV.slice(0,L));pass(PADS[L]);
-  const cloudH=q.getBoundingClientRect().bottom-about.getBoundingClientRect().top;if(cloudH<=avail)break}}
+ for(let L=0;L<PADS.length;L++){body.classList.remove(...LV);if(L>0)body.classList.add(...LV.slice(0,L));q.style.setProperty('padding-bottom',PADS[L]+'px','important');place();
+  if(q.getBoundingClientRect().bottom-about.getBoundingClientRect().top<=avail)break}
+ place()}
 let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(size,90)});addEventListener('load',size);document.fonts&&document.fonts.ready.then(size);size();
 })();
 </script>
