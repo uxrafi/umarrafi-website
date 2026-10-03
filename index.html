@@ -289,7 +289,7 @@ html.portrait-fly .home-cloud-background .home-portrait.is-in{opacity:1;transfor
 <div class="home-about-inner">
 <h2 class="profile-heading">A life across worlds.</h2>
 <div class="profile-title-divider" aria-hidden="true"><span class="divider-lines"></span><span class="divider-monogram"><svg viewBox="0 0 72 74" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9"/><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23"/></svg></span><span class="divider-lines"></span></div>
-<div class="author-profile-layout"><div class="profile-columns"><div><p>Umar Rafi’s life has been an accidental journey across countries, cultures and professions. Born in Pakistan, he has lived in Iraq, USA, Canada, UAE, Saudi Arabia, Lebanon and Malaysia. His work in entrepreneurship, aviation, technology and finance, and the friendships he has made along the way, have shaped his curiosity about people and what drives them.</p></div><div><p>His studies and career led him to write books on technology and finance, but the writing closest to his heart is fiction. His novels draw on that learning and lived experience to follow characters across cultures and borders as they navigate love, loyalty and duty, exploring the choices that bring people together and the beliefs that set them apart.</p></div></div></div><div class="profile-action"><button type="button" class="professional-background-trigger home-professional-button" data-professional-background aria-haspopup="dialog" aria-controls="professional-background">Professional Background</button></div>
+<div class="author-profile-layout"><div class="profile-columns"><div><p>Umar Rafi’s life has been an accidental journey across countries, cultures and professions. Born in Pakistan, he has lived in Iraq, USA, Canada, UAE, Saudi Arabia, Lebanon and Malaysia. His work in aviation, technology, finance, academia and entrepreneurship, and the friendships he has made along the way, have shaped his curiosity about people and what drives them.</p></div><div><p>His studies and career led him to write books on technology and finance, but the writing closest to his heart is fiction. His novels draw on that learning and lived experience to follow characters across cultures and borders as they navigate love, loyalty and duty, exploring the choices that bring people together and the beliefs that set them apart.</p></div></div></div><div class="profile-action"><button type="button" class="professional-background-trigger home-professional-button" data-professional-background aria-haspopup="dialog" aria-controls="professional-background">Professional Background</button></div>
 </div>
 </section>
 <section class="quote"><img class="home-portrait" src="images/contact-portrait-full.webp" alt="Umar Rafi" width="1086" height="1448" loading="lazy" decoding="async"><div class="profile-quote-align"><div class="profile-quote-text"><blockquote>“The greatest gift one can offer another is a moment of laughter and a thought that lingers.”</blockquote><p>— Umar Rafi</p></div></div></section>
@@ -365,6 +365,21 @@ if('IntersectionObserver' in window){bg.classList.add('clouds-moving','clouds-pa
 })();
 </script>
 <script src="notify.js?v=1" defer></script>
+<script id="home-portrait-height">
+(()=>{/* Keep the portrait standing on the bottom of the clouds with the top of the head level with the section heading:
+   the space under the quote is adjusted so the section is exactly as tall as the portrait needs. */
+const img=document.querySelector('.home-cloud-background .home-portrait'),h=document.querySelector('.home-cloud-background .profile-heading'),q=document.querySelector('.home-cloud-background .quote'),qt=document.querySelector('.home-cloud-background .profile-quote-align'),body=document.body;if(!img||!h||!q||!qt)return;
+const HEAD=37/1448;
+function size(){q.style.removeProperty('padding-bottom');body.style.removeProperty('--ph');if(innerWidth<1000)return;
+ const ph0=parseFloat(getComputedStyle(img).height)||600;
+ for(let i=0;i<3;i++){
+  const top=h.getBoundingClientRect().top,textBot=qt.getBoundingClientRect().bottom,content=textBot-top+24;
+  const ph=Math.max(ph0,Math.min(820,ph0*1.12,content/(1-HEAD)));body.style.setProperty('--ph',Math.round(ph)+'px');dispatchEvent(new Event('portrait-sized'));
+  const need=ph*(1-HEAD)-(qt.getBoundingClientRect().bottom-h.getBoundingClientRect().top);
+  q.style.setProperty('padding-bottom',Math.max(24,Math.round(need))+'px','important')}}
+let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(size,90)});addEventListener('load',size);document.fonts&&document.fonts.ready.then(size);size();
+})();
+</script>
 <script id="home-about-width">
 (()=>{/* Text keeps its earlier width beside the portrait, narrowed just enough to add one line to the longer column. */
 const root=document.documentElement,img=document.querySelector('.home-portrait'),inner=document.querySelector('.home-cloud-background .home-about-inner');if(!img||!inner)return;
@@ -376,7 +391,7 @@ function fit(){root.style.removeProperty('--about-w');if(innerWidth<1000)return;
  root.style.setProperty('--about-w',w+'px');const target=lines()+1;
  while(w>start*.7){w-=6;root.style.setProperty('--about-w',w+'px');if(lines()>=target)break}}
 let t;const run=()=>{clearTimeout(t);t=setTimeout(fit,60)};
-if(img.complete)fit();else img.addEventListener('load',fit);addEventListener('resize',run);addEventListener('load',fit);document.fonts&&document.fonts.ready.then(fit);
+if(img.complete)fit();else img.addEventListener('load',fit);addEventListener('resize',run);addEventListener('portrait-sized',fit);addEventListener('load',fit);document.fonts&&document.fonts.ready.then(fit);
 })();
 </script>
 <script id="home-portrait-flyin-js">
