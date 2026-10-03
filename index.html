@@ -268,6 +268,24 @@ html.portrait-fly .home-cloud-background .home-portrait.is-in{opacity:1;transfor
 </style>
 <style id="painting-toggle-darker">html body .painting-peek-toggle.athens-game-open{color:#173c50!important;font-weight:400!important}</style>
 <style id="media-no-portrait">html body .media .media-portrait-layout{display:block!important;grid-template-columns:none!important;text-align:center;width:100%!important;max-width:1050px!important;margin:0 auto!important;left:0!important}html body .media .media-copy{margin-left:auto!important;margin-right:auto!important}</style>
+<style id="cloud-tight">
+@media(min-width:1000px){
+html body.home-layout.cloud-t1 .home-cloud-background .home-about{padding-top:2.2rem!important}
+html body.home-layout.cloud-t1 .home-cloud-background .profile-title-divider{margin-bottom:1.1rem!important}
+html body.home-layout.cloud-t1 .home-cloud-background .profile-action{margin-top:1.1rem!important}
+html body.home-layout.cloud-t1 .home-cloud-background .quote{padding-top:1.1rem!important}
+html body.home-layout.cloud-t2 .home-cloud-background .home-about{padding-top:1.4rem!important}
+html body.home-layout.cloud-t2 .home-cloud-background .profile-heading{font-size:3.1rem!important;margin-top:0!important}
+html body.home-layout.cloud-t2 .home-cloud-background .profile-columns p{font-size:1rem!important;line-height:1.65!important}
+html body.home-layout.cloud-t3 .home-cloud-background .home-about{padding-top:.9rem!important}
+html body.home-layout.cloud-t3 .home-cloud-background .profile-heading{font-size:2.7rem!important}
+html body.home-layout.cloud-t3 .home-cloud-background .profile-title-divider{margin-bottom:.8rem!important}
+html body.home-layout.cloud-t3 .home-cloud-background .profile-columns p{font-size:.95rem!important;line-height:1.58!important}
+html body.home-layout.cloud-t3 .home-cloud-background .profile-action{margin-top:.8rem!important}
+html body.home-layout.cloud-t3 .home-cloud-background .quote{padding-top:.8rem!important}
+html body.home-layout.cloud-t3 .home-cloud-background .profile-quote-text blockquote{font-size:1.25rem!important}
+}
+</style>
 </head>
 <body class="home-layout site-branding">
 <aside class="top-bar" aria-label="Quote and social links"><div class="announcement"><span class="quote-text">“Man is not free from ignorance except when he knows that he is ignorant.”</span> <span class="quote-credit">— Averroes</span></div><nav class="social-links" aria-label="Social media"><a href="https://www.linkedin.com/in/umar-rafi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6H2V22h3.4V7.6ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.5c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.2V7.6H9.2V22h3.4v-8c0-2.1.4-4.1 3-4.1s3 2.4 3 4.2V22H22v-8.5Z"/></svg></a><a href="https://www.facebook.com/uxrafi" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.3-2.8-.3-2.8 0-4.7 1.7-4.7 4.9v2.6H7V13h3.2v9H14Z"/></svg></a></nav></aside>
@@ -366,17 +384,22 @@ if('IntersectionObserver' in window){bg.classList.add('clouds-moving','clouds-pa
 </script>
 <script src="notify.js?v=1" defer></script>
 <script id="home-portrait-height">
-(()=>{/* Keep the portrait standing on the bottom of the clouds with the top of the head level with the section heading:
-   the space under the quote is adjusted so the section is exactly as tall as the portrait needs. */
-const img=document.querySelector('.home-cloud-background .home-portrait'),h=document.querySelector('.home-cloud-background .profile-heading'),q=document.querySelector('.home-cloud-background .quote'),qt=document.querySelector('.home-cloud-background .profile-quote-align'),body=document.body;if(!img||!h||!q||!qt)return;
-const HEAD=37/1448;
-function size(){q.style.removeProperty('padding-bottom');body.style.removeProperty('--ph');if(innerWidth<1000)return;
+(()=>{/* Keep the portrait standing on the bottom of the clouds with the top of the head level with the heading,
+   and keep the whole cloud section within one screen on shorter laptop windows by tightening spacing in steps. */
+const img=document.querySelector('.home-cloud-background .home-portrait'),h=document.querySelector('.home-cloud-background .profile-heading'),q=document.querySelector('.home-cloud-background .quote'),qt=document.querySelector('.home-cloud-background .profile-quote-align'),about=document.querySelector('.home-cloud-background .home-about'),hdr=document.querySelector('.site-header'),body=document.body;if(!img||!h||!q||!qt||!about)return;
+const HEAD=37/1448,PADS=[68,44,30,22],LV=['cloud-t1','cloud-t2','cloud-t3'];
+function pass(minPad){
+ q.style.removeProperty('padding-bottom');body.style.removeProperty('--ph');
  const ph0=parseFloat(getComputedStyle(img).height)||600;
  for(let i=0;i<3;i++){
-  const top=h.getBoundingClientRect().top,textBot=qt.getBoundingClientRect().bottom,content=textBot-top+68;
+  const top=h.getBoundingClientRect().top,content=qt.getBoundingClientRect().bottom-top+minPad;
   const ph=Math.max(ph0,Math.min(820,ph0*1.16,content/(1-HEAD)));body.style.setProperty('--ph',Math.round(ph)+'px');dispatchEvent(new Event('portrait-sized'));
   const need=ph*(1-HEAD)-(qt.getBoundingClientRect().bottom-h.getBoundingClientRect().top);
-  q.style.setProperty('padding-bottom',Math.max(68,Math.round(need))+'px','important')}}
+  q.style.setProperty('padding-bottom',Math.max(minPad,Math.round(need))+'px','important')}}
+function size(){body.classList.remove(...LV);q.style.removeProperty('padding-bottom');body.style.removeProperty('--ph');if(innerWidth<1000)return;
+ const avail=innerHeight-(hdr?hdr.getBoundingClientRect().height:0);
+ for(let L=0;L<PADS.length;L++){body.classList.remove(...LV);if(L>0)body.classList.add(...LV.slice(0,L));pass(PADS[L]);
+  const cloudH=q.getBoundingClientRect().bottom-about.getBoundingClientRect().top;if(cloudH<=avail)break}}
 let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(size,90)});addEventListener('load',size);document.fonts&&document.fonts.ready.then(size);size();
 })();
 </script>
