@@ -747,15 +747,19 @@ d.querySelectorAll('section').forEach(sec=>{const h=sec.querySelector(':scope>h2
  pin.querySelector('.poem-pin-bar').addEventListener('click',()=>{const c=pin._card;if(c){const s=c.querySelector(':scope>summary');d.scrollTo({top:Math.max(0,c.offsetTop-pin.offsetTop-8),behavior:'smooth'})}})});
 let card=null;
 function pinOf(c){return c&&c.closest('section')?.querySelector('.poem-pin')}
-function update(){d.querySelectorAll('.poem-pin.is-on').forEach(p=>{if(!card||pinOf(card)!==p)p.classList.remove('is-on')});if(!card||!card.open){return}
- const pin=pinOf(card);if(!pin)return;const sum=card.querySelector(':scope>summary');const pr=pin.getBoundingClientRect(),sr=sum.getBoundingClientRect();
- pin.classList.toggle('is-on',sr.bottom<pr.top+4)}
+function fill(c){const pin=pinOf(c);if(!pin)return;pin._card=c;pin.querySelector('.poem-pin-title').textContent=c.querySelector('.poem-title')?.textContent||'';pin.querySelector('.poem-pin-credit').textContent=c.querySelector('.poem-credit')?.textContent||'';const t=c.querySelector('.poem-title');pin.querySelector('.poem-pin-title').setAttribute('style',t?.getAttribute('style')||'')}
+function update(){if(!card||!card.open){card=[...d.querySelectorAll('section:not([hidden]) details.poem-card[open]')].pop()||null;if(card)fill(card)}
+ d.querySelectorAll('.poem-pin.is-on').forEach(p=>{if(!card||pinOf(card)!==p)p.classList.remove('is-on')});if(!card||!card.open){return}
+ const pin=pinOf(card);if(!pin)return;const sum=card.querySelector(':scope>summary');const pr=pin.getBoundingClientRect(),sr=sum.getBoundingClientRect(),cr=card.getBoundingClientRect(),bh=pin.querySelector('.poem-pin-bar').offsetHeight;
+ /* Pinned from the moment the title scrolls away until the reader is past the end of the poem. */
+ pin.classList.toggle('is-on',sr.bottom<pr.top+4&&cr.bottom>pr.top+bh+12)}
 d.addEventListener('toggle',e=>{const c=e.target;if(!(c instanceof HTMLDetailsElement)||!c.classList.contains('poem-card'))return;
  if(c.open){card=c;const pin=pinOf(c);if(pin){pin._card=c;pin.querySelector('.poem-pin-title').textContent=c.querySelector('.poem-title')?.textContent||'';pin.querySelector('.poem-pin-credit').textContent=c.querySelector('.poem-credit')?.textContent||'';const t=c.querySelector('.poem-title');pin.querySelector('.poem-pin-title').setAttribute('style',t?.getAttribute('style')||'')}}
  else if(card===c){card=[...d.querySelectorAll('section:not([hidden]) details.poem-card[open]')].pop()||null;if(card){const pin=pinOf(card);pin._card=card;pin.querySelector('.poem-pin-title').textContent=card.querySelector('.poem-title').textContent;pin.querySelector('.poem-pin-credit').textContent=card.querySelector('.poem-credit').textContent}}
  requestAnimationFrame(update)},true);
 d.addEventListener('scroll',update,{passive:true});addEventListener('resize',update);
 d.addEventListener('close',()=>{card=null;update()});
+new MutationObserver(()=>{if(d.open)requestAnimationFrame(update)}).observe(d,{attributes:true,attributeFilter:['open']});
 })();
 </script>
 <script id="poem-one-open">
