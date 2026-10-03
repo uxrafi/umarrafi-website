@@ -373,10 +373,10 @@ const HEAD=37/1448;
 function size(){q.style.removeProperty('padding-bottom');body.style.removeProperty('--ph');if(innerWidth<1000)return;
  const ph0=parseFloat(getComputedStyle(img).height)||600;
  for(let i=0;i<3;i++){
-  const top=h.getBoundingClientRect().top,textBot=qt.getBoundingClientRect().bottom,content=textBot-top+24;
-  const ph=Math.max(ph0,Math.min(820,ph0*1.12,content/(1-HEAD)));body.style.setProperty('--ph',Math.round(ph)+'px');dispatchEvent(new Event('portrait-sized'));
+  const top=h.getBoundingClientRect().top,textBot=qt.getBoundingClientRect().bottom,content=textBot-top+68;
+  const ph=Math.max(ph0,Math.min(820,ph0*1.16,content/(1-HEAD)));body.style.setProperty('--ph',Math.round(ph)+'px');dispatchEvent(new Event('portrait-sized'));
   const need=ph*(1-HEAD)-(qt.getBoundingClientRect().bottom-h.getBoundingClientRect().top);
-  q.style.setProperty('padding-bottom',Math.max(24,Math.round(need))+'px','important')}}
+  q.style.setProperty('padding-bottom',Math.max(68,Math.round(need))+'px','important')}}
 let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(size,90)});addEventListener('load',size);document.fonts&&document.fonts.ready.then(size);size();
 })();
 </script>
