@@ -234,6 +234,11 @@ body .poetry-category-dialog:has(#waris-shah[open]){padding-left:1.2rem;padding-
 #poetry-category-dialog .poem-pin-credit{font:300 .8rem/1.4 Montserrat,Arial,sans-serif;color:#647386}
 @media(max-width:600px){#poetry-category-dialog .poem-pin-bar{padding:.6rem 1rem}#poetry-category-dialog .poem-pin-title{font-size:1.2rem}}
 </style>
+<style id="poem-pin-close">
+#poetry-category-dialog .poem-pin-bar{padding-right:3.2rem}
+#poetry-category-dialog .poem-pin-bar .reveal-close{top:50%;right:.6rem;transform:translateY(-50%)}
+@media(max-width:600px){#poetry-category-dialog .poem-pin-bar{padding-right:2.8rem}#poetry-category-dialog .poem-pin-bar .reveal-close{right:.3rem}}
+</style>
 </head>
 <body class="poetry-layout site-branding">
 
@@ -736,6 +741,18 @@ d.addEventListener('toggle',e=>{const c=e.target;if(!(c instanceof HTMLDetailsEl
  requestAnimationFrame(()=>requestAnimationFrame(()=>{const sec=c.closest('section'),h=sec&&sec.querySelector(':scope>h2'),dr=d.getBoundingClientRect();
   const under=h?h.getBoundingClientRect().bottom:dr.top;const delta=c.getBoundingClientRect().top-under-6;
   d.scrollTo({top:Math.max(0,d.scrollTop+delta),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}))},true);
+})();
+</script>
+<script id="poem-pin-close-js">
+(()=>{/* The pinned title bar carries the poem's × so it stays reachable while reading. */
+const d=document.getElementById('poetry-category-dialog');if(!d)return;
+d.querySelectorAll('.poem-pin').forEach(pin=>{const bar=pin.querySelector('.poem-pin-bar');if(!bar)return;
+ pin.removeAttribute('aria-hidden');bar.querySelectorAll('.poem-pin-title,.poem-pin-credit').forEach(x=>x.setAttribute('aria-hidden','true'));
+ const x=document.createElement('button');x.type='button';x.className='reveal-close';x.setAttribute('aria-label','Close poem');x.textContent='×';bar.appendChild(x);
+ x.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const c=pin._card;if(!c)return;c.open=false;pin.classList.remove('is-on');
+  requestAnimationFrame(()=>{const h=c.closest('section')?.querySelector(':scope>h2');const under=h?h.getBoundingClientRect().bottom:d.getBoundingClientRect().top;
+   const delta=c.getBoundingClientRect().top-under-6;if(delta<0)d.scrollTo({top:Math.max(0,d.scrollTop+delta)});
+   const s=c.querySelector(':scope>summary');if(e.detail===0)s.focus({preventScroll:true});else document.activeElement?.blur()})})});
 })();
 </script>
 </body></html>
