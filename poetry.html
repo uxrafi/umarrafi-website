@@ -728,4 +728,14 @@ d.addEventListener('scroll',update,{passive:true});addEventListener('resize',upd
 d.addEventListener('close',()=>{card=null;update()});
 })();
 </script>
+<script id="poem-one-open">
+(()=>{/* Opening a poem closes any other open poem, brings it to the top under the section title, and its title pins as you read. */
+const d=document.getElementById('poetry-category-dialog');if(!d)return;
+d.addEventListener('toggle',e=>{const c=e.target;if(!(c instanceof HTMLDetailsElement)||!c.classList.contains('poem-card')||!c.open)return;
+ d.querySelectorAll('details.poem-card[open]').forEach(o=>{if(o!==c)o.open=false});
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{const sec=c.closest('section'),h=sec&&sec.querySelector(':scope>h2'),dr=d.getBoundingClientRect();
+  const under=h?h.getBoundingClientRect().bottom:dr.top;const delta=c.getBoundingClientRect().top-under-6;
+  d.scrollTo({top:Math.max(0,d.scrollTop+delta),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}))},true);
+})();
+</script>
 </body></html>
