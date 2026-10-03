@@ -161,6 +161,30 @@ html body.bt-layout .bt-affiliations .brand-logo img{transform:scale(1.1);transf
 html body.bt-layout .bt-affiliations .company-bar{padding-top:.9rem!important;padding-bottom:.9rem!important}
 @media (max-width:900px){html body.bt-layout .bt-first .bt-eras{grid-template-columns:minmax(0,340px)!important}html body.bt-layout .bt-era-btn:not(.bt-more-btn){aspect-ratio:auto;min-height:260px}}
 </style>
+<style id="bt-first-screen">
+/* Desktop: heading, text, era boxes and logo strip fit the first screen; the footer sits below it. */
+@media (min-width:901px){
+html body.bt-layout .bt-first{padding-top:1.2rem!important;padding-bottom:1.4rem!important}
+html body.bt-layout .bt-first .bt-intro{margin-top:1.4rem!important}
+html body.bt-layout .bt-first .bt-intro p{line-height:1.65!important}
+html body.bt-layout .bt-first .bt-eras{margin-top:1.8rem!important}
+html body.bt-layout .bt-era-btn:not(.bt-more-btn){aspect-ratio:auto!important;height:var(--bt-box,290px);padding:1rem 1.4rem!important;overflow:hidden}
+html body.bt-layout .bt-era-btn .bt-era-num{font-size:clamp(3rem,calc(var(--bt-box,290px) * .27),5.6rem)!important}
+html body.bt-layout .bt-more{margin-top:1.3rem!important}
+html.bt-short body.bt-layout .bt-era-btn .bt-era-def{display:none!important}
+html.bt-short body.bt-layout .bt-era-btn .bt-era-name{margin-bottom:.35rem!important}
+}
+@media (min-width:901px) and (max-height:820px){
+html body.bt-layout .bt-first{padding-top:.6rem!important;padding-bottom:1rem!important}
+html body.bt-layout .bt-heading h1{font-size:2.8rem!important;margin-bottom:.3rem!important}
+html body.bt-layout .bt-heading h1{margin-bottom:.9rem!important}html body.bt-layout .bt-heading .about-rule{margin:0 auto .5rem!important}
+html body.bt-layout .bt-heading .bt-lead{font-size:1.3rem!important;margin:.3rem 0 0!important}
+html body.bt-layout .bt-first .bt-intro{margin-top:1rem!important}
+html body.bt-layout .bt-first .bt-intro p{font-size:.93rem!important;line-height:1.55!important}
+html body.bt-layout .bt-first .bt-eras{margin-top:1.2rem!important}
+html body.bt-layout .bt-more{margin-top:.9rem!important}
+}
+</style>
 </head>
 <body class="bt-layout site-branding">
 <header class="site-header inner-page-header">
@@ -206,5 +230,15 @@ dlg.addEventListener('close',()=>{btns.forEach(x=>x.setAttribute('aria-pressed',
 /* Keep the logo strip on the bottom edge of the first screen */
 const strip=document.querySelector('.bt-affiliations'),foot=document.querySelector('body > footer');function size(){if(strip)document.documentElement.style.setProperty('--bt-strip',strip.offsetHeight+'px');if(foot)document.documentElement.style.setProperty('--bt-foot',foot.offsetHeight+'px')}size();addEventListener('resize',size);
 })();
+</script>
+<script id="bt-first-screen-fit">
+(()=>{const root=document.documentElement,strip=document.querySelector('.bt-affiliations');if(!strip)return;
+function fit(){if(innerWidth<901){root.style.removeProperty('--bt-box');root.classList.remove('bt-short');return}
+root.classList.remove('bt-short');root.style.setProperty('--bt-box','290px');
+const over=strip.getBoundingClientRect().bottom+scrollY-innerHeight;
+let h=Math.max(170,Math.min(290,Math.floor(290-over)));
+if(h<235){root.classList.add('bt-short');const o2=strip.getBoundingClientRect().bottom+scrollY-innerHeight;h=Math.max(170,Math.min(290,Math.floor(290-o2)))}
+root.style.setProperty('--bt-box',h+'px')}
+fit();addEventListener('resize',fit);addEventListener('load',fit);document.fonts&&document.fonts.ready.then(fit)})();
 </script>
 </body></html>
