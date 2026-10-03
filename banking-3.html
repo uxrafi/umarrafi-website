@@ -145,4 +145,15 @@ document.querySelectorAll('details.poem-card').forEach(d=>d.addEventListener('to
 })();
 </script>
 <script src="notify.js?v=1" defer></script>
+<script id="row-centre">
+(()=>{/* Centre the button row between the text above and the footer below. */
+const row=document.querySelector('.landing-hero .notify-row')||document.querySelector('.landing-hero .book-section-tabs'),foot=document.querySelector('body > footer');if(!row||!foot)return;
+const copy=[...document.querySelectorAll('.landing-hero-copy > *, .landing-cover')];
+function fit(){row.style.marginTop='';if(innerWidth<901)return;
+ const text=Math.max(...copy.map(e=>e.getBoundingClientRect().bottom)),r=row.getBoundingClientRect(),f=foot.getBoundingClientRect().top;
+ const gap=(f-text-r.height)/2,cur=r.top-text;if(gap>cur)row.style.marginTop=(gap-cur)+'px';
+ if(document.documentElement.scrollHeight>innerHeight)row.style.marginTop=''}
+fit();addEventListener('resize',fit);addEventListener('load',fit);if(document.fonts)document.fonts.ready.then(fit);
+})();
+</script>
 </body></html>

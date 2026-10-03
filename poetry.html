@@ -239,6 +239,12 @@ body .poetry-category-dialog:has(#waris-shah[open]){padding-left:1.2rem;padding-
 #poetry-category-dialog .poem-pin-bar .reveal-close{top:50%;right:.6rem;transform:translateY(-50%)}
 @media(max-width:600px){#poetry-category-dialog .poem-pin-bar{padding-right:2.8rem}#poetry-category-dialog .poem-pin-bar .reveal-close{right:.3rem}}
 </style>
+<style id="poem-one-line">
+/* Every verse stays on one line so translations line up; the fitter scales the type to the column. */
+#poetry-category-dialog .poem-text .poem-stanza{white-space:pre!important}
+#poetry-category-dialog .bilingual-couplet>p{white-space:nowrap!important}
+#poetry-category-dialog .poem-text,#poetry-category-dialog .bilingual-couplet>p{overflow-x:auto;overflow-y:hidden;scrollbar-width:thin}
+</style>
 </head>
 <body class="poetry-layout site-branding">
 
@@ -519,7 +525,7 @@ I will simply dissolve into a cup of latte</span><span class="poem-stanza">Fear 
 Arafat; I will avert, when I hear such screams</span><span class="poem-stanza">My heart believes; my mind denies
 The mosque at a distance; will a temple suffice?</span><span class="poem-stanza">God's love heals; the paramour's may churn
 In my beloveds' arms; in hell I shall burn</span><span class="poem-stanza">Satan's debate; the pretensions of faith
-Walk past the mosque with a quite gait</span><span class="poem-stanza">Fate of inquiry; an exit from heavens?
+Walk past the mosque with a quiet gait</span><span class="poem-stanza">Fate of inquiry; an exit from heavens?
 Flee such gardens; the Edens and Adns</span><span class="poem-stanza">Pursuit is my mosque; this world is my lair
 Much to be done, beyond worship and prayer</span><span class="poem-stanza">Save I behold, Moses' surprise 
 Convictions of science, I cannot deny</span><span class="poem-stanza">Your horde is for pagans and heathens Umar
@@ -743,6 +749,23 @@ d.querySelectorAll('.poem-pin').forEach(pin=>{const bar=pin.querySelector('.poem
   requestAnimationFrame(()=>{const h=c.closest('section')?.querySelector(':scope>h2');const under=h?h.getBoundingClientRect().bottom:d.getBoundingClientRect().top;
    const delta=c.getBoundingClientRect().top-under-6;if(delta<0)d.scrollTo({top:Math.max(0,d.scrollTop+delta)});
    const s=c.querySelector(':scope>summary');if(e.detail===0)s.focus({preventScroll:true});else document.activeElement?.blur()})})});
+})();
+</script>
+<script id="poem-one-line-fit">
+(()=>{/* Scale each open poem's verse so its longest line fits its column, with all columns of a poem at the same size. */
+const d=document.getElementById('poetry-category-dialog');if(!d)return;const MIN=11;
+function parts(card){return [...card.querySelectorAll('.poem-text, .bilingual-couplet>p')]}
+function fit(card){if(!card||!card.open)return;const els=parts(card);if(!els.length)return;
+ els.forEach(el=>{el.style.fontSize='';el.dataset.base=parseFloat(getComputedStyle(el).fontSize)});
+ const worst=()=>{let r=1;els.forEach(el=>{const avail=el.clientWidth;if(!avail)return;
+  const need=el.classList.contains('poem-text')?Math.max(0,...[...el.querySelectorAll('.poem-stanza')].map(s=>s.scrollWidth)):el.scrollWidth;
+  if(need>avail)r=Math.min(r,(avail-2)/need)});return r};
+ let scale=1;for(let i=0;i<8;i++){const r=worst();if(r>=1)break;scale*=r*.995;let floored=true;
+  els.forEach(el=>{const px=Math.max(MIN,Math.floor(el.dataset.base*scale*100)/100);if(px>MIN)floored=false;el.style.fontSize=px+'px'});if(floored)break}}
+const openCards=()=>d.querySelectorAll('details.poem-card[open]');
+d.addEventListener('toggle',e=>{const c=e.target;if(c instanceof HTMLDetailsElement&&c.classList.contains('poem-card')&&c.open){fit(c);requestAnimationFrame(()=>fit(c))}},true);
+let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>openCards().forEach(fit),80)});
+document.fonts&&document.fonts.ready.then(()=>openCards().forEach(fit));
 })();
 </script>
 </body></html>
