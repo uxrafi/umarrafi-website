@@ -378,12 +378,12 @@ if(img.complete)fit();else img.addEventListener('load',fit);addEventListener('re
 })();
 </script>
 <script id="home-portrait-flyin-js">
-(()=>{/* The portrait flies in from the left three seconds after the page opens, or when it first comes into view if that is later. */
+(()=>{/* The portrait flies in from the left one second after the page opens, or when it first comes into view if that is later. */
 const img=document.querySelector('.home-cloud-background .home-portrait');if(!img||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 document.documentElement.classList.add('portrait-fly');
 let ready=false,seen=false,done=false;
 const go=()=>{if(done||!ready||!seen)return;done=true;requestAnimationFrame(()=>img.classList.add('is-in'))};
-setTimeout(()=>{ready=true;go()},3000);
+setTimeout(()=>{ready=true;go()},1000);
 if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){seen=true;io.disconnect();go()}},{threshold:.25});io.observe(img.closest('.quote')||img)}else{seen=true}
 })();
 </script>
