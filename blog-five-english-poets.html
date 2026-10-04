@@ -248,6 +248,14 @@ html body.blog-layout main.blog-post-page{box-sizing:border-box;width:100%;max-w
 .blog-post-page .eq-figure figcaption{margin-top:.4rem;text-align:center;font:300 .78rem/1.4 Lato,Arial,sans-serif;color:#647386}
 @media(max-width:600px){.blog-post-page .poet-photo{width:110px;margin-left:1rem}.blog-post-page .post-body p{font-size:1rem}}
 </style>
+<style id="couplet-grid">
+.blog-post-page .couplet.cg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:1.6rem;row-gap:.1rem;--cg:1}
+.blog-post-page .couplet.cg .cg-s{font:italic 400 calc(1.15rem * var(--cg))/1.6 "Cormorant Garamond",Georgia,serif;color:#1f2a33;white-space:nowrap;overflow:hidden}
+.blog-post-page .couplet.cg .cg-t{font:300 calc(.98rem * var(--cg))/1.6 Lato,Arial,sans-serif;color:#4d6072;white-space:nowrap;overflow:hidden;align-self:baseline}
+.blog-post-page .couplet.cg.cg-wrap{row-gap:.4rem}
+.blog-post-page .couplet.cg.cg-wrap .cg-s,.blog-post-page .couplet.cg.cg-wrap .cg-t{white-space:normal}
+@media(max-width:640px){.blog-post-page .couplet.cg{grid-template-columns:1fr;row-gap:0}.blog-post-page .couplet.cg .cg-s,.blog-post-page .couplet.cg .cg-t{white-space:normal;overflow:visible}.blog-post-page .couplet.cg .cg-t{margin-bottom:.45rem}}
+</style>
 </head>
 <body class="blog-layout site-branding">
 <header class="site-header inner-page-header">
@@ -270,6 +278,16 @@ html body.blog-layout main.blog-post-page{box-sizing:border-box;width:100%;max-w
 document.querySelectorAll('.yt-open').forEach(function(b){b.addEventListener('click',function(){if(b.getAttribute('aria-expanded')==='true'){close(b);return}open.slice().forEach(close);var f=b.closest('.poet-listen').querySelector('.yt-frame'),i=document.createElement('iframe');i.src='https://www.youtube-nocookie.com/embed/'+f.dataset.id+'?autoplay=1&rel=0'+(f.dataset.start?'&start='+f.dataset.start:'');i.title=f.dataset.title;i.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';i.allowFullscreen=true;f.appendChild(i);f.hidden=false;b.setAttribute('aria-expanded','true');b.innerHTML='✕ Close video';open.push(b)})});
 function check(){if(!open.length||document.fullscreenElement)return;var a=document.querySelector('article'),top=parseFloat(getComputedStyle(a).getPropertyValue('--poet-top'))||0;open.slice().forEach(function(b){var r=b.closest('.poet').getBoundingClientRect();if(r.bottom<top+60||r.top>innerHeight)close(b)})}
 addEventListener('scroll',check,{passive:true})})();</script>
+<script id="couplet-grid-js">(function(){
+/* Show each verse line beside its translation; shrink the type if a line would wrap and break the line-by-line match. */
+var qs=[].slice.call(document.querySelectorAll('.blog-post-page blockquote.couplet'));
+qs.forEach(function(q){var s=q.querySelector('.src'),t=q.querySelector('.tr');if(!s||!t)return;var a=s.innerHTML.split(/<br\s*\/?>/i),b=t.innerHTML.split(/<br\s*\/?>/i),n=Math.max(a.length,b.length),h='';
+ for(var i=0;i<n;i++)h+='<span class="cg-s">'+(a[i]||'')+'</span><span class="cg-t">'+(b[i]||'')+'</span>';q.innerHTML=h;q.classList.add('cg')});
+function over(q){return [].some.call(q.children,function(c){return c.scrollWidth>c.clientWidth+1})}
+function fit(){qs.forEach(function(q){if(!q.classList.contains('cg'))return;q.classList.remove('cg-wrap');q.style.setProperty('--cg',1);if(innerWidth<=640)return;var k=1;while(over(q)&&k>0.84){k-=0.03;q.style.setProperty('--cg',k)}if(over(q))q.classList.add('cg-wrap')})}
+fit();addEventListener('resize',fit);addEventListener('load',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+})();</script>
+
 <script id="pin-title-offset">(function(){var t=document.querySelector('.post-titlebar.is-pinned');if(!t)return;function f(){var h=document.querySelector('.site-header'),cs=h&&getComputedStyle(h),o=(cs&&(cs.position==='fixed'||cs.position==='sticky'))?Math.max(0,h.getBoundingClientRect().bottom):0;t.style.setProperty('--pin-top',o+'px');var a=t.closest('article');if(a)a.style.setProperty('--poet-top',(o+t.offsetHeight)+'px')}f();addEventListener('resize',f);addEventListener('scroll',f,{passive:true});addEventListener('load',f)})();</script>
 </main>
 <footer id="contact" class="book-landing-footer"><div><a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a></div><p class="footer-meta"><a class="footer-blog-link" href="blog.html">Blog</a><span class="footer-sep" aria-hidden="true">·</span>© <span id="year">2026</span> Umar Rafi</p></footer>
