@@ -8,7 +8,7 @@
   const BOOKS = {
     acp: {
       title: 'Be the first to know',
-      text: 'Leave your email and I’ll let you know when <em>A Children’s Playground</em> is published.',
+      text: 'Enter your email and I’ll let you know when <em>A Children’s Playground</em> is published.',
       book: 'A Children’s Playground',
       boxes: [['novel', 'My novels', true], ['tech', 'My books on banking and technology', false]]
     },
@@ -86,10 +86,10 @@ html:not(.notify-ready) .notify-open{display:none!important}
     const b = BOOKS[key]; if (!b) return;
     current = key; opener = btn;
     dlg.querySelector('#notify-title').textContent = b.title;
-    dlg.querySelector('.notify-text').innerHTML = b.text;
+    dlg.querySelector('.notify-text').innerHTML = b.text + (NOTIFY_ENDPOINT ? '' : ' This opens a request in your email app; please send the draft to receive updates.');
     boxes.innerHTML = b.boxes.map(([v, label, on]) => `<label><input type="checkbox" name="interest" value="${v}"${on ? ' checked' : ''}> ${label}</label>`).join('');
     form.reset(); b.boxes.forEach(([v, , on]) => { const c = boxes.querySelector(`[value="${v}"]`); if (c) c.checked = on; });
-    status.hidden = true; submit.disabled = false; submit.textContent = 'Notify me';
+    status.hidden = true; submit.disabled = false; submit.textContent = NOTIFY_ENDPOINT ? 'Notify me' : 'Open email draft';
     if (btn) btn.setAttribute('aria-expanded', 'true');
     dlg.showModal(); email.focus();
   }
@@ -105,7 +105,7 @@ html:not(.notify-ready) .notify-open{display:none!important}
     if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dlg.close();
   });
   dlg.addEventListener('close', () => {
-    if (opener) { opener.setAttribute('aria-expanded', 'false'); opener.focus({ preventScroll: true }); opener.blur(); }
+    if (opener) { opener.setAttribute('aria-expanded', 'false'); opener.focus({ preventScroll: true }); }
   });
 
   form.addEventListener('submit', async e => {
@@ -117,7 +117,7 @@ html:not(.notify-ready) .notify-open{display:none!important}
     if (!NOTIFY_ENDPOINT) {
       const body = `Please let me know when ${b.book === 'the blog' ? 'new posts are' : b.book + ' is'} published.\n\nKeep me posted about:\n- ${interests.join('\n- ')}\n\nMy email: ${email.value}`;
       location.href = `mailto:${TO}?subject=${encodeURIComponent('Notify me: ' + b.book)}&body=${encodeURIComponent(body)}`;
-      say('Your email app should open with a short note ready to send. Thank you.', true);
+      say('Your email app should open with a request ready to send. Please send it to complete your request for updates.', true);
       return;
     }
     submit.disabled = true; submit.textContent = 'Sending…'; status.hidden = true;
