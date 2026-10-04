@@ -1,0 +1,6 @@
+README.md
+wrangler.jsonc
+.git
+.git/**
+.openai/**
+responsive-audit.html

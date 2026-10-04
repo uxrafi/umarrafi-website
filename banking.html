@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#4d6d7d">
+<title>Banking technology — Umar Rafi</title>
+<meta name="description" content="Twenty-five years in banking technology: Umar Rafi’s work across on-premise risk and regulatory systems, cloud and digital banking, and AI agents for financial institutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=final-20261003">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://umarrafi-website.pages.dev/banking.html"><meta property="og:type" content="website"><meta property="og:site_name" content="Umar Rafi"><meta property="og:title" content="Banking technology — Umar Rafi"><meta property="og:description" content="Twenty-five years. Three eras of banking."><meta property="og:url" content="https://umarrafi-website.pages.dev/banking.html"><meta property="og:image" content="https://umarrafi-website.pages.dev/images/share/banking.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/jpeg"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","name":"Banking technology — Umar Rafi","url":"https://umarrafi-website.pages.dev/banking.html","mainEntity":{"@type":"Person","name":"Umar Rafi","jobTitle":"Banking technology architect, author and entrepreneur","alumniOf":["United States Air Force Academy","Wichita State University","INCEIF","Georgia Institute of Technology"],"hasCredential":"Salesforce Certified Technical Architect"}}</script>
+
+
+
+<style>
+/* Banking technology page */
+html body.bt-layout{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+html body.bt-layout>main{flex:1 0 auto}
+.bt-page{--ink:#172536;--slate:#244f6c;--head:#185b78;--muted:#4d6072;--rule:#cfdae3;width:min(1180px,90vw);margin:0 auto;padding:2.6rem 0 4rem;box-sizing:border-box}
+.bt-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bt-heading{text-align:center}
+.bt-heading h1{margin:0;font:400 clamp(2.4rem,4vw,4rem)/1.12 "Cormorant Garamond",Georgia,serif;color:var(--head);letter-spacing:0}
+.bt-heading .about-rule{margin:.9rem auto 1.2rem}
+.bt-lead{margin:0;font:400 1.6rem/1.3 "Cormorant Garamond",Georgia,serif;color:var(--head)}
+.bt-intro{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1040px;margin:2.4rem auto 0}
+.bt-intro p{margin:0;font:300 1.04rem/1.72 Lato,Arial,sans-serif;color:var(--ink)}
+.bt-eras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:3.6rem 0 0;border-top:1px solid var(--rule)}
+.bt-era{padding:2rem 2rem 0;border-left:1px solid var(--rule)}
+.bt-era:first-of-type{border-left:0;padding-left:0}
+.bt-era:last-of-type{padding-right:0}
+.bt-era-num{margin:0;font:400 clamp(4rem,7vw,6.2rem)/.9 "Cormorant Garamond",Georgia,serif;color:var(--head)}
+.bt-era-num::before{content:"Banking";display:block;margin:0 0 .35rem;font:400 .95rem/1 Lato,Arial,sans-serif;color:var(--muted)}
+.bt-era h3{margin:.4rem 0 .5rem;font:400 1.75rem/1.15 "Cormorant Garamond",Georgia,serif;color:var(--ink)}
+.bt-era-def{margin:0 0 1.4rem;font:italic 400 1.12rem/1.45 "Cormorant Garamond",Georgia,serif;color:var(--muted)}
+.bt-era ul{list-style:none;margin:0;padding:0}
+.bt-era li{padding:.9rem 0;border-top:1px solid var(--rule)}
+.bt-era h4{margin:0 0 .3rem;font:400 1rem/1.3 Lato,Arial,sans-serif;color:var(--slate)}
+.bt-era h4 span{font-weight:300;color:var(--muted);margin-left:.35rem}
+.bt-era li p{margin:0;font:300 .95rem/1.6 Lato,Arial,sans-serif;color:var(--ink)}
+.bt-era li p a,.bt-edu a{color:var(--slate)}
+.bt-logos{margin:4rem 0 0;padding:2.2rem 2rem 2.4rem;background:#fff;border:1px solid #dde6ec;border-radius:2px;text-align:center}
+.bt-logos h2,.bt-edu h2{margin:0;font:400 2rem/1.2 "Cormorant Garamond",Georgia,serif;color:var(--head)}
+.bt-logos>p{margin:.4rem 0 1.8rem;font:300 1rem/1.5 Lato,Arial,sans-serif;color:var(--muted)}
+.bt-logos ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.6rem 2rem;align-items:center}
+.bt-logos li{display:flex;align-items:center;justify-content:center;height:56px}
+.bt-logos img{max-width:130px;max-height:46px;min-height:30px;width:auto;height:auto;object-fit:contain}
+.bt-edu{margin:4rem 0 0;text-align:center}
+.bt-edu-intro{max-width:640px;margin:.5rem auto 2rem;font:300 1.02rem/1.65 Lato,Arial,sans-serif;color:var(--muted)}
+.bt-edu ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem;text-align:left;counter-reset:deg}
+.bt-edu li{position:relative;padding-top:1.4rem;border-top:2px solid var(--slate)}
+.bt-edu li img{display:block;height:52px;width:auto;max-width:120px;object-fit:contain;margin:0 0 1rem;mix-blend-mode:multiply}
+.bt-edu li h3{margin:0;font:400 1.35rem/1.2 "Cormorant Garamond",Georgia,serif;color:var(--ink)}
+.bt-school{margin:.2rem 0 .6rem;font:400 .9rem/1.3 Lato,Arial,sans-serif;color:var(--slate)}
+.bt-edu li p:last-child{margin:0;font:300 .95rem/1.6 Lato,Arial,sans-serif;color:var(--ink)}
+.bt-cred{max-width:820px;margin:2.6rem auto 0;font:300 1rem/1.7 Lato,Arial,sans-serif;color:var(--ink)}
+.bt-next{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem;margin:3rem 0 0}
+.bt-next a{padding:.65rem 1.1rem;border:1px solid #b9ccd6;border-radius:3px;color:var(--slate);font:300 .92rem/1.2 Lato,Arial,sans-serif;text-decoration:none;transition:background .2s,color .2s}
+.bt-next a.bt-next-primary{background:var(--slate);border-color:var(--slate);color:#fff}
+.bt-next a:hover,.bt-next a:focus-visible{background:#173c50;border-color:#173c50;color:#fff}
+@media(max-width:900px){.bt-intro{grid-template-columns:1fr;gap:1.2rem}.bt-eras{grid-template-columns:1fr;border-top:0}.bt-era,.bt-era:first-of-type,.bt-era:last-of-type{padding:1.8rem 0 0;border-left:0;border-top:1px solid var(--rule)}.bt-logos ul{grid-template-columns:repeat(3,minmax(0,1fr))}.bt-edu ol{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.bt-page{padding-top:2rem}.bt-logos{padding:1.6rem 1rem}.bt-logos ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}.bt-edu ol{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.bt-next a{transition:none}}
+</style>
+<style>
+/* First screen: heading, intro, era buttons, logo strip on the bottom edge */
+.bt-page{padding-top:0;padding-bottom:4rem;width:auto}
+.bt-page>.bt-first,.bt-page>.bt-rest{width:min(1180px,90vw);margin:0 auto}
+.bt-first{min-height:calc(100svh - 60px - var(--bt-strip,72px));display:flex;flex-direction:column;justify-content:center;padding:1.6rem 0 1.8rem;box-sizing:border-box}
+.bt-first .bt-intro{margin-top:1.6rem}
+.bt-eras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;margin:2rem 0 0;border:0}
+.bt-era-btn{display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:1.3rem 1.5rem 1.2rem;border:1px solid #b9ccd6;border-radius:4px;background:transparent;color:inherit;font:inherit;cursor:pointer;transition:background .2s,border-color .2s}
+.bt-era-btn:hover,.bt-era-btn:focus-visible,.bt-era-btn[aria-pressed="true"]{background:#e3edf2;border-color:#244f6c}
+.bt-era-btn:focus-visible{outline:2px solid #244f6c;outline-offset:3px}
+.bt-era-btn .bt-era-num{margin:0;font:400 clamp(3rem,5vw,4.4rem)/.9 "Cormorant Garamond",Georgia,serif;color:#185b78}
+.bt-era-btn .bt-era-num::before{content:"Banking";display:block;margin:0 0 .3rem;font:400 .9rem/1 Lato,Arial,sans-serif;color:#4d6072}
+.bt-era-name{margin:.4rem 0 .35rem;font:400 1.6rem/1.15 "Cormorant Garamond",Georgia,serif;color:#172536}
+.bt-era-btn .bt-era-def{margin:0 0 .9rem;font:italic 400 1.05rem/1.4 "Cormorant Garamond",Georgia,serif;color:#4d6072}
+.bt-era-more{margin-top:auto;font:400 .88rem/1.2 Lato,Arial,sans-serif;color:#244f6c;border-bottom:1px solid currentColor}
+/* Logo strip (moved from Startup Journey) */
+html body.bt-layout .bt-affiliations{padding:0;margin:0;width:100vw;margin-left:calc(50% - 50vw);box-sizing:border-box}html body.bt-layout{overflow-x:clip}
+html body.bt-layout .bt-affiliations .company-bar{margin:0}
+html body.bt-layout .bt-affiliations .brand-logo img[src="images/logos/varo-updated.png"]{width:42px!important;height:42px!important;object-fit:contain;mix-blend-mode:normal;transform:none}
+.bt-rest>.bt-edu{margin-top:3.6rem}
+/* Era details popup */
+.bt-dialog{box-sizing:border-box;width:min(680px,92vw);max-width:92vw;max-height:88svh;margin:auto;padding:1.7rem 2rem 1.6rem;border:1px solid #adc1cc;border-radius:8px;background:#f7fafb;color:#172536;box-shadow:0 20px 80px rgb(18 43 59 / .35);overflow-y:auto}
+.bt-dialog::backdrop{background:rgb(18 35 47 / .55)}
+.bt-dialog-close{position:absolute;top:.6rem;right:.8rem;width:2.2rem;height:2.2rem;border:0;border-radius:50%;background:transparent;color:#24556e;font:300 1.6rem/1 Lato,Arial,sans-serif;cursor:pointer}
+.bt-dialog-close:hover,.bt-dialog-close:focus-visible{background:#dbe7ed}
+.bt-era-panel[hidden]{display:none}
+.bt-dialog-kicker{margin:0;font:400 .95rem/1.2 Lato,Arial,sans-serif;color:#4d6072}
+.bt-era-panel h2{margin:.15rem 2.2rem .3rem 0;font:400 2.1rem/1.1 "Cormorant Garamond",Georgia,serif;color:#185b78}
+.bt-era-panel .bt-era-def{margin:0 0 1rem;font:italic 400 1.12rem/1.45 "Cormorant Garamond",Georgia,serif;color:#4d6072}
+.bt-era-panel ul{list-style:none;margin:0;padding:0}
+.bt-era-panel li{padding:.85rem 0;border-top:1px solid #cfdae3}
+.bt-era-panel h4{margin:0 0 .3rem;font:400 1rem/1.3 Lato,Arial,sans-serif;color:#244f6c}
+.bt-era-panel h4 span{font-weight:300;color:#4d6072;margin-left:.35rem}
+.bt-era-panel li p{margin:0;font:300 .96rem/1.6 Lato,Arial,sans-serif}
+@media(max-width:900px){.bt-eras{grid-template-columns:1fr;gap:.8rem}.bt-era-btn{display:grid;grid-template-columns:auto 1fr;column-gap:1.2rem;align-items:center}.bt-era-btn .bt-era-num{grid-row:span 3}.bt-era-btn .bt-era-def{margin-bottom:.4rem}.bt-first{min-height:0}}
+@media(max-width:600px){.bt-dialog{padding:1.3rem 1.2rem}.bt-era-panel h2{font-size:1.8rem}}
+@media(min-width:901px) and (max-height:800px){.bt-first{padding:.8rem 0 1rem}.bt-first .bt-intro{margin-top:1rem}.bt-first .bt-intro p{font-size:.97rem;line-height:1.62}.bt-eras{margin-top:1.2rem}.bt-era-btn{padding:1rem 1.3rem .9rem}.bt-era-btn .bt-era-num{font-size:3rem}}
+@media(prefers-reduced-motion:reduce){.bt-era-btn{transition:none}}
+</style>
+<style>@media (min-width:901px) and (max-height:740px){html body .bt-first{padding:.5rem 0 .7rem}html body .bt-first .bt-intro{margin-top:.8rem}html body .bt-first .bt-intro p{line-height:1.55}html body .bt-eras{margin-top:1rem}html body .bt-era-btn{padding:.8rem 1.2rem .75rem}html body .bt-era-btn .bt-era-def{margin-bottom:.5rem}}</style>
+<style id="bt-align">
+@media (min-width:901px){
+html body .bt-first{justify-content:flex-start;padding:var(--bt-top,42px) 0 0}
+html body .bt-first .bt-heading h1{margin-top:0}
+html body .bt-first .bt-eras{margin-top:auto;margin-bottom:auto;padding:2.2rem 0 3.4rem}
+html body .bt-era-btn{padding:1rem 1.3rem .9rem}
+html body .bt-era-btn .bt-era-num{font-size:clamp(2.6rem,3.6vw,3.6rem)}
+html body .bt-era-btn .bt-era-name{font-size:1.45rem;margin:.3rem 0 .25rem}
+html body .bt-era-btn .bt-era-def{font-size:1rem;line-height:1.35;margin-bottom:.6rem}
+}
+@media (min-width:901px) and (max-height:800px){
+html body .bt-first .bt-eras{padding:1.4rem 0 2.6rem}
+html body .bt-era-btn{padding:.75rem 1.1rem .7rem}
+html body .bt-era-btn .bt-era-num{font-size:2.5rem}
+html body .bt-era-btn .bt-era-num::before{font-size:.8rem;margin-bottom:.2rem}
+html body .bt-era-btn .bt-era-name{font-size:1.3rem}
+html body .bt-era-btn .bt-era-def{font-size:.95rem;margin-bottom:.45rem}
+}
+@media (min-width:901px) and (max-height:740px){
+html body .bt-first .bt-eras{padding:1rem 0 2.2rem}
+html body .bt-era-btn{padding:.6rem 1.1rem .6rem}
+html body .bt-era-btn .bt-era-def{line-height:1.3;margin-bottom:.4rem}
+}
+</style>
+<style id="bt-onescreen">
+@media (min-width:901px){
+
+html body.bt-layout main.bt-page{padding-bottom:0!important}html body.bt-layout .bt-first .bt-eras{padding:clamp(1rem,3vh,2.2rem) 0 clamp(.9rem,2.4vh,1.6rem)!important}
+}
+html body.bt-layout .bt-more{display:flex;justify-content:center;align-items:center;gap:.9rem;flex-wrap:wrap;margin:0 0 clamp(1rem,3.2vh,2.4rem)}
+html body.bt-layout .bt-more .bt-more-btn,html body.bt-layout .bt-more .bt-more-link{display:inline-flex!important;flex-direction:row!important;white-space:nowrap;align-items:center;padding:.6rem .95rem;border:1px solid #c5d3dc;border-radius:4px;background:transparent;color:#597382;font:300 .85rem/1.2 Lato,Arial,sans-serif;text-decoration:none;cursor:pointer;grid-template-columns:none;transition:background .2s,border-color .2s,color .2s}
+html body.bt-layout .bt-more .bt-more-btn::after,html body.bt-layout .bt-more .bt-more-link::after{content:" \2192";margin-left:.35rem}
+html body.bt-layout .bt-more .bt-more-btn:hover,html body.bt-layout .bt-more .bt-more-btn:focus-visible,html body.bt-layout .bt-more .bt-more-btn[aria-pressed="true"],html body.bt-layout .bt-more .bt-more-link:hover,html body.bt-layout .bt-more .bt-more-link:focus-visible{background:#e3edf2;border-color:#8fa9b8;color:#244f6c}
+html body.bt-layout .bt-dialog.bt-wide{width:min(1040px,94vw)}
+html body.bt-layout .bt-edu-panel{margin:0;text-align:left}
+html body.bt-layout .bt-edu-panel .bt-edu-intro{margin:.4rem 0 1.6rem;max-width:none}
+html body.bt-layout .bt-edu-panel ol{gap:1.5rem}
+html body.bt-layout .bt-edu-panel .bt-cred{margin:1.6rem 0 0;font:300 .95rem/1.65 Lato,Arial,sans-serif;color:#2b3640}
+html body.bt-layout .bt-edu-panel .bt-next a{display:inline-flex;align-items:center;padding:.6rem .95rem;border:1px solid #c5d3dc;border-radius:4px;background:transparent!important;color:#3f6276!important;font:300 .85rem/1.2 Lato,Arial,sans-serif;text-decoration:none}html body.bt-layout .bt-edu-panel .bt-next a:hover,html body.bt-layout .bt-edu-panel .bt-next a:focus-visible{background:#e3edf2!important;border-color:#8fa9b8;color:#244f6c!important}html body.bt-layout .bt-edu-panel .bt-next{margin:1.4rem 0 0;display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:flex-start}
+@media (max-width:900px){html body.bt-layout .bt-edu-panel ol{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){html body.bt-layout .bt-edu-panel ol{grid-template-columns:1fr}}
+</style>
+<style id="bt-scroll">
+/* Relaxed layout: the page scrolls, text is narrower and the era boxes are square. */
+html body.bt-layout .bt-first{min-height:0!important;padding-bottom:3rem!important;justify-content:flex-start!important}
+html body.bt-layout .bt-first .bt-intro{max-width:880px!important;margin:2rem auto 0!important;gap:3rem!important}
+html body.bt-layout .bt-first .bt-intro p{font-size:1rem!important;line-height:1.75!important}
+html body.bt-layout .bt-first .bt-eras{display:grid!important;grid-template-columns:repeat(3,minmax(0,290px))!important;justify-content:center;gap:1.6rem!important;margin:3.2rem auto 0!important;padding:0!important}
+html body.bt-layout .bt-era-btn:not(.bt-more-btn){aspect-ratio:1/1;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;padding:1.4rem 1.5rem!important}
+html body.bt-layout .bt-era-btn .bt-era-num{font-size:clamp(4.2rem,6vw,5.6rem)!important;line-height:.9!important;margin:0 0 .6rem!important}
+html body.bt-layout .bt-era-btn .bt-era-num::before{font-size:.85rem!important;margin:0 0 .45rem!important;letter-spacing:.08em}
+html body.bt-layout .bt-era-btn .bt-era-name{font-size:1.5rem!important;margin:0 0 .5rem!important}
+html body.bt-layout .bt-era-btn .bt-era-def{display:block!important;font-size:1rem!important;line-height:1.4!important;margin:0 0 .9rem!important;max-width:15rem}
+html body.bt-layout .bt-era-btn .bt-era-more{display:inline!important;margin-top:0!important;font-size:.85rem!important}
+html body.bt-layout .bt-more{margin:2.4rem 0 0!important}
+html body.bt-layout .bt-affiliations .brand-logo img{transform:scale(1.1);transform-origin:center}@media (min-width:1600px){html body.bt-layout .bt-affiliations .brand-logo img{transform:scale(1.18)}}
+html body.bt-layout .bt-affiliations .company-bar{padding-top:.9rem!important;padding-bottom:.9rem!important}
+@media (max-width:900px){html body.bt-layout .bt-first .bt-eras{grid-template-columns:minmax(0,340px)!important}html body.bt-layout .bt-era-btn:not(.bt-more-btn){aspect-ratio:auto;min-height:260px}}
+</style>
+<style id="bt-first-screen">
+/* Desktop: heading, text, era boxes and logo strip fit the first screen; the footer sits below it. */
+@media (min-width:901px){
+html body.bt-layout .bt-first{padding-top:1.2rem!important;padding-bottom:1.4rem!important}
+html body.bt-layout .bt-first .bt-intro{margin-top:1.4rem!important}
+html body.bt-layout .bt-first .bt-intro p{line-height:1.65!important}
+html body.bt-layout .bt-first .bt-eras{margin-top:1.8rem!important}
+html body.bt-layout .bt-era-btn:not(.bt-more-btn){aspect-ratio:auto!important;height:var(--bt-box,290px);padding:1rem 1.4rem!important;overflow:hidden}
+html body.bt-layout .bt-era-btn .bt-era-num{font-size:clamp(3rem,calc(var(--bt-box,290px) * .27),5.6rem)!important}
+html body.bt-layout .bt-more{margin-top:1.3rem!important}
+html.bt-short body.bt-layout .bt-era-btn .bt-era-def{display:none!important}
+html.bt-short body.bt-layout .bt-era-btn .bt-era-name{margin-bottom:.35rem!important}
+}
+@media (min-width:901px) and (max-height:820px){
+html body.bt-layout .bt-first{padding-top:.6rem!important;padding-bottom:1rem!important}
+html body.bt-layout .bt-heading h1{font-size:2.8rem!important;margin-bottom:.3rem!important}
+html body.bt-layout .bt-heading h1{margin-bottom:.9rem!important}html body.bt-layout .bt-heading .about-rule{margin:0 auto .5rem!important}
+html body.bt-layout .bt-heading .bt-lead{font-size:1.3rem!important;margin:.3rem 0 0!important}
+html body.bt-layout .bt-first .bt-intro{margin-top:1rem!important}
+html body.bt-layout .bt-first .bt-intro p{font-size:.93rem!important;line-height:1.55!important}
+html body.bt-layout .bt-first .bt-eras{margin-top:1.2rem!important}
+html body.bt-layout .bt-more{margin-top:.9rem!important}
+}
+</style>
+<style id="edu-school-gap">html body.bt-layout .bt-edu-panel .bt-school{margin-bottom:1em!important}</style>
+<style id="edu-logos">
+html body.bt-layout .bt-edu-panel ol li{text-align:center}
+html body.bt-layout .bt-edu-panel ol li img{display:block;height:84px!important;width:auto!important;max-width:170px!important;object-fit:contain;margin:0 auto 1.1rem!important}
+html body.bt-layout .bt-edu-panel ol li img[src*="inceif"]{height:auto!important;width:170px!important;margin-top:18px!important;margin-bottom:calc(1.1rem + 18px)!important}
+</style>
+<style id="cred-centred">html body.bt-layout .bt-edu-panel .bt-cred{max-width:820px;margin-left:auto!important;margin-right:auto!important;text-align:left;text-align-last:auto}html body.bt-layout .bt-edu-panel .bt-next{justify-content:center}@media(max-width:600px){html body.bt-layout .bt-edu-panel .bt-cred{text-align:left;text-align-last:auto}}</style>
+</head>
+<body class="bt-layout site-branding">
+<header class="site-header inner-page-header">
+<a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
+<button class="menu" aria-label="Open navigation" aria-expanded="false">Menu</button>
+<nav aria-label="Main navigation"><a href="about.html" aria-current="true">About</a><a href="books.html">Books</a><a href="poetry.html">Writing</a><a href="contact.html">Contact</a></nav>
+<nav class="social-links" aria-label="Social media"><a href="https://www.linkedin.com/in/umar-rafi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6H2V22h3.4V7.6ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.5c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.2V7.6H9.2V22h3.4v-8c0-2.1.4-4.1 3-4.1s3 2.4 3 4.2V22H22v-8.5Z"/></svg></a><a href="https://www.facebook.com/uxrafi" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.3-2.8-.3-2.8 0-4.7 1.7-4.7 4.9v2.6H7V13h3.2v9H14Z"/></svg></a></nav>
+</header>
+<main class="bt-page" id="top">
+<section class="bt-first"><header class="bt-heading"><h1>Banking technology.</h1><div class="about-rule"></div><p class="bt-lead">Twenty-five years. Three eras of banking.</p></header>
+<div class="bt-intro"><p>For close to twenty-five years, I have helped shape the software that banking depends on, developing deep expertise in financial systems and enterprise architecture. My work spans banking data, risk and regulatory systems, cloud-based financial-services platforms and, increasingly, artificial intelligence. It is grounded in building solutions for institutions ranging from microfinance providers in developing countries to some of the world’s largest banks, across North America, Europe and the Middle East.</p><p>I have worked through three phases of banking technology: systems that record, platforms that connect and AI agents that act. Throughout that evolution, banking has remained my domain, giving me a distinctive perspective on how each generation inherits the strengths and limitations of the last. Today, I bring that accumulated knowledge to autonomous AI, defining the architecture, governance and controls that allow intelligence to act within clear boundaries of authority, evidence and accountability.</p></div>
+<div class="bt-eras" role="group" aria-label="Three eras of banking"><button type="button" class="bt-era-btn" data-era="0" aria-haspopup="dialog" aria-pressed="false"><span class="bt-era-num" aria-hidden="true">1.0</span><span class="bt-sr">Banking 1.0: </span><span class="bt-era-name">Systems that record</span><span class="bt-era-def">The bank’s institutional memory: data, risk and regulatory systems running inside the institution.</span><span class="bt-era-more">See the work</span></button><button type="button" class="bt-era-btn" data-era="1" aria-haspopup="dialog" aria-pressed="false"><span class="bt-era-num" aria-hidden="true">2.0</span><span class="bt-sr">Banking 2.0: </span><span class="bt-era-name">Platforms that connect</span><span class="bt-era-def">Cloud, software as a service and digital banking: data and services brought together across channels.</span><span class="bt-era-more">See the work</span></button><button type="button" class="bt-era-btn" data-era="2" aria-haspopup="dialog" aria-pressed="false"><span class="bt-era-num" aria-hidden="true">3.0</span><span class="bt-sr">Banking 3.0: </span><span class="bt-era-name">Agents that act</span><span class="bt-era-def">Intelligence that carries work within explicit boundaries of authority, evidence and accountability.</span><span class="bt-era-more">See the work</span></button></div><div class="bt-more"><button type="button" class="bt-era-btn bt-more-btn" data-era="3" aria-haspopup="dialog" aria-pressed="false">Education &amp; credentials</button><a class="bt-more-link" href="contact.html">Speaking &amp; advisory enquiries</a></div></section><div class="home-layout bt-affiliations"><section class="company-bar auto-logo-strip" aria-label="Professional affiliations"><div class="logo-window"><div class="company-list"><div class="logo-group">
+
+<a class="brand-logo" href="https://www.varomoney.com/" target="_blank" rel="noopener noreferrer" aria-label="Varo Bank"><img src="images/logos/varo-updated.png" alt="Varo Bank" width="130" height="64"></a>
+
+<a class="brand-logo" href="https://www.td.com/" target="_blank" rel="noopener noreferrer" aria-label="TD"><img src="images/logos/td-updated.png" alt="TD" width="130" height="64"></a>
+
+
+<a class="brand-logo" href="https://home.barclays/" target="_blank" rel="noopener noreferrer" aria-label="Barclays"><img src="images/logos/barclays-local.svg" alt="Barclays" width="80" height="48"></a>
+
+<a class="brand-logo" href="https://www.alinma.com/" target="_blank" rel="noopener noreferrer" aria-label="Alinma Bank"><img src="images/logos/alinma.svg" alt="Alinma Bank" width="80" height="48"></a>
+<a class="brand-logo" href="https://www.wellsfargo.com/" target="_blank" rel="noopener noreferrer" aria-label="Wells Fargo"><img src="images/logos/wells-fargo-local.svg" alt="Wells Fargo" width="80" height="48"></a>
+<a class="brand-logo" href="https://www.bmo.com/" target="_blank" rel="noopener noreferrer" aria-label="Bank of Montreal"><img src="images/logos/bmo.svg" alt="Bank of Montreal" width="80" height="48"></a>
+<a class="brand-logo" href="https://www.hbl.com/" target="_blank" rel="noopener noreferrer" aria-label="HBL"><img src="images/logos/hbl-local.svg" alt="HBL" width="80" height="48"></a>
+<a class="brand-logo" href="https://www.ubs.com/global/en/our-firm/credit-suisse.html" target="_blank" rel="noopener noreferrer" aria-label="Credit Suisse"><img src="images/logos/credit-suisse-local.svg" alt="Credit Suisse" width="80" height="48"></a><a class="brand-logo" href="https://www.edwardjones.com/" target="_blank" rel="noopener noreferrer" aria-label="Edward Jones"><img src="images/logos/edward-jones-local.svg" alt="Edward Jones" width="86" height="36"></a><span class="brand-logo" aria-label="Noor Bank"><img src="images/logos/noor-bank.png" alt="Noor Bank" width="64" height="36"></span>
+<a class="brand-logo" href="https://www.bankaudi.com.lb/" target="_blank" rel="noopener noreferrer" aria-label="Bank Audi"><img src="images/logos/bank-audi-updated.png" alt="Bank Audi" width="64" height="36"></a>
+<a class="brand-logo" href="https://robinhood.com/" target="_blank" rel="noopener noreferrer" aria-label="Robinhood"><img src="images/logos/robinhood-local.svg" alt="Robinhood" width="64" height="36"></a><a class="brand-logo" href="https://www.scotiabank.com/" target="_blank" rel="noopener noreferrer" aria-label="Scotiabank"><img src="images/logos/scotiabank-updated.jpeg" alt="Scotiabank" width="96" height="40"></a><a class="brand-logo" href="https://www.usbank.com/" target="_blank" rel="noopener noreferrer" aria-label="U.S. Bank"><img src="images/logos/us-bank.png" alt="U.S. Bank" width="96" height="40"></a>
+<a class="brand-logo" href="https://www.schwab.com/" target="_blank" rel="noopener noreferrer" aria-label="Charles Schwab"><img src="images/logos/charles-schwab.png" alt="Charles Schwab" width="96" height="40"></a></div></div></div></section></div>
+</main>
+<dialog class="bt-dialog" id="bt-dialog" aria-labelledby="bt-era-0-title"><button type="button" class="bt-dialog-close" aria-label="Close">×</button><section class="bt-era-panel" id="bt-era-0" hidden><p class="bt-dialog-kicker">Banking 1.0</p><h2 id="bt-era-0-title">Systems that record</h2><p class="bt-era-def">The bank’s institutional memory: data, risk and regulatory systems running inside the institution.</p><ul><li><h4>Oracle <span>2007–2015</span></h4><p>I led the Risk and Compliance practice across the Middle East and Africa, bringing risk, regulatory and compliance systems to banks across the region.</p></li><li><h4>FRS Global <span>2005–2007</span></h4><p>I built the Canadian operation from inception. Within eighteen months our clients included four of Canada’s six largest banks, with regulatory reporting and Basel II across credit, market and operational risk.</p></li><li><h4>Verax <span>2003–2005</span></h4><p>I established the software-development lifecycle practice for dependable enterprise systems.</p></li></ul></section><section class="bt-era-panel" id="bt-era-1" hidden><p class="bt-dialog-kicker">Banking 2.0</p><h2 id="bt-era-1-title">Platforms that connect</h2><p class="bt-era-def">Cloud, software as a service and digital banking: data and services brought together across channels.</p><ul><li><h4>Salesforce <span>2017–2025</span></h4><p>I helped shape Financial Services Cloud and architected cloud transformations for banks and wealth managers across North America and Europe, as a Certified Technical Architect.</p></li><li><h4>Varo Bank <span>2016–2017</span></h4><p>On the founding technology leadership team of a digital bank, I worked across core banking, governance, compliance, integration and regulatory controls.</p></li><li><h4>WorldInsure <span>2001–2002</span></h4><p>Early software as a service: a hosted life and health insurance platform supporting sales and underwriting, at the start of cloud-based financial-services software.</p></li></ul></section><section class="bt-era-panel" id="bt-era-2" hidden><p class="bt-dialog-kicker">Banking 3.0</p><h2 id="bt-era-2-title">Agents that act</h2><p class="bt-era-def">Intelligence that carries work within explicit boundaries of authority, evidence and accountability.</p><ul><li><h4>Sayaa.ai <span>Today</span></h4><p>I co-founded Sayaa.ai to bring runtime assurance to autonomous financial systems: discovering, controlling and demonstrating how AI agents behave.</p></li><li><h4>Banking 3.0 <span>December 2026</span></h4><p>My book on the architecture banks need as intelligence learns to act.</p></li><li><h4>Tessera Labs <span>2025–2026</span></h4><p>As VP of Enterprise Architecture and Delivery, I led architecture and delivery for the Mosaic AI-agent platform.</p></li><li><h4>Georgia Tech <span>Research</span></h4><p>My research examines the runtime governance of enterprise AI-agent workflows.</p></li></ul></section><section class="bt-era-panel bt-edu bt-edu-panel" id="bt-era-3" hidden><p class="bt-dialog-kicker">Education &amp; credentials</p><h2 id="bt-era-3-title">How my education fits together</h2><p class="bt-edu-intro">Each degree added a layer to the same question: how systems that hold people’s money and trust should be built, and how they should behave.</p><ol><li><img src="images/education/usafa-trim.jpg" alt="" loading="lazy"><h3>B.S. Applied Mathematics</h3><p class="bt-school">United States Air Force Academy</p><p>Modelling numerical methods for flight systems.</p></li><li><img src="images/education/wichita-state-trim.jpg" alt="" loading="lazy"><h3>M.S. Computer Science</h3><p class="bt-school">Wichita State University</p><p>Persistent object-oriented data models and query processing for complex data.</p></li><li><img src="images/education/inceif-trim.png" alt="" loading="lazy"><h3>Ph.D. Finance</h3><p class="bt-school">INCEIF</p><p>Antifragility of equity contracts versus debt contracts under black swan events.</p></li><li><img src="images/education/georgia-tech-trim.png" alt="" loading="lazy"><h3>M.S. Machine Learning</h3><p class="bt-school">Georgia Tech</p><p>Telemetry-driven runtime governance of enterprise AI-agent workflows.</p></li></ol>
+<p class="bt-cred">I am a Salesforce Certified Technical Architect and hold 27 Salesforce certifications. I have taught at UC Berkeley Extension in California, USA; SP Jain School of Global Management, with campuses in Dubai, Singapore, Sydney and Mumbai; and Hamdan Bin Mohammed Smart University in Dubai, UAE. I also mentor computer science students in remote areas of developing countries through iCodeGuru, a California-based nonprofit that expands access to technology education through online crowdlearning.</p><nav class="bt-next" aria-label="Related pages"><a class="bt-next-primary" href="contact.html">Speaking and advisory enquiries</a><a href="banking-3.html">About Banking 3.0</a><a href="ventures.html">Startup Journey</a></nav></section></dialog>
+<footer id="contact" class="book-landing-footer"><div><a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a></div><p class="footer-meta"><a class="footer-blog-link" href="blog.html">Blog</a><span class="footer-sep" aria-hidden="true">·</span>© <span id="year">2026</span> Umar Rafi</p></footer>
+<script src="script.js?v=mobile-entrance-fix-96"></script>
+<script>
+(()=>{
+/* Era buttons open their details in a popup */
+const dlg=document.getElementById('bt-dialog');if(!dlg)return;
+const btns=[...document.querySelectorAll('.bt-era-btn')],panels=[...dlg.querySelectorAll('.bt-era-panel')],close=dlg.querySelector('.bt-dialog-close');let opener=null;
+btns.forEach(b=>b.addEventListener('click',()=>{const i=b.dataset.era;panels.forEach(p=>p.hidden=p.id!=='bt-era-'+i);btns.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));dlg.setAttribute('aria-labelledby','bt-era-'+i+'-title');dlg.classList.toggle('bt-wide',i==='3');opener=b;dlg.showModal();dlg.scrollTop=0;close.focus()}));
+close.addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target!==dlg)return;const r=dlg.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dlg.close()});
+dlg.addEventListener('close',()=>{btns.forEach(x=>x.setAttribute('aria-pressed','false'));if(opener){opener.focus({preventScroll:true});opener.blur()}});
+/* Keep the logo strip on the bottom edge of the first screen */
+const strip=document.querySelector('.bt-affiliations'),foot=document.querySelector('body > footer');function size(){if(strip)document.documentElement.style.setProperty('--bt-strip',strip.offsetHeight+'px');if(foot)document.documentElement.style.setProperty('--bt-foot',foot.offsetHeight+'px')}size();addEventListener('resize',size);
+})();
+</script>
+<script id="bt-first-screen-fit">
+(()=>{const root=document.documentElement,strip=document.querySelector('.bt-affiliations');if(!strip)return;
+function fit(){if(innerWidth<901){root.style.removeProperty('--bt-box');root.classList.remove('bt-short');return}
+root.classList.remove('bt-short');root.style.setProperty('--bt-box','290px');
+const over=strip.getBoundingClientRect().bottom+scrollY-innerHeight;
+let h=Math.max(170,Math.min(290,Math.floor(290-over)));
+if(h<235){root.classList.add('bt-short');const o2=strip.getBoundingClientRect().bottom+scrollY-innerHeight;h=Math.max(170,Math.min(290,Math.floor(290-o2)))}
+root.style.setProperty('--bt-box',h+'px')}
+fit();addEventListener('resize',fit);addEventListener('load',fit);document.fonts&&document.fonts.ready.then(fit)})();
+</script>
+</body></html>
