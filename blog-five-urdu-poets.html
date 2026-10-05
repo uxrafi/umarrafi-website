@@ -275,11 +275,11 @@ html body.blog-layout main.blog-post-page{box-sizing:border-box;width:100%;max-w
 .poet-picker{margin:2rem 0;color:#435363}
 .poet-picker>p{font:300 1rem/1.6 Lato,Arial,sans-serif}
 .poet-portrait-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem}
-.poet-choice{min-width:0;padding:.6rem;border:1px solid #cfdae3;border-radius:3px;background:transparent;color:#244f6c;cursor:pointer;text-align:center}
+.poet-choice{min-width:0;padding:.6rem;border:0;border-radius:3px;background:transparent;color:#244f6c;cursor:pointer;text-align:center}
 .blog-post-page .poet-picker .poet-choice img{display:block!important;width:100%!important;height:160px!important;max-width:none!important;max-height:none!important;aspect-ratio:auto;object-fit:cover!important;object-position:center top;margin:0 0 .6rem!important;filter:grayscale(1)}
 .poet-choice span{display:block;font:400 1.2rem/1.3 "Cormorant Garamond",Georgia,serif}
 .poet-choice small{display:block;margin-top:.4rem;font:400 .7rem/1.5 Lato,Arial,sans-serif}
-.poet-choice[aria-expanded="true"]{background:#e5eef4;border-color:#244f6c;box-shadow:inset 0 -3px #244f6c}
+.poet-choice[aria-expanded="true"]{background:#e5eef4;box-shadow:none}
 .poet-read-all{margin-top:1rem;padding:.5rem .8rem;background:transparent;border:1px solid #cfdae3;border-radius:3px;color:#244f6c;cursor:pointer}
 .poet-picker button:focus-visible{outline:2px solid #244f6c;outline-offset:3px}
 .poet-picker-ready section.poet[hidden]{display:none!important}
@@ -288,7 +288,7 @@ html body.blog-layout main.blog-post-page{box-sizing:border-box;width:100%;max-w
 .poet-picker-ready section.poet{scroll-margin-top:150px}
 @media(max-width:700px){.poet-portrait-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}.poet-choice img{height:140px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style></head>
+</style><style id="poet-portrait-borderless">.blog-post-page .poet-picker .poet-choice,.blog-post-page .poet-picker .poet-choice img{border:0!important;box-shadow:none!important}</style></head>
 <body class="blog-layout site-branding">
 <header class="site-header inner-page-header">
 <a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
