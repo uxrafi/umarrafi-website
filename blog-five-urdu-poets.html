@@ -256,7 +256,22 @@ html body.blog-layout main.blog-post-page{box-sizing:border-box;width:100%;max-w
 .blog-post-page .couplet.cg.cg-wrap .cg-s,.blog-post-page .couplet.cg.cg-wrap .cg-t{white-space:normal}
 @media(max-width:640px){.blog-post-page .couplet.cg{grid-template-columns:1fr;row-gap:0}.blog-post-page .couplet.cg .cg-s,.blog-post-page .couplet.cg .cg-t{white-space:normal;overflow:visible}.blog-post-page .couplet.cg .cg-t{margin-bottom:.45rem}}
 </style>
-</head>
+<style id="comments-trial-style">
+.reader-comments{max-width:880px;margin:3rem auto;padding:2rem 0;border-top:1px solid #cfdae3;color:#435363}
+.reader-comments h2{font:400 2rem/1.2 "Cormorant Garamond",Georgia,serif;color:#185b78;margin:0 0 .65rem}
+.reader-comments p{font:300 1rem/1.7 Lato,Arial,sans-serif}
+.reader-comments .comment-trial-label{font:.7rem/1.5 Montserrat,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#647386}
+.comment-fields{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.reader-comments label{display:block;font:.85rem/1.6 Lato,Arial,sans-serif}
+.reader-comments input,.reader-comments textarea{box-sizing:border-box;width:100%;margin:.35rem 0 1rem;padding:.7rem;border:1px solid #cfdae3;border-radius:3px;background:transparent;color:#172536;font:400 1rem/1.6 Lato,Arial,sans-serif}
+.reader-comments textarea{resize:vertical;min-height:140px}
+.reader-comments button{border:1px solid #b4c7d3;background:#e5eef4;color:#244f6c;border-radius:3px;padding:.65rem 1rem;font:.85rem/1.4 Lato,Arial,sans-serif;cursor:pointer}
+.reader-comments :focus-visible{outline:2px solid #244f6c;outline-offset:3px}
+.comment-preview{margin-top:1.5rem;border-left:2px solid #86b5c8;padding-left:1rem}
+.comment-preview[hidden]{display:none}
+.comment-preview-text{white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:700px){.reader-comments{margin:2rem 1rem}.comment-fields{grid-template-columns:1fr;gap:0}}
+</style></head>
 <body class="blog-layout site-branding">
 <header class="site-header inner-page-header">
 <a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
@@ -289,11 +304,22 @@ qs.forEach(function(q){var s=q.querySelector('.src'),t=q.querySelector('.tr');if
 })();</script>
 
 <script id="pin-title-offset">(function(){var t=document.querySelector('.post-titlebar.is-pinned');if(!t)return;function f(){var h=document.querySelector('.site-header'),cs=h&&getComputedStyle(h),o=(cs&&(cs.position==='fixed'||cs.position==='sticky'))?Math.max(0,h.getBoundingClientRect().bottom):0;t.style.setProperty('--pin-top',o+'px');var a=t.closest('article');if(a)a.style.setProperty('--poet-top',(o+t.offsetHeight)+'px')}f();addEventListener('resize',f);addEventListener('scroll',f,{passive:true});addEventListener('load',f)})();</script>
-</main>
+<section class="reader-comments" aria-labelledby="reader-comments-heading">
+<p class="comment-trial-label">Development preview</p>
+<h2 id="reader-comments-heading">Join the conversation</h2>
+<p>What stayed with you? Share a thought, a question or a different reading.</p>
+<p id="comment-trial-help">Try the form below. This preview does not submit or publish comments. When connected, comments will appear after approval and email addresses will remain private.</p>
+<form id="reader-comment-form" aria-describedby="comment-trial-help">
+<div class="comment-fields"><label>Your name<input name="name" autocomplete="name" maxlength="80" required></label><label>Email <span>(not displayed)</span><input name="email" type="email" autocomplete="email" required></label></div>
+<label>Your comment<textarea name="comment" maxlength="3000" required></textarea></label>
+<button type="submit">Preview comment</button>
+</form>
+<div class="comment-preview" hidden aria-live="polite"><p class="comment-trial-label">Preview only — not submitted</p><strong class="comment-preview-name"></strong><p class="comment-preview-text"></p></div>
+</section></main>
 <footer id="contact" class="book-landing-footer"><div><a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a></div><p class="footer-meta"><a class="footer-blog-link" href="blog.html">Blog</a><span class="footer-sep" aria-hidden="true">·</span>© <span id="year">2026</span> Umar Rafi</p></footer>
 <script src="script.js?v=mobile-entrance-fix-96"></script><script src="notify.js?v=2" defer></script><script id="blog-filters">
 (()=>{const bs=[...document.querySelectorAll('.blog-filters button')],secs=[...document.querySelectorAll('.blog-series[data-cat]')];
 function show(f){bs.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.f===f)));secs.forEach(x=>x.hidden=!(f==='all'||x.dataset.cat===f));if(history.replaceState)history.replaceState(null,'',f==='all'?location.pathname:'#'+f)}
 bs.forEach(b=>b.addEventListener('click',()=>show(b.dataset.f)));const h=location.hash.slice(1);if(['literature','finance','technology'].includes(h))show(h);})();
 </script>
-</body></html>
+<script id="comments-trial-script">(()=>{const form=document.getElementById('reader-comment-form'),preview=document.querySelector('.comment-preview');form.addEventListener('submit',event=>{event.preventDefault();preview.querySelector('.comment-preview-name').textContent=form.elements.name.value.trim();preview.querySelector('.comment-preview-text').textContent=form.elements.comment.value.trim();preview.hidden=false;});})();</script></body></html>
