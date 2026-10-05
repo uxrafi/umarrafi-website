@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#4d6d7d">
+<title>Books — Umar Rafi</title>
+<meta name="description" content="Books by Umar Rafi: A Children’s Playground, Banking 3.0, and Antifragility of Islamic Finance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=final-20261003">
+<style>
+.books-gallery-page{width:min(1240px,90vw);margin-inline:auto;padding:2.5rem 0 4rem}
+.books-gallery-page .books-page-heading{text-align:center;margin-bottom:2rem}
+.books-gallery-page .books-page-heading h1{font-size:clamp(2.4rem,4vw,4rem)}
+.book-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3rem;align-items:start}
+.book-gallery-card{text-align:center;display:flex;flex-direction:column;align-items:center}
+.book-graphic-button{width:100%;height:340px;display:flex;align-items:center;justify-content:center;padding:0;border:0;background:none;cursor:pointer}
+.book-graphic-button img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .3s}
+.book-graphic-button:hover img{transform:translateY(-5px)}
+.book-gallery-card .meta{font:300 .7rem/1.6 Montserrat,Arial,sans-serif;margin:1.1rem 0 .4rem}
+.book-gallery-card h2{font:400 1.8rem/1.15 'Cormorant Garamond',Georgia,serif;min-height:4.2rem;margin:.25rem 0 .8rem}
+.book-description-button,.close-book-description{font:300 .8rem/1.4 Montserrat,Arial,sans-serif;padding:.7rem 1.15rem;border:1px solid #aabfc9;border-radius:4px;background:#e2ecf1;color:#34586c;cursor:pointer;transition:background .2s,color .2s}
+.book-description-button:hover,.book-description-button:focus-visible,.book-description-button[aria-expanded="true"]{background:#4d7186;color:white}
+.book-graphic-button:focus-visible{outline:2px solid #4d7186;outline-offset:5px}
+.book-gallery-description[hidden]{display:none!important}
+.book-gallery-description{margin:2.5rem auto 0;max-width:950px;border-top:1px solid #cfdae3;padding-top:1.5rem}
+.book-description-heading{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.book-gallery-description h2{font-size:2.3rem}
+.book-gallery-description p{font:300 1.05rem/1.85 Lato,Arial,sans-serif}
+.book-gallery-description h2 a{color:inherit;text-decoration:none}
+.close-book-description{background:transparent}
+.close-book-description:hover{background:#4d7186;color:white}
+@media(max-width:800px){.book-gallery{gap:1.25rem}.book-graphic-button{height:270px}.book-gallery-card h2{font-size:1.4rem}}
+@media(max-width:600px){.book-gallery{grid-template-columns:1fr;gap:2.5rem}.book-graphic-button{height:320px}.book-gallery-card h2{min-height:0}.books-gallery-page{padding-top:2rem}}
+@media(prefers-reduced-motion:reduce){.book-graphic-button img{transition:none}}
+</style><style>
+.site-branding footer{padding:.7rem 5vw;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.site-branding footer>div>p{display:none}
+.site-branding footer .ur-logo{width:32px;height:34px}
+.site-branding footer p{margin:0;font-size:.75rem}
+.contact-layout footer.book-landing-footer>div,.contact-layout footer.book-landing-footer>p{display:block}
+@media(max-width:650px){.site-branding footer{flex-direction:row!important;text-align:left}.site-branding footer .author-name{font-size:.85rem}.contact-layout footer.book-landing-footer{justify-content:space-between}}
+</style><style>
+/* Keep the Books footer against the viewport bottom on short pages. */
+body.books-layout.site-branding{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;margin:0;padding-bottom:0}
+.books-layout.site-branding>.site-header{flex-shrink:0}
+.books-layout.site-branding>.books-gallery-page{flex:1 0 auto}
+.books-layout.site-branding>footer.book-landing-footer{flex-shrink:0;margin-bottom:0}
+</style><style>
+/* One footer height across the site, measured including padding. */
+body.site-branding>footer{box-sizing:border-box!important;height:60px!important;min-height:60px!important;padding:0 5vw!important;gap:1rem;align-items:center}
+body.site-branding>footer .ur-logo{width:32px!important;height:34px!important}
+body.site-branding>footer p{margin:0!important}
+@media(max-width:650px){body.site-branding>footer{height:54px!important;min-height:54px!important}body.home-layout.site-branding>footer{height:auto!important;min-height:54px!important;padding:.5rem 5vw!important}}
+</style><style>.books-page-heading>.eyebrow{font-size:1.05rem;letter-spacing:.14em;margin-bottom:1rem}</style><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://umarrafi-website.pages.dev/books.html"><meta property="og:type" content="website"><meta property="og:site_name" content="Umar Rafi"><meta property="og:title" content="Books — Umar Rafi"><meta property="og:description" content="Books by Umar Rafi: A Children’s Playground, Banking 3.0, and Antifragility of Islamic Finance."><meta property="og:url" content="https://umarrafi-website.pages.dev/books.html"><meta property="og:image" content="https://umarrafi-website.pages.dev/images/share/books.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/jpeg"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Umar Rafi", "url": "https://umarrafi-website.pages.dev", "sameAs": ["https://www.linkedin.com/in/umar-rafi/", "https://www.facebook.com/uxrafi"]}</script><style>.book-gallery-card .meta{color:#4d6072}</style><style>
+/* Book summary popup (matches the Ventures popup) */
+body .book-dialog{box-sizing:border-box;width:min(720px,92vw);max-width:92vw;max-height:88svh;margin:auto;padding:1.8rem 2rem;border:1px solid #adc1cc;border-radius:8px;background:#f7fafb;color:#292f34;box-shadow:0 20px 80px rgb(18 43 59 / .35);overflow-y:auto}
+body .book-dialog::backdrop{background:rgb(18 35 47 / .55)}
+body .book-dialog .book-dialog-close{position:absolute;top:.6rem;right:.8rem;width:2.2rem;height:2.2rem;border-radius:50%;font:300 1.6rem/1 Lato,Arial,sans-serif;color:#24556e;background:transparent;border:0;cursor:pointer}
+body .book-dialog .book-dialog-close:hover,body .book-dialog .book-dialog-close:focus-visible{background:#dbe7ed}
+body .book-dialog .book-gallery-description{display:grid;grid-template-columns:140px 1fr;gap:1.8rem;align-items:start;margin:0;max-width:none;border:0;padding:0}
+body .book-dialog .book-gallery-description[hidden]{display:none!important}
+body .book-dialog .book-dialog-cover{width:140px;height:auto;display:block}
+body .book-dialog .book-dialog-copy .meta{margin:.2rem 2.2rem .3rem 0;font:400 .72rem/1.4 Montserrat,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4f6878}
+body .book-dialog .book-dialog-copy h2{margin:0 2.2rem .7rem 0;font:400 2rem/1.1 "Cormorant Garamond",Georgia,serif;color:#185b78}
+body .book-dialog .book-dialog-copy h2 a{color:inherit;text-decoration:none}
+body .book-dialog .book-dialog-copy p:not(.meta){margin:0 0 1rem;font:300 1rem/1.65 Lato,Arial,sans-serif}
+body .book-dialog .book-dialog-more{display:inline-block;color:#24556e}
+@media(max-width:600px){body .book-dialog{padding:1.4rem 1.2rem}body .book-dialog .book-gallery-description{grid-template-columns:1fr;gap:1rem}body .book-dialog .book-dialog-cover{width:96px}body .book-dialog .book-dialog-copy h2{font-size:1.7rem}}
+</style>
+<style>
+/* Tagline under the Books heading (matches the Ventures lead line) */
+body.books-layout .books-page-heading .about-rule{margin:.9rem auto 1.2rem}
+body.books-layout .books-page-heading p.books-lead{font:400 1.6rem/1.3 "Cormorant Garamond",Georgia,serif;color:#185b78;letter-spacing:0;text-transform:none;margin:0}
+@media(max-width:600px){body.books-layout .books-page-heading p.books-lead{font-size:1.35rem}}
+</style>
+<style>
+/* Covers size to the screen height so the gallery fills the space above the footer. */
+@media(min-width:601px){
+body.books-layout main.books-gallery-page{padding-bottom:2.25rem}
+body.books-layout .book-gallery .book-graphic-button{height:clamp(185px,calc(100svh - 552px),530px)}
+}
+</style>
+<style>
+/* Shared page-title standard (About, Books, Writing): same size and same distance below the menu. */
+html body.books-layout main.books-gallery-page{padding-top:2.6rem}
+html body.books-layout main.books-gallery-page>.books-page-heading{margin-top:0;padding-top:0}
+html body.books-layout main.books-gallery-page>.books-page-heading>h1{font:400 clamp(2.4rem,4vw,4rem)/1.12 "Cormorant Garamond",Georgia,serif;letter-spacing:0;margin-top:0}
+@media(max-width:600px){html body.books-layout main.books-gallery-page{padding-top:2rem}}
+</style>
+<style id="books-short">
+@media (min-width:901px) and (max-height:760px){
+html body.books-layout main.books-gallery-page{padding-bottom:18px}
+html body.books-layout main.books-gallery-page>.books-page-heading{margin-bottom:16px}
+html body.books-layout main.books-gallery-page>.books-page-heading .about-rule{margin:10px auto 12px}
+html body.books-layout .book-gallery-card .meta{margin:10px 0 4px}
+html body.books-layout .book-gallery-card h2{min-height:0;margin:2px 0 8px}
+html body.books-layout .book-gallery-card .book-description-button{padding-top:8px;padding-bottom:8px}
+html body.books-layout .book-gallery .book-graphic-button{height:clamp(100px,calc(100svh - var(--books-fixed,460px)),530px)}
+}
+</style>
+<style>
+/* Share the card height so wrapped titles do not lower one action button. */
+@media(min-width:601px){
+html body.books-layout .book-gallery{align-items:stretch}
+html body.books-layout .book-gallery-card .book-description-button{margin-top:auto}
+}
+</style><style>
+/* Try the full finance title on one line, at the same size as its neighbours. */
+@media(min-width:901px){
+html body.books-layout main.books-gallery-page{width:min(1400px,94vw)}
+html body.books-layout .book-gallery{gap:1.5rem}
+html body.books-layout .book-gallery-card{min-width:0}
+html body.books-layout .book-gallery-card h2{max-width:none;white-space:nowrap;min-height:0}
+}
+</style><style>
+/* Centre each action in the space between its title and the footer. */
+@media(min-width:601px){
+html body.books-layout main.books-gallery-page{display:flex;flex-direction:column;padding-bottom:0}
+html body.books-layout .book-gallery{flex:1;align-items:stretch}
+html body.books-layout .book-gallery-card h2{margin-bottom:0}
+html body.books-layout .book-gallery-card .book-description-button{margin-top:auto;margin-bottom:auto}
+}
+</style><style id="identity-navigation">
+.identity-context{text-align:center;margin:0 0 .45rem;font:300 .7rem/1.3 Montserrat,Arial,sans-serif!important;letter-spacing:.08em;text-transform:uppercase;color:#647386}
+.identity-return{display:block;width:fit-content;margin:0 auto .7rem 0;font:300 .85rem/1.4 Lato,Arial,sans-serif;color:#24556e;text-decoration:underline;text-underline-offset:.2em}
+.identity-return:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+#home-roles{scroll-margin-top:130px}
+</style></head>
+<body class="books-layout site-branding">
+
+<header class="site-header inner-page-header">
+<a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
+<button class="menu" aria-label="Open navigation" aria-expanded="false">Menu</button>
+<nav aria-label="Main navigation"><a href="about.html">About</a><a href="books.html" aria-current="page">Books</a><a href="poetry.html">Writing</a><a href="contact.html">Contact</a></nav>
+<nav class="social-links" aria-label="Social media"><a href="https://www.linkedin.com/in/umar-rafi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6H2V22h3.4V7.6ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.5c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.2V7.6H9.2V22h3.4v-8c0-2.1.4-4.1 3-4.1s3 2.4 3 4.2V22H22v-8.5Z"/></svg></a><a href="https://www.facebook.com/uxrafi" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.3-2.8-.3-2.8 0-4.7 1.7-4.7 4.9v2.6H7V13h3.2v9H14Z"/></svg></a></nav>
+</header>
+
+
+
+<main class="books-page books-gallery-page"><header class="books-page-heading"><a class="identity-return" href="index.html#home-roles">← Back to Home</a><p class="identity-context">Author</p><h1>Stories and ideas.</h1><div class="about-rule"></div><p class="books-lead">Three books. Three worlds.</p></header><div class="book-gallery"><article class="book-gallery-card"><button class="book-graphic-button" type="button" data-book="a-childrens-playground" aria-controls="description-a-childrens-playground" aria-expanded="false" aria-haspopup="dialog" aria-label="Read about A Children’s Playground"><img src="images/books/a-childrens-playground-mockup.webp" alt="A Children’s Playground book mockup" width="1024" height="1536"></button><p class="meta">LITERARY FICTION · JUNE 2027</p><h2>A Children’s Playground</h2><button class="book-description-button" type="button" data-book="a-childrens-playground" aria-controls="description-a-childrens-playground" aria-expanded="false" aria-haspopup="dialog">About the book</button></article><article class="book-gallery-card"><button class="book-graphic-button" type="button" data-book="banking-3" aria-controls="description-banking-3" aria-expanded="false" aria-haspopup="dialog" aria-label="Read about Banking 3.0"><img src="images/books/banking-3-mockup.webp" alt="Banking 3.0 book mockup" width="1042" height="1510"></button><p class="meta">TECHNOLOGY · DECEMBER 2026</p><h2>Banking 3.0</h2><button class="book-description-button" type="button" data-book="banking-3" aria-controls="description-banking-3" aria-expanded="false" aria-haspopup="dialog">About the book</button></article><article class="book-gallery-card"><button class="book-graphic-button" type="button" data-book="antifragility" aria-controls="description-antifragility" aria-expanded="false" aria-haspopup="dialog" aria-label="Read about Antifragility of Islamic Finance"><img src="images/books/antifragility-mockup.webp" alt="Antifragility of Islamic Finance book mockup" width="1024" height="1536"></button><p class="meta">FINANCE · PUBLISHED 2018</p><h2>Antifragility of Islamic Finance</h2><button class="book-description-button" type="button" data-book="antifragility" aria-controls="description-antifragility" aria-expanded="false" aria-haspopup="dialog">About the book</button></article></div><dialog class="book-dialog" id="book-dialog" aria-label="About the book"><button type="button" class="book-dialog-close" aria-label="Close book description">×</button><section id="description-a-childrens-playground" class="book-gallery-description" aria-labelledby="a-childrens-playground-dialog-title" hidden><img class="book-dialog-cover" src="images/books/a-childrens-playground-mockup.webp" alt="" width="240" height="360"><div class="book-dialog-copy"><p class="meta">Forthcoming · June 2027</p><h2 id="a-childrens-playground-dialog-title"><a class="book-title-link" href="a-childrens-playground.html">A Children’s Playground</a></h2><p>A Children’s Playground is a coming-of-age novel set against the backdrop of the Global War on Terror, exploring how love, loss, duty, and war shape the moral journey of one young man. Spanning continents, cultures, and religions in an alternate contemporary setting, it examines the timeless themes of class, family, faith, identity, and fate, asking what it truly means to become the person one is destined to be.</p><a class="text-link book-dialog-more" href="a-childrens-playground.html">Read more about the book <span aria-hidden="true">→</span></a></div></section><section id="description-banking-3" class="book-gallery-description" aria-labelledby="banking-3-dialog-title" hidden><img class="book-dialog-cover" src="images/books/banking-3-mockup.webp" alt="" width="240" height="360"><div class="book-dialog-copy"><p class="meta">Forthcoming · December 2026</p><h2 id="banking-3-dialog-title"><a class="book-title-link" href="banking-3.html">Banking 3.0</a></h2><p>Banking has always been built on trust. For most of its history, that trust lived in people, and in the rules and systems built to remember what happened and to hold it true. Artificial intelligence introduces something different: software that can increasingly interpret, reason, decide, and act.</p><a class="text-link book-dialog-more" href="banking-3.html">Read more about the book <span aria-hidden="true">→</span></a></div></section><section id="description-antifragility" class="book-gallery-description" aria-labelledby="antifragility-dialog-title" hidden><img class="book-dialog-cover" src="images/books/antifragility-mockup.webp" alt="" width="240" height="360"><div class="book-dialog-copy"><p class="meta">Published · 2018</p><h2 id="antifragility-dialog-title"><a href="antifragility.html">Antifragility of Islamic Finance</a></h2><p><em>Antifragility of Islamic Finance: The Risk-Sharing Alternative</em> explains how risk-sharing, as defined under Islamic finance, makes financial systems antifragile. It highlights the benefits of 100% equity-based finance over debt-based finance.</p><a class="text-link book-dialog-more" href="antifragility.html">Read more about the book <span aria-hidden="true">→</span></a></div></section></dialog></main><footer id="contact" class="book-landing-footer"><div><a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a></div><p class="footer-meta"><a class="footer-blog-link" href="blog.html">Blog</a><span class="footer-sep" aria-hidden="true">·</span>© <span id="year">2026</span> Umar Rafi</p></footer>
+<script src="script.js?v=mobile-entrance-fix-96"></script>
+<script>
+(()=>{
+/* Book summaries open in a popup; the full text lives on each book's own page. */
+const dialog=document.getElementById('book-dialog');if(!dialog)return;
+const controls=[...document.querySelectorAll('[data-book]')],panels=[...dialog.querySelectorAll('.book-gallery-description')],close=dialog.querySelector('.book-dialog-close');let opener=null;
+controls.forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.book;panels.forEach(p=>p.hidden=p.id!=='description-'+id);controls.forEach(x=>x.setAttribute('aria-expanded',String(x.dataset.book===id)));dialog.setAttribute('aria-labelledby',id+'-dialog-title');opener=b;dialog.showModal();close.focus()}));
+close.addEventListener('click',()=>dialog.close());
+dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()});
+dialog.addEventListener('close',()=>{controls.forEach(x=>x.setAttribute('aria-expanded','false'));opener?.focus({preventScroll:true})});
+})();
+</script></body></html>

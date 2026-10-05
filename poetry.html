@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#4d6d7d">
+<title>Bayt al-Hikma — Writing by Umar Rafi</title>
+<meta name="description" content="English translations of Urdu and Punjabi poetry, alongside original poetry and writing by Umar Rafi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400&family=Montserrat:wght@300;400;700&family=Noto+Nastaliq+Urdu:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=final-20261003">
+<style>.poetry-intro .hikma-subtitle{font-family:'Lato',Arial,sans-serif;font-weight:300;font-size:1.05rem;color:#597382;margin:.8rem auto 1.6rem}</style><style>
+.poetry-layout .poem-card[open]{grid-column:1/-1}
+.parallel-poem{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem;align-items:start}
+.parallel-poem-column{min-width:0}
+.parallel-poem-column h4{font:300 .75rem/1.5 'Montserrat',Arial,sans-serif;letter-spacing:.05em;color:#597382;margin:0 0 1rem;padding-bottom:.6rem;border-bottom:1px solid #cfdae3}
+.parallel-poem .poem-text{margin:0;line-height:1.9;font-size:1rem}
+@media(max-width:700px){.parallel-poem{grid-template-columns:1fr;gap:1.75rem}.parallel-poem .poem-text{font-size:.95rem}}
+</style><style>
+.poetry-group[hidden]{display:none!important}
+.poetry-category-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:.75rem}
+.poetry-category-tabs button{font-family:Montserrat,sans-serif;font-weight:300;font-size:.8rem;padding:.7rem 1.15rem;border:1px solid #aabfc9;border-radius:4px;background:#e2ecf1;color:#34586c;cursor:pointer;transition:background .2s,color .2s}
+.poetry-category-tabs button:hover,.poetry-category-tabs button:focus-visible,.poetry-category-tabs button[aria-selected="true"]{background:#4d7186;color:white}
+</style><style>.poetry-intro .hikma-intro-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem;margin:1.5rem auto;text-align:left}.poetry-intro .hikma-intro-columns p{font-family:Lato,Arial,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.8;margin:0;max-width:none;color:#597382}@media(max-width:700px){.poetry-intro .hikma-intro-columns{grid-template-columns:1fr;gap:1.25rem}}</style><style>
+.site-branding footer{padding:.7rem 5vw;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.site-branding footer>div>p{display:none}
+.site-branding footer .ur-logo{width:32px;height:34px}
+.site-branding footer p{margin:0;font-size:.75rem}
+.contact-layout footer.book-landing-footer>div,.contact-layout footer.book-landing-footer>p{display:block}
+@media(max-width:650px){.site-branding footer{flex-direction:row!important;text-align:left}.site-branding footer .author-name{font-size:.85rem}.contact-layout footer.book-landing-footer{justify-content:space-between}}
+</style><style>
+/* One footer height across the site, measured including padding. */
+body.site-branding>footer{box-sizing:border-box!important;height:60px!important;min-height:60px!important;padding:0 5vw!important;gap:1rem;align-items:center}
+body.site-branding>footer .ur-logo{width:32px!important;height:34px!important}
+body.site-branding>footer p{margin:0!important}
+@media(max-width:650px){body.site-branding>footer{height:54px!important;min-height:54px!important}body.home-layout.site-branding>footer{height:auto!important;min-height:54px!important;padding:.5rem 5vw!important}}
+</style><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://umarrafi-website.pages.dev/poetry.html"><meta property="og:type" content="website"><meta property="og:site_name" content="Umar Rafi"><meta property="og:title" content="Bayt al-Hikma — Writing by Umar Rafi"><meta property="og:description" content="English translations of Urdu and Punjabi poetry, alongside original poetry and writing by Umar Rafi."><meta property="og:url" content="https://umarrafi-website.pages.dev/poetry.html"><meta property="og:image" content="https://umarrafi-website.pages.dev/images/share/poetry.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/jpeg"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Umar Rafi", "url": "https://umarrafi-website.pages.dev", "sameAs": ["https://www.linkedin.com/in/umar-rafi/", "https://www.facebook.com/uxrafi"]}</script><style>
+/* Keep the footer at the bottom of the screen when the page content is short. */
+body.poetry-layout.site-branding{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+body.poetry-layout.site-branding>main{flex:1 0 auto;width:100%;box-sizing:border-box}
+body.poetry-layout.site-branding>header,body.poetry-layout.site-branding>footer{flex:none}
+</style>
+<style>
+/* Shared page-title standard (About, Books, Writing): same size and same distance below the menu. */
+html body.poetry-layout main.poetry-page{padding-top:2.6rem}
+html body.poetry-layout main.poetry-page>.poetry-intro{margin-top:0;padding-top:0}
+html body.poetry-layout main.poetry-page>.poetry-intro>h1{font:400 clamp(2.4rem,4vw,4rem)/1.12 "Cormorant Garamond",Georgia,serif;letter-spacing:0;margin-top:0}
+@media(max-width:600px){html body.poetry-layout main.poetry-page{padding-top:2rem}}
+</style>
+<style>
+/* Bayt al-Hikma mural strip (Sadequain, Treasures of Time): full mural at its true 7.6:1 proportions */
+.hikma-mural{flex:none;background:#2f3439}
+.hikma-mural-strip{width:100%;overflow:hidden}
+.hikma-mural-strip img{display:block;width:100%;height:auto}
+.hikma-mural-caption{margin:0;padding:.45rem 1.2rem;text-align:right;font:300 .72rem/1.4 Lato,Arial,sans-serif;letter-spacing:.04em;color:#dfe7ec;background:#2f3439}
+.hikma-mural-hint{display:none}
+html body.poetry-layout main.poetry-page{padding-top:2.4rem}
+@media(max-width:900px){
+.hikma-mural-strip{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.hikma-mural-strip img{width:auto;height:170px;max-width:none}
+.hikma-mural-strip:focus-visible{outline:2px solid #86b5c8;outline-offset:-2px}
+.hikma-mural-caption{text-align:center;font-size:.68rem}
+.hikma-mural-hint{display:inline}
+html body.poetry-layout main.poetry-page{padding-top:1.8rem}
+}
+</style>
+<style>
+/* Treasures of Time explorer */
+.hikma-mural{position:relative}
+.hikma-mural .mural-open{position:absolute;right:1rem;bottom:.9rem;z-index:2;padding:.55rem 1rem;border:1px solid rgba(255,255,255,.85);border-radius:3px;background:rgba(20,30,38,.55);color:#fff;font:400 .72rem/1.2 Montserrat,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.hikma-mural .mural-open:hover,.hikma-mural .mural-open:focus-visible{background:rgba(20,30,38,.85)}
+.hikma-mural-strip img{cursor:zoom-in}
+.mural-explorer{box-sizing:border-box;width:min(1400px,96vw);max-width:96vw;max-height:92svh;margin:auto;padding:1.2rem 1.4rem 1.4rem;border:1px solid #adc1cc;border-radius:8px;background:#f7fafb;color:#292f34;box-shadow:0 20px 80px rgb(18 43 59 / .35);overflow-y:auto}
+.mural-explorer::backdrop{background:rgb(18 35 47 / .7)}
+.mural-explorer-head{display:flex;align-items:center;gap:1rem;padding-right:2.6rem;position:relative}
+.mural-explorer-head h2{margin:0;flex:1;font:400 clamp(1.5rem,2.6vw,2.1rem)/1.1 "Cormorant Garamond",Georgia,serif;color:#185b78}
+.mural-about-toggle{padding:.5rem .9rem;border:1px solid #c5d3dc;border-radius:4px;background:transparent;color:#4d6072;font:300 .82rem/1.2 Lato,Arial,sans-serif;cursor:pointer;white-space:nowrap}
+.mural-about-toggle:hover,.mural-about-toggle:focus-visible,.mural-about-toggle[aria-expanded="true"]{background:#4d7186;border-color:#4d7186;color:#fff}
+.mural-explorer-close,.mural-panel-close{position:absolute;top:-.2rem;right:-.3rem;width:2.2rem;height:2.2rem;border:0;border-radius:50%;background:transparent;color:#24556e;font:300 1.6rem/1 Lato,Arial,sans-serif;cursor:pointer}
+.mural-explorer-close:hover,.mural-explorer-close:focus-visible,.mural-panel-close:hover,.mural-panel-close:focus-visible{background:#dbe7ed}
+.mural-explorer-intro{margin:.4rem 0 .8rem;font:300 .92rem/1.5 Lato,Arial,sans-serif;color:#4d6072}
+.mural-explorer-strip{overflow-x:auto;overscroll-behavior-x:contain;border-radius:4px;background:#2f3439}
+.mural-explorer-strip:focus-visible{outline:2px solid #4d7186;outline-offset:2px}
+.mural-explorer-canvas{position:relative;width:max(100%,1883px)}
+.mural-explorer-canvas img{display:block;width:100%;height:auto}
+.mural-marker{position:absolute;top:10%;transform:translateX(-50%);width:2rem;height:2rem;border:2px solid #fff;border-radius:50%;background:#4d7186;color:#fff;font:600 .9rem/1 Lato,Arial,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.55);cursor:pointer;transition:transform .15s}
+.mural-marker:hover,.mural-marker:focus-visible{transform:translateX(-50%) scale(1.12)}
+.mural-marker[aria-pressed="true"]{background:#c9a24b;color:#1f2a30}
+.mural-panel{position:relative;margin-top:1rem;padding:1rem 1.2rem 1.1rem;border:1px solid #cfdae3;border-radius:6px;background:#fff}
+.mural-panel .mural-panel-close{top:.4rem;right:.4rem}
+.mural-panel h3{margin:.1rem 2.4rem .5rem 0;font:400 1.6rem/1.15 "Cormorant Garamond",Georgia,serif;color:#185b78}
+.mural-panel p{margin:0 0 .6rem;font:300 .98rem/1.6 Lato,Arial,sans-serif}
+.mural-panel .mural-panel-era{margin:0;font:400 .7rem/1.4 Montserrat,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4d6072}
+.mural-panel .mural-panel-look{margin:0;font-style:italic;color:#4d6072}
+.mural-panel .mural-note{font-size:.85rem;color:#4d6072;margin:0}
+@media(max-width:600px){.mural-explorer{padding:1rem .9rem 1.1rem}.mural-explorer-head{flex-wrap:wrap}.mural-explorer-canvas{width:1500px}.hikma-mural .mural-open{right:.6rem;bottom:.6rem;padding:.45rem .7rem;font-size:.62rem}}
+</style>
+<style>
+/* Mural explorer opens full screen (like the School of Athens): the mural fills the screen height and pans sideways. */
+#mural-explorer.mural-explorer{position:fixed;inset:0;width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;padding:0;border:0;border-radius:0;background:#1f2529;overflow:hidden;box-shadow:none}
+#mural-explorer.mural-explorer[open]{display:block}
+#mural-explorer.mural-explorer .mural-explorer-strip{position:absolute;inset:0;overflow-x:auto;overflow-y:hidden;border-radius:0;background:#1f2529;cursor:grab;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.35) transparent}
+#mural-explorer.mural-explorer .mural-explorer-strip.is-dragging{cursor:grabbing;scroll-behavior:auto}
+#mural-explorer.mural-explorer .mural-explorer-strip:focus-visible{outline:3px solid #86b5c8;outline-offset:-3px}
+#mural-explorer.mural-explorer .mural-explorer-canvas{position:relative;display:inline-block;height:100%;width:auto;vertical-align:top}
+#mural-explorer.mural-explorer .mural-explorer-canvas img{display:block;height:100%;width:auto;max-width:none;user-select:none;-webkit-user-drag:none;pointer-events:none}
+#mural-explorer.mural-explorer .mural-marker{top:22%;width:2.5rem;height:2.5rem;font-size:1.05rem}
+#mural-explorer.mural-explorer .mural-explorer-head{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;gap:1rem;padding:.7rem 4rem .7rem 1.4rem;background:linear-gradient(rgba(20,28,34,.85),rgba(20,28,34,.55) 70%,rgba(20,28,34,0));pointer-events:none}
+#mural-explorer.mural-explorer .mural-explorer-head>*{pointer-events:auto}
+#mural-explorer.mural-explorer .mural-explorer-head h2{color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+#mural-explorer.mural-explorer .mural-about-toggle{background:rgba(243,247,250,.94);border-color:#c5d3dc;color:#244f6c}
+#mural-explorer.mural-explorer .mural-about-toggle:hover,#mural-explorer.mural-explorer .mural-about-toggle:focus-visible,#mural-explorer.mural-explorer .mural-about-toggle[aria-expanded="true"]{background:#4d7186;border-color:#4d7186;color:#fff}
+#mural-explorer.mural-explorer .mural-explorer-close{position:absolute;top:.65rem;right:.8rem;width:2.5rem;height:2.5rem;background:rgba(243,247,250,.94);color:#24556e;font-size:1.7rem;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+#mural-explorer.mural-explorer .mural-explorer-close:hover,#mural-explorer.mural-explorer .mural-explorer-close:focus-visible{background:#fff}
+#mural-explorer.mural-explorer .mural-explorer-intro{display:none}
+#mural-explorer.mural-explorer .mural-pan-hint{position:absolute;z-index:4;left:50%;bottom:1rem;transform:translateX(-50%);margin:0;padding:.4rem .9rem;border-radius:999px;background:rgba(20,28,34,.7);color:#fff;font:300 .8rem/1.3 Lato,Arial,sans-serif;letter-spacing:.03em;white-space:nowrap;pointer-events:none;transition:opacity .4s}
+#mural-explorer.mural-explorer.has-panned .mural-pan-hint,#mural-explorer.mural-explorer:has(.mural-panel:not([hidden])) .mural-pan-hint{opacity:0}
+#mural-explorer.mural-explorer .mural-panel{position:absolute;z-index:6;left:50%;bottom:1rem;transform:translateX(-50%);width:min(680px,94vw);max-height:46dvh;overflow-y:auto;margin:0;background:rgba(247,250,251,.97);border:0;box-shadow:0 3px 18px rgba(0,0,0,.4)}
+@media(max-width:600px){#mural-explorer.mural-explorer .mural-explorer-head{padding:.6rem 3.6rem .6rem .9rem;flex-wrap:wrap;gap:.5rem}#mural-explorer.mural-explorer .mural-explorer-head h2{font-size:1.35rem}#mural-explorer.mural-explorer .mural-about-toggle{padding:.4rem .7rem;font-size:.75rem}#mural-explorer.mural-explorer .mural-marker{top:26%;width:2.2rem;height:2.2rem}#mural-explorer.mural-explorer .mural-panel{bottom:.6rem;max-height:52dvh}#mural-explorer.mural-explorer .mural-pan-hint{font-size:.72rem}}
+</style>
+<style>
+/* Full-screen mural: no title overlay; About button and card match the School of Athens explorer. */
+#mural-explorer.mural-explorer .mural-explorer-head{background:none;padding:0;position:static}
+#mural-explorer.mural-explorer .mural-explorer-head h2{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#mural-explorer.mural-explorer .mural-about-toggle{position:absolute;top:1rem;left:1rem;z-index:6;padding:.55rem .9rem;background:rgba(246,249,250,.94);color:#173c50;border:1px solid #173c50;border-radius:4px;font:400 .85rem/1.2 Lato,Arial,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#mural-explorer.mural-explorer .mural-about-toggle:hover,#mural-explorer.mural-explorer .mural-about-toggle:focus-visible,#mural-explorer.mural-explorer .mural-about-toggle[aria-expanded="true"]{background:#173c50;border-color:#173c50;color:#fff}
+#mural-explorer.mural-explorer #mural-about{position:absolute;z-index:7;top:4rem;left:1rem;bottom:auto;transform:none;width:min(580px,calc(100vw - 2rem));max-height:calc(100dvh - 5rem);overflow:auto;box-sizing:border-box;padding:1.5rem 1.7rem;background:rgba(246,249,250,.97);color:#203747;border:0;border-radius:6px;box-shadow:0 8px 32px rgba(0,0,0,.27)}
+#mural-explorer.mural-explorer #mural-about[hidden]{display:none}
+#mural-explorer.mural-explorer #mural-about h2{margin:0 1.5rem .8rem 0;font:400 2rem/1.1 "Cormorant Garamond",Georgia,serif;color:#203747}
+#mural-explorer.mural-explorer #mural-about h3{margin:1rem 0 .5rem;font:600 1.1rem/1.3 Lato,Arial,sans-serif;color:#203747}
+#mural-explorer.mural-explorer #mural-about p{margin:.7rem 0;font:300 .95rem/1.6 Lato,Arial,sans-serif;color:#203747}
+#mural-explorer.mural-explorer #mural-about .mural-note{font-size:.85rem;color:#4d6072}
+#mural-explorer.mural-explorer #mural-about .mural-note a{color:#24556e}
+#mural-explorer.mural-explorer #mural-about .mural-panel-close{position:absolute;right:.6rem;top:.4rem;width:auto;height:auto;padding:0 .2rem;border:0;background:transparent;color:#203747;font-size:1.6rem;box-shadow:none}
+@media(max-width:600px){#mural-explorer.mural-explorer .mural-about-toggle{top:.7rem;left:.7rem;padding:.45rem .7rem;font-size:.78rem}#mural-explorer.mural-explorer #mural-about{top:3.5rem;left:.6rem;width:calc(100vw - 1.2rem);max-height:calc(100dvh - 4.2rem);padding:1.2rem 1.1rem}#mural-explorer.mural-explorer #mural-about h2{font-size:1.7rem}}
+</style>
+<style>
+/* Match the School of Athens explorer controls */
+.hikma-mural .mural-open{top:auto;bottom:0;right:1rem;transform:translateY(50%);z-index:8;padding:7.2px 11.2px;background:#e5eef3;color:#244f6c;border:1px solid #b9ccd6;border-radius:3px;font:300 12px/1.4 Montserrat,sans-serif;letter-spacing:normal;text-transform:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+.hikma-mural .mural-open:hover,.hikma-mural .mural-open:focus-visible{background:#244f6c;color:#fff;border-color:#244f6c}
+#mural-explorer.mural-explorer .mural-about-toggle{font:300 .85rem/normal Lato,Arial,sans-serif;box-shadow:none}
+#mural-explorer.mural-explorer .mural-explorer-close{top:.65rem;right:.8rem;width:auto;height:auto;padding:.45rem .7rem;background:rgba(243,247,250,.94);color:#244f6c;border:1px solid #7895a4;border-radius:3px;font:400 1rem/normal Lato,Arial,sans-serif;box-shadow:none;z-index:6}
+#mural-explorer.mural-explorer .mural-explorer-close:hover,#mural-explorer.mural-explorer .mural-explorer-close:focus-visible{background:#244f6c;color:#fff}
+#mural-explorer.mural-explorer #mural-about h2{line-height:1.65}
+#mural-explorer.mural-explorer #mural-about h3{margin:1rem 0 .5rem;font:400 1.1rem/1.65 "Cormorant Garamond",Georgia,serif;color:#203747}
+#mural-explorer.mural-explorer #mural-about .mural-panel-close{right:.6rem;top:.4rem;padding:1px 6px;border-radius:0;font:400 1.6rem/normal Arial,sans-serif;color:#203747}
+#mural-explorer.mural-explorer .mural-marker{width:32px;height:32px;background:#244f6c;color:#fff;border:1px solid #fff;font:400 13px/1 Arial,sans-serif;box-shadow:0 2px 5px #0008;transform:translate(-50%,-50%)}
+#mural-explorer.mural-explorer .mural-marker:hover,#mural-explorer.mural-explorer .mural-marker[aria-pressed="true"]{z-index:3;transform:translate(-50%,-50%) scale(1.25);background:#244f6c;color:#fff}
+#mural-explorer.mural-explorer .mural-marker:focus-visible{outline:3px solid #ffe16a;outline-offset:3px}
+#mural-explorer.mural-explorer #mural-section-panel{bottom:1rem;width:min(650px,94vw);padding:.7rem 1rem;background:rgba(243,247,250,.95);color:#172536;border-radius:5px;box-shadow:0 3px 18px #0004;font-size:.85rem}
+#mural-explorer.mural-explorer #mural-section-panel h3{margin:0 2rem .3rem 0;font:400 1.6rem/1.65 "Cormorant Garamond",Georgia,serif;color:#172536}
+#mural-explorer.mural-explorer #mural-section-panel p{margin:.35rem 0;font:300 .85rem/1.6 Lato,Arial,sans-serif;color:#172536}
+#mural-explorer.mural-explorer #mural-section-panel .mural-panel-era{margin:0;font:400 .65rem/1.4 Montserrat,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#4d6072}
+#mural-explorer.mural-explorer #mural-section-panel .mural-panel-look{font-style:italic;color:#4d6072}
+#mural-explorer.mural-explorer #mural-section-panel .mural-panel-close{top:.35rem;right:.5rem;width:auto;height:auto;padding:.2rem .35rem;border-radius:0;background:none;color:#244f6c;font:400 1.5rem/1 Arial,sans-serif}
+/* "There is more to the right" cues */
+#mural-explorer.mural-explorer .mural-pan{position:absolute;z-index:5;top:50%;transform:translateY(-50%);width:3rem;height:3rem;border-radius:50%;background:rgba(243,247,250,.94);color:#244f6c;border:1px solid #7895a4;font:300 2rem/1 Lato,Arial,sans-serif;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;padding:0 0 .2rem}
+#mural-explorer.mural-explorer .mural-pan:hover,#mural-explorer.mural-explorer .mural-pan:focus-visible{background:#244f6c;color:#fff}
+#mural-explorer.mural-explorer .mural-pan[hidden]{display:none}
+#mural-explorer.mural-explorer .mural-pan-next{right:1rem;animation:mural-nudge 1.6s ease-in-out 3}
+#mural-explorer.mural-explorer .mural-pan-prev{left:1rem}
+@keyframes mural-nudge{0%,100%{transform:translate(0,-50%)}50%{transform:translate(6px,-50%)}}
+#mural-explorer.mural-explorer:before,#mural-explorer.mural-explorer:after{content:"";position:absolute;z-index:4;top:0;bottom:0;width:9rem;pointer-events:none;transition:opacity .3s}
+#mural-explorer.mural-explorer:after{right:0;background:linear-gradient(to left,rgba(15,22,27,.55),rgba(15,22,27,0))}
+#mural-explorer.mural-explorer:before{left:0;background:linear-gradient(to right,rgba(15,22,27,.55),rgba(15,22,27,0));opacity:0}
+#mural-explorer.mural-explorer.at-end:after{opacity:0}
+#mural-explorer.mural-explorer.not-start:before{opacity:1}
+#mural-explorer.mural-explorer .mural-pan-hint{bottom:1.6rem}
+#mural-explorer.mural-explorer .mural-progress{position:absolute;z-index:5;left:1rem;right:1rem;bottom:.5rem;height:4px;border-radius:2px;background:rgba(255,255,255,.25);pointer-events:none}
+#mural-explorer.mural-explorer .mural-progress span{position:absolute;top:0;bottom:0;left:0;border-radius:2px;background:rgba(255,255,255,.85)}
+#mural-explorer.mural-explorer:has(.mural-panel:not([hidden])) .mural-progress{opacity:0}
+@media(prefers-reduced-motion:reduce){#mural-explorer.mural-explorer .mural-pan-next{animation:none}}
+@media(max-width:600px){#mural-explorer.mural-explorer .mural-pan{width:2.5rem;height:2.5rem;font-size:1.7rem}#mural-explorer.mural-explorer .mural-pan-next{right:.6rem}#mural-explorer.mural-explorer .mural-pan-prev{left:.6rem}#mural-explorer.mural-explorer:before,#mural-explorer.mural-explorer:after{width:4rem}#mural-explorer.mural-explorer .mural-explorer-close{top:.6rem;right:.6rem;padding:.4rem .6rem;font-size:.9rem}}
+.hikma-mural .mural-open{line-height:1.5}
+#mural-explorer.mural-explorer .mural-about-toggle{line-height:1.65}
+#mural-explorer.mural-explorer .mural-explorer-close{font-weight:300;line-height:1.65}
+#mural-explorer.mural-explorer #mural-about{box-shadow:0 8px 32px #0004}
+</style>
+<style>
+/* Figure markers (School of Athens colours) and section labels */
+#mural-explorer.mural-explorer .mural-marker{width:28px;height:28px;font-size:12px}
+#mural-explorer.mural-explorer .mural-marker-likely{background:#9a5b00;color:#fff4d6;border-color:#ffe0a3}
+#mural-explorer.mural-explorer .mural-marker-possible{background:#7b1724;color:#ffb6b6;border-color:#ffd4d4}
+#mural-explorer.mural-explorer .mural-marker-likely:hover,#mural-explorer.mural-explorer .mural-marker-likely[aria-pressed="true"]{background:#9a5b00;color:#fff4d6}
+#mural-explorer.mural-explorer .mural-marker-possible:hover,#mural-explorer.mural-explorer .mural-marker-possible[aria-pressed="true"]{background:#7b1724;color:#ffb6b6}
+#mural-explorer.mural-explorer .mural-section-pill{position:absolute;top:6%;transform:translateX(-50%);padding:.3rem .7rem;border:1px solid #7895a4;border-radius:3px;background:rgba(243,247,250,.9);color:#244f6c;font:300 .78rem/1.3 Lato,Arial,sans-serif;white-space:nowrap;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+#mural-explorer.mural-explorer .mural-section-pill:hover,#mural-explorer.mural-explorer .mural-section-pill:focus-visible,#mural-explorer.mural-explorer .mural-section-pill[aria-pressed="true"]{background:#244f6c;color:#fff;border-color:#244f6c}
+#mural-explorer.mural-explorer #mural-section-panel[data-kind="likely"] .mural-panel-era{color:#9a5b00}
+#mural-explorer.mural-explorer #mural-section-panel[data-kind="possible"] .mural-panel-era{color:#7b1724}
+#mural-explorer.mural-explorer #mural-section-panel[data-kind="confirmed"] .mural-panel-era{color:#244f6c}
+.mural-key-dot{display:inline-block;width:.8rem;height:.8rem;margin-right:.45rem;border-radius:50%;vertical-align:-.05rem;background:#244f6c;border:1px solid #fff;box-shadow:0 0 0 1px #244f6c}
+.mural-key-amber{background:#9a5b00;box-shadow:0 0 0 1px #9a5b00}
+.mural-key-red{background:#7b1724;box-shadow:0 0 0 1px #7b1724}
+@media(max-width:600px){#mural-explorer.mural-explorer .mural-section-pill{font-size:.7rem;padding:.25rem .55rem}#mural-explorer.mural-explorer .mural-marker{width:26px;height:26px}}
+</style>
+<noscript><style>/* Without JavaScript, show every section */html body [role="tabpanel"][role][hidden],html body main .book-reading-panel[hidden],html body main .book-tab-panel[hidden],html body main .poetry-group[hidden]{display:block!important}.reveal-close,[role="tablist"]{display:none!important}</style></noscript>
+<style>
+body .poetry-category-dialog{box-sizing:border-box;width:min(1050px,92vw);max-width:92vw;max-height:88svh;margin:auto;padding:2.8rem 2rem 2rem;border:1px solid #adc1cc;border-radius:8px;background:#f7fafb;color:#292f34;box-shadow:0 20px 80px rgb(18 43 59 / .35);overflow-y:auto}
+.poetry-category-dialog::backdrop{background:rgb(18 35 47 / .55)}
+.poetry-category-dialog .poetry-group{margin:0;padding-top:0}
+.poetry-category-dialog .poetry-group[hidden]{display:none!important}
+.poetry-dialog-close{position:absolute;right:.8rem;top:.6rem;width:2.2rem;height:2.2rem;border:0;border-radius:50%;background:transparent;color:#24556e;font:300 1.6rem/1 Lato,Arial,sans-serif;cursor:pointer}
+.poetry-dialog-close:hover,.poetry-dialog-close:focus-visible{background:#dbe7ed}
+.poetry-category-tabs button[aria-expanded="true"]{background:#4d7186;color:white;border-color:#4d7186}
+@media(max-width:700px){body .poetry-category-dialog{padding:2.8rem 1.2rem 1.2rem}}
+</style><style>
+/* Compact stanza spacing while preserving each verse line. */
+body .poem-text .poem-stanza{display:block;white-space:pre-wrap;line-height:1.65;margin:0}
+body .poem-text .poem-stanza+.poem-stanza{margin-top:.55em}
+</style><style>
+@media(min-width:1000px){
+body .poetry-category-dialog:has(#waris-shah[open]){width:min(1240px,96vw);max-width:96vw}
+#waris-shah .poem-single-line{white-space:nowrap}
+}
+</style><style>
+@media(min-width:1000px){
+body .poetry-category-dialog:has(#waris-shah[open]){padding-left:1.2rem;padding-right:1.2rem}
+}
+@media(min-width:1000px) and (max-width:1100px){
+#waris-shah .poem-text{font-size:.95rem}
+}
+</style><style id="mural-sticky-title">#mural-about>h2{position:sticky;top:-1.5rem;z-index:2;margin:-1.5rem -1.7rem .8rem!important;padding:1.5rem 4rem .75rem 1.7rem;background:#f6f9fa;border-bottom:1px solid #dbe5eb}#mural-about>.mural-panel-close{position:sticky!important;float:right;top:0;z-index:3;margin:-.6rem -.9rem 0 0;right:auto}@media(max-width:600px){#mural-explorer.mural-explorer #mural-about>h2{top:-1.2rem;margin:-1.2rem -1.1rem .8rem!important;padding:1.2rem 3.4rem .7rem 1.1rem}}</style>
+<style id="mural-key-list">#mural-about .mural-key-list{margin:.4rem 0 1rem;padding-left:1.6rem;columns:2;column-gap:1.6rem;font:300 .88rem/1.55 Lato,Arial,sans-serif;color:#203747}#mural-about .mural-key-list li{break-inside:avoid}#mural-about .mural-key-list span{color:#6a7c8a;font-style:italic}@media(max-width:600px){#mural-about .mural-key-list{columns:1}}</style>
+<style id="category-sticky-title">
+#poetry-category-dialog{--pt:44.8px;--px:32px}
+#poetry-category-dialog>section>h2{position:sticky;top:calc(-1 * var(--pt));z-index:3;margin-left:calc(-1 * var(--px))!important;margin-right:calc(-1 * var(--px))!important;margin-top:calc(26.56px - var(--pt))!important;padding:var(--pt) 4rem 12.8px var(--px)!important;background:#f7fafb}
+#poetry-category-dialog>.poetry-dialog-close{position:sticky!important;float:right;top:calc(9.6px - var(--pt));z-index:4;margin:calc(9.6px - var(--pt)) calc(12.8px - var(--px)) -40px 0;right:auto}
+</style>
+<style id="poem-pin">
+#poetry-category-dialog .poem-pin{position:sticky;top:var(--sumtop,70px);height:0;z-index:3}
+#poetry-category-dialog .poem-pin-bar{position:absolute;left:0;right:0;top:0;display:flex;flex-direction:column;gap:.15rem;padding:.8rem 1.5rem .75rem;background:#fff;border:1px solid #cfdae3;border-top:0;box-shadow:0 8px 16px -12px rgba(23,37,54,.35);cursor:pointer;opacity:0;visibility:hidden;transition:opacity .15s}
+#poetry-category-dialog .poem-pin.is-on .poem-pin-bar{opacity:1;visibility:visible}
+#poetry-category-dialog .poem-pin-title{font:400 1.45rem/1.2 "Cormorant Garamond",Georgia,serif;color:#185b78}
+#poetry-category-dialog .poem-pin-credit{font:300 .8rem/1.4 Montserrat,Arial,sans-serif;color:#647386}
+@media(max-width:600px){#poetry-category-dialog .poem-pin-bar{padding:.6rem 1rem}#poetry-category-dialog .poem-pin-title{font-size:1.2rem}}
+</style>
+<style id="poem-pin-close">
+#poetry-category-dialog .poem-pin-bar{padding-right:3.2rem}
+#poetry-category-dialog .poem-pin-bar .reveal-close{top:50%;right:.6rem;transform:translateY(-50%)}
+@media(max-width:600px){#poetry-category-dialog .poem-pin-bar{padding-right:2.8rem}#poetry-category-dialog .poem-pin-bar .reveal-close{right:.3rem}}
+</style>
+<style id="poem-one-line">
+/* Every verse stays on one line so translations line up; the fitter scales the type to the column. */
+#poetry-category-dialog .poem-text .poem-stanza{white-space:pre!important}
+#poetry-category-dialog .bilingual-couplet>p{white-space:nowrap!important}
+#poetry-category-dialog .poem-text,#poetry-category-dialog .bilingual-couplet>p{overflow-x:auto;overflow-y:hidden;scrollbar-width:thin}
+</style>
+<style id="blog-link">
+.blog-link-row{margin:2.2rem 0 0;text-align:center}
+.blog-link{display:inline-flex;flex-direction:column;align-items:center;gap:.35rem;text-decoration:none;color:#185b78}
+.blog-link-kicker{font:400 .68rem/1.2 Lato,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#5a6f7f}
+.blog-link-text{font:italic 400 1.45rem/1.2 "Cormorant Garamond",Georgia,serif;padding-bottom:.15rem;border-bottom:1px solid #8fa9b8;transition:border-color .2s,color .2s}
+.blog-link:hover .blog-link-text,.blog-link:focus-visible .blog-link-text{color:#0f3f55;border-bottom-color:#185b78}
+.blog-link:focus-visible{outline:2px solid #244f6c;outline-offset:6px;border-radius:2px}
+</style>
+<style id="intro-wide">
+@media(min-width:901px){
+html body.poetry-layout main.poetry-page>.poetry-intro{max-width:1080px!important}
+html body.poetry-layout main.poetry-page .hikma-intro-columns{gap:3.5rem;margin:1.1rem auto .9rem}
+html body.poetry-layout main.poetry-page .poetry-category-tabs{margin-top:2.8rem!important;margin-bottom:0!important}
+html body.poetry-layout main.poetry-page .poetry-note{margin-bottom:0!important}
+html body.poetry-layout main.poetry-page>.poetry-intro{margin-bottom:0!important;padding-bottom:0!important}
+html body.poetry-layout .blog-link-row{margin:2.8rem 0 0!important}
+}
+@media(min-width:901px) and (max-height:900px){
+html body.poetry-layout main.poetry-page .hikma-intro-columns p{font-size:1rem!important;line-height:1.7!important}
+html body.poetry-layout main.poetry-page{padding-top:1.6rem!important}
+}
+@media(min-width:901px) and (max-height:780px){
+html body.poetry-layout main.poetry-page{padding-top:.9rem!important}
+html body.poetry-layout main.poetry-page .hikma-intro-columns{margin:.8rem auto .7rem}
+html body.poetry-layout main.poetry-page .hikma-intro-columns p{line-height:1.6!important}
+html body.poetry-layout main.poetry-page .poetry-category-tabs{margin-top:2.2rem!important}
+html body.poetry-layout .blog-link-row{margin-top:2.2rem!important}
+}
+</style>
+<style id="couplet-gap">/* Half a centimetre more between couplets, in both the original and the translation. */
+html body .poem-text .poem-stanza+.poem-stanza{margin-top:calc(.55em + .5cm)!important}</style>
+<style id="home-return-navigation">.identity-return{display:block;width:fit-content;margin:0 auto .7rem 0;font:300 .85rem/1.4 Lato,Arial,sans-serif;color:#24556e;text-decoration:underline;text-underline-offset:.2em}.identity-return:focus-visible{outline:2px solid currentColor;outline-offset:4px}</style></head>
+<body class="poetry-layout site-branding">
+
+<header class="site-header inner-page-header">
+<a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
+<button class="menu" aria-label="Open navigation" aria-expanded="false">Menu</button>
+<nav aria-label="Main navigation"><a href="about.html">About</a><a href="books.html">Books</a><a href="poetry.html" aria-current="page">Writing</a><a href="contact.html">Contact</a></nav>
+<nav class="social-links" aria-label="Social media"><a href="https://www.linkedin.com/in/umar-rafi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6H2V22h3.4V7.6ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.5c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.2V7.6H9.2V22h3.4v-8c0-2.1.4-4.1 3-4.1s3 2.4 3 4.2V22H22v-8.5Z"/></svg></a><a href="https://www.facebook.com/uxrafi" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.3-2.8-.3-2.8 0-4.7 1.7-4.7 4.9v2.6H7V13h3.2v9H14Z"/></svg></a></nav>
+</header>
+
+
+
+<section class="hikma-mural" aria-label="Treasures of Time by Sadequain"><button type="button" class="mural-open" data-open-mural aria-haspopup="dialog">Explore the mural ↓</button><div class="hikma-mural-strip" tabindex="0" title="Sadequain · Treasures of Time · 1961 · State Bank of Pakistan Museum" aria-label="Sadequain’s mural Treasures of Time — swipe or use arrow keys to explore"><img data-open-mural src="images/treasures-of-time.webp" alt="Sadequain’s mural Treasures of Time: a 61-foot procession of scholars and thinkers through history, with books, instruments, domes and minarets" width="1883" height="245"></div></section><dialog id="mural-explorer" class="mural-explorer" aria-labelledby="mural-explorer-title">
+<div class="mural-explorer-head"><h2 id="mural-explorer-title">Explore <em>Treasures of Time</em></h2><button type="button" class="mural-about-toggle" aria-expanded="false" aria-controls="mural-about">About the mural &amp; sections</button><button type="button" class="mural-explorer-close" aria-label="Close mural explorer">Close ×</button></div>
+<p class="mural-explorer-intro">Sadequain’s mural walks through the history of human thought from left to right. Choose a number to visit each section.</p>
+<p class="mural-pan-hint" aria-hidden="true">Scroll right to see more of the mural →</p><button type="button" class="mural-pan mural-pan-prev" aria-label="Scroll the mural left" hidden>‹</button><button type="button" class="mural-pan mural-pan-next" aria-label="Scroll the mural right">›</button><div class="mural-progress" aria-hidden="true"><span></span></div><div class="mural-explorer-strip" tabindex="0" aria-label="The mural, with numbered sections. Scroll sideways to see it all."><div class="mural-explorer-canvas"><img src="images/treasures-of-time.webp" alt="Sadequain’s mural Treasures of Time, with numbered figures and labelled sections" width="1883" height="245"><button type="button" class="mural-section-pill" style="left:9%" data-section="0" aria-pressed="false" aria-label="Section I: The Greeks">I · The Greeks</button><button type="button" class="mural-section-pill" style="left:27%" data-section="1" aria-pressed="false" aria-label="Section II: Medieval and Renaissance Italy">II · Medieval and Renaissance Italy</button><button type="button" class="mural-section-pill" style="left:50%" data-section="2" aria-pressed="false" aria-label="Section III: The Islamic world">III · The Islamic world</button><button type="button" class="mural-section-pill" style="left:77%" data-section="3" aria-pressed="false" aria-label="Section IV: The Enlightenment">IV · The Enlightenment</button><button type="button" class="mural-section-pill" style="left:92%" data-section="4" aria-pressed="false" aria-label="Section V: South Asia">V · South Asia</button><button type="button" class="mural-section-pill" style="left:98%" data-section="5" aria-pressed="false" aria-label="Section VI: Einstein">VI · Einstein</button><button type="button" class="mural-marker" style="left:1.86%;top:43.27%" data-figure="0" aria-pressed="false" aria-label="Figure 1: A prehistoric potter, confirmed identification">1</button><button type="button" class="mural-marker mural-marker-likely" style="left:5.0%;top:30.0%" data-figure="1" aria-pressed="false" aria-label="Figure 2: A young man, likely identification">2</button><button type="button" class="mural-marker mural-marker-likely" style="left:6.9%;top:37.55%" data-figure="2" aria-pressed="false" aria-label="Figure 3: Socrates, likely identification">3</button><button type="button" class="mural-marker mural-marker-likely" style="left:9.82%;top:23.67%" data-figure="3" aria-pressed="false" aria-label="Figure 4: Plato, likely identification">4</button><button type="button" class="mural-marker mural-marker-possible" style="left:12.37%;top:26.94%" data-figure="4" aria-pressed="false" aria-label="Figure 5: Aristotle, possible identification">5</button><button type="button" class="mural-marker mural-marker-likely" style="left:13.91%;top:48.16%" data-figure="5" aria-pressed="false" aria-label="Figure 6: Euclid, likely identification">6</button><button type="button" class="mural-marker mural-marker-likely" style="left:15.93%;top:23.67%" data-figure="6" aria-pressed="false" aria-label="Figure 7: Confucius, likely identification">7</button><button type="button" class="mural-marker mural-marker-likely" style="left:18.06%;top:26.94%" data-figure="7" aria-pressed="false" aria-label="Figure 8: Herodotus, likely identification">8</button><button type="button" class="mural-marker mural-marker-likely" style="left:22.3%;top:31.02%" data-figure="8" aria-pressed="false" aria-label="Figure 9: Sophocles, likely identification">9</button><button type="button" class="mural-marker mural-marker-possible" style="left:20.0%;top:30.5%" data-figure="9" aria-pressed="false" aria-label="Figure 10: Archimedes, possible identification">10</button><button type="button" class="mural-marker mural-marker-likely" style="left:24.96%;top:25.31%" data-figure="10" aria-pressed="false" aria-label="Figure 11: Dante Alighieri, likely identification">11</button><button type="button" class="mural-marker mural-marker-likely" style="left:26.55%;top:46.53%" data-figure="11" aria-pressed="false" aria-label="Figure 12: Galileo Galilei, likely identification">12</button><button type="button" class="mural-marker mural-marker-likely" style="left:27.4%;top:31.84%" data-figure="12" aria-pressed="false" aria-label="Figure 13: Leonardo da Vinci, likely identification">13</button><button type="button" class="mural-marker mural-marker-likely" style="left:30.16%;top:29.39%" data-figure="13" aria-pressed="false" aria-label="Figure 14: The Buddha, likely identification">14</button><button type="button" class="mural-marker mural-marker-possible" style="left:34.6%;top:31.0%" data-figure="14" aria-pressed="false" aria-label="Figure 15: Ferdowsi, possible identification">15</button><button type="button" class="mural-marker mural-marker-possible" style="left:36.0%;top:29.5%" data-figure="15" aria-pressed="false" aria-label="Figure 16: Al-Ghazali, possible identification">16</button><button type="button" class="mural-marker mural-marker-possible" style="left:37.8%;top:30.0%" data-figure="16" aria-pressed="false" aria-label="Figure 17: Al-Kindi, possible identification">17</button><button type="button" class="mural-marker mural-marker-possible" style="left:39.7%;top:33.0%" data-figure="17" aria-pressed="false" aria-label="Figure 18: Hunayn ibn Ishaq, possible identification">18</button><button type="button" class="mural-marker mural-marker-likely" style="left:41.95%;top:26.94%" data-figure="18" aria-pressed="false" aria-label="Figure 19: Jabir ibn Hayyan, likely identification">19</button><button type="button" class="mural-marker mural-marker-likely" style="left:44.18%;top:38.37%" data-figure="19" aria-pressed="false" aria-label="Figure 20: Al-Farabi, likely identification">20</button><button type="button" class="mural-marker mural-marker-possible" style="left:49.81%;top:26.12%" data-figure="20" aria-pressed="false" aria-label="Figure 21: Ibn Sina, possible identification">21</button><button type="button" class="mural-marker mural-marker-possible" style="left:51.78%;top:26.12%" data-figure="21" aria-pressed="false" aria-label="Figure 22: Al-Biruni, possible identification">22</button><button type="button" class="mural-marker mural-marker-possible" style="left:54.43%;top:38.37%" data-figure="22" aria-pressed="false" aria-label="Figure 23: Al-Khwarizmi, possible identification">23</button><button type="button" class="mural-marker" style="left:57.09%;top:26.94%" data-figure="25" aria-pressed="false" aria-label="Figure 26: Sadequain (self-portrait), confirmed identification">26</button><button type="button" class="mural-marker" style="left:60.28%;top:41.63%" data-figure="26" aria-pressed="false" aria-label="Figure 27: Al-Razi, confirmed identification">27</button><button type="button" class="mural-marker mural-marker-possible" style="left:61.0%;top:30.0%" data-figure="27" aria-pressed="false" aria-label="Figure 28: Jalaluddin Rumi, possible identification">28</button><button type="button" class="mural-marker mural-marker-possible" style="left:62.93%;top:26.12%" data-figure="28" aria-pressed="false" aria-label="Figure 29: Al-Idrisi, possible identification">29</button><button type="button" class="mural-marker mural-marker-possible" style="left:64.9%;top:26.94%" data-figure="30" aria-pressed="false" aria-label="Figure 31: Ibn Khaldun, possible identification">31</button><button type="button" class="mural-marker mural-marker-likely" style="left:71.96%;top:37.55%" data-figure="31" aria-pressed="false" aria-label="Figure 32: Nicolaus Copernicus, likely identification">32</button><button type="button" class="mural-marker mural-marker-likely" style="left:74.08%;top:33.47%" data-figure="32" aria-pressed="false" aria-label="Figure 33: William Shakespeare, likely identification">33</button><button type="button" class="mural-marker mural-marker-likely" style="left:76.47%;top:30.2%" data-figure="33" aria-pressed="false" aria-label="Figure 34: Isaac Newton, likely identification">34</button><button type="button" class="mural-marker mural-marker-possible" style="left:78.44%;top:24.49%" data-figure="34" aria-pressed="false" aria-label="Figure 35: Immanuel Kant, possible identification">35</button><button type="button" class="mural-marker mural-marker-possible" style="left:78.44%;top:40.0%" data-figure="35" aria-pressed="false" aria-label="Figure 36: Michael Faraday, possible identification">36</button><button type="button" class="mural-marker mural-marker-likely" style="left:80.08%;top:24.49%" data-figure="36" aria-pressed="false" aria-label="Figure 37: René Descartes, likely identification">37</button><button type="button" class="mural-marker mural-marker-possible" style="left:81.89%;top:33.47%" data-figure="37" aria-pressed="false" aria-label="Figure 38: Johann Wolfgang von Goethe, possible identification">38</button><button type="button" class="mural-marker mural-marker-possible" style="left:84.28%;top:26.94%" data-figure="38" aria-pressed="false" aria-label="Figure 39: Adam Smith, possible identification">39</button><button type="button" class="mural-marker mural-marker-possible" style="left:88.69%;top:30.2%" data-figure="39" aria-pressed="false" aria-label="Figure 40: Walt Whitman, possible identification">40</button><button type="button" class="mural-marker mural-marker-likely" style="left:86.3%;top:25.31%" data-figure="40" aria-pressed="false" aria-label="Figure 41: Karl Marx, likely identification">41</button><button type="button" class="mural-marker mural-marker-possible" style="left:86.67%;top:51.43%" data-figure="41" aria-pressed="false" aria-label="Figure 42: Charles Darwin, possible identification">42</button><button type="button" class="mural-marker" style="left:92.14%;top:43.27%" data-figure="42" aria-pressed="false" aria-label="Figure 43: Mirza Ghalib, confirmed identification">43</button><button type="button" class="mural-marker mural-marker-likely" style="left:93.47%;top:28.57%" data-figure="43" aria-pressed="false" aria-label="Figure 44: Rabindranath Tagore, likely identification">44</button><button type="button" class="mural-marker" style="left:95.06%;top:31.02%" data-figure="44" aria-pressed="false" aria-label="Figure 45: Allama Muhammad Iqbal, confirmed identification">45</button><button type="button" class="mural-marker" style="left:97.98%;top:26.94%" data-figure="45" aria-pressed="false" aria-label="Figure 46: Albert Einstein, confirmed identification">46</button></div></div>
+<section class="mural-panel" id="mural-section-panel" aria-live="polite" hidden><button type="button" class="mural-panel-close" aria-label="Close section">×</button><p class="mural-panel-era"></p><h3></h3><p class="mural-panel-text"></p><p class="mural-panel-look"></p></section>
+<section class="mural-panel mural-about" id="mural-about" aria-label="About the mural and the artist" hidden><button type="button" class="mural-panel-close" aria-label="Close about the mural">×</button><h2>Treasures of Time</h2>
+<h3>The artist</h3>
+<p>Syed Sadequain Ahmed Naqvi (1930–1987), known simply as Sadequain, was born in Amroha, in present-day Uttar Pradesh, into a family of calligraphers. He moved to Karachi after Partition and, largely self-taught, became one of Pakistan’s most celebrated painters. He transformed calligraphy into a living modern art form, won the Paris Biennale in 1961, and received all four of Pakistan’s highest civilian honours. He was a poet too, writing hundreds of rubaiyat, or quatrains, in the tradition of Omar Khayyam and Sarmad Kashani.</p>
+<p>Sadequain believed art belonged to the public. He rarely sold his work, called himself an “artist of the gutter”, and painted more than thirty-five monumental murals for banks, museums, universities and other public buildings across Pakistan and India, many of them given as gifts.</p>
+<h3>Why he painted it</h3>
+<p>In 1961 the State Bank of Pakistan completed its new headquarters in Karachi, a showpiece building with escalators and a rooftop garden, and turned to Sadequain, by then the country’s most celebrated artist, to adorn its halls. Shuttling between Karachi and Paris at the time, he accepted, with only three months to produce about a dozen works. From August to October 1961 he practically lived at the bank, going home only to bathe and change his clothes.</p>
+<p><em>Treasures of Time</em>, his first large mural, was the centrepiece. Rather than a national or allegorical subject, Sadequain chose a universal one: a celebration of humankind’s intellectual achievements, honouring thinkers from many civilisations side by side. When the President of Pakistan opened the building before heads of central banks from around the world, the mural became the centre of attention. It also marked a turning point in his own work, opening the way to the literary and classical subjects of his later paintings. Unusually for Sadequain, this was one of the few commissions for which he accepted payment.</p>
+<h3>What it depicts</h3>
+<p>Around eight feet high and some sixty feet long, the mural traces the history of human thought from ancient Greece to the twentieth century, moving from left to right through 46 figures. It opens with a prehistoric potter at his wheel and ends with Einstein standing alone beside a clock. In between come philosophers, scientists, poets and writers from Socrates, Confucius and the Buddha to al-Farabi, Ibn Sina, Shakespeare, Newton, Darwin, Ghalib, Tagore and Iqbal, with the largest group drawn from the Islamic world. Each is identified by the tools or symbols of their calling: ruined temples and pyramids, the Leaning Tower of Pisa, an astrolabe and a lute, a blazing sun. Rather than literal portraits, Sadequain gives them elongated forms and his sweeping calligraphic line. Near the centre he painted himself among them, a frail figure taking his own pulse before the physician al-Razi.</p><p>In spirit, the mural is a cousin of Raphael’s <a href="index.html"><em>School of Athens</em></a> on this site’s home page: both gather thinkers from different centuries into one imagined assembly, and both artists painted themselves into the crowd. As one writer in <em>Dawn</em> put it, “walking its length feels like walking through centuries.”</p>
+<p>The mural first hung in the State Bank’s library. When the library was later turned into a canteen, the mural was taken apart into its sections and put into storage. It was shown again at Mohatta Palace in 2002 in the exhibition <em>SADEQUAIN: The Holy Sinner</em>, by then missing a piece of its upper left corner, reportedly cut away to clear an air-conditioning duct. In 2011 it was restored, the missing corner was repainted, and it was installed in the Sadequain Gallery of the State Bank Museum.</p>
+<h3>Understanding the numbers</h3>
+<p>The numbers follow the list of the mural’s 46 figures, read from left to right, from the prehistoric potter to Einstein. 43 of them are marked on the painting, matched by their place in that order and by the clues Sadequain painted: the tools, settings and likenesses of each figure. Three, Omar Khayyam, Ibn Rushd and Hafiz, are named in the list but not yet located in the painting.</p>
+<p><span class="mural-key-dot" aria-hidden="true"></span><strong>Blue:</strong> a confirmed identification, either described in published accounts or unmistakable in the painting.</p>
+<p><span class="mural-key-dot mural-key-amber" aria-hidden="true"></span><strong>Amber:</strong> a likely identification. A clear likeness or emblem, together with the list’s order, points to this figure.</p>
+<p><span class="mural-key-dot mural-key-red" aria-hidden="true"></span><strong>Red:</strong> a possible identification, based mainly on where the figure falls in the list’s order. These are informed guesses.</p>
+<h3>The 46 figures</h3><ol class="mural-key-list"><li>A prehistoric potter</li><li>A young man</li><li>Socrates</li><li>Plato</li><li>Aristotle</li><li>Euclid</li><li>Confucius</li><li>Herodotus</li><li>Sophocles</li><li>Archimedes</li><li>Dante Alighieri</li><li>Galileo Galilei</li><li>Leonardo da Vinci</li><li>The Buddha</li><li>Ferdowsi</li><li>Al-Ghazali</li><li>Al-Kindi</li><li>Hunayn ibn Ishaq</li><li>Jabir ibn Hayyan</li><li>Al-Farabi</li><li>Ibn Sina</li><li>Al-Biruni</li><li>Al-Khwarizmi</li><li>Omar Khayyam <span>(not yet located)</span></li><li>Ibn Rushd <span>(not yet located)</span></li><li>Sadequain (self-portrait)</li><li>Al-Razi</li><li>Jalaluddin Rumi</li><li>Al-Idrisi</li><li>Hafiz <span>(not yet located)</span></li><li>Ibn Khaldun</li><li>Nicolaus Copernicus</li><li>William Shakespeare</li><li>Isaac Newton</li><li>Immanuel Kant</li><li>Michael Faraday</li><li>René Descartes</li><li>Johann Wolfgang von Goethe</li><li>Adam Smith</li><li>Walt Whitman</li><li>Karl Marx</li><li>Charles Darwin</li><li>Mirza Ghalib</li><li>Rabindranath Tagore</li><li>Allama Muhammad Iqbal</li><li>Albert Einstein</li></ol><p>The roman numerals mark the mural’s broad sections, whose boundaries are approximate. The numbers are this page’s navigation guide, not part of the mural. Select any number or section to read more.</p>
+</section>
+</dialog><main class="poetry-page"><header class="poetry-intro"><a class="identity-return" href="index.html#home-roles">← Back to Home</a><h1>Bayt al-Hikma</h1><div class="hikma-intro-columns"><p>Bayt al-Hikma (the House of Wisdom) was an Abbasid royal library in Baghdad, closely associated with the reign of al-Ma’mun in the ninth century. It belonged to an age of remarkable intellectual exchange, when scholars translated and studied works of philosophy, mathematics, astronomy and medicine from earlier traditions. Across Baghdad’s wider scholarly community, knowledge travelled between languages and cultures, preserving inherited ideas while opening them to new questions. That willingness to learn across boundaries inspires this page.</p><p>My Bayt al-Hikma is a modest meeting place for poetry, translations and reflections. Most of the poems gathered here are my English translations of Urdu and my native Punjabi, bringing the voices, ideas and emotions of poets I admire to readers in another language. Alongside them are my own poems and writings, shaped by the countries, friendships and perspectives that have formed me. My hope is to carry something of each voice across languages, inviting understanding and connection through the words we share.</p></div></header><nav class="poetry-index poetry-category-tabs" role="tablist" aria-label="Poetry categories"><button type="button" role="tab" id="tab-urdu-translations" aria-controls="urdu-translations" aria-selected="false" tabindex="0">Urdu translations</button><button type="button" role="tab" id="tab-punjabi-translations" aria-controls="punjabi-translations" aria-selected="false" tabindex="-1">Punjabi translations</button><button type="button" role="tab" id="tab-writing" aria-controls="writing" aria-selected="false" tabindex="-1">English poetry</button><button type="button" role="tab" id="tab-urdu-poetry" aria-controls="urdu-poetry" aria-selected="false" tabindex="-1">Urdu poetry</button></nav><p class="blog-link-row"><a class="blog-link" href="blog.html"><span class="blog-link-kicker">Prose &amp; reflections</span><span class="blog-link-text">Read the blog <span aria-hidden="true">→</span></span></a></p><section id="urdu-translations" class="poetry-group" role="tabpanel" aria-labelledby="tab-urdu-translations" hidden><h2>Urdu translations</h2><div class="poetry-cards"><details class="poem-card" id="bol"><summary><span class="poem-title">Bol — Speak</span><span class="poem-credit">Faiz Ahmed Faiz · Urdu · English translation by Umar Rafi</span><span class="poem-preview">Speak! For your lips are free</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><div class="parallel-poem"><section class="parallel-poem-column"><h4>Roman Urdu</h4><div class="poem-text source-text" lang="ur-Latn"><span class="poem-stanza">Bol ki lab azaad hain tere
+Bol zabaan ab tak teri hai</span><span class="poem-stanza">Tera sutwaan jism hai tera
+Bol ki jaan ab tak teri hai</span><span class="poem-stanza">Dekh ki aahan-gar ki dukaan mein
+Tund hain sholay, surkh hai aahan</span><span class="poem-stanza">Khulne lage quflon ke dahaane
+Phaila har ik zanjeer ka daaman</span><span class="poem-stanza">Bol ye thoda waqt bahut hai
+Jism-o-zabaan ki maut se pehle</span><span class="poem-stanza">Bol ki sach zinda hai ab tak
+Bol jo kuch kehna hai keh le</span></div></section><section class="parallel-poem-column"><h4>English translation</h4><div class="poem-text" lang="en"><span class="poem-stanza">Speak! For your lips are free
+Speak! It’s your destiny</span><span class="poem-stanza">Your (resilient) soul defines your tale
+Speak! For life stills belongs to thee</span><span class="poem-stanza">Look inside the blacksmith’s shop
+The flames are high; the iron is hot</span><span class="poem-stanza">(But) the chains are slowly opening wide
+Their locks starting to fall aside</span><span class="poem-stanza">Speak! Don’t waste this finite time
+Before your soul and hope subsides</span><span class="poem-stanza">Speak! For the truth; which, still survives
+Speak! And say whatever you like</span></div></section></div><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/9FwoR8mh8T0" title="Bol — sung performance on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=9FwoR8mh8T0" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details></div></details><details class="poem-card" id="khuda-karay"><summary><span class="poem-title">Khuda Karay — May God Will</span><span class="poem-credit">Ahmad Nadeem Qasmi · Urdu · English translation by Umar Rafi</span><span class="poem-preview">I pray there descends upon my pure land</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><p class="poem-date">Translation dated 2006.</p><div class="parallel-poem"><section class="parallel-poem-column"><h4>Roman Urdu</h4><div class="poem-text source-text" lang="ur-Latn"><span class="poem-stanza">Khuda karay ke meri arz-e-pak per utray
+Wo fasl-e-gul jisay andesha-e-zawaal na ho</span><span class="poem-stanza">Yahan jo phool khilay, khila rahay sadi'on
+Yahan khizaan ko guzarnay bi bhi majaal na ho</span><span class="poem-stanza">Yahan jo sabza ugay, hamesha sabz rahay
+Aur aisa sabz ke jis ki koi misaal na ho</span><span class="poem-stanza">Khuda karay ke na kham ho sir-e-waqar-e-watan
+Aur is ke husn ko tashweesh-e-mah-o-saal na ho</span><span class="poem-stanza">Har aik fard ho, tahzeeb-o-fun ka oaj-e-kamaal
+Koi malool na ho, koi khasta haal ha Ho</span><span class="poem-stanza">Khuda karay ke meray aik bhi hum'watan ke leay
+Hayaat jurm na ho, zindagi wabaal na ho</span><span class="poem-stanza">Khuda karay ke meri arz-e-pak per utray
+Wo fasl-e-gul jisay andesha-e-zawaal na ho</span></div></section><section class="parallel-poem-column"><h4>English translation</h4><div class="poem-text" lang="en"><span class="poem-stanza">I pray there descends upon my pure land
+A field of flowers, fearless of decay</span><span class="poem-stanza">Whose fragrant blossoms, bloom for the ages
+And autumn winds never come its way</span><span class="poem-stanza">Its budding flora, forever green
+A green, which never turns to grey</span><span class="poem-stanza">I pray this land holds its head up high
+With stunning beauty that never fades away</span><span class="poem-stanza">Its natives drenched, in grace and joy
+In anguish, nor in pangs of fray</span><span class="poem-stanza">I pray, for all of my countrymen
+Existence; never a crime, till their dying day</span><span class="poem-stanza">I pray there descends upon my pure land
+A field of flowers, fearless of decay</span></div></section></div><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/NpctBHvXzLM" title="Khuda Karay — performance on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=NpctBHvXzLM" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details></div></details><details class="poem-card" id="bazeecha"><summary><span class="poem-title">Bazeecha-e-Atfal — A Children’s Playground</span><span class="poem-credit">Mirza Ghalib · Urdu · English translation by Umar Rafi</span><span class="poem-preview">A Children’s playground, the world before me</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><p class="poem-date">Translation dated 2011 · Balli Maraan, near Chandni Chowk, Old Delhi.</p><div class="parallel-poem"><section class="parallel-poem-column"><h4>Roman Urdu</h4><div class="poem-text source-text" lang="ur-Latn"><span class="poem-stanza">Bazeecha-e-atfal hai duniya mere aage,
+Hota hai shab-o-roz tamasha mere aage</span><span class="poem-stanza">ik khel hai auraNg-e-sulemaaN mere nazdeek
+ik  baat  hai 'eijaz-e-maseeha  mere  aage</span><span class="poem-stanza">juz naam naheeN soorat-e-aalam mujhe manzoor
+juz waham naheeN  hastee-e-ashiya  mere aage</span><span class="poem-stanza">hota hai nihaaN  gard  meiN sehara mere hote
+ghisata hai jabeeN KHaak pe dariya mere aage</span><span class="poem-stanza">mat pooch ke kya haal hai mera tere peeche ?
+too  dekh  ke  kya  rang  tera  mere  aage</span><span class="poem-stanza">sach kahte ho, KHudbeen-o-KHud_aaraa na kyoN hooN ?
+baiTha   hai   but-e-aainaa_seemaa   mere    aage</span><span class="poem-stanza">phir dekhiye andaaz-e-gul_afshaani-e-guftaar
+rakh de koee  paimaanaa-o-sahba  mere  aage</span><span class="poem-stanza">nafrat ka gumaaN guzare hai, maiN rashk se guzaraa
+kyoN  kar  kahooN,  lo  naam  na  uska  mere  aage</span><span class="poem-stanza">imaaN mujhe roke hai jo khiNche hai mujhe  kufr
+ka'aba   mere  peeche  hai  kaleesa  mere  aage</span><span class="poem-stanza">aashiq hooN, pe maashooq_farebee hai mera kaam
+majnooN  ko  bura  kehti  hai laila  mere aage</span><span class="poem-stanza">KHush hote haiN par wasl meiN yoN mar naheeN jaate
+aayee   shab-e-hijaraaN  ki   tamanna   mere  aage</span><span class="poem-stanza">hai mauj_zan ik qulzum-e-KHooN, kaash, yahee ho
+aata  hai  abhee  dekhiye  kya-kya   mere  aage</span><span class="poem-stanza">go haath ko jumbish naheeN aaNhoN meiN to dam hai
+rehne   do   abhee  saaGHar-o-meena   mere   aage</span><span class="poem-stanza">ham_pesha-o-ham_masharb-o-ham_raaz  hai mera
+'GHalib' ko bura kyoN kaho achchaa mere aage !</span></div></section><section class="parallel-poem-column"><h4>English translation</h4><div class="poem-text" lang="en"><span class="poem-stanza">A Children’s playground, the world before me
+Nightly and daily, watching its pageantry</span><span class="poem-stanza">The throne of Suleiman; but a game to me
+Miracles of Messiah; a mere simplicity</span><span class="poem-stanza">No name I accept; less the critic of the world
+The existence of things, to me seems absurd</span><span class="poem-stanza">In its dust hides the desert, when I appear
+Rivers bow on their banks, in my fear</span><span class="poem-stanza">Don’t ask how I feel when You are not around
+Sincerity betrays You, wherever I am found</span><span class="poem-stanza">Correct are you, I’m as proud as can be
+My beloved’s reflection, like a mirror to me</span><span class="poem-stanza">To watch how flowers spread on my command
+A goblet of wine is all I demand</span><span class="poem-stanza">Jealous am I; ‘tis envy I feel
+His name, to me, it does not appeal</span><span class="poem-stanza">Faith restricts, while sin allures
+Ka’aba at my back; the church in the fore</span><span class="poem-stanza">A lover am I; deceit is my charm
+Laila faults Majnoon, when in my arms</span><span class="poem-stanza">Torture it is; but our union a delight
+The thought of the anguish of the separation night</span><span class="poem-stanza">My wish: our separation be exciting and elate
+I know not what future holds from this date</span><span class="poem-stanza">My hands may be numb, but my eyes still have light
+Leave the decanter and cup in my sight</span><span class="poem-stanza">My habits, my callings, he shares all with me
+Ghalib, I fancy; my confidant is he</span></div></section></div><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/-UsI9d9kccE" title="Bazeecha-e-Atfal — sung performance on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=-UsI9d9kccE" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details><p class="poem-book-link"><a class="text-link" href="a-childrens-playground.html#bazeecha-e-atfal">The poem behind A Children’s Playground →</a></p></div></details><details class="poem-card" id="ku-ba-ku"><summary><span class="poem-title">Ku-ba-ku — Petal to Petal</span><span class="poem-credit">Parveen Shakir · Urdu · English translation by Umar Rafi</span><span class="poem-preview">Petal to petal, spore to spore; rumors of love, spread, door to door</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><p class="poem-date">Translation dated 2000.</p><div class="parallel-poem"><section class="parallel-poem-column"><h4>Roman Urdu</h4><div class="poem-text source-text" lang="ur-Latn"><span class="poem-stanza">ku-ba-ku phail gai bat shanasai ki
+us ne khushbu ki tarah meri pazirai ki</span><span class="poem-stanza">kaise kah dun k mujhe chor diya hai us ne
+bat to sach hai magar bat hai ruswai ki</span><span class="poem-stanza">wo kahin bhi gaya lauta to mere pas aya
+bas yahi bat hai achi mere harjai ki</span><span class="poem-stanza">tera pahlu tere dil ki tarah abad rahe
+tujh pe guzre na qayamat shab-e-tanhai ki</span><span class="poem-stanza">us ne jalti hui peshani pe jo hath rakha
+ruh tak a gai tasir masihai ki</span></div></section><section class="parallel-poem-column"><h4>English translation</h4><div class="poem-text" lang="en"><span class="poem-stanza">Petal to petal, spore to spore; rumors of love, spread, door to door
+Like the sweet scent, of a blooming rose; he courted me, ever so slow</span><span class="poem-stanza">How can I say, he has left me; he is here no more
+The infamy of this truth I cannot ignore</span><span class="poem-stanza">Wherever he went, he returned;  he came back to me
+His fickle virtue is enough to keep me happy</span><span class="poem-stanza">May, he, be in your arms; the one, you adore
+May the night of separation, never knock on your door</span><span class="poem-stanza">As he lay his healing palm on my torrid brow
+A feeling of rejuvenation reached deep into my soul</span></div></section></div><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/LF8Ass5PTWQ" title="Ku-ba-ku — sung performance on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=LF8Ass5PTWQ" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details></div></details><details class="poem-card" id="doors-of-life"><summary><span class="poem-title">Zindagi Ke Jitnay Darwaze — All the Doors of Life</span><span class="poem-credit">Ahmad Nadeem Qasmi · Urdu · English translation by Umar Rafi</span><span class="poem-preview">All the doors of life are closed to me</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><p class="poem-date">Translation dated 2010.</p><div class="parallel-poem"><section class="parallel-poem-column"><h4>Roman Urdu</h4><div class="poem-text source-text" lang="ur-Latn"><span class="poem-stanza">Zindagi kay jitnay darwaze hain mujh par band hain 
+Dekhna; hadd-e nazar se agay barh kar dekhna bhe jurm hae 
+Sochna; apne aqeedoon aur yakeenoon se nikal kar sochna bhe jurm hae
+Asmaan dar asmaan asrar ki partein hata kar jhankna bhe jurm hae
+&quot;&quot;Kyun,&quot; bhe kehna jurm hae; &quot;&quot;Kaisay,&quot; bhe kehna jurm hae
+Sans lenay ki tou aazadi muyasar hae magar 
+Zinda rehne kay liyay insaan ko kuch aur bhe darkar hae
+Aur is kuch aur ka tazkara bhe jurm hae
+Aey hunar mandan-e-aain-o-siyasat 
+Aey khuda-wandan-e-aiwan-ikaid
+Zindagi ke naam par bus ik inayat chahiyeh 
+mujjh ko in saray jaraim ki ijaazat chahiyeh</span></div></section><section class="parallel-poem-column"><h4>English translation</h4><div class="poem-text" lang="en"><span class="poem-stanza">All the doors of life are closed to me
+Seeing; a crime to see beyond the boundaries of sight
+Thinking; a crime to think beyond beliefs and certainities
+A crime to remove layers upon layers of perceptions and to glimpse
+A crime to say, “Why;” a crime to say, “How”
+It is permissible to breath; but
+Life and its humanity requires something more
+Even a crime to utter the words, “Something more”
+O’ experts of constitutions and politics
+O’ self-appointed residents of religious mansions
+In the name of humanity, I want one right:
+I want the right to commit all these crimes</span></div></section></div><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/VFR2DQS0PR0" title="Zindagi Ke Jitnay Darwaze — performance on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=VFR2DQS0PR0" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details></div></details><details class="poem-card" id="dasht"><summary><span class="poem-title">Dasht-e-Tanhai — The Desert of Seclusion</span><span class="poem-credit">Faiz Ahmed Faiz · Urdu · English translation by Umar Rafi</span><span class="poem-preview">in the desert of seclusion, o love of my life, there trembles</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><div class="parallel-poem"><section class="parallel-poem-column"><h4>Roman Urdu</h4><div class="poem-text source-text" lang="ur-Latn"><span class="poem-stanza">Dasht-e-tanhaee main ai jaan-e-jahaan larzaan hai
+Teri aavaaz kay saaey, teray honton kay saraab</span><span class="poem-stanza">Dasht-e-tanhaee main dooree kay khas-o-khaak talay
+Khil rahay hain teray pehloo kay saman or gulaab</span><span class="poem-stanza">Uth rahee hai kaheen qurbat say teri saans kee aanch
+Apnee khushboo main sulagti hooee madham madham</span><span class="poem-stanza">Dour ufaq paar chamaktee hooee qatra qatra
+Gir rahee hai teri dildaar nazar kee shabnam</span><span class="poem-stanza">Is qadar payaar say ai jaan-e-jahaan rakha hai
+Dil kay rukhsaar pay is waqt teri yaad nain haath</span><span class="poem-stanza">Yoon gumaan hota hai gerchay hai abhee subh-e-firaaq
+Dhal gaya hijr ka din aa bhi gaee wasl ki raat.</span></div></section><section class="parallel-poem-column"><h4>English translation</h4><div class="poem-text" lang="en"><span class="poem-stanza">in the desert of seclusion, o love of my life, there trembles
+under the shadows of your voice; the illusion of your lips</span><span class="poem-stanza">in the desert of seclusion, beneath the ashes of separation
+blossom the jasmnes and roses of your intimacy</span><span class="poem-stanza">the warmth of your breath, ascending from the proximity
+simmering in its own fragrance; gently, languidly</span><span class="poem-stanza">at a distance on the horizon, glistening, drop by drop
+recedes the dew of your seductive glance</span><span class="poem-stanza">with immense affection, my love, have you placed this time
+on the silhouette of my heart, your touch of remembrance</span><span class="poem-stanza">though it feels as if this is the dawn of our parting
+the morning of our separation has set; the night of our union has arrived</span></div></section></div><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/tYB-6i_q4sU" title="Dasht-e-Tanhai — sung performance on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=tYB-6i_q4sU" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details></div></details><details class="poem-card" id="dil"><summary><span class="poem-title">Dil Hi To Hai — ’Tis my heart</span><span class="poem-credit">Mirza Ghalib · Urdu · English translation by Umar Rafi</span><span class="poem-preview">‘Tis my heart, not brick, nor stone </span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><p class="poem-date">Translation dated 2003.</p><div class="parallel-poem"><section class="parallel-poem-column"><h4>Roman Urdu</h4><div class="poem-text source-text" lang="ur-Latn"><span class="poem-stanza">Dil Hi To Hai Na Sang-o-Khist 
+Dard Se Bhar Na Aaaye Kyon? 
+Royenge Hum Hazaar Baar 
+Koyee Hamein Sataye Kyon? </span><span class="poem-stanza">Dair Nahin, Haram Nahin, 
+Dar Nahin, Aastan Nahin 
+Baithe Hain Reh-Guzar Pe Hum 
+Gair Hamein Uthaye Kyon? </span><span class="poem-stanza">Jab Voh Jamaal-e-Dilfaroze 
+Surte-Mehre Neem-Roze 
+Aap Hi Ho Nazaar-Soze 
+Parde Mein Munh Chuppaye Kyon? </span><span class="poem-stanza">Dashne-e-Gamaz Jaan-Sitan 
+Naavke-Naaz Bepanah 
+Tera Hi Akse-Rukh Sahi, 
+Saamne Teray Aaye Kyon? </span><span class="poem-stanza">Qaide-Hayat-O-Band-e-Gam, 
+Asl Mein Dono Aik Hain 
+Maut Say Pehlay Aadmi 
+Gum Say Nijaat Paye Kyon? </span><span class="poem-stanza">Husn Aur Us Pe Husn-e-Zun 
+Reh Gayee Bulhavas Ki Sharm 
+Apne Pe Eitmad Hai, 
+Gair Ko Aazmaye Kyon? </span><span class="poem-stanza">Van Voh Garure-Izz-o-Naaz 
+Yan Yeh Hijabe-Paase-Vazan 
+Rah Mein Hum Milain Kahan 
+Bazm Mein Voh Bulaye Kyon? </span><span class="poem-stanza">Han Voh Nahin Khuda Parasat 
+Jaao Voh Baiwafa Sahi 
+Jisko Ho Din-o-Dil Aziz 
+Uski Gali Mein Jaye Kyon? </span><span class="poem-stanza">Ghalib-e-Khasta Kay Bagair 
+Kaunsay Kaam Band Hain? 
+Roeeye Zar-Zar Kaya? 
+Keejiye Haye-Haye Kyon?</span></div></section><section class="parallel-poem-column"><h4>English translation</h4><div class="poem-text" lang="en"><span class="poem-stanza">‘Tis my heart, not brick, nor stone 
+Weeps like others; don’t you know? 
+It will cry, a thousand times 
+Why, do you, torture it so? </span><span class="poem-stanza">At temples, mosques, nor at his door 
+Not even, on, my beloved’s porch 
+I wait, along a distant road 
+Why do others, ask me to go? </span><span class="poem-stanza">His face, its beauty, lights my heart 
+Brighter than, the midday’s glow 
+His sight, it sears, with every gaze 
+Why is it, he veils it so? </span><span class="poem-stanza">Your tender glance, a fatal knife 
+Like haughty darts, from a deadly bow 
+Your image is, enough for me 
+My self, to you, I dare not show </span><span class="poem-stanza">Life, a prison; my anguish, its chain 
+Filled with sorrow; both, the same 
+Is my wish, for death, insane? 
+How else, do I, remove my pain? </span><span class="poem-stanza">Beauty does agree with you 
+Lust - ‘tis my carnal quest 
+I must control, my inner thoughts 
+Why have you, put me, to this test? </span><span class="poem-stanza">There; a modest dignity 
+Here; a show of shy respect 
+Can we meet, along the way? 
+Will he call me, to his fest? </span><span class="poem-stanza">I know, he does not, fear God 
+Disloyal and faithless, he maybe 
+The loyal, the faithful, those two 
+They have never, interested me </span><span class="poem-stanza">Ghalib, the wretch; when he leaves 
+The world, without him, will not cease 
+So, when he dies, no need to mourn 
+So, when he dies, no need to grieve</span></div></section></div><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/49XOMo2hak0" title="Dil Hi To Hai — sung performance on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=49XOMo2hak0" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details></div></details></div></section><section id="punjabi-translations" class="poetry-group" role="tabpanel" aria-labelledby="tab-punjabi-translations" hidden><h2>Punjabi translations</h2><div class="poetry-cards"><details class="poem-card" id="waris-shah"><summary><span class="poem-title">Ajj Aakhaan Waris Shah Nu — Today I Call Waris Shah</span><span class="poem-credit">Amrita Pritam · Punjabi · English translation by Umar Rafi</span><span class="poem-preview">Today, I call Waris Shah, “Speak from inside your grave”</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><p class="poem-date">Translation dated 2005.</p><div class="parallel-poem"><section class="parallel-poem-column"><h4>Roman Punjabi</h4><div class="poem-text source-text" lang="pa-Latn"><span class="poem-stanza">aaj aakhaN Waris Shah nuuN, kitoN kabraaN vichchoN bol,
+te aaj kitab-e ishq daa koii aglaa varkaa phol</span><span class="poem-stanza">ik roii sii dhii punjaab dii, tuuN likh likh maare vaen,
+aaj lakhaaN dhiiaaN rondiaa, tainuN waris shah nuN kahen</span><span class="poem-stanza">uTh dardmandaaN diaa dardiaa, uth takk apnaa Punjaab
+aaj bele lashaaN bichhiaaN te lahu dii bharii Chenab</span><span class="poem-stanza">kise ne panjaN paniaN vichch dittii zahar ralaa
+te unhaaN paniiaaN dharat nuuN dittaa paanii laa</span><span class="poem-stanza">is zarkhez zamiin de luun luun phuttia zaher
+gitth gitth charhiaaN laaliaN fuuT fuuT charhiaa kaher</span><span class="poem-stanza">veh valliissii vha pher, van van vaggii jaa,
+ohne har ik vans di vanjhalii ditti naag banaa</span><span class="poem-stanza">pehlaa dang madaariaN, mantar gaye guaach,
+dooje dang di lagg gayii, jane khane nuN laag</span><span class="poem-stanza">laagaaN kiile lok muNh, bus phir dang hi dang,
+palo palii punjaab de, neele pae gaye ang</span><span class="poem-stanza">gale`oN tutt`e geet phir, takaleon tuttii tand,
+trinjanoN tuttiaaN saheliaaN, chaRakhRre ghuukar band</span><span class="poem-stanza">sane sej de beriaaN, luddaN dittiaaN rohr,
+sane daliaan peengh aj, piplaaN dittii toR</span><span class="poem-stanza">jitthe vajdii sii phuuk pyaar dii, ve oh vanjhalii gayii guaach
+raanjhe de sab veer aaj, bhul gaye uhadii jaach</span><span class="poem-stanza">dhartii te lahoo varsiyaa, kabraaN paiaaN choan
+preet diaaN shaahzaadiaaN, aaj vichch mazaaraaN roan</span><span class="poem-stanza">aaj sabbhe `Qaido` ban gaye, husn ishq de chor
+aaj kitthoN liaaiye labbh ke waris shah ik hor</span><span class="poem-stanza">aaj aakhaN waris shah nuuN, kitoN kabraan vichchoN bol,
+te aaj kitaab-e ishq daa, koii aglaa varkaa phol</span></div></section><section class="parallel-poem-column"><h4>English translation</h4><div class="poem-text" lang="en"><span class="poem-stanza">Today, I call Waris Shah, “Speak from inside your grave”
+And turn, today, the book of love’s next affectionate page</span><span class="poem-stanza">Once, a daughter of Punjab cried; you wrote a wailing saga
+Today, a million daughters, cry to you Waris Shah</span><span class="poem-stanza">Rise! O’ narrator of the grieving; rise! look at your Punjab
+Today, fields are lined with corpses and blood fills the Chenab</span><span class="poem-stanza">Someone mixed poison in the five rivers’ flow
+Their deadly water, now, irrigates our lands galore</span><span class="poem-stanza">This fertile land is sprouting venom from every pore
+The sky is turning red with endless cries of gore</span><span class="poem-stanza">The toxic forest wind, screams within its wake
+Turning every singing flute into a deadly snake</span><span class="poem-stanza">With the first snake-bite; charmers lost their spell
+The second bite turned all of them into snakes as well</span><span class="poem-stanza">Drinking from this deadly stream, filling the land with bane
+Slowly, Punjab’s limbs have turned black and blue with pain</span><span class="poem-stanza"><span class="poem-single-line">The street-songs have been silenced; cotton threads have snapped</span>
+<span class="poem-single-line">Girls have left their playgroups; the spinning wheels have cracked</span></span><span class="poem-stanza">Our wedding boats; their oarsmen, have sent them all asea
+Our hanging swings broken; by their  sheltering Pipal tree</span><span class="poem-stanza">Lost is the flute, which once blew sounds of our heart
+Ranjha’s brothers, today, no longer know this art</span><span class="poem-stanza">Blood rained on our shrines; drenching them to the core
+Damsels of amore, today, sit crying at their door</span><span class="poem-stanza">Today, all are ‘Qaido;’ thieves of beauty and ardor
+Where can we go to find, another Warish Shah once more</span><span class="poem-stanza">Today, I call Waris Shah, “Speak from inside your grave”
+And turn, today, the book of love’s next affectionate page</span></div></section></div><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/o07YSAPa1Aw" title="Ajj Aakhaan Waris Shah Nu — performance on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=o07YSAPa1Aw" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details></div></details><details class="poem-card" id="bulleh"><summary><span class="poem-title">Bulleh! Ki Jaana Main Kaun — Bulleh! To me, I am not known</span><span class="poem-credit">Bulleh Shah · Punjabi · English translation by Umar Rafi</span><span class="poem-preview">Bulleh! To me, I am not known</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><p class="poem-date">Translation dated 1999.</p><div class="parallel-poem"><section class="parallel-poem-column"><h4>Roman Punjabi</h4><div class="poem-text source-text" lang="pa-Latn"><span class="poem-stanza">Bulleh! ki jaana maen kaun</span><span class="poem-stanza">Na maen momin vich maseet aan
+Na maen vich kufar diyan reet aan
+Na maen paakaan vich paleet aan
+Na maen moosa na pharaun</span><span class="poem-stanza">Bulleh! ki jaana maen kaun</span><span class="poem-stanza">Na maen andar ved kitaab aan,
+Na vich bhangaan na sharaab aan
+Na vich rindaan masat kharaab aan
+Na vich jaagan na vich saun.</span><span class="poem-stanza">Bulleh! ki jaana maen kaun</span><span class="poem-stanza">Na vich shaadi na ghamnaaki
+Na maen vich paleeti paaki
+Na maen aabi na maen khaki
+Na maen aatish na maen paun</span><span class="poem-stanza">Bulleh! ki jaana maen kaun</span><span class="poem-stanza">Na maen arabi na lahori
+Na maen hindi shehar nagauri
+Na hindu na turak peshawri
+Na maen rehnda vich nadaun</span><span class="poem-stanza">Bulleh! ki jaana maen kaun</span><span class="poem-stanza">Na maen bheth mazhab da paaya
+Ne maen aadam havva jaaya
+Na maen apna naam dharaaya
+Na vich baitthan na vich bhaun</span><span class="poem-stanza">Bulleh! ki jaana maen kaun</span><span class="poem-stanza">Avval aakhir aap nu jaana
+Na koi dooja hor pehchaana
+Maethon hor na koi siyaana
+Bulla! ooh khadda hai kaun</span><span class="poem-stanza">Bulleh! ki jaana maen kaun.</span></div></section><section class="parallel-poem-column"><h4>English translation</h4><div class="poem-text" lang="en"><span class="poem-stanza">Bulleh! To me, I am not known</span><span class="poem-stanza">Not a believer inside the mosque, am I
+Nor a pagan disciple of false rites
+Not the pure amongst the impure
+Neither Moses, nor the Pharaoh</span><span class="poem-stanza">Bulleh! To me, I am not known</span><span class="poem-stanza">Not in the holy Vedas, am I
+Nor in opium, neither in wine
+Not in the drunkard`s intoxicated craze
+Neither awake, nor in a sleeping daze</span><span class="poem-stanza">Bulleh! To me, I am not known</span><span class="poem-stanza">In happiness nor in sorrow, am I
+Neither clean, nor a filthy mire
+Not from water, nor from earth
+Neither fire, nor from air, is my birth</span><span class="poem-stanza">Bulleh! To me, I am not known</span><span class="poem-stanza">Not an Arab, nor Lahori
+Neither Hindi, nor Nagauri
+Hindu, Turk (Muslim), nor Peshawari
+Nor do I live in Nadaun</span><span class="poem-stanza">Bulleh! To me, I am not known</span><span class="poem-stanza">Secrets of religion, I have not known
+From Adam and Eve, I am not born
+I am not the name I assume
+Not in stillness, nor on the move</span><span class="poem-stanza">Bulleh! To me, I am not known</span><span class="poem-stanza">I am the first, I am the last
+None other, have I ever known
+I am the wisest of them all
+Bulleh! Do I stand alone?</span><span class="poem-stanza">Bulleh! To me, I am not known</span></div></section></div><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem — version 1 <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/VzsQ55-LL80" title="Bulleh! Ki Jaana Main Kaun — performance 1 on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=VzsQ55-LL80" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem — version 2 <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/SxRiln1baiw" title="Bulleh! Ki Jaana Main Kaun — performance 2 on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=SxRiln1baiw" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details><details class="poem-performance" style="margin-top:1.5rem;border-top:1px solid #cfdae3;padding-top:1rem"><summary style="cursor:pointer;font-family:Montserrat,sans-serif;font-weight:300;color:#34586c">Listen to the poem — version 3 <span aria-hidden="true">↓</span></summary><div style="margin-top:1rem"><iframe data-video-src="https://www.youtube-nocookie.com/embed/rfkqcGGtK7Y" title="Bulleh! Ki Jaana Main Kaun — performance 3 on YouTube" width="560" height="315" style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p style="margin-top:.75rem"><a href="https://www.youtube.com/watch?v=rfkqcGGtK7Y" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></p></div></details></div></details></div></section><section id="writing" class="poetry-group" role="tabpanel" aria-labelledby="tab-writing" hidden><h2>English poetry</h2><div class="poetry-cards"><details class="poem-card" id="behs"><summary><span class="poem-title">The Atheist’s Argument</span><span class="poem-credit">Umar Rafi · English</span><span class="poem-preview">When death arrives, I shall not die</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><div class="poem-text" lang="en"><span class="poem-stanza">When death arrives, I shall not die
+Like a flowing river, I will pass it by</span><span class="poem-stanza">A shining donut in a palatial cafe
+I will simply dissolve into a cup of latte</span><span class="poem-stanza">Fear of doomsday; all delusions and dreams
+Arafat; I will avert, when I hear such screams</span><span class="poem-stanza">My heart believes; my mind denies
+The mosque at a distance; will a temple suffice?</span><span class="poem-stanza">God's love heals; the paramour's may churn
+In my beloveds' arms; in hell I shall burn</span><span class="poem-stanza">Satan's debate; the pretensions of faith
+Walk past the mosque with a quiet gait</span><span class="poem-stanza">Fate of inquiry; an exit from heavens?
+Flee such gardens; the Edens and Adns</span><span class="poem-stanza">Pursuit is my mosque; this world is my lair
+Much to be done, beyond worship and prayer</span><span class="poem-stanza">Save I behold, Moses' surprise 
+Convictions of science, I cannot deny</span><span class="poem-stanza">Your horde is for pagans and heathens Umar
+For angels and seers, look somewhere else</span></div></div></details><details class="poem-card" id="pity"><summary><span class="poem-title">Pity the Nation</span><span class="poem-credit">Umar Rafi · English</span><span class="poem-preview">Pity the nation whose soldier is a businessman</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><div class="poem-text"><span class="poem-stanza">Pity the nation whose soldier is a businessman
+Whose businessman is a politician; whose politician is an actor
+Whose actor is a priest and whose priest is a soldier</span><span class="poem-stanza">Pity the nation whose history is trapped in fiction
+Whose fiction trapped in religion
+And whose religion trapped in the minds of those who understand neither fiction nor history</span><span class="poem-stanza">Pity the nation where labor is abundant
+Each child a laborer
+Each woman a commodity; designated to produce more labor
+Pity the nation, where drones are cherished
+But life is cheap
+Where damage is incidental and death is collateral</span><span class="poem-stanza">Pity the nation where liquor flows freely
+Yet free-thought is a luxury
+Whose boozers too fake to think; whose thinkers too rigid to drink</span><span class="poem-stanza">Pity the nation where only men can dance
+Its girls bullied into modesty; save for when flesh is on sale
+Each strut of her body under the shadows of sleazy merriment and ill-begotten currency....</span><span class="poem-stanza">Pity the nation whose canons are loud
+Whose poets quiet
+Their poetry filled, not with love and romance, but with revenge and anger</span><span class="poem-stanza">Pity the nation whose artists are fearful
+Whose preachers fearless
+And whose greatest minds, numb with cynicism, neither fearful nor fearless</span><span class="poem-stanza">Pity the nation whose general stands proudly
+Not at the helm of charging brigades
+But at the dais of political gatherings....</span></div></div></details><details class="poem-card" id="poets-of-home"><summary><span class="poem-title">The Poets of Home</span><span class="poem-credit">Umar Rafi · English</span><span class="poem-preview">Winter days, their nights so long</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><p class="poem-date">Written on 27 December 2004, Ghalib’s birth anniversary.</p><div class="poem-text" lang="en"><span class="poem-stanza">Winter days, their nights so long
+My soul yearns for a lover’s song
+Silent lakes with frozen brows
+Distant peaks, where moonlight glows</span><span class="poem-stanza">I think of all the bards of yore
+Their winsome charms, their words galore
+Yet, none can soothe my dismal soul
+Milton, Goethe, nor Rousseau</span><span class="poem-stanza">My heart longs for a different world
+With timid boys and bashful girls
+A land in which the Indus flows
+A land in which the Ganga strolls</span><span class="poem-stanza">Leftist cries of, “We Shall See”
+Will quench your thirsts and shake your knees
+With Faiz, I feel my destiny
+Does not belong to foreign shores</span><span class="poem-stanza">Those promises of loyalty
+You may or may not agree
+Aching love; Momin’s amore
+The dying cries of a deer’s woes</span><span class="poem-stanza">A conquered land, with mutinies
+Weeping odes, a once brave king
+Zafar, reciting poetry
+Quietly, in his gallows</span><span class="poem-stanza">The tolling bell, it calls to me
+Each verse drenched in energy
+Iqbal and his philosophies
+Of soaring birds and a withering rose</span><span class="poem-stanza">The Fragrance of Beena’s pen
+Will it ever write again?
+Soliloquies, Refusals, Marigolds
+The young death of a blooming prose</span><span class="poem-stanza">The sun comes out, so strong, so bold
+My soul has found its lover’s door
+But tell me what to do Umar
+My heart still aches for something more</span><span class="poem-stanza">So when I need that healing touch
+Beyond the words of Mir, and such
+A tender thought, a poet’s lib
+I turn to you, Mirza Ghalib</span></div></div></details><details class="poem-card" id="gather"><summary><span class="poem-title">Gather</span><span class="poem-credit">Umar Rafi · English</span><span class="poem-preview">Gather 'round people, lend me your ear </span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><p class="poem-date">2004 · Written during the anti-Iraq war protests in Toronto.</p><div class="poem-text" lang="en"><span class="poem-stanza">Gather 'round people, lend me your ear 
+Open your minds and all will be clear
+Burn down the flags you hold so dear 
+Raise your voice; there is nothing to fear </span><span class="poem-stanza">&quot;Speak! your lips are free” as a bird 
+Speak! if you don't, you'll never be heard 
+Speak! and speak, till you can speak no more
+Speak! till your words knock on God's door</span><span class="poem-stanza">If you cannot speak, then talk through your eyes 
+Wipe off your tears and hold your head high 
+'Tis where you finish, not where you begin 
+&quot;For the loser now, will be later to win&quot; </span><span class="poem-stanza">Not only thy neighbour, love all men, alike 
+&quot;Don't break people's heart, 'tis where God resides;&quot; But 
+If ever attacked in the day or the night 
+Stand up and fight!; you must stand up and fight </span><span class="poem-stanza">&quot;The jackal's wedding,&quot; under the desert palms 
+The faceless killers, drunk to their bones 
+No friends of yours and no friends of mine 
+Go! spit in their beer and piss in their wine </span><span class="poem-stanza">&quot;The moving finger writes, and having writ, moves on&quot; 
+Your troubles will pass; a new day will dawn 
+The sun and the moon are at His command 
+&quot;As-shams-u wal qamaru bay-husbaan&quot; </span><span class="poem-stanza">&quot;Ashes to ashes, dust to dust&quot; 
+Return to our Lord, someday, we must; But,
+To the day of your death, from the day of your birth 
+&quot;Live like a falcon, in the mountain's hearth&quot; </span><span class="poem-stanza">So, if your hands are tied and you are down on your knees 
+It seems as if troubles shall never cease; Remember 
+&quot;They can bomb the world to pieces 
+But they can't bomb it into peace&quot;</span></div></div></details></div></section><section id="urdu-poetry" class="poetry-group" role="tabpanel" aria-labelledby="tab-urdu-poetry" hidden><h2>Urdu poetry</h2><div class="poetry-cards"><details class="poem-card" id="urdu-behs"><summary><span class="poem-title" lang="ur" dir="rtl" style="font-family:'Noto Nastaliq Urdu',serif;line-height:2.6">بحثِ غشاش</span><span class="poem-credit">Umar Rafi · Urdu poetry</span><span class="poem-preview">Koun kehta hae ke mout aaye to mar jaoon ga</span><span class="poem-read">Read poem <span aria-hidden="true">↓</span></span></summary><div class="poem-body"><div class="urdu-column-headings"><span>Urdu</span><span>Roman Urdu</span></div><div class="bilingual-couplet"><p class="urdu-script" lang="ur" dir="rtl">کون کہتا ہے کہ موت آئے تو مر جاؤں گا<br>میں تو دریا ہوں، سمندر میں اتر جاؤں گا</p><p class="roman-urdu" lang="ur-Latn" dir="ltr">Koun kehta hae ke mout aaye to mar jaoon ga<br>Mein to daryaa houn, sumandar mein utar jaoon ga</p></div><div class="bilingual-couplet"><p class="urdu-script" lang="ur" dir="rtl">قصرِ ڈنکن کے چمکتے ہوئے ڈونٹ کی طرح<br>ایک لاٹے کی پیالی میں پگھل جاؤں گا</p><p class="roman-urdu" lang="ur-Latn" dir="ltr">Qasr-e-Dunkin ke chamktay huway donut ki tarah<br>Aik latte ki piyali mein pighal jaoon ga</p></div><div class="bilingual-couplet"><p class="urdu-script" lang="ur" dir="rtl">شورِ محشر ہے فقط وہمِ اذیت کی صدا<br>جبلِ رحمہ کے کنارے سے ہی مڑ جاؤں گا</p><p class="roman-urdu" lang="ur-Latn" dir="ltr">Shour-e-mehshar hay faqat wahm-e-izziyyat ki sada<br>Jabl-e-Rahma kay kinaray sae hi murh jaoon ga</p></div><div class="bilingual-couplet"><p class="urdu-script" lang="ur" dir="rtl">دل تو مومن ہے، مگر عقل ابھی کافر ہے<br>کعبہ ہو دور تو مندر میں چلا جاؤں گا</p><p class="roman-urdu" lang="ur-Latn" dir="ltr">Dil tou momin hae, magar aqal abhi kaafir hae<br>Kaaba ho dour tou mandir mein chalaa jaoon ga</p></div><div class="bilingual-couplet"><p class="urdu-script" lang="ur" dir="rtl">عشقِ خالق میں جزا، عشقِ مجازی میں سزا<br>نظرِ محبوب میں دوزخ سے گزر جاؤں گا</p><p class="roman-urdu" lang="ur-Latn" dir="ltr">Ishq-e-Khaliq mein jazaa, Ishq-e-majaazi mein sazaa<br>Nazr-e-mehboob maen dozakh sae guzar jaoon ga</p></div><div class="bilingual-couplet"><p class="urdu-script" lang="ur" dir="rtl">بحثِ ابلیس کہاں، حجتِ ایمان کہاں<br>دیرِ مسجد سے دبے پاؤں پلٹ آؤں گا</p><p class="roman-urdu" lang="ur-Latn" dir="ltr">Bahs-e-Iblees kahaan, hujaat-e-imaan kahaan<br>Dair-e-masjid sae dabay paoon palat aaoon ga</p></div><div class="bilingual-couplet"><p class="urdu-script" lang="ur" dir="rtl">کیا ہے انجامِ طلب؟ خارجِ گلزارِ عدن<br>رت سے پہلے ہی میں جنت سے نکل جاؤں گا</p><p class="roman-urdu" lang="ur-Latn" dir="ltr">Kyaa hae anjaam-e-talab?; khaaraj-e-gulzaar-e-Adn<br>Rut sae pehlay he mein jannat sae nikal jaoon ga</p></div><div class="bilingual-couplet"><p class="urdu-script" lang="ur" dir="rtl">اور بھی کام ہیں عالم میں، عبادت ہی نہیں<br>زیرِ ابراز میں سجدے میں نہیں جاؤں گا</p><p class="roman-urdu" lang="ur-Latn" dir="ltr">Aur bhi kaam hein aalam mein, ibaadat he nahin<br>Zair-e-abraaz mein sajday mein nahin jaoon ga</p></div><div class="bilingual-couplet"><p class="urdu-script" lang="ur" dir="rtl">اے خدا مجھ کو دکھا معجزِ جلوۂ طور<br>ورنہ میں شاخِ یقینی سے پھسل جاؤں گا</p><p class="roman-urdu" lang="ur-Latn" dir="ltr">Aye Khuda mujh ko dikha mujaz-e-jalwa-e-toor<br>Warna mein shaakh-e-yaqeeni sae phisaal jaoon ga</p></div><div class="bilingual-couplet"><p class="urdu-script" lang="ur" dir="rtl">تو تو کچھ اور ہی لگنے لگا غشاش عمر<br>تیری صحبت میں الٰہی کو کدھر پاؤں گا</p><p class="roman-urdu" lang="ur-Latn" dir="ltr">Tu tou kuch aur he lagnay lagaa ghushshash Umar<br>Teri suhbat mein Ilahi ko kidhar paoon ga</p></div></div></details></div></section></main><footer class="book-landing-footer"><div><a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a></div><p class="footer-meta"><a class="footer-blog-link" href="blog.html">Blog</a><span class="footer-sep" aria-hidden="true">·</span>© <span id="year"></span> Umar Rafi</p></footer><script src="script.js?v=mobile-entrance-fix-96"></script><script>
+document.querySelectorAll('.poem-performance').forEach(performance => {
+ performance.addEventListener('toggle', () => {
+  const frame = performance.querySelector('iframe');
+  if (performance.open) {
+   if (!frame.hasAttribute('src')) frame.src = frame.dataset.videoSrc;
+  } else frame.removeAttribute('src');
+ });
+});
+</script>
+<script>
+(()=>{
+ const controls=[...document.querySelectorAll('.poetry-category-tabs button')];
+ const panels=[...document.querySelectorAll('.poetry-group')];
+ document.querySelector('.poetry-category-tabs').removeAttribute('role');
+ const dialog=document.createElement('dialog');dialog.id='poetry-category-dialog';dialog.className='poetry-category-dialog';
+ const close=document.createElement('button');close.type='button';close.className='poetry-dialog-close';close.textContent='×';close.setAttribute('aria-label','Close poetry category');dialog.append(close);document.body.append(dialog);
+ panels.forEach(p=>{p.removeAttribute('role');p.hidden=true;dialog.append(p)});
+ let opener=null;
+ function open(id,trigger){
+ const target=document.getElementById(id),panel=target&&(panels.includes(target)?target:target.closest('.poetry-group'));if(!panel)return;
+ panels.forEach(p=>p.hidden=p!==panel);
+ controls.forEach(b=>b.setAttribute('aria-expanded',String(b.getAttribute('aria-controls')===panel.id)));
+ dialog.setAttribute('aria-labelledby',panel.getAttribute('aria-labelledby'));opener=trigger;
+ if(target.matches('.poem-card'))target.open=true;
+ if(!dialog.open)dialog.showModal();dialog.scrollTop=0;close.focus();
+ }
+ controls.forEach(b=>{b.removeAttribute('role');b.removeAttribute('aria-selected');b.removeAttribute('tabindex');b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-expanded','false');b.addEventListener('click',()=>open(b.getAttribute('aria-controls'),b))});
+ close.addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()});
+ dialog.addEventListener('close',()=>{controls.forEach(b=>b.setAttribute('aria-expanded','false'));dialog.querySelectorAll('details.poem-performance[open]').forEach(d=>d.open=false);opener?.focus({preventScroll:true})});
+ window.addEventListener('hashchange',()=>open(location.hash.slice(1),null));
+ const initial=location.hash.slice(1);if(initial&&!panels.some(p=>p.id===initial))open(initial,null);
+})();</script><style>
+/* × close buttons for anything a button opens */
+[role="tabpanel"]:has(>.reveal-close),details.poem-card,details.poem-performance{position:relative}
+.reveal-close{position:absolute;top:.5rem;right:.5rem;z-index:2;display:flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;margin:0;padding:0;border:0;border-radius:50%;background:transparent;color:#24556e;font:300 1.6rem/1 Lato,Arial,sans-serif;cursor:pointer}
+.reveal-close:hover,.reveal-close:focus-visible{background:#dbe7ed}
+.reveal-close:focus-visible{outline:2px solid #4d7186;outline-offset:2px}
+details.poem-performance>.reveal-close{top:.6rem;right:0;width:1.9rem;height:1.9rem;font-size:1.35rem}
+details.poem-card[open]>summary{padding-right:2.6rem}
+</style>
+<script>
+(()=>{
+/* Every panel opened by a button gets a × that closes it and returns the button to normal. */
+function addClose(host,label,close,before){
+ const b=document.createElement('button');b.type='button';b.className='reveal-close';b.setAttribute('aria-label',label);b.textContent='×';
+ b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();close(e.detail===0)});
+ before?before.after(b):host.prepend(b);
+}
+const tabs=[...document.querySelectorAll('[role="tab"][aria-controls],[role="tab"][href^="#"]')];
+const tabFor=p=>tabs.find(t=>(t.getAttribute('aria-controls')||t.hash?.slice(1))===p.id);
+document.querySelectorAll('[role="tabpanel"]').forEach(panel=>addClose(panel,'Close section',keyboard=>{
+ const tab=tabFor(panel);
+ panel.hidden=true;
+ panel.querySelectorAll('details[open]').forEach(d=>d.open=false);
+ tabs.forEach((t,i)=>{t.setAttribute('aria-selected','false');t.tabIndex=i===0?0:-1});
+ if(tab){tab.closest('[role="tablist"]')?.scrollIntoView({block:'nearest',behavior:'smooth'});if(keyboard)tab.focus({preventScroll:true});else document.activeElement?.blur()}
+}));
+document.querySelectorAll('details.poem-card,details.poem-performance').forEach(d=>{
+ const summary=d.querySelector(':scope>summary');
+ addClose(d,d.classList.contains('poem-card')?'Close poem':'Close performance',keyboard=>{d.open=false;if(keyboard)summary.focus({preventScroll:true});else document.activeElement?.blur()},summary);
+});
+/* Closing a poem also closes (and stops) any performance inside it. */
+document.querySelectorAll('details.poem-card').forEach(d=>d.addEventListener('toggle',()=>{if(!d.open)d.querySelectorAll('details.poem-performance[open]').forEach(x=>x.open=false)}));
+})();
+</script>
+<script>
+(()=>{
+/* Treasures of Time explorer: labelled sections and numbered figures, with a × on every panel. */
+const sections=[{"x": 9, "name": "The Greeks", "era": "From the fourth century BC", "text": "The procession begins with a prehistoric potter at his wheel, then moves into the ancient world among ruined temples, with pyramids on the horizon. The mural’s exhibition catalogue names Socrates, Plato, Aristotle, Euclid, Herodotus, Sophocles and Archimedes here, with Confucius from China among them.", "look": "Look for the potter at the far left, the ruined temple, a map, a geometry tablet and a theatre mask."}, {"x": 27, "name": "Medieval and Renaissance Italy", "era": "Middle Ages to the Renaissance", "text": "Gothic spires and the Leaning Tower of Pisa mark the arrival of Italy, at the meeting point of faith, art, science and invention: Dante, Leonardo da Vinci and Galileo. The haloed Buddha sits at the threshold of the next section.", "look": "Look for the Leaning Tower of Pisa and the tall Gothic spires."}, {"x": 50, "name": "The Islamic world", "era": "The golden age of Islamic learning", "text": "The longest stretch of the mural, and its largest group of figures, unfolds beneath domes and minarets. The exhibition catalogue names Firdausi, al-Ghazali, al-Kindi, Hunain ibn Ishaq, Jabir ibn Hayyan, al-Farabi, Ibn Sina, al-Biruni, al-Khwarizmi, al-Razi and Ibn Khaldun; other accounts add Rumi, Hafiz, Omar Khayyam, Ibn Rushd and al-Idrisi. In the middle, Sadequain painted himself as a frail figure taking his own pulse before the physician al-Razi.", "look": "Look for the tools of their callings: an astrolabe, a lute, laboratory glassware, books and manuscripts."}, {"x": 77, "name": "The Enlightenment", "era": "After the Renaissance", "text": "A blazing sun marks the turn to the scientific revolution and the age of reason in Europe, with European rooftops behind. The exhibition catalogue names Copernicus, Shakespeare, Newton, Kant, Faraday, Descartes, Goethe, Adam Smith, Karl Marx, Walt Whitman and Charles Darwin.", "look": "Look for the blazing sun, the celestial globe and the shaft of light."}, {"x": 92, "name": "South Asia", "era": "The modern subcontinent", "text": "Toward the end, the mural turns to South Asia: Mirza Ghalib, Rabindranath Tagore and Allama Iqbal, named in that order in the exhibition catalogue.", "look": "Look for the domed skyline, the candle and the hookah."}, {"x": 98, "name": "Einstein", "era": "The twentieth century", "text": "The procession ends with Albert Einstein, standing alone at the far right beside a clock: a fitting close for a mural about time.", "look": "Look for the white-haired figure and the clock face at the far right."}];
+const figures=[{"x": 1.86, "y": 43.27, "c": "confirmed", "name": "A prehistoric potter", "text": "Shaping clay at a wheel: the procession begins with one of humankind’s first inventions.", "why": "The mural’s exhibition catalogue says it opens with “a prehistoric potter with the wheel.”", "n": 1}, {"x": 5.0, "y": 30.0, "c": "likely", "text": "A young man in a Greek mantle, standing between the potter and the philosophers: perhaps the youth of Athens whose education Socrates made his life’s work.", "why": "A beardless young man, second in the procession, where the mural’s list of figures places a youth.", "name": "A young man", "n": 2}, {"x": 6.9, "y": 37.55, "c": "likely", "name": "Socrates", "text": "Athenian philosopher (c. 470–399 BC) who taught by questioning, and whose ideas survive through his student Plato.", "why": "A bald, bearded elder seated with a staff, hand at his chin, as Socrates is often portrayed, and the first thinker after the potter. Named in the mural’s list of figures.", "n": 3}, {"x": 9.82, "y": 23.67, "c": "likely", "name": "Plato", "text": "Student of Socrates and founder of the Academy in Athens; his dialogues shaped Western philosophy.", "why": "The central standing figure of the Greek group, next in line after Socrates. Named in the mural’s list of figures.", "n": 4}, {"x": 12.37, "y": 26.94, "c": "possible", "name": "Aristotle", "text": "Student of Plato and tutor of Alexander the Great, whose works shaped logic, ethics, politics and natural science.", "why": "A dark-robed figure beside Plato, where Aristotle falls in the list’s order. Named in the mural’s list of figures.", "n": 5}, {"x": 13.91, "y": 48.16, "c": "likely", "name": "Euclid", "text": "Greek mathematician of Alexandria whose Elements set out the foundations of geometry.", "why": "Kneeling over a tablet, drawing a geometric figure. Named in the mural’s list of figures.", "n": 6}, {"x": 15.93, "y": 23.67, "c": "likely", "name": "Confucius", "text": "Chinese philosopher (551–479 BC) whose teachings on virtue, family and government shaped East Asian thought.", "why": "A bearded figure in a tall scholar’s cap, unlike the Greeks around him. Named in the mural’s list of figures.", "n": 7}, {"x": 18.06, "y": 26.94, "c": "likely", "name": "Herodotus", "text": "Greek writer (c. 484–425 BC) known as the father of history, whose Histories describe the peoples and lands of the known world.", "why": "Holding up a large map of the known world. Named in the mural’s list of figures.", "n": 8}, {"x": 22.3, "y": 31.02, "c": "likely", "name": "Sophocles", "text": "Athenian tragedian (c. 497–406 BC), author of Oedipus the King and Antigone.", "why": "He carries a dark theatre mask. Named in the mural’s list of figures.", "n": 9}, {"x": 20.0, "y": 30.5, "c": "possible", "text": "Greek mathematician and inventor of Syracuse (c. 287–212 BC), who discovered the principle of buoyancy and the law of the lever.", "why": "Placed by its position in the mural’s list of 46 figures, read left to right; the exact figure is uncertain.", "name": "Archimedes", "n": 10}, {"x": 24.96, "y": 25.31, "c": "likely", "name": "Dante Alighieri", "text": "Florentine poet (1265–1321) of the Divine Comedy.", "why": "The crown-like wreath of hair recalls the laurel crown with which Dante is traditionally shown, among the Gothic spires of medieval Italy. Named in the mural’s list of figures.", "n": 11}, {"x": 26.55, "y": 46.53, "c": "likely", "name": "Galileo Galilei", "text": "Italian astronomer and physicist (1564–1642), a founder of modern science.", "why": "Seated in a ruffed collar before the Leaning Tower of Pisa, with a ball at his feet, recalling the falling-bodies experiment told of Pisa. Named in the mural’s list of figures.", "n": 12}, {"x": 27.4, "y": 31.84, "c": "likely", "name": "Leonardo da Vinci", "text": "Renaissance painter, inventor and scientist (1452–1519).", "why": "A long-bearded figure in a cap, close to Leonardo’s familiar likeness. Named in the mural’s list of figures.", "n": 13}, {"x": 30.16, "y": 29.39, "c": "likely", "name": "The Buddha", "text": "Teacher of the path to awakening, whose thought spread across Asia.", "why": "Haloed and seated cross-legged, hair gathered in a topknot, chin resting on his hand. Named in the mural’s list of figures.", "n": 14}, {"x": 34.6, "y": 31.0, "c": "possible", "text": "Persian poet (c. 940–1020) of the Shahnameh, the national epic of Iran.", "why": "Placed by its position in the mural’s list of 46 figures, read left to right; the exact figure is uncertain.", "name": "Ferdowsi", "n": 15}, {"x": 36.0, "y": 29.5, "c": "possible", "text": "Theologian and philosopher (c. 1058–1111) whose writings brought Sufi spirituality into the mainstream of Islamic thought.", "why": "Placed by its position in the mural’s list of 46 figures, read left to right; the exact figure is uncertain.", "name": "Al-Ghazali", "n": 16}, {"x": 37.8, "y": 30.0, "c": "possible", "text": "Ninth-century “philosopher of the Arabs” of Baghdad, who brought Greek philosophy into Arabic thought.", "why": "Placed by its position in the mural’s list of 46 figures, read left to right; the exact figure is uncertain.", "name": "Al-Kindi", "n": 17}, {"x": 39.7, "y": 33.0, "c": "possible", "text": "Ninth-century physician and translator of Baghdad, who rendered Galen, Hippocrates and Aristotle into Arabic.", "why": "Placed by its position in the mural’s list of 46 figures, read left to right; the exact figure is uncertain.", "name": "Hunayn ibn Ishaq", "n": 18}, {"x": 41.95, "y": 26.94, "c": "likely", "name": "Jabir ibn Hayyan", "text": "Eighth-century alchemist, often called the father of chemistry.", "why": "Standing above distillation apparatus: a flask over a flame and an alembic. Named in the mural’s list of figures.", "n": 19}, {"x": 44.18, "y": 38.37, "c": "likely", "name": "Al-Farabi", "text": "Philosopher (c. 870–950) known as the “Second Teacher” after Aristotle, and author of a great book on music.", "why": "He holds a lute. Named in the mural’s list of figures.", "n": 20}, {"x": 49.81, "y": 26.12, "c": "possible", "name": "Ibn Sina", "text": "Physician and philosopher (980–1037), known in Europe as Avicenna, whose Canon of Medicine was taught for centuries.", "why": "A turbaned scholar who appears to hold a skull, a fitting emblem for a physician, where Ibn Sina falls in the list’s order. Named in the mural’s list of figures.", "n": 21}, {"x": 51.78, "y": 26.12, "c": "possible", "name": "Al-Biruni", "text": "Polymath (973–c. 1050) of astronomy, mathematics and geography, who wrote on the astrolabe and on India.", "why": "A white-bearded scholar holding up a diagram, beside the great astrolabe. Named in the mural’s list of figures.", "n": 22}, {"x": 54.43, "y": 38.37, "c": "possible", "name": "Al-Khwarizmi", "text": "Ninth-century mathematician of Baghdad whose work gave us the words algebra and algorithm.", "why": "Bent over his calculations at a desk, with books beside him. Named in the mural’s list of figures.", "n": 23}, {"x": null, "y": null, "c": "possible", "text": "Persian mathematician, astronomer and poet (1048–1131), author of the Rubaiyat.", "why": "Named in the mural’s list of figures but not yet located in the painting.", "name": "Omar Khayyam", "n": 24}, {"x": null, "y": null, "c": "possible", "text": "Andalusian philosopher (1126–1198), known in Europe as Averroes, the great commentator on Aristotle.", "why": "Named in the mural’s list of figures but not yet located in the painting.", "name": "Ibn Rushd", "n": 25}, {"x": 57.09, "y": 26.94, "c": "confirmed", "name": "Sadequain (self-portrait)", "text": "The artist painted himself among the great thinkers, frail and gaunt, taking his own pulse.", "why": "In the middle of the mural, the artist stands beside al-Razi, showing him his pulse, as published accounts describe.", "n": 26}, {"x": 60.28, "y": 41.63, "c": "confirmed", "name": "Al-Razi", "text": "Physician and philosopher of Baghdad (c. 854–925), known in Europe as Rhazes.", "why": "The physician beside whom the artist stands in the middle of the mural, showing him his pulse, as published accounts describe.", "n": 27}, {"x": 61.0, "y": 30.0, "c": "possible", "text": "Persian poet and mystic (1207–1273) of the Masnavi.", "why": "Placed by its position in the mural’s list of 46 figures, read left to right; the exact figure is uncertain.", "name": "Jalaluddin Rumi", "n": 28}, {"x": 62.93, "y": 26.12, "c": "possible", "name": "Al-Idrisi", "text": "Geographer (1100–1165) whose world map for Roger II of Sicily was among the most accurate of the Middle Ages.", "why": "Holding a globe. Al-Idrisi is named in other published accounts of the mural.", "n": 29}, {"x": null, "y": null, "c": "possible", "text": "Persian poet (c. 1315–1390) whose ghazals are still recited across the Persian-speaking world.", "why": "Named in the mural’s list of figures but not yet located in the painting.", "name": "Hafiz", "n": 30}, {"x": 64.9, "y": 26.94, "c": "possible", "name": "Ibn Khaldun", "text": "Historian (1332–1406) whose Muqaddimah founded the study of society and history.", "why": "Holding a book, the last figure of the Islamic world before the blazing sun, where Ibn Khaldun closes that part of the catalogue’s list. Named in the mural’s list of figures.", "n": 31}, {"x": 71.96, "y": 37.55, "c": "likely", "name": "Nicolaus Copernicus", "text": "Astronomer (1473–1543) who placed the Sun, not the Earth, at the centre of the planets.", "why": "Leaning over an armillary sphere, with planets circling overhead. Named in the mural’s list of figures.", "n": 32}, {"x": 74.08, "y": 33.47, "c": "likely", "name": "William Shakespeare", "text": "English playwright and poet (1564–1616).", "why": "The high forehead and beard of his familiar portrait, with a theatre mask at his side. Named in the mural’s list of figures.", "n": 33}, {"x": 76.47, "y": 30.2, "c": "likely", "name": "Isaac Newton", "text": "English mathematician and physicist (1643–1727) of gravity, motion and light.", "why": "Long-haired, with a beam of light passing through a lens and breaking into colour, recalling his experiments with light. Named in the mural’s list of figures.", "n": 34}, {"x": 78.44, "y": 24.49, "c": "possible", "name": "Immanuel Kant", "text": "German philosopher (1724–1804) of the Critique of Pure Reason.", "why": "A grey-haired figure just after Newton, where Kant falls in the list’s order. Named in the mural’s list of figures.", "n": 35}, {"x": 78.44, "y": 40.0, "c": "possible", "name": "Michael Faraday", "text": "English scientist (1791–1867) whose discoveries in electricity and magnetism powered the modern world.", "why": "A thoughtful figure, hand at his mouth, between Kant and Descartes in the list’s order. Named in the mural’s list of figures.", "n": 36}, {"x": 80.08, "y": 24.49, "c": "likely", "name": "René Descartes", "text": "French philosopher and mathematician (1596–1650): “I think, therefore I am.”", "why": "The long dark hair and moustache of his best-known portrait, exactly where the catalogue places him. Named in the mural’s list of figures.", "n": 37}, {"x": 81.89, "y": 33.47, "c": "possible", "name": "Johann Wolfgang von Goethe", "text": "German poet, dramatist and scientist (1749–1832), author of Faust.", "why": "A grey-haired writer with paper and book, where Goethe falls in the list’s order. Named in the mural’s list of figures.", "n": 38}, {"x": 84.28, "y": 26.94, "c": "possible", "name": "Adam Smith", "text": "Scottish philosopher and economist (1723–1790), author of The Wealth of Nations.", "why": "A tall grey-haired figure, where Adam Smith falls in the list’s order. Named in the mural’s list of figures.", "n": 39}, {"x": 88.69, "y": 30.2, "c": "possible", "name": "Walt Whitman", "text": "American poet (1819–1892) of Leaves of Grass.", "why": "Flowing white hair and beard, among the last thinkers before South Asia. Named in the mural’s list of figures.", "n": 40}, {"x": 86.3, "y": 25.31, "c": "likely", "name": "Karl Marx", "text": "German philosopher and economist (1818–1883), author of Capital.", "why": "The great bushy beard and mane of his familiar portrait, holding a book. Named in the mural’s list of figures.", "n": 41}, {"x": 86.67, "y": 51.43, "c": "possible", "name": "Charles Darwin", "text": "English naturalist (1809–1882) whose theory of evolution by natural selection transformed biology.", "why": "A bald elder with a long white beard, like Darwin in later life. Named in the mural’s list of figures.", "n": 42}, {"x": 92.14, "y": 43.27, "c": "confirmed", "name": "Mirza Ghalib", "text": "The great poet of Urdu and Persian (1797–1869) of Mughal Delhi.", "why": "The tall cap, quill and paper, candle and hookah are the familiar imagery of Ghalib.", "n": 43}, {"x": 93.47, "y": 28.57, "c": "likely", "name": "Rabindranath Tagore", "text": "Bengali poet and philosopher (1861–1941), the first Asian winner of the Nobel Prize in Literature.", "why": "Long white hair and a flowing beard, standing between Ghalib and Iqbal, exactly as the catalogue lists them. Named in the mural’s list of figures.", "n": 44}, {"x": 95.06, "y": 31.02, "c": "confirmed", "name": "Allama Muhammad Iqbal", "text": "Poet-philosopher (1877–1938) of the East and the spiritual father of Pakistan.", "why": "Head resting on his hand, his most famous pose, with a book and a falcon, the shaheen of his poetry, perched beside him.", "n": 45}, {"x": 97.98, "y": 26.94, "c": "confirmed", "name": "Albert Einstein", "text": "Physicist (1879–1955) whose theory of relativity transformed our understanding of space and time.", "why": "Published accounts say the mural ends with Einstein standing alone; here he stands beside a clock.", "n": 46}];
+const LABEL={"confirmed": "Confirmed identification", "likely": "Likely identification", "possible": "Possible identification"};
+const dlg=document.getElementById('mural-explorer'),openers=[...document.querySelectorAll('[data-open-mural]')];
+if(!dlg)return;
+const panel=document.getElementById('mural-section-panel'),about=document.getElementById('mural-about'),aboutBtn=dlg.querySelector('.mural-about-toggle'),strip=dlg.querySelector('.mural-explorer-strip'),canvas=dlg.querySelector('.mural-explorer-canvas');
+const pins=[...dlg.querySelectorAll('.mural-marker,.mural-section-pill')];
+let opener=null,current=null;
+const kb=e=>e&&e.detail===0;
+const era=panel.querySelector('.mural-panel-era'),title=panel.querySelector('h3'),text=panel.querySelector('.mural-panel-text'),look=panel.querySelector('.mural-panel-look');
+function clear(){pins.forEach(m=>m.setAttribute('aria-pressed','false'))}
+function closePanel(e){panel.hidden=true;clear();const m=current;current=null;if(m){if(kb(e))m.focus();else document.activeElement?.blur()}}
+function closeAbout(e){about.hidden=true;aboutBtn.setAttribute('aria-expanded','false');if(kb(e))aboutBtn.focus();else document.activeElement?.blur()}
+function centre(x){strip.scrollTo({left:canvas.offsetWidth*x/100-strip.clientWidth/2,behavior:'smooth'})}
+function show(pin){about.hidden=true;aboutBtn.setAttribute('aria-expanded','false');panel.dataset.kind='';
+ if(pin.dataset.figure!==undefined){const i=+pin.dataset.figure,d=figures[i];panel.dataset.kind=d.c;era.textContent=LABEL[d.c];title.textContent=d.n+'. '+(d.c==='possible'?'Possibly ':d.c==='likely'?'Likely ':'')+d.name;text.textContent=d.text;look.textContent='Why: '+d.why;centre(d.x)}
+ else{const i=+pin.dataset.section,d=sections[i];panel.dataset.kind='section';era.textContent=d.era;title.textContent=['I','II','III','IV','V','VI'][i]+'. '+d.name;text.textContent=d.text;look.textContent=d.look;centre(d.x)}
+ panel.hidden=false;clear();current=pin;pin.setAttribute('aria-pressed','true')}
+pins.forEach(m=>m.addEventListener('click',()=>{if(m.getAttribute('aria-pressed')==='true')closePanel();else show(m)}));
+panel.querySelector('.mural-panel-close').addEventListener('click',closePanel);
+about.querySelector('.mural-panel-close').addEventListener('click',closeAbout);
+aboutBtn.addEventListener('click',e=>{if(!about.hidden){closeAbout(e);return}panel.hidden=true;clear();current=null;about.hidden=false;about.scrollTop=0;aboutBtn.setAttribute('aria-expanded','true')});
+openers.forEach(o=>o.addEventListener('click',()=>{opener=o;dlg.showModal();strip.scrollLeft=0;dlg.querySelector('.mural-explorer-close').focus()}));
+dlg.querySelector('.mural-explorer-close').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('close',()=>{panel.hidden=true;about.hidden=true;aboutBtn.setAttribute('aria-expanded','false');clear();current=null;opener?.focus({preventScroll:true});document.activeElement?.blur()});
+})();
+</script>
+<script>
+(()=>{
+/* Full-screen mural: drag, wheel and keyboard panning; markers centre their section. */
+const dlg=document.getElementById('mural-explorer');if(!dlg)return;
+const strip=dlg.querySelector('.mural-explorer-strip');
+let down=null,moved=false;
+strip.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0||e.target.closest('.mural-marker,.mural-section-pill'))return;down={x:e.clientX,left:strip.scrollLeft};moved=false;strip.setPointerCapture(e.pointerId)});
+strip.addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-down.x;if(Math.abs(dx)>4){moved=true;strip.classList.add('is-dragging')}strip.scrollLeft=down.left-dx});
+const end=()=>{down=null;strip.classList.remove('is-dragging')};
+strip.addEventListener('pointerup',end);strip.addEventListener('pointercancel',end);
+strip.addEventListener('click',e=>{if(moved){e.stopPropagation();e.preventDefault();moved=false}},true);
+strip.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){strip.scrollLeft+=e.deltaY;e.preventDefault()}},{passive:false});
+strip.addEventListener('scroll',()=>{if(strip.scrollLeft>40)dlg.classList.add('has-panned')},{passive:true});
+dlg.addEventListener('close',()=>dlg.classList.remove('has-panned'));
+})();
+</script>
+<script>
+(()=>{
+/* Arrows, edge shading and a position bar show there is more mural to the right. */
+const dlg=document.getElementById('mural-explorer');if(!dlg)return;
+const strip=dlg.querySelector('.mural-explorer-strip'),prev=dlg.querySelector('.mural-pan-prev'),next=dlg.querySelector('.mural-pan-next'),bar=dlg.querySelector('.mural-progress span');
+function update(){const max=strip.scrollWidth-strip.clientWidth,x=strip.scrollLeft;prev.hidden=x<=4;next.hidden=x>=max-4;dlg.classList.toggle('not-start',x>4);dlg.classList.toggle('at-end',x>=max-4);bar.style.width=(strip.clientWidth/strip.scrollWidth*100)+'%';bar.style.left=(max>0?x/strip.scrollWidth*100:0)+'%'}
+const step=d=>strip.scrollBy({left:d*strip.clientWidth*.7,behavior:'smooth'});
+prev.addEventListener('click',()=>step(-1));next.addEventListener('click',()=>step(1));
+strip.addEventListener('scroll',update,{passive:true});addEventListener('resize',update);
+new MutationObserver(()=>{if(dlg.open)requestAnimationFrame(update)}).observe(dlg,{attributes:true,attributeFilter:['open']});
+dlg.querySelector('.mural-explorer-canvas img').addEventListener('load',update);
+})();
+</script>
+<script>
+(()=>{/* Keep each poetry popup's title pinned at the top while its contents scroll. */
+const d=document.getElementById('poetry-category-dialog');if(!d)return;
+const set=()=>{const c=getComputedStyle(d);d.style.setProperty('--pt',c.paddingTop);d.style.setProperty('--px',c.paddingLeft);requestAnimationFrame(()=>{const h=d.querySelector('section:not([hidden])>h2');if(h)d.style.setProperty('--sumtop',(h.offsetHeight-parseFloat(c.paddingTop))+'px')})};d.addEventListener('toggle',set,true);
+new MutationObserver(()=>{if(d.open)set()}).observe(d,{attributes:true,attributeFilter:['open']});addEventListener('resize',()=>{if(d.open)set()});
+})();
+</script>
+<script>
+(()=>{/* While a poem is open, its title stays pinned under the section title, even after scrolling past it. */
+const d=document.getElementById('poetry-category-dialog');if(!d)return;
+d.querySelectorAll('section').forEach(sec=>{const h=sec.querySelector(':scope>h2');if(!h)return;const pin=document.createElement('div');pin.className='poem-pin';pin.setAttribute('aria-hidden','true');pin.innerHTML='<div class="poem-pin-bar"><span class="poem-pin-title"></span><span class="poem-pin-credit"></span></div>';h.after(pin);
+ pin.querySelector('.poem-pin-bar').addEventListener('click',()=>{const c=pin._card;if(c){const s=c.querySelector(':scope>summary');d.scrollTo({top:Math.max(0,c.offsetTop-pin.offsetTop-8),behavior:'smooth'})}})});
+let card=null;
+function pinOf(c){return c&&c.closest('section')?.querySelector('.poem-pin')}
+function fill(c){const pin=pinOf(c);if(!pin)return;pin._card=c;pin.querySelector('.poem-pin-title').textContent=c.querySelector('.poem-title')?.textContent||'';pin.querySelector('.poem-pin-credit').textContent=c.querySelector('.poem-credit')?.textContent||'';const t=c.querySelector('.poem-title');pin.querySelector('.poem-pin-title').setAttribute('style',t?.getAttribute('style')||'')}
+function update(){if(!card||!card.open){card=[...d.querySelectorAll('section:not([hidden]) details.poem-card[open]')].pop()||null;if(card)fill(card)}
+ d.querySelectorAll('.poem-pin.is-on').forEach(p=>{if(!card||pinOf(card)!==p)p.classList.remove('is-on')});if(!card||!card.open){return}
+ const pin=pinOf(card);if(!pin)return;const sum=card.querySelector(':scope>summary');const pr=pin.getBoundingClientRect(),sr=sum.getBoundingClientRect(),cr=card.getBoundingClientRect(),bh=pin.querySelector('.poem-pin-bar').offsetHeight;
+ /* Pinned from the moment the title scrolls away until the reader is past the end of the poem. */
+ pin.classList.toggle('is-on',sr.bottom<pr.top+4&&cr.bottom>pr.top+bh+12)}
+d.addEventListener('toggle',e=>{const c=e.target;if(!(c instanceof HTMLDetailsElement)||!c.classList.contains('poem-card'))return;
+ if(c.open){card=c;const pin=pinOf(c);if(pin){pin._card=c;pin.querySelector('.poem-pin-title').textContent=c.querySelector('.poem-title')?.textContent||'';pin.querySelector('.poem-pin-credit').textContent=c.querySelector('.poem-credit')?.textContent||'';const t=c.querySelector('.poem-title');pin.querySelector('.poem-pin-title').setAttribute('style',t?.getAttribute('style')||'')}}
+ else if(card===c){card=[...d.querySelectorAll('section:not([hidden]) details.poem-card[open]')].pop()||null;if(card){const pin=pinOf(card);pin._card=card;pin.querySelector('.poem-pin-title').textContent=card.querySelector('.poem-title').textContent;pin.querySelector('.poem-pin-credit').textContent=card.querySelector('.poem-credit').textContent}}
+ requestAnimationFrame(update)},true);
+d.addEventListener('scroll',update,{passive:true});addEventListener('resize',update);
+d.addEventListener('close',()=>{card=null;update()});
+new MutationObserver(()=>{if(d.open)requestAnimationFrame(update)}).observe(d,{attributes:true,attributeFilter:['open']});
+})();
+</script>
+<script id="poem-one-open">
+(()=>{/* Opening a poem closes any other open poem, brings it to the top under the section title, and its title pins as you read. */
+const d=document.getElementById('poetry-category-dialog');if(!d)return;
+d.addEventListener('toggle',e=>{const c=e.target;if(!(c instanceof HTMLDetailsElement)||!c.classList.contains('poem-card')||!c.open)return;
+ d.querySelectorAll('details.poem-card[open]').forEach(o=>{if(o!==c)o.open=false});
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{const sec=c.closest('section'),h=sec&&sec.querySelector(':scope>h2'),dr=d.getBoundingClientRect();
+  const under=h?h.getBoundingClientRect().bottom:dr.top;const delta=c.getBoundingClientRect().top-under-6;
+  d.scrollTo({top:Math.max(0,d.scrollTop+delta),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}))},true);
+})();
+</script>
+<script id="poem-pin-close-js">
+(()=>{/* The pinned title bar carries the poem's × so it stays reachable while reading. */
+const d=document.getElementById('poetry-category-dialog');if(!d)return;
+d.querySelectorAll('.poem-pin').forEach(pin=>{const bar=pin.querySelector('.poem-pin-bar');if(!bar)return;
+ pin.removeAttribute('aria-hidden');bar.querySelectorAll('.poem-pin-title,.poem-pin-credit').forEach(x=>x.setAttribute('aria-hidden','true'));
+ const x=document.createElement('button');x.type='button';x.className='reveal-close';x.setAttribute('aria-label','Close poem');x.textContent='×';bar.appendChild(x);
+ x.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const c=pin._card;if(!c)return;c.open=false;pin.classList.remove('is-on');
+  requestAnimationFrame(()=>{const h=c.closest('section')?.querySelector(':scope>h2');const under=h?h.getBoundingClientRect().bottom:d.getBoundingClientRect().top;
+   const delta=c.getBoundingClientRect().top-under-6;if(delta<0)d.scrollTo({top:Math.max(0,d.scrollTop+delta)});
+   const s=c.querySelector(':scope>summary');if(e.detail===0)s.focus({preventScroll:true});else document.activeElement?.blur()})})});
+})();
+</script>
+<script id="poem-one-line-fit">
+(()=>{/* Scale each open poem's verse so its longest line fits its column, with all columns of a poem at the same size. */
+const d=document.getElementById('poetry-category-dialog');if(!d)return;const MIN=11;
+function parts(card){return [...card.querySelectorAll('.poem-text, .bilingual-couplet>p')]}
+function fit(card){if(!card||!card.open)return;const els=parts(card);if(!els.length)return;
+ els.forEach(el=>{el.style.fontSize='';el.dataset.base=parseFloat(getComputedStyle(el).fontSize)});
+ const worst=()=>{let r=1;els.forEach(el=>{const avail=el.clientWidth;if(!avail)return;
+  const need=el.classList.contains('poem-text')?Math.max(0,...[...el.querySelectorAll('.poem-stanza')].map(s=>s.scrollWidth)):el.scrollWidth;
+  if(need>avail)r=Math.min(r,(avail-2)/need)});return r};
+ let scale=1;for(let i=0;i<8;i++){const r=worst();if(r>=1)break;scale*=r*.995;let floored=true;
+  els.forEach(el=>{const px=Math.max(MIN,Math.floor(el.dataset.base*scale*100)/100);if(px>MIN)floored=false;el.style.fontSize=px+'px'});if(floored)break}}
+const openCards=()=>d.querySelectorAll('details.poem-card[open]');
+d.addEventListener('toggle',e=>{const c=e.target;if(c instanceof HTMLDetailsElement&&c.classList.contains('poem-card')&&c.open){fit(c);requestAnimationFrame(()=>fit(c))}},true);
+let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>openCards().forEach(fit),80)});
+document.fonts&&document.fonts.ready.then(()=>openCards().forEach(fit));
+})();
+</script>
+</body></html>
