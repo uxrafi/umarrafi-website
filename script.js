@@ -91,7 +91,7 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  const track=gallery.querySelector('.skydiving-track');
  const toggle=gallery.querySelector('.skydiving-toggle');
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
- let paused=false,touching=false,hovered=false,frame=null,last=null,direction=1,position=track.scrollLeft;
+ let paused=false,touching=false,hovered=false,resumeTimer=null,frame=null,last=null,direction=1,position=track.scrollLeft;
  function step(time){
   frame=null;
   const elapsed=last===null?0:Math.min(time-last,64);
@@ -106,7 +106,7 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  function schedule(){
   if(frame!==null)cancelAnimationFrame(frame);
   frame=null;last=null;position=track.scrollLeft;
-  if(!paused&&!touching&&!hovered&&!document.hidden&&!reduced.matches)frame=requestAnimationFrame(step);
+  if(!paused&&!touching&&!hovered&&resumeTimer===null&&!document.hidden&&!reduced.matches)frame=requestAnimationFrame(step);
   toggle.textContent=paused?'Play':'Pause';
   toggle.setAttribute('aria-pressed',String(paused));
   toggle.setAttribute('aria-label',paused?'Start skydiving photo rotation':'Pause skydiving photo rotation');
@@ -117,7 +117,44 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
  photos.querySelectorAll('figure').forEach(photo=>{photo.style.cursor='pointer';});
  // Observe the stationary strip, not the zooming image's changing hit area.
  photos.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'){hovered=true;schedule();}});
- photos.addEventListener('pointerleave',event=>{if(event.pointerType==='mouse'){hovered=false;paused=false;schedule();}});
+ photos.addEventListener('pointerleave',event=>{if(event.pointerType==='mouse'){hovered=false;schedule();}});
+ track.style.cursor='grab';
+ track.style.userSelect='none';
+ track.title='Drag or swipe left and right to explore';
+ track.setAttribute('aria-label','Skydiving gallery — drag, swipe, or use arrow keys to explore');
+ track.querySelectorAll('figure').forEach(photo=>{photo.style.cursor='inherit';});
+ track.querySelectorAll('img').forEach(photo=>{photo.draggable=false;});
+ function resumeLater(){
+  clearTimeout(resumeTimer);
+  resumeTimer=setTimeout(()=>{resumeTimer=null;schedule();},2000);
+  schedule();
+ }
+ let mouseDrag=null;
+ track.addEventListener('pointerdown',event=>{
+  if(event.pointerType!=='mouse'||event.button!==0)return;
+  mouseDrag={id:event.pointerId,x:event.clientX,scroll:track.scrollLeft};
+  touching=true;
+  track.style.cursor='grabbing';
+  track.setPointerCapture(event.pointerId);
+  schedule();
+ });
+ track.addEventListener('pointermove',event=>{
+  if(!mouseDrag||event.pointerId!==mouseDrag.id)return;
+  const delta=event.clientX-mouseDrag.x;
+  if(Math.abs(delta)>5)dragged=true;
+  track.scrollLeft=mouseDrag.scroll-delta;
+  position=track.scrollLeft;
+ });
+ function finishDrag(event){
+  if(!mouseDrag||event.pointerId!==mouseDrag.id)return;
+  mouseDrag=null;touching=false;
+  track.style.cursor='grab';
+  if(track.hasPointerCapture(event.pointerId))track.releasePointerCapture(event.pointerId);
+  resumeLater();
+ }
+ track.addEventListener('pointerup',finishDrag);
+ track.addEventListener('pointercancel',finishDrag);
+ track.addEventListener('lostpointercapture',finishDrag);
  let pointerStart=null,dragged=false;
  photos.addEventListener('pointerdown',event=>{pointerStart={x:event.clientX,y:event.clientY};dragged=false;});
  photos.addEventListener('pointermove',event=>{
@@ -138,8 +175,8 @@ const topBar=document.querySelector('.top-bar');const siteHeader=document.queryS
   }
  });
  track.addEventListener('touchstart',()=>{touching=true;schedule();},{passive:true});
- track.addEventListener('touchend',()=>{touching=false;schedule();},{passive:true});
- track.addEventListener('touchcancel',()=>{touching=false;schedule();},{passive:true});
+ track.addEventListener('touchend',()=>{touching=false;resumeLater();},{passive:true});
+ track.addEventListener('touchcancel',()=>{touching=false;resumeLater();},{passive:true});
  track.addEventListener('wheel',()=>{position=track.scrollLeft;},{passive:true});
  document.addEventListener('visibilitychange',schedule);
  reduced.addEventListener('change',schedule);
