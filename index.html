@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 20564)
-Total output lines: 455
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -300,7 +297,14 @@ html body.home-layout.cloud-t2 .home-cloud-background .home-about{padding-top:ca
 html body.home-layout.cloud-t3 .home-cloud-background .home-about{padding-top:calc(.9rem + 38px)!important}
 }
 </style>
-</head>
+<style id="home-role-navigation">
+#home-roles{scroll-margin-top:130px}
+.athens-overlay p{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:.35rem .6rem;margin:0}
+.athens-overlay p .hero-role-link{white-space:nowrap;text-decoration:underline;text-decoration-color:rgba(255,255,255,.65);text-underline-offset:.25em;text-decoration-thickness:1px}
+.athens-overlay p .hero-role-link::after{content:" ↗";font-size:.7em}
+.athens-overlay .hero-role-link:focus-visible{outline:2px solid currentColor;outline-offset:5px}
+@media(max-width:480px){.athens-overlay{width:96%}.athens-overlay p{font-size:clamp(.75rem,3.15vw,1rem);gap:.3rem}.athens-overlay h1{font-size:clamp(2.6rem,11vw,3.2rem)}}
+</style></head>
 <body class="home-layout site-branding">
 <aside class="top-bar" aria-label="Quote and social links"><div class="announcement"><span class="quote-text">“Man is not free from ignorance except when he knows that he is ignorant.”</span> <span class="quote-credit">— Averroes</span></div><nav class="social-links" aria-label="Social media"><a href="https://www.linkedin.com/in/umar-rafi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.6H2V22h3.4V7.6ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.5c0-4.3-2.3-6.3-5.3-6.3-2.4 0-3.5 1.3-4.1 2.2V7.6H9.2V22h3.4v-8c0-2.1.4-4.1 3-4.1s3 2.4 3 4.2V22H22v-8.5Z"/></svg></a><a href="https://www.facebook.com/uxrafi" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8h1.9V2.3c-.3 0-1.5-.3-2.8-.3-2.8 0-4.7 1.7-4.7 4.9v2.6H7V13h3.2v9H14Z"/></svg></a></nav></aside>
 <header class="site-header">
@@ -314,7 +318,7 @@ html body.home-layout.cloud-t3 .home-cloud-background .home-about{padding-top:ca
 <main id="top">
 <section class="art-hero" aria-label="The School of Athens by Raphael">
 <img src="images/school-of-athens.webp" alt="Raphael's The School of Athens" width="1600" height="1045" fetchpriority="high">
-<div class="athens-overlay"><h1><a class="hero-role-link" href="about.html">Umar Rafi</a></h1><p><a class="hero-role-link" href="books.html">Author</a> · <a class="hero-role-link" href="banking.html">Technologist</a> · <a class="hero-role-link" href="ventures.html">Entrepreneur</a></p></div>
+<div class="athens-overlay" id="home-roles"><h1><a class="hero-role-link" href="about.html">Umar Rafi</a></h1><p><a class="hero-role-link" href="books.html">Author</a> · <a class="hero-role-link" href="banking.html">Technologist</a> · <a class="hero-role-link" href="ventures.html">Entrepreneur</a></p></div>
 </section>
 <section class="home-featured-book" aria-labelledby="featured-novel-title"><button class="painting-peek-toggle athens-game-open" type="button" aria-haspopup="dialog" aria-controls="athens-game">Explore the painting ↓</button><a class="featured-cover" href="a-childrens-playground.html"><img src="images/books/a-childrens-playground-mockup.webp" alt="A Children’s Playground book" width="1024" height="1536" loading="lazy"></a><div><h2 id="featured-novel-title"><a href="a-childrens-playground.html">A Children’s Playground</a><span class="featured-inline-date"> · Coming June 2027</span></h2><p>Between love and duty, home and destiny, a boy must choose who he will become.</p></div><button type="button" class="notify-open featured-notify" data-notify="acp">Be the first to know →</button></section>
 <div class="home-cloud-background"><section class="home-about">
@@ -363,7 +367,9 @@ html body.home-layout.cloud-t3 .home-cloud-background .home-about{padding-top:ca
 <p class="contact-copyright">Copyright © <span id="year"></span> Umar Rafi</p>
 </footer>
 <dialog id="professional-background" class="professional-dialog" aria-labelledby="professional-title">
- <div class="professional-dialog-heading"><div><p class="professional-kicker">B…564 tokens truncated…t of all, I have been a student for rather longer than planned: a bachelor’s, three master’s and a doctorate later, I suspect I may never quite graduate. Every role has led me back to the same question: how should systems that hold people’s money and trust be built, and how should they behave?</p>
+ <div class="professional-dialog-heading"><div><p class="professional-kicker">Beyond the writing</p><h2 id="professional-title">Professional background</h2></div><button type="button" class="professional-close" aria-label="Close professional background" autofocus>Close ×</button></div>
+ <div class="professional-dialog-content professional-narrative"><div class="professional-opening"><figure class="early-flight-photo"><img src="images/early-flying-years.webp" alt="Umar Rafi in flying gear beside an aircraft in his early flying years" width="1000" height="750" loading="lazy"><figcaption>Early flying years.</figcaption></figure><p>It began at the United States Air Force Academy, where I was the first Pakistani ever selected, one of only eight foreign cadets in a class of 1,500. Somewhere between a degree in applied mathematics, soaring in gliders above the Rockies and the relentless demands of military training, I found myself on the Wings of Blue, the Academy’s parachute demonstration team. Jumping with them carried me across America, from packed stadiums and small-town air shows to the plains and coastlines in between. Then came the cockpit, where every flight began long before take-off, with briefings, checklists and the quiet discipline of getting every detail right.</p></div><p>In those years I learned that preparation is never wasted, that responsibility cannot be handed to someone else, and that every decision, however small, travels with you into the air. I still fly as a licensed pilot and coach skydivers. Few moments compare with the instant the door opens and the ground falls away. Up there, the sky is honest: it rewards discipline and punishes complacency. Those lessons still shape how I approach complex systems, with precision and an awareness of the people who depend on them.</p>
+  <p>From the cockpit I moved into the world where software meets finance, and stayed for more than twenty years, through multiple startups and across the Middle East, South Asia and North America. In that time I watched banking change three times: from systems that quietly recorded what institutions owed, to platforms that connected them with the people they serve, to intelligent agents now beginning to act on their behalf. I have been an engineer, an architect, a founder and a teacher along the way. Most of all, I have been a student for rather longer than planned: a bachelor’s, three master’s and a doctorate later, I suspect I may never quite graduate. Every role has led me back to the same question: how should systems that hold people’s money and trust be built, and how should they behave?</p>
   <p>In time those questions found their way into my writing and teaching. I explore how technology reshapes banking, from the way institutions manage risk and serve their customers to how financial systems endure shocks, and what they will need as intelligence moves closer to action: how authority is delegated, how decisions are evidenced, and how trust is kept when machines begin to act on our behalf.</p>
   <p><a class="text-link" href="banking.html">Explore my work in banking technology →</a></p>
  </div>
