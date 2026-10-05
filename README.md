@@ -22,4 +22,11 @@ Literary, elegant, international, thoughtful, and understated. The author identi
 
 ## Status
 
-Initial design/build in progress.
+The author website is ready for production.
+
+## Deployment
+
+- `main` is the Cloudflare Pages production branch.
+- `website-v1` is the development branch; changes are reviewed through preview deployments before merging into `main`.
+- The custom production domain is `umarrafi.com` (configured in Cloudflare Pages).
+
