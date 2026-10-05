@@ -363,7 +363,7 @@ fromHash();addEventListener('hashchange',fromHash);
 </script><script id="poet-first-screen-fit">
 (()=>{const intro=document.querySelector('.poets-intro-scroll'),names=[...document.querySelectorAll('.poet-choice>span:not(.ghalib-portrait-frame)')];if(!intro||names.length!==5)return;
 function fit(){intro.style.height='';intro.style.maxHeight='';if(innerWidth<901)return;
-const bottom=Math.max(...names.map(e=>e.getBoundingClientRect().bottom)),current=intro.getBoundingClientRect().height;
+const bottom=Math.max(...names.map(e=>e.getBoundingClientRect().bottom+scrollY)),current=intro.getBoundingClientRect().height;
 const height=Math.max(90,current+innerHeight-20-bottom);intro.style.maxHeight='none';intro.style.height=height+'px';}
 fit();addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts)document.fonts.ready.then(fit);
 })();
