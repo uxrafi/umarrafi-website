@@ -967,3 +967,10 @@ html:has(dialog[open]){overflow:hidden}
 .footer-blog-link{color:inherit;text-decoration:none;font:300 .8rem/1.6 'Montserrat',sans-serif;letter-spacing:.08em;border-bottom:1px solid transparent;transition:border-color .2s}
 .footer-blog-link:hover,.footer-blog-link:focus-visible{border-bottom-color:currentColor}
 .footer-sep{display:inline-block;margin:0 .65rem;opacity:.55}
+
+/* Blog poetry: continuous verse lines without added row spacing. */
+.blog-post-page blockquote.couplet.cg{row-gap:0!important}
+.blog-post-page blockquote.couplet .cg-s,
+.blog-post-page blockquote.couplet .cg-t,
+.blog-post-page blockquote.couplet .src,
+.blog-post-page blockquote.couplet .tr{margin-top:0!important;margin-bottom:0!important;padding-top:0!important;padding-bottom:0!important}
