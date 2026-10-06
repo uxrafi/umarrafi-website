@@ -214,7 +214,13 @@ html body.bt-layout .bt-edu-panel ol li img[src*="inceif"]{height:auto!important
 @media(max-width:500px){.bt-company-wordmark{height:50px;font-size:1rem}}
 </style><style id="banking-intro-wider">
 @media(min-width:901px){html body.bt-layout .bt-first .bt-intro{max-width:1020px!important;gap:2.5rem!important}}
-</style></head>
+</style><style id="banking-box-spacing">
+@media(min-width:901px){
+html body.bt-layout .bt-first .bt-eras{grid-template-columns:repeat(3,minmax(0,270px))!important}
+html body.bt-layout .bt-more{margin-top:2.1rem!important}
+}
+</style>
+</head>
 <body class="bt-layout site-branding">
 <header class="site-header inner-page-header">
 <a class="wordmark author-wordmark" href="index.html" aria-label="Umar Rafi home"><svg class="ur-logo" viewBox="0 0 72 74" aria-hidden="true" fill="none"><path d="M9 9v34c0 15 8 23 20 23s20-8 20-23V9" /><path d="M29 66V9h14c15 0 22 8 22 18S58 44 43 44H29m13 0 24 23" /></svg><span class="author-name">UMAR RAFI</span></a>
@@ -263,10 +269,10 @@ const strip=document.querySelector('.bt-affiliations'),foot=document.querySelect
 <script id="bt-first-screen-fit">
 (()=>{const root=document.documentElement,strip=document.querySelector('.bt-affiliations');if(!strip)return;
 function fit(){if(innerWidth<901){root.style.removeProperty('--bt-box');root.classList.remove('bt-short');return}
-root.classList.remove('bt-short');root.style.setProperty('--bt-box','290px');
+root.classList.remove('bt-short');root.style.setProperty('--bt-box','266px');
 const over=strip.getBoundingClientRect().bottom+scrollY-innerHeight;
-let h=Math.max(170,Math.min(290,Math.floor(290-over)));
-if(h<235){root.classList.add('bt-short');const o2=strip.getBoundingClientRect().bottom+scrollY-innerHeight;h=Math.max(170,Math.min(290,Math.floor(290-o2)))}
+let h=Math.max(170,Math.min(266,Math.floor(266-over)));
+if(h<235){root.classList.add('bt-short');const o2=strip.getBoundingClientRect().bottom+scrollY-innerHeight;h=Math.max(170,Math.min(266,Math.floor(266-o2)))}
 root.style.setProperty('--bt-box',h+'px')}
 fit();addEventListener('resize',fit);addEventListener('load',fit);document.fonts&&document.fonts.ready.then(fit)})();
 </script>
