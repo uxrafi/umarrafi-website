@@ -221,6 +221,13 @@ html body.bt-layout .bt-more{margin-top:2.1rem!important}
 }
 </style>
 <style id="banking-box-number-only">html body.bt-layout .bt-era-btn .bt-era-num::before{display:none!important}</style>
+<style id="banking-rectangular-cards">
+@media(min-width:901px){
+html body.bt-layout .bt-first .bt-eras{width:100%;max-width:1020px;grid-template-columns:repeat(3,minmax(0,1fr))!important}
+html body.bt-layout .bt-era-btn .bt-era-def{max-width:none}
+html body.bt-layout .bt-era-btn .bt-era-num{font-size:3rem!important;margin-bottom:.45rem!important}
+}
+</style>
 </head>
 <body class="bt-layout site-branding">
 <header class="site-header inner-page-header">
@@ -270,10 +277,10 @@ const strip=document.querySelector('.bt-affiliations'),foot=document.querySelect
 <script id="bt-first-screen-fit">
 (()=>{const root=document.documentElement,strip=document.querySelector('.bt-affiliations');if(!strip)return;
 function fit(){if(innerWidth<901){root.style.removeProperty('--bt-box');root.classList.remove('bt-short');return}
-root.classList.remove('bt-short');root.style.setProperty('--bt-box','218px');
+root.classList.remove('bt-short');root.style.setProperty('--bt-box','190px');
 const over=strip.getBoundingClientRect().bottom+scrollY-innerHeight;
-let h=Math.max(170,Math.min(218,Math.floor(218-over)));
-if(h<235){root.classList.add('bt-short');const o2=strip.getBoundingClientRect().bottom+scrollY-innerHeight;h=Math.max(170,Math.min(218,Math.floor(218-o2)))}
+let h=Math.max(170,Math.min(190,Math.floor(190-over)));
+if(h<235){root.classList.add('bt-short');const o2=strip.getBoundingClientRect().bottom+scrollY-innerHeight;h=Math.max(170,Math.min(190,Math.floor(190-o2)))}
 root.style.setProperty('--bt-box',h+'px')}
 fit();addEventListener('resize',fit);addEventListener('load',fit);document.fonts&&document.fonts.ready.then(fit)})();
 </script>
