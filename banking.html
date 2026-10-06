@@ -216,10 +216,11 @@ html body.bt-layout .bt-edu-panel ol li img[src*="inceif"]{height:auto!important
 @media(min-width:901px){html body.bt-layout .bt-first .bt-intro{max-width:1020px!important;gap:2.5rem!important}}
 </style><style id="banking-box-spacing">
 @media(min-width:901px){
-html body.bt-layout .bt-first .bt-eras{grid-template-columns:repeat(3,minmax(0,270px))!important}
+html body.bt-layout .bt-first .bt-eras{grid-template-columns:repeat(3,minmax(0,250px))!important}
 html body.bt-layout .bt-more{margin-top:2.1rem!important}
 }
 </style>
+<style id="banking-box-number-only">html body.bt-layout .bt-era-btn .bt-era-num::before{display:none!important}</style>
 </head>
 <body class="bt-layout site-branding">
 <header class="site-header inner-page-header">
@@ -269,10 +270,10 @@ const strip=document.querySelector('.bt-affiliations'),foot=document.querySelect
 <script id="bt-first-screen-fit">
 (()=>{const root=document.documentElement,strip=document.querySelector('.bt-affiliations');if(!strip)return;
 function fit(){if(innerWidth<901){root.style.removeProperty('--bt-box');root.classList.remove('bt-short');return}
-root.classList.remove('bt-short');root.style.setProperty('--bt-box','266px');
+root.classList.remove('bt-short');root.style.setProperty('--bt-box','242px');
 const over=strip.getBoundingClientRect().bottom+scrollY-innerHeight;
-let h=Math.max(170,Math.min(266,Math.floor(266-over)));
-if(h<235){root.classList.add('bt-short');const o2=strip.getBoundingClientRect().bottom+scrollY-innerHeight;h=Math.max(170,Math.min(266,Math.floor(266-o2)))}
+let h=Math.max(170,Math.min(242,Math.floor(242-over)));
+if(h<235){root.classList.add('bt-short');const o2=strip.getBoundingClientRect().bottom+scrollY-innerHeight;h=Math.max(170,Math.min(242,Math.floor(242-o2)))}
 root.style.setProperty('--bt-box',h+'px')}
 fit();addEventListener('resize',fit);addEventListener('load',fit);document.fonts&&document.fonts.ready.then(fit)})();
 </script>
