@@ -374,11 +374,15 @@ window.poetIntroFit=fit;fit();addEventListener('load',fit);addEventListener('res
 .blog-post-page .poets-intro-scroll{transition:height .3s ease}
 .blog-post-page .poet-picker.portraits-tucked{max-height:0!important;opacity:0;margin-top:0!important;margin-bottom:0!important;overflow:hidden;pointer-events:none}
 @media (prefers-reduced-motion:reduce){.blog-post-page .poet-picker,.blog-post-page .poets-intro-scroll{transition:none}}</style><script id="portrait-tuck-js">(()=>{const intro=document.querySelector('.poets-intro-scroll'),nav=document.querySelector('.poet-picker');if(!intro||!nav)return;
-let tucked=false,timer=0,base=0;
+let tucked=false,timer=0,base=0,quietUntil=0,last=intro.scrollTop;
 function active(){return !!intro.style.height&&getComputedStyle(intro).overflowY!=='visible'&&intro.scrollHeight>intro.clientHeight+4}
 function tuck(){if(tucked||!active())return;const cs=getComputedStyle(nav),h=nav.getBoundingClientRect().height,d=h+parseFloat(cs.marginTop)+parseFloat(cs.marginBottom);
 base=parseFloat(intro.style.height);nav.style.maxHeight=h+'px';void nav.offsetHeight;tucked=true;nav.classList.add('portraits-tucked');intro.style.height=(base+d)+'px'}
-function untuck(){if(!tucked)return;tucked=false;nav.classList.remove('portraits-tucked');intro.style.height=base+'px'}
-intro.addEventListener('scroll',()=>{tuck();clearTimeout(timer);timer=setTimeout(untuck,900)},{passive:true});
+function untuck(){clearTimeout(timer);if(!tucked)return;tucked=false;quietUntil=performance.now()+600;nav.classList.remove('portraits-tucked');intro.style.height=base+'px'}
+intro.addEventListener('scroll',()=>{const t=intro.scrollTop,moved=Math.abs(t-last)>1;last=t;
+if(t<=2){untuck();return}
+if(performance.now()<quietUntil||!moved)return;
+tuck();clearTimeout(timer);timer=setTimeout(untuck,900)},{passive:true});
+intro.addEventListener('mouseleave',()=>{if(tucked){clearTimeout(timer);timer=setTimeout(untuck,300)}});
 addEventListener('resize',()=>{if(!tucked)return;clearTimeout(timer);tucked=false;nav.classList.remove('portraits-tucked');nav.style.maxHeight='';if(window.poetIntroFit)window.poetIntroFit()});
 })();</script></body></html>
