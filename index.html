@@ -338,27 +338,19 @@ if(!img||img.complete)show();else{img.addEventListener('load',show);img.addEvent
 <section class="quote"><img class="home-portrait" src="images/contact-portrait-full.webp" alt="Umar Rafi" width="1086" height="1448" loading="lazy" decoding="async"><div class="profile-quote-align"><div class="profile-quote-text"><blockquote>“The greatest gift one can offer another is a moment of laughter and a thought that lingers.”</blockquote><p>— Umar Rafi</p></div></div></section>
 <section class="skydiving-showcase" aria-label="Umar’s skydiving photographs">
 <figure class="skydiving-static"><img src="images/skydiving-ground.jpg" alt="Umar Rafi in his blue skydiving suit, holding his helmet on the ground" loading="lazy" width="1200" height="1200"></figure>
-<div class="skydiving-rotator" aria-roledescription="carousel" aria-label="Skydiving in the air and on the ground">
-<div class="skydiving-track" tabindex="0" aria-label="Skydiving gallery — swipe or use arrow keys">
-<figure style="--photo-ratio:1.3333333333333333"><img src="images/gallery/academy-exit.webp" style="rotate:180deg" alt="Academy days — a skydiver exiting an aircraft" loading="lazy" width="1200" height="900"></figure>
-<figure style="--photo-ratio:1.3333333333333333"><img src="images/gallery/academy-formation.webp" style="rotate:180deg" alt="Academy days — a skydiving formation" loading="lazy" width="1200" height="900"></figure>
-<figure style="--photo-ratio:1.5003663003663004"><img src="images/gallery/sky-sequence-1.webp" alt="Skydivers leaving an aircraft above Perris" loading="lazy" width="2048" height="1365"></figure>
-<figure style="--photo-ratio:1.5003663003663004"><img src="images/gallery/sky-sequence-2.webp" alt="Skydivers spreading out beneath the aircraft" loading="lazy" width="2048" height="1365"></figure>
-<figure style="--photo-ratio:1.499267935578331"><img src="images/gallery/sky-sequence-3-me.webp" alt="A freefall formation beneath the sun" loading="lazy" width="2048" height="1366"></figure>
-
-<figure style="--photo-ratio:1.7777777777777777"><img src="images/gallery/sky-freefall-frame.webp" alt="Umar Rafi in a blue suit skydiving alongside two fellow skydivers above a mountainous landscape" loading="lazy" width="1920" height="1080"></figure>
-<figure style="--photo-ratio:1.7777777777777777"><img src="images/gallery/sky-freefall-42018.webp" alt="Skydivers in freefall above a mountainous landscape" loading="lazy" width="1920" height="1080"></figure>
-<figure style="--photo-ratio:1.7777777777777777"><img src="images/gallery/sky-freefall-54160.webp" alt="Skydivers in freefall above a mountainous landscape" loading="lazy" width="1920" height="1080"></figure>
-
-
-<figure style="--photo-ratio:1.499267935578331"><img src="images/gallery/sky-sequence-7.webp" alt="Skydivers in formation above the desert landscape" loading="lazy" width="2048" height="1366"></figure>
-<figure style="--photo-ratio:1.5003663003663004"><img src="images/gallery/sky-sequence-8.webp" alt="Skydivers descending over a broad landscape and clouds" loading="lazy" width="2048" height="1365"></figure>
-<figure style="--photo-ratio:1.5003663003663004"><img src="images/gallery/sky-sequence-9.webp" alt="Open parachutes against the blue sky" loading="lazy" width="2048" height="1365"></figure>
-
-<figure style="--photo-ratio:1.5003663003663004"><img src="images/gallery/sky-sequence-11.webp" alt="Parachutes approaching the grassy landing area" loading="lazy" width="2048" height="1365"></figure>
-<figure style="--photo-ratio:1.5003663003663004"><img src="images/gallery/sky-sequence-12.webp" alt="Skydivers and parachutes back on the ground" loading="lazy" width="2048" height="1365"></figure></div>
-<button class="skydiving-toggle" type="button" aria-label="Pause skydiving photo rotation" aria-pressed="false">Pause</button>
-</div></section>
+<div class="skydiving-video"><video src="videos/skydiving-loop.mp4" poster="images/skydiving-video-poster.jpg" muted loop playsinline preload="metadata" aria-label="Skydiving: leaving the aircraft and building a large freefall formation"></video></div>
+<style id="skydiving-video-css">.skydiving-video{position:relative;min-width:0;overflow:hidden;background:#cad8e1}
+.skydiving-video video{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.5) brightness(.8);opacity:0;transition:opacity 2.5s ease}
+.skydiving-video.is-ready video{opacity:.92}
+@media(max-width:600px){.skydiving-video video{min-height:180px}}
+@media(prefers-reduced-motion:reduce){.skydiving-video video{transition:none}}</style>
+<script id="skydiving-video-js">(function(){var box=document.querySelector('.skydiving-video'),v=box&&box.querySelector('video');if(!v)return;
+var still=matchMedia('(prefers-reduced-motion: reduce)').matches||(navigator.connection&&navigator.connection.saveData);
+function ready(){box.classList.add('is-ready')}
+if(still){v.removeAttribute('autoplay');ready();return}
+v.addEventListener('playing',ready,{once:true});
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(ready)}else v.pause()})},{threshold:.15});
+io.observe(box);setTimeout(ready,4000)})();</script></section>
 
 
 
