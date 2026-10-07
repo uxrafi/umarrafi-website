@@ -342,15 +342,24 @@ if(!img||img.complete)show();else{img.addEventListener('load',show);img.addEvent
 <style id="skydiving-video-css">.skydiving-video{position:relative;min-width:0;overflow:hidden;background:#cad8e1}
 .skydiving-video video{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.5) brightness(.8);opacity:0;transition:opacity 2.5s ease}
 .skydiving-video.is-ready video{opacity:.92}
+.skydiving-video{cursor:pointer}
+.skydiving-video:focus-visible{outline:2px solid #244b65;outline-offset:-2px}
+.skydiving-video::after{content:'';position:absolute;right:.8rem;top:.8rem;width:30px;height:30px;border-radius:50%;background:rgba(237,243,247,.75) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l9 5-9 5z' fill='%23244b65'/%3E%3C/svg%3E") center/18px no-repeat;opacity:0;transition:opacity .4s ease;pointer-events:none}
+.skydiving-video.is-paused::after{opacity:1}
 @media(max-width:600px){.skydiving-video video{min-height:180px}}
 @media(prefers-reduced-motion:reduce){.skydiving-video video{transition:none}}</style>
 <script id="skydiving-video-js">(function(){var box=document.querySelector('.skydiving-video'),v=box&&box.querySelector('video');if(!v)return;
-var still=matchMedia('(prefers-reduced-motion: reduce)').matches||(navigator.connection&&navigator.connection.saveData);
+var still=matchMedia('(prefers-reduced-motion: reduce)').matches||(navigator.connection&&navigator.connection.saveData),userPaused=false,visible=false;
 function ready(){box.classList.add('is-ready')}
-if(still){v.removeAttribute('autoplay');ready();return}
-v.addEventListener('playing',ready,{once:true});
-var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(ready)}else v.pause()})},{threshold:.15});
-io.observe(box);setTimeout(ready,4000)})();</script></section>
+function label(){var off=v.paused;box.classList.toggle('is-paused',off&&userPaused);box.setAttribute('aria-label',off?'Play skydiving video':'Pause skydiving video');box.setAttribute('aria-pressed',String(!off))}
+function play(){var p=v.play();if(p&&p.catch)p.catch(function(){ready();label()})}
+box.setAttribute('role','button');box.tabIndex=0;box.title='Click to pause or play';
+function toggle(){if(v.paused){userPaused=false;play()}else{userPaused=true;v.pause()}}
+box.addEventListener('click',toggle);box.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+v.addEventListener('play',label);v.addEventListener('pause',label);v.addEventListener('playing',ready,{once:true});
+if(still){userPaused=true;ready();label();return}
+new IntersectionObserver(function(e){e.forEach(function(x){visible=x.isIntersecting;if(visible){if(!userPaused)play()}else if(!v.paused)v.pause()})},{threshold:.15}).observe(box);
+label();setTimeout(ready,4000)})();</script></section>
 
 
 
