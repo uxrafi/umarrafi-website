@@ -414,7 +414,6 @@ function untuck(){clearTimeout(timer);if(!tucked)return;tucked=false;quietUntil=
 intro.addEventListener('scroll',()=>{const t=intro.scrollTop,moved=Math.abs(t-last)>1;last=t;
 if(t<=2){untuck();return}
 if(performance.now()<quietUntil||!moved)return;
-tuck();clearTimeout(timer);timer=setTimeout(untuck,900)},{passive:true});
-intro.addEventListener('mouseleave',()=>{if(tucked){clearTimeout(timer);timer=setTimeout(untuck,300)}});
+tuck()},{passive:true});
 addEventListener('resize',()=>{if(!tucked)return;clearTimeout(timer);tucked=false;nav.classList.remove('portraits-tucked');nav.style.maxHeight='';if(window.poetIntroFit)window.poetIntroFit()});
 })();</script></body></html>
