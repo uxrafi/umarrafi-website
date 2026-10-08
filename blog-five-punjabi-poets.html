@@ -402,7 +402,7 @@ function tuck(){if(tucked||!active())return;const cs=getComputedStyle(nav),h=nav
 base=parseFloat(intro.style.height);nav.style.maxHeight=h+'px';void nav.offsetHeight;tucked=true;nav.classList.add('portraits-tucked');intro.style.height=(base+d)+'px'}
 function untuck(){clearTimeout(timer);if(!tucked)return;tucked=false;quietUntil=performance.now()+600;nav.classList.remove('portraits-tucked');intro.style.height=base+'px'}
 intro.addEventListener('scroll',()=>{const t=intro.scrollTop,moved=Math.abs(t-last)>1;last=t;
-if(t<=2){untuck();return}
+if(t<=2||t+intro.clientHeight>=intro.scrollHeight-2){untuck();return}
 if(performance.now()<quietUntil||!moved)return;
 tuck()},{passive:true});
 addEventListener('resize',()=>{if(!tucked)return;clearTimeout(timer);tucked=false;nav.classList.remove('portraits-tucked');nav.style.maxHeight='';if(window.poetIntroFit)window.poetIntroFit()});
