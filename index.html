@@ -336,7 +336,7 @@ if(!img||img.complete)show();else{img.addEventListener('load',show);img.addEvent
 </div>
 </section>
 <section class="quote"><img class="home-portrait" src="images/contact-portrait-full.webp" alt="Umar Rafi" width="1086" height="1448" loading="lazy" decoding="async"><div class="profile-quote-align"><div class="profile-quote-text"><blockquote>“The greatest gift one can offer another is a moment of laughter and a thought that lingers.”</blockquote><p>— Umar Rafi</p></div></div></section>
-<section class="skydiving-showcase" aria-label="Umar’s skydiving photographs">
+<section class="skydiving-showcase with-flying" aria-label="Umar’s skydiving and flying photographs">
 <figure class="skydiving-static"><img src="images/skydiving-ground.jpg" alt="Umar Rafi in his blue skydiving suit, holding his helmet on the ground" loading="lazy" width="1200" height="1200"></figure>
 <div class="skydiving-video"><video src="videos/skydiving-loop.mp4" poster="images/skydiving-video-poster.jpg" muted loop playsinline preload="metadata" aria-label="Skydiving: leaving the aircraft and building a large freefall formation"></video></div>
 <style id="skydiving-video-css">.skydiving-video{position:relative;min-width:0;overflow:hidden;background:#cad8e1}
@@ -359,7 +359,7 @@ box.addEventListener('click',toggle);box.addEventListener('keydown',function(e){
 v.addEventListener('play',label);v.addEventListener('pause',label);v.addEventListener('playing',ready,{once:true});
 if(still){userPaused=true;ready();label();return}
 new IntersectionObserver(function(e){e.forEach(function(x){visible=x.isIntersecting;if(visible){if(!userPaused)play()}else if(!v.paused)v.pause()})},{threshold:.15}).observe(box);
-label();setTimeout(ready,4000)})();</script></section>
+label();setTimeout(ready,4000)})();</script><div class="flying-drift"><img src="images/flying-wide.webp" alt="Umar Rafi on the ladder of a two-seat fighter trainer" loading="lazy" width="1400" height="1050"></div><figure class="flying-static"><img src="images/flying-close.webp" alt="Umar Rafi in flying kit, holding his helmet on the cockpit ladder" loading="lazy" width="1400" height="1050"></figure><style id="flying-strip-css">.home-layout .skydiving-showcase.with-flying{grid-template-columns:1fr 2fr 2fr 1fr;height:clamp(200px,27vw,390px)}.home-layout .with-flying>*{height:100%;min-height:0}.home-layout .with-flying .skydiving-static img{width:100%;height:100%;object-fit:cover;object-position:28% 50%}.home-layout .with-flying .flying-drift{position:relative;overflow:hidden;background:#cad8e1}.home-layout .with-flying .flying-drift img,.home-layout .with-flying .flying-static img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.5) brightness(.8)}.home-layout .with-flying .flying-drift img{object-position:40% 60%;transform-origin:38% 45%;animation:flying-drift 36s ease-in-out infinite alternate}.home-layout .with-flying .flying-static{margin:0;overflow:hidden}.home-layout .with-flying .flying-static img{object-position:49% 50%}@keyframes flying-drift{from{transform:scale(1)}to{transform:scale(1.14) translateX(-2%)}}@media(max-width:600px){.home-layout .skydiving-showcase.with-flying{grid-template-columns:1fr 2fr;grid-template-rows:180px 180px;height:auto}.home-layout .with-flying .flying-drift{grid-column:1/2;grid-row:2}.home-layout .with-flying .flying-static{grid-column:2/3;grid-row:2}.home-layout .with-flying .flying-static img{object-position:50% 40%}}@media(prefers-reduced-motion:reduce){.home-layout .with-flying .flying-drift img{animation:none}}</style></section>
 
 
 
